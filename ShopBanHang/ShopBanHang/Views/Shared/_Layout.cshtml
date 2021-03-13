@@ -352,16 +352,40 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="/dangnhap"   >
-                                <i class="fas fa-sign-in-alt"></i>
-                                <span class="dangkydangnhap ">Đăng ký/Đăng nhập  </span>                              
+                            @if (Session["tenKH"] != null)
+                            {
+
+                                <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["taiKhoan"].ToString()</a>
+
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Tài khoản
+                                    </a>
+
+                                    <a href="@Url.Action("DangXuat","NguoiDung" )" class="dropdown-item">Đăng xuất</a>
+                                    <div class="dropdown-divider"></div>
+
+                                </div>
 
 
-                            </a>
-                            
-                           
+                            }
+                            else
+                            {
+                                <a class="nav-link dropdown-toggle" href="/dangnhap">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    <span class="dangkydangnhap ">Đăng ký/Đăng nhập  </span>
+
+
+                                </a>
+                            }
+
+
+
                             <!-- Dropdown - User Information -->
-                            
+
                         </li>
 
                     </ul>

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script src="~/Scripts/jquery-3.6.0.min.js"></script>
-<script src="~/Scripts/js.js"></script>
+
 
 
 
@@ -85,7 +85,7 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input id="btnSubmit" type="submit" onclick="return checkDK()" value="Create" class="btn btn-primary" />
+                <input id="btnSubmit" type="submit" onclick="return checkDK()" value="Đăng ký" class="btn btn-primary" />
 
             </div>
         </div>
@@ -114,6 +114,11 @@
         if (matKhau != matkhuau2)
         {
             alert("Mật khẩu phải trùng nhau");
+            return false;
+        }
+        if (matKhau.length < 6)
+        {
+            alert("Mật khẩu phải dài hơn 6 ký tự");
             return false;
         }
         else {
