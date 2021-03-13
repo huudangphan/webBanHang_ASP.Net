@@ -55,6 +55,10 @@ namespace ShopBanHang.Controllers
                 Session["tenKH"] = data.FirstOrDefault().tenKH;
                 Session["taiKhoan"] = data.FirstOrDefault().taiKhoan;
                 Session["matKhau"] = data.FirstOrDefault().matKhau;
+                Session["diaChi"] = data.FirstOrDefault().diaChi;
+                Session["ngaySinh"] = data.FirstOrDefault().ngaySinh;
+                Session["email"] = data.FirstOrDefault().emai;
+                Session["sdt"] = data.FirstOrDefault().sdt;
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -69,5 +73,13 @@ namespace ShopBanHang.Controllers
             Session.Clear();
             return RedirectToAction("Index","Home");
         }
+      
+        public ActionResult HoSoNguoiDung()
+        {
+            
+
+            return View();
+        }
+        
     }
 }

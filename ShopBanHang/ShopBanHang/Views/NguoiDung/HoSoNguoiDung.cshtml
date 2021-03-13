@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ShopBanHang.Models.KhachHang>
+
+@{
+    ViewBag.Title = "HoSoNguoiDung";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>HoSoNguoiDung</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Tên Người dùng
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+           Ngày sinh
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Số điện thoai
+        </th>
+        <th>
+            Tên tài khoản
+        </th>
+        
+        <th></th>
+    </tr>
+
+<tr>
+   
+    <td>
+        
+        @Session["tenKH"].ToString()
+    </td>
+    <td>
+       
+        @Session["diaChi"].ToString()
+
+    </td>
+    <td>
+        
+        @Session["ngaySinh"].ToString()
+    </td>
+    <td>
+        
+        @Session["email"].ToString()
+    </td>
+    <td>
+        @Session["sdt"].ToString()
+    </td>
+    <td>
+        @Session["taiKhoan"].ToString()
+    </td>
+
+
+</tr>
+
+
+
+</table>
+
