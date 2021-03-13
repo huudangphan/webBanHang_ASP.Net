@@ -29,7 +29,7 @@ namespace ShopBanHang.Controllers
                 db.KhachHangs.Add(kh);
                 db.SaveChanges();
                 
-                return View("DangNhap");
+                return View();
             }
 
             else
@@ -60,14 +60,14 @@ namespace ShopBanHang.Controllers
             else
             {
                 ViewBag.error = "Tên đăng nhập hoặc mật khẩu sai";
-                return RedirectToAction("DangNhap");
+                return View();
             }
            
         }
         public ActionResult DangXuat()
         {
             Session.Clear();
-            return RedirectToAction("DangNhap");
+            return RedirectToAction("Index","Home");
         }
     }
 }

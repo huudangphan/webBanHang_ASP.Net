@@ -10,17 +10,18 @@
     @foreach (var item in Model)
     {
 
-        <div class="col-md-3">
-            <img src="~/Assit/img/@Html.DisplayFor(modelItem=>item.anh)" alt="Alternate Text" style="width:270px;height:250px;" />
-            <div style="text-align:center;margin-bottom:10px;">
-                @Html.DisplayFor(modelItem => item.tenSP)
-                <br />
-                @Html.DisplayFor(modelItem => item.giaSP)
-                <br />
-                <button class="btn btn-primary"><a href="@Url.Action("xemChiTiet","SanPham",new { @masp=item.maSP})" style="color:white">Xem chi tiết</a></button>
-            </div>
-
+    <div class="col-md-3">
+        <a href="@Url.Action("xemChiTiet","SanPham",new { @masp=item.maSP})" style="color:white"><img src="~/Assit/img/@Html.DisplayFor(modelItem=>item.anh)" alt="Alternate Text" style="width:270px;height:250px;" /></a>
+        
+        <div style="text-align:center;margin-bottom:10px;">
+            @Html.DisplayFor(modelItem => item.tenSP)
+            <br />
+            @Html.DisplayFor(modelItem => item.giaSP)
+            <br />
+         
         </div>
+
+    </div>
 
     }
 </div>
