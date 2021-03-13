@@ -1,0 +1,127 @@
+﻿@model ShopBanHang.Models.KhachHang
+
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script src="~/Scripts/js.js"></script>
+
+
+
+@using (Html.BeginForm("DangKy","NguoiDung",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    
+
+    <div class="form-horizontal">
+        
+        <hr />
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+        <div class="form-group">
+            <div class="control-label col-md-2">Họ và tên</div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.tenKH, new { htmlAttributes = new { @class = "form-control" } })
+                <span id="loiTen"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Địa chỉ</div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.diaChi, new { htmlAttributes = new { @class = "form-control" } })
+                <span id="loiDiaChi"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Ngày sinh</div>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="ngaySinh" name="ngaySinh" type="datetime" value="">
+                @*@Html.EditorFor(model => model.ngaySinh, new { htmlAttributes = new { @class = "form-control" } })*@
+                <span id="loiNgaySinh"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Email</div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.emai, new { htmlAttributes = new { @class = "form-control" } })
+                <span id="loiEmail"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Số điện thoại</div>
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.sdt, new { htmlAttributes = new { @class = "form-control" } })*@
+                <input class="form-control text-box single-line" id="sdt" name="sdt" type="text" value="">
+                <span id="loiSodienThoai"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Tên đăng nhập</div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.taiKhoan, new { htmlAttributes = new { @class = "form-control" } })
+                <span id="loiTenDangNhap"></span>
+                <span style="color:red;">* @ViewBag.Error</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Mật khẩu</div>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="matKhau" name="matKhau" type="password" value="">
+                <span id="loiMatKhau"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2">Xác nhận Mật khẩu</div>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="matKhau2" name="matKhau" type="password" value="">
+                @*@Html.ValidationMessageFor(model => model.matKhau, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input id="btnSubmit" type="submit" onclick="return checkDK()" value="Create" class="btn btn-primary" />
+
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<script type="text/javascript">
+
+
+    function checkDK() {
+        var ten = $("#tenKH");
+        var diaChi = $('#diaChi').val();
+        var ngaySinh = $('#ngaySinh').val();
+        var emai = $('#emai').val();
+        var sdt = $('#sdt').val();
+        var taiKhoan = $('#taiKhoan').val();
+        var matKhau = $('#matKhau').val();
+        var matkhuau2 = $('#matKhau2').val();
+        if (ten == "" || diaChi == "" || ngaySinh == "" || emai == "" || sdt == "" || taiKhoan == "" || matKhau=="") {
+            alert("Không được bỏ trống thông tin");
+            return false;
+        }
+        if (matKhau != matkhuau2)
+        {
+            alert("Mật khẩu phải trùng nhau");
+            return false;
+        }
+        else {
+            
+
+        }
+    };
+
+
+
+</script>

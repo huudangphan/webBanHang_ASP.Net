@@ -1,0 +1,14 @@
+﻿@model ShopBanHang.Models.SanPham
+
+@{
+    ViewBag.Title = "xemChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>xemChiTiet</h2>
+<div><img src="~/Assit/img/@Model.anh" alt="Alternate Text" /></div>
+   
+<div>Tên sản phẩm: @Model.tenSP</div>
+<div>Giá: @Model.giaSP</div>
+<div>Số lượng tồn: @Model.slTon</div>
+

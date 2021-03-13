@@ -1,0 +1,22 @@
+﻿@model IEnumerable<ShopBanHang.Models.SanPham>
+
+<div class="h1">Các sản phẩm bán chạy nhất</div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+        <div class="col-md-3">
+            <img src="~/Assit/img/@Html.DisplayFor(modelItem=>item.anh)" alt="Alternate Text" style="width:230px;height:250px;" />
+            <div style="text-align:center;margin-bottom:10px;">
+                @Html.DisplayFor(modelItem => item.tenSP)
+                <br />
+                @Html.DisplayFor(modelItem => item.giaSP)
+                <br />
+                <button class="btn btn-primary"><a href="@Url.Action("xemChiTiet","SanPham",new { @masp=item.maSP})" style="color:white">Xem chi tiết</a></button>
+
+            </div>
+
+        </div>
+
+    }
+</div>
