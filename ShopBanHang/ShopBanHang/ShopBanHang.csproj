@@ -178,13 +178,54 @@
     <Content Include="Assit\css\sb-admin-2.css" />
     <Content Include="Assit\css\sb-admin-2.min.css" />
     <Content Include="Assit\css\trangchu.css" />
+    <Content Include="Assit\img\applewacth.png" />
+    <Content Include="Assit\img\asusf571.png" />
+    <Content Include="Assit\img\asusgamingstrixhero.png" />
+    <Content Include="Assit\img\asusvivobook.png" />
+    <Content Include="Assit\img\asusx409.png" />
+    <Content Include="Assit\img\cannoneos4000D.png" />
+    <Content Include="Assit\img\cannonixus.png" />
+    <Content Include="Assit\img\dellinspiron.png" />
+    <Content Include="Assit\img\delllatitude.png" />
+    <Content Include="Assit\img\hpgaming.png" />
+    <Content Include="Assit\img\hppavillion.png" />
+    <Content Include="Assit\img\hpspectre.png" />
+    <Content Include="Assit\img\huawei2.png" />
+    <Content Include="Assit\img\huaweigt2.png" />
+    <Content Include="Assit\img\ip12.png" />
+    <Content Include="Assit\img\ip6.png" />
+    <Content Include="Assit\img\ip8plus.png" />
+    <Content Include="Assit\img\iphone.png" />
+    <Content Include="Assit\img\iphone12pro.png" />
+    <Content Include="Assit\img\ipXSmax.png" />
+    <Content Include="Assit\img\lgwatchstyle.png" />
+    <Content Include="Assit\img\lgwatchurban.png" />
+    <Content Include="Assit\img\macair.png" />
+    <Content Include="Assit\img\macpro.png" />
     <Content Include="Assit\img\map.png" />
+    <Content Include="Assit\img\mayanh.png" />
+    <Content Include="Assit\img\miband4.png" />
+    <Content Include="Assit\img\oppo.png" />
+    <Content Include="Assit\img\oppoa3s.png" />
+    <Content Include="Assit\img\oppof17.png" />
+    <Content Include="Assit\img\oppof9.png" />
+    <Content Include="Assit\img\samsunga31.png" />
+    <Content Include="Assit\img\samsungnote10lite.png" />
+    <Content Include="Assit\img\sangsunga50.png" />
+    <Content Include="Assit\img\series3.png" />
+    <Content Include="Assit\img\series5.png" />
+    <Content Include="Assit\img\sonyalpha.png" />
+    <Content Include="Assit\img\sonydsch3000.png" />
     <Content Include="Assit\img\undraw_posting_photo.svg" />
     <Content Include="Assit\img\undraw_profile.svg" />
     <Content Include="Assit\img\undraw_profile_1.svg" />
     <Content Include="Assit\img\undraw_profile_2.svg" />
     <Content Include="Assit\img\undraw_profile_3.svg" />
     <Content Include="Assit\img\undraw_rocket.svg" />
+    <Content Include="Assit\img\user-01.png" />
+    <Content Include="Assit\img\xiaomi8.png" />
+    <Content Include="Assit\img\xiaomi9se.png" />
+    <Content Include="Assit\img\xiaomiwatchlite.png" />
     <Content Include="Assit\js\demo\chart-area-demo.js" />
     <Content Include="Assit\js\demo\chart-bar-demo.js" />
     <Content Include="Assit\js\demo\chart-pie-demo.js" />
@@ -1095,10 +1136,10 @@
     <Content Include="Views\NguoiDung\DangNhap.cshtml" />
     <Content Include="Views\NguoiDung\HoSoNguoiDung.cshtml" />
     <Content Include="Views\NguoiDung\AdminTT.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\GioHang\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

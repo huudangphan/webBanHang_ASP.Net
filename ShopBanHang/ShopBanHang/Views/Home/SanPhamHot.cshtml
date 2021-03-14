@@ -11,7 +11,8 @@
             <div style="text-align:center;margin-bottom:10px;">
                 @Html.DisplayFor(modelItem => item.tenSP)
                 <br />
-                @Html.DisplayFor(modelItem => item.giaSP)
+                @*@Html.DisplayFor(modelItem => item.giaSP)*@
+                @String.Format("{0:0,0}", Html.DisplayFor(modelItem => item.giaSP)) VNĐ
                 <br />
 
             </div>
