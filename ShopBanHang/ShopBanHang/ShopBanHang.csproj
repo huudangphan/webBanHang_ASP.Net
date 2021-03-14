@@ -1094,6 +1094,7 @@
     <Content Include="Views\NguoiDung\DangKy.cshtml" />
     <Content Include="Views\NguoiDung\DangNhap.cshtml" />
     <Content Include="Views\NguoiDung\HoSoNguoiDung.cshtml" />
+    <Content Include="Views\NguoiDung\AdminTT.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

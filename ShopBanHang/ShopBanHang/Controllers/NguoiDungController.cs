@@ -50,7 +50,18 @@ namespace ShopBanHang.Controllers
         {
 
             var data = db.KhachHangs.Where(c => c.taiKhoan.Equals(kh.taiKhoan) && c.matKhau.Equals(kh.matKhau)).ToList();
-            if(data.Count()>0)
+            if(data.Count()>0&&kh.taiKhoan=="admin")
+            {
+                Session["tenKH"] = data.FirstOrDefault().tenKH;
+                Session["taiKhoan"] = data.FirstOrDefault().taiKhoan;
+                Session["matKhau"] = data.FirstOrDefault().matKhau;
+                Session["diaChi"] = data.FirstOrDefault().diaChi;
+                Session["ngaySinh"] = data.FirstOrDefault().ngaySinh;
+                Session["email"] = data.FirstOrDefault().emai;
+                Session["sdt"] = data.FirstOrDefault().sdt;
+                return RedirectToAction("AdminTT", "NguoiDung");
+            }    
+            else if(data.Count()>0)
             {
                 Session["tenKH"] = data.FirstOrDefault().tenKH;
                 Session["taiKhoan"] = data.FirstOrDefault().taiKhoan;
@@ -78,6 +89,10 @@ namespace ShopBanHang.Controllers
         {
             
 
+            return View();
+        }
+        public ActionResult AdminTT()
+        {
             return View();
         }
         
