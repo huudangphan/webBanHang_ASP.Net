@@ -9,7 +9,7 @@ namespace ShopBanHang.Controllers
 {
     public class NguoiDungController : Controller
     {
-        QuanLyShopEntities db = new QuanLyShopEntities();
+        QLShopEntities db = new QLShopEntities();
         // GET: NguoiDung
         public ActionResult Index()
         {
@@ -50,10 +50,13 @@ namespace ShopBanHang.Controllers
         {
 
             var data = db.KhachHangs.Where(c => c.taiKhoan.Equals(kh.taiKhoan) && c.matKhau.Equals(kh.matKhau)).ToList();
+            var khachhang = db.KhachHangs.SingleOrDefault(n => n.taiKhoan == kh.taiKhoan && n.matKhau == kh.matKhau);
             if(data.Count()>0&&kh.taiKhoan=="admin")
             {
+                Session["taiKhoan"] = khachhang;
+                Session["tk"] = data.FirstOrDefault().taiKhoan;
                 Session["tenKH"] = data.FirstOrDefault().tenKH;
-                Session["taiKhoan"] = data.FirstOrDefault().taiKhoan;
+               
                 Session["matKhau"] = data.FirstOrDefault().matKhau;
                 Session["diaChi"] = data.FirstOrDefault().diaChi;
                 Session["ngaySinh"] = data.FirstOrDefault().ngaySinh;

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QLShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChiTietDonHang">
           <Key>
             <PropertyRef Name="maSP" />
@@ -13,16 +13,7 @@
           <Property Name="maSP" Type="int" Nullable="false" />
           <Property Name="maDH" Type="int" Nullable="false" />
           <Property Name="soLuong" Type="int" />
-          <Property Name="donGia" Type="nchar" MaxLength="10" />
-        </EntityType>
-        <EntityType Name="DoanhThu">
-          <Key>
-            <PropertyRef Name="maBaoCao" />
-          </Key>
-          <Property Name="maBaoCao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="thoiGian" Type="date" />
-          <Property Name="maDH" Type="int" />
-          <Property Name="tongThu" Type="int" />
+          <Property Name="donGia" Type="int" />
         </EntityType>
         <EntityType Name="DonHang">
           <Key>
@@ -78,18 +69,6 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <Association Name="FK_ChiTietDonHang_DoanhThu">
-          <End Role="DoanhThu" Type="Self.DoanhThu" Multiplicity="1" />
-          <End Role="ChiTietDonHang" Type="Self.ChiTietDonHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DoanhThu">
-              <PropertyRef Name="maBaoCao" />
-            </Principal>
-            <Dependent Role="ChiTietDonHang">
-              <PropertyRef Name="maDH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ChiTietDonHang_DonHang">
           <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
           <End Role="ChiTietDonHang" Type="Self.ChiTietDonHang" Multiplicity="*" />
@@ -138,18 +117,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QuanLyShopModelStoreContainer">
+        <EntityContainer Name="QLShopModelStoreContainer">
           <EntitySet Name="ChiTietDonHang" EntityType="Self.ChiTietDonHang" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DoanhThu" EntityType="Self.DoanhThu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DonHang" EntityType="Self.DonHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Hang" EntityType="Self.Hang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_ChiTietDonHang_DoanhThu" Association="Self.FK_ChiTietDonHang_DoanhThu">
-            <End Role="DoanhThu" EntitySet="DoanhThu" />
-            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />
-          </AssociationSet>
           <AssociationSet Name="FK_ChiTietDonHang_DonHang" Association="Self.FK_ChiTietDonHang_DonHang">
             <End Role="DonHang" EntitySet="DonHang" />
             <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />
@@ -171,7 +145,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="QuanLyShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="QLShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ChiTietDonHang">
           <Key>
             <PropertyRef Name="maSP" />
@@ -180,20 +154,9 @@
           <Property Name="maSP" Type="Int32" Nullable="false" />
           <Property Name="maDH" Type="Int32" Nullable="false" />
           <Property Name="soLuong" Type="Int32" />
-          <Property Name="donGia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="DoanhThu" Relationship="Self.FK_ChiTietDonHang_DoanhThu" FromRole="ChiTietDonHang" ToRole="DoanhThu" />
+          <Property Name="donGia" Type="Int32" />
           <NavigationProperty Name="DonHang" Relationship="Self.FK_ChiTietDonHang_DonHang" FromRole="ChiTietDonHang" ToRole="DonHang" />
           <NavigationProperty Name="SanPham" Relationship="Self.FK_ChiTietDonHang_SanPham" FromRole="ChiTietDonHang" ToRole="SanPham" />
-        </EntityType>
-        <EntityType Name="DoanhThu">
-          <Key>
-            <PropertyRef Name="maBaoCao" />
-          </Key>
-          <Property Name="maBaoCao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="thoiGian" Type="DateTime" Precision="0" />
-          <Property Name="maDH" Type="Int32" />
-          <Property Name="tongThu" Type="Int32" />
-          <NavigationProperty Name="ChiTietDonHangs" Relationship="Self.FK_ChiTietDonHang_DoanhThu" FromRole="DoanhThu" ToRole="ChiTietDonHang" />
         </EntityType>
         <EntityType Name="DonHang">
           <Key>
@@ -255,18 +218,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK_ChiTietDonHang_DoanhThu">
-          <End Role="DoanhThu" Type="Self.DoanhThu" Multiplicity="1" />
-          <End Role="ChiTietDonHang" Type="Self.ChiTietDonHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DoanhThu">
-              <PropertyRef Name="maBaoCao" />
-            </Principal>
-            <Dependent Role="ChiTietDonHang">
-              <PropertyRef Name="maDH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ChiTietDonHang_DonHang">
           <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
           <End Role="ChiTietDonHang" Type="Self.ChiTietDonHang" Multiplicity="*" />
@@ -315,18 +266,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QuanLyShopEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLShopEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHang" />
-          <EntitySet Name="DoanhThus" EntityType="Self.DoanhThu" />
           <EntitySet Name="DonHangs" EntityType="Self.DonHang" />
           <EntitySet Name="Hangs" EntityType="Self.Hang" />
           <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
           <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <AssociationSet Name="FK_ChiTietDonHang_DoanhThu" Association="Self.FK_ChiTietDonHang_DoanhThu">
-            <End Role="DoanhThu" EntitySet="DoanhThus" />
-            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
-          </AssociationSet>
           <AssociationSet Name="FK_ChiTietDonHang_DonHang" Association="Self.FK_ChiTietDonHang_DonHang">
             <End Role="DonHang" EntitySet="DonHangs" />
             <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
@@ -349,9 +295,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QuanLyShopModelStoreContainer" CdmEntityContainer="QuanLyShopEntities">
+        <EntityContainerMapping StorageEntityContainer="QLShopModelStoreContainer" CdmEntityContainer="QLShopEntities">
           <EntitySetMapping Name="ChiTietDonHangs">
-            <EntityTypeMapping TypeName="QuanLyShopModel.ChiTietDonHang">
+            <EntityTypeMapping TypeName="QLShopModel.ChiTietDonHang">
               <MappingFragment StoreEntitySet="ChiTietDonHang">
                 <ScalarProperty Name="maSP" ColumnName="maSP" />
                 <ScalarProperty Name="maDH" ColumnName="maDH" />
@@ -360,18 +306,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DoanhThus">
-            <EntityTypeMapping TypeName="QuanLyShopModel.DoanhThu">
-              <MappingFragment StoreEntitySet="DoanhThu">
-                <ScalarProperty Name="maBaoCao" ColumnName="maBaoCao" />
-                <ScalarProperty Name="thoiGian" ColumnName="thoiGian" />
-                <ScalarProperty Name="maDH" ColumnName="maDH" />
-                <ScalarProperty Name="tongThu" ColumnName="tongThu" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="DonHangs">
-            <EntityTypeMapping TypeName="QuanLyShopModel.DonHang">
+            <EntityTypeMapping TypeName="QLShopModel.DonHang">
               <MappingFragment StoreEntitySet="DonHang">
                 <ScalarProperty Name="maDH" ColumnName="maDH" />
                 <ScalarProperty Name="daThanhToan" ColumnName="daThanhToan" />
@@ -383,7 +319,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Hangs">
-            <EntityTypeMapping TypeName="QuanLyShopModel.Hang">
+            <EntityTypeMapping TypeName="QLShopModel.Hang">
               <MappingFragment StoreEntitySet="Hang">
                 <ScalarProperty Name="maHang" ColumnName="maHang" />
                 <ScalarProperty Name="tenHang" ColumnName="tenHang" />
@@ -391,7 +327,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KhachHangs">
-            <EntityTypeMapping TypeName="QuanLyShopModel.KhachHang">
+            <EntityTypeMapping TypeName="QLShopModel.KhachHang">
               <MappingFragment StoreEntitySet="KhachHang">
                 <ScalarProperty Name="maKH" ColumnName="maKH" />
                 <ScalarProperty Name="tenKH" ColumnName="tenKH" />
@@ -405,7 +341,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SanPhams">
-            <EntityTypeMapping TypeName="QuanLyShopModel.SanPham">
+            <EntityTypeMapping TypeName="QLShopModel.SanPham">
               <MappingFragment StoreEntitySet="SanPham">
                 <ScalarProperty Name="maSP" ColumnName="maSP" />
                 <ScalarProperty Name="tenSP" ColumnName="tenSP" />
@@ -419,7 +355,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="QuanLyShopModel.sysdiagram">
+            <EntityTypeMapping TypeName="QLShopModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />

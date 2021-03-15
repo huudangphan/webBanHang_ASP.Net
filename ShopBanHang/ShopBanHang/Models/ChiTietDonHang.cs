@@ -17,9 +17,8 @@ namespace ShopBanHang.Models
         public int maSP { get; set; }
         public int maDH { get; set; }
         public Nullable<int> soLuong { get; set; }
-        public string donGia { get; set; }
+        public Nullable<int> donGia { get; set; }
     
-        public virtual DoanhThu DoanhThu { get; set; }
         public virtual DonHang DonHang { get; set; }
         public virtual SanPham SanPham { get; set; }
     }

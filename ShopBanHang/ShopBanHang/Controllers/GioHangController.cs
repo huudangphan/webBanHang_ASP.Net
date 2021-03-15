@@ -9,7 +9,8 @@ namespace ShopBanHang.Controllers
 {
     public class GioHangController : Controller
     {
-        QuanLyShopEntities db = new QuanLyShopEntities();
+
+        QLShopEntities db = new QLShopEntities();
         // GET: GioHang
         public List<GioHang> getGioHang()
         {
@@ -21,10 +22,10 @@ namespace ShopBanHang.Controllers
             }// nếu chưa có giỏ hàng
             return listGioHang;
         }
-        public ActionResult ThemGioHang(int masp,string url)
+        public ActionResult ThemGioHang(int masp, string url)
         {
             SanPham sp = db.SanPhams.SingleOrDefault(x => x.maSP == masp);
-            if(sp==null)
+            if (sp == null)
             {
                 Response.StatusCode = 404;
                 return null;
@@ -47,7 +48,7 @@ namespace ShopBanHang.Controllers
 
         }
         // cập nhật giỏ hàng
-        public ActionResult CapNhatGioHang(int masp,FormCollection f)
+        public ActionResult CapNhatGioHang(int masp, FormCollection f)
         {
             SanPham sp = db.SanPhams.SingleOrDefault(a => a.maSP == masp);
             // kiểm tra sản phẩm có tồn tại trong giỏ hàng hay không
@@ -58,11 +59,12 @@ namespace ShopBanHang.Controllers
             }
             List<GioHang> listGioHang = getGioHang();
             GioHang lsp = listGioHang.SingleOrDefault(x => x.maSP == masp);
-            if(lsp!=null)
+            if (lsp != null)
             {
                 lsp.soLuong = Int32.Parse(f["txtSoLuong"].ToString());
             }
-            return View("GioHang");
+
+            return RedirectToAction("GioHang");
         }
         // Xóa giỏ hàng
         public ActionResult XoaGioHang(int masp)
@@ -79,21 +81,21 @@ namespace ShopBanHang.Controllers
             if (lsp != null)
             {
                 listGioHang.RemoveAll(x => x.maSP == masp);
-                
+
             }
             if (listGioHang.Count == 0)
             {
-                return RedirectToAction("Home","Index");
+                return RedirectToAction("Index", "Home");
             }
             return RedirectToAction("GioHang");
         }
         // Giao diện giỏ hàng
         public ActionResult GioHang()
         {
-            if(Session["GioHang"]==null)
-                return RedirectToAction("Home", "Index");
+            if (Session["GioHang"] == null)
+                return RedirectToAction("Index", "Home");
             List<GioHang> listGioHang = getGioHang();
-                
+
             return View(listGioHang);
         }
         // tính tổng số lượng và tổng tiền 
@@ -117,6 +119,56 @@ namespace ShopBanHang.Controllers
                 tongTien = listGioHang.Sum(x => x.thanhTien);
             }
             return tongTien;
+        }
+        public ActionResult SuaGioHang()
+        {
+            if (Session["GioHang"] == null)
+                return RedirectToAction("Index", "Home");
+            List<GioHang> listGioHang = getGioHang();
+
+            return View(listGioHang);
+        }
+        [HttpPost]
+        public ActionResult DatHang()
+        {
+            // Kiểm tra đăng nhập
+            if (Session["taiKhoan"] == null || Session["taiKhoan"].ToString() == "")
+            {
+                return RedirectToAction("DangNhap", "NguoiDung");
+            }
+            // Kiểm tra giỏ hàng
+            if (Session["GioHang"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            // Thêm đơn hàng
+            DonHang dh = new DonHang();
+            List<GioHang> giohang = getGioHang();
+            KhachHang kh = (KhachHang)Session["taiKhoan"];
+            dh.maKH = kh.maKH;
+            dh.ngayDat = DateTime.Now;
+            db.DonHangs.Add(dh);
+            db.SaveChanges();
+            // Thêm chi tiết đơn hàng
+            foreach (var item in giohang)
+            {
+                ChiTietDonHang ctdonHang = new ChiTietDonHang();
+
+                ctdonHang.maDH = dh.maDH;
+                ctdonHang.soLuong = item.soLuong;
+                ctdonHang.donGia = item.donGia * item.soLuong;
+                ctdonHang.maSP = item.maSP;
+                db.ChiTietDonHangs.Add(ctdonHang);
+               
+
+            }
+            db.SaveChanges();
+            //foreach (var item in giohang)
+            //{
+            //    ChiTietDonHang ctdh = new ChiTietDonHang();
+            //    ctdh.donGia = Int32.Parse(item.donGia);
+            //}
+            return RedirectToAction("Index", "Home");
         }
     }
 }

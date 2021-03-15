@@ -9,7 +9,7 @@ namespace ShopBanHang.Controllers
 {
     public class HomeController : Controller
     {
-        QuanLyShopEntities db = new QuanLyShopEntities();
+        QLShopEntities db = new QLShopEntities();
         public ActionResult Index()
         {
             var listsp = db.SanPhams.Take(30).ToList();

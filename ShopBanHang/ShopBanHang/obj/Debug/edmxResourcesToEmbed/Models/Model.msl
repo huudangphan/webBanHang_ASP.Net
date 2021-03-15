@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLShopModelStoreContainer" CdmEntityContainer="QLShopEntities">
+    <EntitySetMapping Name="ChiTietDonHangs">
+      <EntityTypeMapping TypeName="QLShopModel.ChiTietDonHang">
+        <MappingFragment StoreEntitySet="ChiTietDonHang">
+          <ScalarProperty Name="maSP" ColumnName="maSP" />
+          <ScalarProperty Name="maDH" ColumnName="maDH" />
+          <ScalarProperty Name="soLuong" ColumnName="soLuong" />
+          <ScalarProperty Name="donGia" ColumnName="donGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonHangs">
+      <EntityTypeMapping TypeName="QLShopModel.DonHang">
+        <MappingFragment StoreEntitySet="DonHang">
+          <ScalarProperty Name="maDH" ColumnName="maDH" />
+          <ScalarProperty Name="daThanhToan" ColumnName="daThanhToan" />
+          <ScalarProperty Name="tinhTrang" ColumnName="tinhTrang" />
+          <ScalarProperty Name="ngayDat" ColumnName="ngayDat" />
+          <ScalarProperty Name="ngayGiao" ColumnName="ngayGiao" />
+          <ScalarProperty Name="maKH" ColumnName="maKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hangs">
+      <EntityTypeMapping TypeName="QLShopModel.Hang">
+        <MappingFragment StoreEntitySet="Hang">
+          <ScalarProperty Name="maHang" ColumnName="maHang" />
+          <ScalarProperty Name="tenHang" ColumnName="tenHang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="QLShopModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="maKH" ColumnName="maKH" />
+          <ScalarProperty Name="tenKH" ColumnName="tenKH" />
+          <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+          <ScalarProperty Name="ngaySinh" ColumnName="ngaySinh" />
+          <ScalarProperty Name="emai" ColumnName="emai" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="taiKhoan" ColumnName="taiKhoan" />
+          <ScalarProperty Name="matKhau" ColumnName="matKhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="QLShopModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="maSP" ColumnName="maSP" />
+          <ScalarProperty Name="tenSP" ColumnName="tenSP" />
+          <ScalarProperty Name="loaiSP" ColumnName="loaiSP" />
+          <ScalarProperty Name="slTon" ColumnName="slTon" />
+          <ScalarProperty Name="ngayCapNhat" ColumnName="ngayCapNhat" />
+          <ScalarProperty Name="anh" ColumnName="anh" />
+          <ScalarProperty Name="maHang" ColumnName="maHang" />
+          <ScalarProperty Name="giaSP" ColumnName="giaSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QLShopModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

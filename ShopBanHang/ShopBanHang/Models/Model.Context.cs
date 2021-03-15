@@ -13,10 +13,10 @@ namespace ShopBanHang.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QuanLyShopEntities : DbContext
+    public partial class QLShopEntities : DbContext
     {
-        public QuanLyShopEntities()
-            : base("name=QuanLyShopEntities")
+        public QLShopEntities()
+            : base("name=QLShopEntities")
         {
         }
     
@@ -26,7 +26,6 @@ namespace ShopBanHang.Models
         }
     
         public virtual DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
-        public virtual DbSet<DoanhThu> DoanhThus { get; set; }
         public virtual DbSet<DonHang> DonHangs { get; set; }
         public virtual DbSet<Hang> Hangs { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
