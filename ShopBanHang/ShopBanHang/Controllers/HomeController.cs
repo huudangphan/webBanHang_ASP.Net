@@ -38,7 +38,7 @@ namespace ShopBanHang.Controllers
         {
 
             var list = db.SanPhams.OrderBy(c => c.slTon).Where(c => c.loaiSP == "laptop").Take(4);
-
+            
             return PartialView("LaptopHot", list);
         }
         public PartialViewResult DongHoHot()

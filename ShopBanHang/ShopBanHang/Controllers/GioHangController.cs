@@ -163,11 +163,7 @@ namespace ShopBanHang.Controllers
 
             }
             db.SaveChanges();
-            //foreach (var item in giohang)
-            //{
-            //    ChiTietDonHang ctdh = new ChiTietDonHang();
-            //    ctdh.donGia = Int32.Parse(item.donGia);
-            //}
+            
             return RedirectToAction("Index", "Home");
         }
     }
