@@ -36,9 +36,9 @@
             <!-- Divider -->
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/index">
+                <a class="nav-link" href="@Url.Action("Index","QuanLy")">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Trang Chủ</span>
+                    <span>Quản lý sản phẩm</span>
                 </a>
             </li>
 
@@ -64,7 +64,6 @@
 
                         <a class="collapse-item" href="@Url.Action("HPLaptop","Home")">HP</a>
                         <a class="collapse-item" href="@Url.Action("AsusLaptop","Home")">Asus</a>
-                        
                     </div>
                 </div>
             </li>
@@ -78,13 +77,11 @@
                 </a>
                 <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
                         <a class="collapse-item" href="@Url.Action("ApplePhone","Home")">Apple</a>
 
                         <a class="collapse-item" href="@Url.Action("SamsungPhone","Home")">Samsung</a>
                         <a class="collapse-item" href="@Url.Action("XiaomiPhone","Home")">Xiaomi</a>
                         <a class="collapse-item" href="@Url.Action("OppoPhone","Home")">Oppo</a>
-                      
 
                     </div>
                 </div>
@@ -97,11 +94,8 @@
                 </a>
                 <div id="collapseTwo3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
-
                         <a class="collapse-item" href="@Url.Action("CannonCamera","Home")">Cannon</a>
                         <a class="collapse-item" href="@Url.Action("SonyCamera","Home")">Sony</a>
-                        
                     </div>
                 </div>
             </li>
@@ -115,13 +109,10 @@
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-
                         <a class="collapse-item" href="@Url.Action("AppleWatch","Home")">Apple</a>
-
                         <a class="collapse-item" href="@Url.Action("XiaomiWatch","Home")">Xiaomi</a>
                         <a class="collapse-item" href="@Url.Action("HuaweiWatch","Home")">Huawei</a>
                         <a class="collapse-item" href="@Url.Action("LGWatch","Home")">LG</a>
-                    
                     </div>
                 </div>
             </li>
@@ -209,44 +200,21 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                 aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                               placeholder="Search for..." aria-label="Search"
-                                               aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
+                        <!-- Nav Item - Alerts -->
 
-                     
-                        
-                        <a href="/giohang" style="margin-top:25px;"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="/giohang"><i class="fas fa-shopping-cart"></i></a>
                         <!-- Nav Item - Messages -->
-                        
 
-                       
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             @if (Session["tenKH"] != null)
                             {
 
-                                <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["tk"].ToString()</a>
+                <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["tk"].ToString()</a>
 
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                      aria-labelledby="userDropdown">
@@ -258,19 +226,15 @@
                                     <a href="@Url.Action("DangXuat","NguoiDung" )" class="dropdown-item"> <i class="fas fa-sign-in-alt"></i>Đăng xuất</a>
                                     <div class="dropdown-divider"></div>
 
-                                </div>
-
-
-                            }
-                            else
-                            {
+                                </div> }
+                                            else
+                                            {
                                 <a class="nav-link dropdown-toggle" href="/dangnhap">
 
                                     <span class="dangkydangnhap ">Đăng ký/Đăng nhập  </span>
 
 
-                                </a>
-                            }
+                                </a>}
 
 
 
@@ -284,12 +248,7 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    @{ Html.RenderAction("SanPhamHot", "Home");}
-                    @{ Html.RenderAction("DienthoaiHot", "Home");}
-                    @{ Html.RenderAction("LaptopHot", "Home");}
-                    @{ Html.RenderAction("DongHoHot", "Home");}
                     @RenderBody()
-
                 </div>
 
                 <!-- /.container-fluid -->
@@ -352,44 +311,6 @@
     <!-- Page level custom scripts -->
     <script src="~/Assit/js/demo/chart-area-demo.js"></script>
     <script src="~/Assit/js/demo/chart-pie-demo.js"></script>
-    <footer class="bg-light text-center text-lg-start">
-        <!-- Grid container -->
-        <div class="container p-4">
-            <!--Grid row-->
-            <div class="row">
-                <!--Grid column-->
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Footer text</h5>
-
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
-                        aliquam voluptatem veniam, est atque cumque eum delectus sint!
-                    </p>
-                </div>
-                <!--Grid column-->
-                <!--Grid column-->
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Footer text</h5>
-
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
-                        aliquam voluptatem veniam, est atque cumque eum delectus sint!
-                    </p>
-                </div>
-                <!--Grid column-->
-            </div>
-            <!--Grid row-->
-        </div>
-        <!-- Grid container -->
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: dodgerblue;color:white">
-            © 2020 Copyright:
-            <a class="text-dark" href="https://mdbootstrap.com/" style="color:white;">MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
 
 </body>
 

@@ -247,3 +247,7 @@ C:\Users\Admin\Downloads\webBanHang_ASP.Net-main\webBanHang_ASP.Net-main\ShopBan
 C:\Users\Admin\Downloads\webBanHang_ASP.Net-main\webBanHang_ASP.Net-main\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csproj.CopyComplete
 C:\Users\Admin\Downloads\webBanHang_ASP.Net-main\webBanHang_ASP.Net-main\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.dll
 C:\Users\Admin\Downloads\webBanHang_ASP.Net-main\webBanHang_ASP.Net-main\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.pdb
+D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\PagedList.dll
+D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\PagedList.Mvc.dll
+D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\PagedList.xml
+D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\PagedList.Mvc.xml

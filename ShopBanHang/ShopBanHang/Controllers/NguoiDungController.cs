@@ -62,12 +62,14 @@ namespace ShopBanHang.Controllers
                 Session["ngaySinh"] = data.FirstOrDefault().ngaySinh;
                 Session["email"] = data.FirstOrDefault().emai;
                 Session["sdt"] = data.FirstOrDefault().sdt;
-                return RedirectToAction("AdminTT", "NguoiDung");
+                return RedirectToAction("Index", "QuanLy");
             }    
             else if(data.Count()>0)
             {
+                Session["taiKhoan"] = khachhang;
+                Session["tk"] = data.FirstOrDefault().taiKhoan;
                 Session["tenKH"] = data.FirstOrDefault().tenKH;
-                Session["taiKhoan"] = data.FirstOrDefault().taiKhoan;
+
                 Session["matKhau"] = data.FirstOrDefault().matKhau;
                 Session["diaChi"] = data.FirstOrDefault().diaChi;
                 Session["ngaySinh"] = data.FirstOrDefault().ngaySinh;

@@ -61,10 +61,13 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/appleLaptop">Apple</a>
-                        <a class="collapse-item" href="/dellLaptop">Dell</a>
-                        <a class="collapse-item" href="/hpLaptop">HP</a>
-                        <a class="collapse-item" href="/asusLaptop">Asus</a>
+                        @*<a class="collapse-item" href="/appleLaptop">Apple</a>*@
+                        <a class="collapse-item" href="@Url.Action("AppleLaptop","Home")">Apple</a>
+
+                        <a class="collapse-item" href="@Url.Action("DellLaptop","Home")">Del</a>
+
+                        <a class="collapse-item" href="@Url.Action("HPLaptop","Home")">HP</a>
+                        <a class="collapse-item" href="@Url.Action("AsusLaptop","Home")">Asus</a>
                     </div>
                 </div>
             </li>
@@ -78,10 +81,11 @@
                 </a>
                 <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/applePhone">Apple</a>
-                        <a class="collapse-item" href="/samsungPhone">Samsung</a>
-                        <a class="collapse-item" href="/xiaomiPhone">Xiaomi</a>
-                        <a class="collapse-item" href="oppoPhone">Oppo</a>
+                        <a class="collapse-item" href="@Url.Action("ApplePhone","Home")">Apple</a>
+
+                        <a class="collapse-item" href="@Url.Action("SamsungPhone","Home")">Samsung</a>
+                        <a class="collapse-item" href="@Url.Action("XiaomiPhone","Home")">Xiaomi</a>
+                        <a class="collapse-item" href="@Url.Action("OppoPhone","Home")">Oppo</a>
 
                     </div>
                 </div>
@@ -94,9 +98,8 @@
                 </a>
                 <div id="collapseTwo3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
-                        <a class="collapse-item" href="cannonCamera">Cannon</a>
-                        <a class="collapse-item" href="sonyCamera">Sony</a>
+                        <a class="collapse-item" href="@Url.Action("CannonCamera","Home")">Cannon</a>
+                        <a class="collapse-item" href="@Url.Action("SonyCamera","Home")">Sony</a>
                     </div>
                 </div>
             </li>
@@ -110,10 +113,10 @@
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="appleWatch">Apple</a>
-                        <a class="collapse-item" href="xiaomiWatch">Xiaomi</a>
-                        <a class="collapse-item" href="huaweiWatch">Huawei</a>
-                        <a class="collapse-item" href="lgWatch">LG</a>
+                        <a class="collapse-item" href="@Url.Action("AppleWatch","Home")">Apple</a>
+                        <a class="collapse-item" href="@Url.Action("XiaomiWatch","Home")">Xiaomi</a>
+                        <a class="collapse-item" href="@Url.Action("HuaweiWatch","Home")">Huawei</a>
+                        <a class="collapse-item" href="@Url.Action("LGWatch","Home")">LG</a>
                     </div>
                 </div>
             </li>
