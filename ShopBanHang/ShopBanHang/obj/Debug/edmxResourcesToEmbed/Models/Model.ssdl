@@ -41,6 +41,15 @@
     <Property Name="taiKhoan" Type="nvarchar" MaxLength="50" />
     <Property Name="matKhau" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QLShop.dbo.LoaiSP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="LoaiSP">
+    <Key>
+      <PropertyRef Name="ma" />
+    </Key>
+    <Property Name="ma" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="loaiSP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="SanPham">
     <Key>
       <PropertyRef Name="maSP" />
@@ -119,6 +128,12 @@
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiSP" EntityType="Self.LoaiSP" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [LoaiSP].[ma] AS [ma], 
+    [LoaiSP].[loaiSP] AS [loaiSP]
+    FROM [dbo].[LoaiSP] AS [LoaiSP]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_ChiTietDonHang_DonHang" Association="Self.FK_ChiTietDonHang_DonHang">
       <End Role="DonHang" EntitySet="DonHang" />
       <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />

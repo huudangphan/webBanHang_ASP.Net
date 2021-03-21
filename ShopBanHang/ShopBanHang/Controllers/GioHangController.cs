@@ -147,6 +147,8 @@ namespace ShopBanHang.Controllers
             KhachHang kh = (KhachHang)Session["taiKhoan"];
             dh.maKH = kh.maKH;
             dh.ngayDat = DateTime.Now;
+            dh.tinhTrang = 0;
+            dh.daThanhToan = 0;
             db.DonHangs.Add(dh);
             db.SaveChanges();
             // Thêm chi tiết đơn hàng

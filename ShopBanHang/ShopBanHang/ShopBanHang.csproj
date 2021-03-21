@@ -139,6 +139,7 @@
     <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Controllers\QuanLyController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,6 +154,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoaiSP.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model.Context.cs">
@@ -176,6 +180,7 @@
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="MultiData\MultiDataa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1146,6 +1151,14 @@
     <Content Include="Views\QuanLy\Index.cshtml" />
     <Content Include="Views\QuanLy\Edit.cshtml" />
     <Content Include="Views\QuanLy\xemChiTiet.cshtml" />
+    <Content Include="Views\QuanLy\Add.cshtml" />
+    <Content Include="Views\QuanLy\Delete.cshtml" />
+    <Content Include="Views\QuanLy\DonHangChuaGiao.cshtml" />
+    <Content Include="Views\QuanLy\DonHangDaGiao.cshtml" />
+    <Content Include="Views\QuanLy\QLDonHang.cshtml" />
+    <Content Include="Views\QuanLy\XemChiTietDonHang.cshtml" />
+    <Content Include="Views\NguoiDung\Hang.cshtml" />
+    <Content Include="Views\TimKiem\TimKiemKQ.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

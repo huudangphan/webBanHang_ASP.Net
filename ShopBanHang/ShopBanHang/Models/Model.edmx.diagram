@@ -15,6 +15,7 @@
         <AssociationConnector Association="QLShopModel.FK_ChiTietDonHang_SanPham" ManuallyRouted="false" />
         <AssociationConnector Association="QLShopModel.FK_DonHang_KhachHang" ManuallyRouted="false" />
         <AssociationConnector Association="QLShopModel.FK_SanPham_Hang" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QLShopModel.LoaiSP" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

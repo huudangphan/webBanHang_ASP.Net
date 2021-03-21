@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ShopBanHang.Models;
+using ShopBanHang.MultiData;
 
 namespace ShopBanHang.Controllers
 {
@@ -100,6 +101,24 @@ namespace ShopBanHang.Controllers
         {
             return View();
         }
-        
+        public ActionResult DonHang()
+        {
+            return View();
+        }
+        public ActionResult Hang()
+        {
+            string taikhoandn = Session["tk"].ToString();
+            var mymodel = new MultiDataa();
+            int makh = (from c in db.KhachHangs
+                        where c.taiKhoan == taikhoandn
+                        select c.maKH).SingleOrDefault();
+            int madh = (from a in db.DonHangs
+                        where a.maKH == makh
+                        select a.maDH).FirstOrDefault();
+            mymodel.donhang = db.DonHangs.Where(x => x.maDH == madh).ToList();
+            mymodel.ctdonhang = db.ChiTietDonHangs.Where(x => x.maDH == madh).ToList();
+            
+            return View(mymodel);
+        }
     }
 }

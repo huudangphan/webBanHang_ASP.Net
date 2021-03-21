@@ -1,0 +1,75 @@
+﻿
+@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<ShopBanHang.Models.SanPham>
+@{
+    ViewBag.Title = "TimKiemKQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TimKiemKQ</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().maSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().tenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().loaiSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().slTon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ngayCapNhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().maHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().giaSP)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.maSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.loaiSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.slTon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngayCapNhat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.maHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.giaSP)
+            </td>
+            
+        </tr>
+    }
+
+</table>

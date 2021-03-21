@@ -53,117 +53,46 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-laptop"></i>
-                    <span>Laptop</span>
+                    <span>Quản lý đơn hàng</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         @*<a class="collapse-item" href="/appleLaptop">Apple</a>*@
-                        <a class="collapse-item" href="@Url.Action("AppleLaptop","Home")">Apple</a>
+                        <a class="collapse-item" href="@Url.Action("QLDonHang","QuanLy")">Tất cả đơn hàng</a>
+                        <a class="collapse-item" href="@Url.Action("DonHangChuaGiao","QuanLy")">Đơn hàng chưa giao</a>
+                        <a class="collapse-item" href="@Url.Action("DonHangDaGiao","QuanLy")">Đơn hàng đã giao</a>
 
-                        <a class="collapse-item" href="@Url.Action("DellLaptop","Home")">Del</a>
 
-                        <a class="collapse-item" href="@Url.Action("HPLaptop","Home")">HP</a>
-                        <a class="collapse-item" href="@Url.Action("AsusLaptop","Home")">Asus</a>
+
+
                     </div>
                 </div>
             </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo2"
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-mobile"></i>
-                    <span>Điện thoại</span>
+                    <i class="fas fa-laptop"></i>
+                    <span>Quản lý Người dùng</span>
                 </a>
-                <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="@Url.Action("ApplePhone","Home")">Apple</a>
+                        @*<a class="collapse-item" href="/appleLaptop">Apple</a>*@
+                        <a class="collapse-item" href="@Url.Action("AppleLaptop","Home")">Tài khoản</a>
 
-                        <a class="collapse-item" href="@Url.Action("SamsungPhone","Home")">Samsung</a>
-                        <a class="collapse-item" href="@Url.Action("XiaomiPhone","Home")">Xiaomi</a>
-                        <a class="collapse-item" href="@Url.Action("OppoPhone","Home")">Oppo</a>
-
+                        
                     </div>
                 </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo3"
-                   aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-camera"></i>
-                    <span>Máy ảnh</span>
-                </a>
-                <div id="collapseTwo3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="@Url.Action("CannonCamera","Home")">Cannon</a>
-                        <a class="collapse-item" href="@Url.Action("SonyCamera","Home")">Sony</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                   aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-stopwatch"></i>
-                    <span>Đồng hồ</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                     data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-
-                        <a class="collapse-item" href="@Url.Action("AppleWatch","Home")">Apple</a>
-                        <a class="collapse-item" href="@Url.Action("XiaomiWatch","Home")">Xiaomi</a>
-                        <a class="collapse-item" href="@Url.Action("HuaweiWatch","Home")">Huawei</a>
-                        <a class="collapse-item" href="@Url.Action("LGWatch","Home")">LG</a>
-                    </div>
-                </div>
-            </li>
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Thông tin Shop
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-pager"></i>
-                    <span>Page</span>
-                </a>
-
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="/baoHanh">
-                    <i class="fas fa-wrench"></i>
-                    <span>Chính sách bảo hành</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/gioiThieu">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Giới thiệu</span>
-                </a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-            <!-- Sidebar Message -->
-            <div class="sidebar-card">
-                <img class="" src="~/Assit/img/map.png" alt="" style="height: 170px;width: 210px;">
-
-            </div>
+            </li>            
 
 
 
 
-            <!-- Sidebar Message -->
+
+
+
+
+
+
 
 
         </ul>
@@ -199,11 +128,7 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <!-- Nav Item - Alerts -->
-
-                        <a href="/giohang"><i class="fas fa-shopping-cart"></i></a>
-                        <!-- Nav Item - Messages -->
+                        
 
 
                         <div class="topbar-divider d-none d-sm-block"></div>
