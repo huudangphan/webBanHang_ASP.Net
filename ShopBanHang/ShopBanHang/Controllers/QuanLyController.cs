@@ -141,10 +141,12 @@ namespace ShopBanHang.Controllers
                         select c.maKH).FirstOrDefault();
 
             mymodel.khachhang = db.KhachHangs.Where(c => c.maKH == makh);
-            int masanpham = (from c in mymodel.ctdonhang
-                               where c.maDH == madh
-                               select c.maSP).SingleOrDefault();
-            mymodel.sanPhams = db.SanPhams.Where(c => c.maSP == masanpham).ToList();
+            mymodel.sanPhams = (from a in db.ChiTietDonHangs
+                                join b in db.SanPhams
+                                on a.maSP equals b.maSP
+                                where a.maDH==madh
+                                select b).ToList();           
+            
             
 
 

@@ -109,15 +109,45 @@ namespace ShopBanHang.Controllers
         {
             string taikhoandn = Session["tk"].ToString();
             var mymodel = new MultiDataa();
-            int makh = (from c in db.KhachHangs
-                        where c.taiKhoan == taikhoandn
-                        select c.maKH).SingleOrDefault();
-            int madh = (from a in db.DonHangs
-                        where a.maKH == makh
-                        select a.maDH).FirstOrDefault();
+       
+            mymodel.donhang = (from a in db.KhachHangs
+                               join b in db.DonHangs
+                               on a.maKH equals b.maKH
+                               where a.taiKhoan == taikhoandn
+                               select b).ToList();
+            //mymodel.ctdonhang = (from a in db.ChiTietDonHangs
+            //                    join b in db.DonHangs
+            //                    on a.maDH equals b.maDH
+            //                    join c in db.SanPhams
+            //                    on a.maSP equals c.maSP
+            //                    where b.maKH==makh
+            //                    select a).ToList();
+                                
+
+
+            return View(mymodel);
+        }
+        public ActionResult XemChiTietDonHang(int madh)
+        {
+            var mymodel = new MultiDataa();
             mymodel.donhang = db.DonHangs.Where(x => x.maDH == madh).ToList();
             mymodel.ctdonhang = db.ChiTietDonHangs.Where(x => x.maDH == madh).ToList();
-            
+            var makh = (from c in mymodel.donhang
+                        where c.maDH == madh
+                        select c.maKH).FirstOrDefault();
+
+            mymodel.khachhang = db.KhachHangs.Where(c => c.maKH == makh);
+            mymodel.sanPhams = (from a in db.ChiTietDonHangs
+                                join b in db.SanPhams
+                                on a.maSP equals b.maSP
+                                where a.maDH == madh
+                                select b).ToList();
+
+
+
+
+
+
             return View(mymodel);
         }
     }
