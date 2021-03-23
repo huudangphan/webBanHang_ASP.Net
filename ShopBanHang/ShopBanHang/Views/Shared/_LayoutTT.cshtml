@@ -195,7 +195,7 @@
                     <!-- Topbar Search -->
                     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            @using (Html.BeginForm("TimKiemKQ", "TimKiem", FormMethod.Post))
+                            @using (Html.BeginForm("TimKiemKQ", "TimKiem", FormMethod.Post,new { @tuKhoatk="iphone"}))
                             {
                     @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "form-control bg-light border-0 small", @placehoder = "Nhập từ khóa" })
                                     <div class="input-group-append">

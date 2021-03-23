@@ -14,9 +14,9 @@ namespace ShopBanHang.Controllers
         QLShopEntities db = new QLShopEntities();
         // GET: TimKiem
         [HttpPost]
-        public ActionResult TimKiemKQ(FormCollection f,int? page)
+        public ActionResult TimKiemKQ(string tuKhoatk,int? page)
         {
-            string tuKhoa = f["txtTimKiem"].ToString();
+            string tuKhoa = tuKhoatk;
             List<SanPham> kqtk = db.SanPhams.Where(n => n.tenSP.Contains(tuKhoa)).ToList();
             int pageNumber = (page ?? 1);
             int pageSize = 9;
@@ -24,8 +24,9 @@ namespace ShopBanHang.Controllers
             {
                 ViewBag.tb = "Không tìm thấy sản phẩm nào phù hợp";
                 return RedirectToAction("Index", "Home");
-            }    
-            return View(kqtk.OrderBy(n=>n.tenSP).ToPagedList(pageNumber,pageSize));
+            }
+            //.OrderBy(n=>n.tenSP).ToPagedList(pageNumber,pageSize)
+            return View(kqtk);
         }
     }
 }

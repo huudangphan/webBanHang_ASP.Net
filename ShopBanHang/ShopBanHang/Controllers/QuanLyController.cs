@@ -56,7 +56,7 @@ namespace ShopBanHang.Controllers
             }
             
             ViewBag.maHang = new SelectList(db.Hangs.ToList(), "maHang", "tenHang");
-            return View();
+            return RedirectToAction("Index", "QuanLy");
         }
         
         [HttpGet]
@@ -82,18 +82,19 @@ namespace ShopBanHang.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
             SanPham sp = db.SanPhams.Where(c => c.maSP == id).SingleOrDefault();
             return View(sp);
         }
         [HttpPost,ActionName("Delete")]
-        public ActionResult Delete(SanPham sp)
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
         {
-            var sanpham = db.SanPhams.SingleOrDefault(c => c.maSP == sp.maSP);
+            var sanpham = db.SanPhams.Find(id);
             db.SanPhams.Remove(sanpham);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index", "QuanLy");
 
         }
         public ViewResult xemChiTiet(int masp = 0)

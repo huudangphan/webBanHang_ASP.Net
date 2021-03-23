@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>QLDonHang</h2>
+
 
 @{ WebGrid obj = new WebGrid(source: Model.donhang, canPage: true, rowsPerPage: 10);}@obj.GetHtml(tableStyle: "table table-bordered table-hover",
 alternatingRowStyle: "info", columns: obj.Columns(
