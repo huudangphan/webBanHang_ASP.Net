@@ -162,6 +162,18 @@ namespace ShopBanHang.Controllers
             hang.daThanhToan = 1;
             DateTime date = DateTime.Now;
             hang.ngayGiao = date;
+            var listct = (from ct in db.ChiTietDonHangs
+                          join d in db.DonHangs
+                          on ct.maDH equals d.maDH
+                          join sp in db.SanPhams
+                          on ct.maSP equals sp.maSP
+                          where ct.maDH == madh && ct.maSP == sp.maSP
+                          select sp).ToList();
+            foreach (var item in listct)
+            {
+                item.slTon -= 1;
+            }
+            
             db.SaveChanges();
             return RedirectToAction("Index", "QuanLy");
         }
