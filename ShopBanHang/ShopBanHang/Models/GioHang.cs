@@ -7,7 +7,8 @@ namespace ShopBanHang.Models
 {
     public class GioHang
     {
-        QLShopEntities db = new QLShopEntities();
+        //QLShopEntities db = new QLShopEntities();
+        databaseEntities db = new databaseEntities();
         public int maSP { get; set; }
         public string tenSP { get; set; }
         public string hinhAnh { get; set; }

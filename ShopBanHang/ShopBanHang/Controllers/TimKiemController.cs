@@ -11,7 +11,8 @@ namespace ShopBanHang.Controllers
 {
     public class TimKiemController : Controller
     {
-        QLShopEntities db = new QLShopEntities();
+        //QLShopEntities db = new QLShopEntities();
+        databaseEntities db = new databaseEntities();
         // GET: TimKiem
         [HttpPost]
         public ActionResult TimKiemKQ(string tuKhoatk,int? page)
