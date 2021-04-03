@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 
 
 
@@ -17,7 +18,7 @@
     <div class="form-horizontal">
         
         <hr />
-        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+     
         <div class="form-group">
             <div class="control-label col-md-2">Họ và tên</div>
             <div class="col-md-10">
@@ -38,7 +39,7 @@
             <div class="control-label col-md-2">Ngày sinh</div>
             <div class="col-md-10">
                 <input class="form-control text-box single-line" id="ngaySinh" name="ngaySinh" type="datetime" value="">
-                @*@Html.EditorFor(model => model.ngaySinh, new { htmlAttributes = new { @class = "form-control" } })*@
+               
                 <span id="loiNgaySinh"></span>
             </div>
         </div>
@@ -54,7 +55,7 @@
         <div class="form-group">
             <div class="control-label col-md-2">Số điện thoại</div>
             <div class="col-md-10">
-                @*@Html.EditorFor(model => model.sdt, new { htmlAttributes = new { @class = "form-control" } })*@
+           
                 <input class="form-control text-box single-line" id="sdt" name="sdt" type="text" value="">
                 <span id="loiSodienThoai"></span>
             </div>
@@ -64,7 +65,7 @@
             <div class="control-label col-md-2">Tên đăng nhập</div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.taiKhoan, new { htmlAttributes = new { @class = "form-control" } })
-                <span id="loiTenDangNhap"></span>
+               
                 <span style="color:red;">* @ViewBag.Error</span>
             </div>
         </div>
@@ -73,20 +74,20 @@
             <div class="control-label col-md-2">Mật khẩu</div>
             <div class="col-md-10">
                 <input class="form-control text-box single-line" id="matKhau" name="matKhau" type="password" value="">
-                <span id="loiMatKhau"></span>
+               
             </div>
         </div>
         <div class="form-group">
             <div class="control-label col-md-2">Xác nhận Mật khẩu</div>
             <div class="col-md-10">
                 <input class="form-control text-box single-line" id="matKhau2" name="matKhau" type="password" value="">
-                @*@Html.ValidationMessageFor(model => model.matKhau, "", new { @class = "text-danger" })*@
+               
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input id="btnSubmit" type="submit" onclick="return checkDK()" value="Create" class="btn btn-primary" />
-
+               
             </div>
         </div>
     </div>
@@ -114,10 +115,19 @@
             alert("Mật khẩu phải trùng nhau");
             return false;
         }
+        if (IsEmail(email) == false)
+        {
+            alert("Định dạng email không đúng");
+            return false;
+        }
         else {
-            
+
 
         }
+    };
+   function isEmail(email) {
+  var EmailRegex = /^([a-zA-Z0-9_.+-])+([a-zA-Z0-9]{2,4})+$/;
+  return EmailRegex.test(email);
     };
 
 

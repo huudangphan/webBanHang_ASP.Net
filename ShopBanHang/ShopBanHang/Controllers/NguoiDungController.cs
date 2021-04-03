@@ -10,8 +10,8 @@ namespace ShopBanHang.Controllers
 {
     public class NguoiDungController : Controller
     {
-        //QLShopEntities db = new QLShopEntities();
-        databaseEntities db = new databaseEntities();
+        QLShopEntities db = new QLShopEntities();
+        //databaseEntities db = new databaseEntities();
         // GET: NguoiDung
         public ActionResult Index()
         {
@@ -25,11 +25,10 @@ namespace ShopBanHang.Controllers
         [HttpPost]
         public ActionResult DangKy(KhachHang kh)
         {
-            var check = db.KhachHangs.FirstOrDefault(c => c.taiKhoan == kh.taiKhoan);
+            var check = db.KhachHangs.SingleOrDefault(c => c.taiKhoan == kh.taiKhoan);
             if (check == null)
             {
-                db.KhachHangs.Add(kh);
-                db.SaveChanges();
+                
                 
                 return View();
             }
@@ -41,6 +40,32 @@ namespace ShopBanHang.Controllers
             }
             
            
+        }
+        public ActionResult DangKy2(ModelUser kh)
+        {
+            var check = db.KhachHangs.SingleOrDefault(c => c.taiKhoan == kh.username);
+            if (check == null&& kh.password==kh.confirmPassword)
+            {
+                KhachHang khach = new KhachHang();
+                khach.tenKH = kh.tenKH;
+                khach.diaChi = kh.diaChi;
+                khach.ngaySinh = kh.ngaySinh;
+                khach.emai = kh.email;
+                khach.sdt = kh.sdt;
+                khach.taiKhoan = kh.username;
+                khach.matKhau = kh.password;
+                db.KhachHangs.Add(khach);
+                db.SaveChanges();
+                return RedirectToAction("DangNhap", "NguoiDung");
+            }
+
+            else
+            {
+
+                return View();
+            }
+
+
         }
         [HttpGet]
         public ActionResult DangNhap()
@@ -57,8 +82,7 @@ namespace ShopBanHang.Controllers
             {
                 Session["taiKhoan"] = khachhang;
                 Session["tk"] = data.FirstOrDefault().taiKhoan;
-                Session["tenKH"] = data.FirstOrDefault().tenKH;
-               
+                Session["tenKH"] = data.FirstOrDefault().tenKH;               
                 Session["matKhau"] = data.FirstOrDefault().matKhau;
                 Session["diaChi"] = data.FirstOrDefault().diaChi;
                 Session["ngaySinh"] = data.FirstOrDefault().ngaySinh;
