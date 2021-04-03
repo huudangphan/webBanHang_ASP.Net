@@ -1,12 +1,8 @@
 ﻿@model IEnumerable<ShopBanHang.Models.SanPham>
 
-@{
-    ViewBag.Title = "TimKiemKQ";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-@foreach (var item in Model)
-{
+<div class="row">
+    @foreach (var item in Model)
+    {
 
 <div class="col-md-3">
     <a href="@Url.Action("xemChiTiet","SanPham",new { @masp=item.maSP})" style="color:white"><img src="~/Assit/img/@Html.DisplayFor(modelItem=>item.anh)" alt="Alternate Text" style="width:270px;height:250px;" /></a>
@@ -20,3 +16,4 @@
     </div>
 
 </div>}
+</div>

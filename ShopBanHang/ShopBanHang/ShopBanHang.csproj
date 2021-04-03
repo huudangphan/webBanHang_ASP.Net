@@ -1192,8 +1192,9 @@
     <Content Include="Views\QuanLy\XemChiTietDonHang.cshtml" />
     <Content Include="Views\NguoiDung\Hang.cshtml" />
     <Content Include="Views\NguoiDung\XemChiTietDonHang.cshtml" />
-    <Content Include="Views\TimKiem\TimKiemKQ.cshtml" />
     <Content Include="Views\NguoiDung\DangKy2.cshtml" />
+    <Content Include="Views\TimKiem\TimKiemKQ.cshtml" />
+    <Content Include="Views\Home\timKiem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

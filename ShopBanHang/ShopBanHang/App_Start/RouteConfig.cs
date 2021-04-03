@@ -115,7 +115,7 @@ namespace ShopBanHang
             routes.MapRoute(
            name: "dangKy",
            url: "dangKy",
-           defaults: new { controller = "NguoiDung", action = "DangKy", id = UrlParameter.Optional }
+           defaults: new { controller = "NguoiDung", action = "DangKy2", id = UrlParameter.Optional }
        );
             routes.MapRoute(
          name: "hoso",

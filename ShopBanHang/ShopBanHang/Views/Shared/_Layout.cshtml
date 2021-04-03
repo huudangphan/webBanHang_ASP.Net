@@ -190,16 +190,17 @@
 
                     <!-- Topbar Search -->
                     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
+                        <div class="input-group txtTimKiem">
                             @using (Html.BeginForm("TimKiemKQ", "TimKiem", FormMethod.Post))
                             {
-                                @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "form-control bg-light border-0 small", @placehoder = "Nhập từ khóa" })
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary">   <i class="fas fa-search fa-sm"></i></button>
-                                </div>
-                            }
+                    @Html.TextBox("search")
 
-                           
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
+
+                                    </div>}
+
+
                         </div>
                     </form>
 
@@ -260,6 +261,7 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    @{ Html.RenderAction("timKiem", "Home");}
                     @RenderBody()
                 </div>
 

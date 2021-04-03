@@ -20,6 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="~/Assit/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="~/Assit/css/trangchu.css" rel="stylesheet" />
+    
 
 
 </head>
@@ -64,7 +65,7 @@
 
                         <a class="collapse-item" href="@Url.Action("HPLaptop","Home")">HP</a>
                         <a class="collapse-item" href="@Url.Action("AsusLaptop","Home")">Asus</a>
-                        
+
                     </div>
                 </div>
             </li>
@@ -84,7 +85,7 @@
                         <a class="collapse-item" href="@Url.Action("SamsungPhone","Home")">Samsung</a>
                         <a class="collapse-item" href="@Url.Action("XiaomiPhone","Home")">Xiaomi</a>
                         <a class="collapse-item" href="@Url.Action("OppoPhone","Home")">Oppo</a>
-                      
+
 
                     </div>
                 </div>
@@ -101,7 +102,7 @@
 
                         <a class="collapse-item" href="@Url.Action("CannonCamera","Home")">Cannon</a>
                         <a class="collapse-item" href="@Url.Action("SonyCamera","Home")">Sony</a>
-                        
+
                     </div>
                 </div>
             </li>
@@ -121,7 +122,7 @@
                         <a class="collapse-item" href="@Url.Action("XiaomiWatch","Home")">Xiaomi</a>
                         <a class="collapse-item" href="@Url.Action("HuaweiWatch","Home")">Huawei</a>
                         <a class="collapse-item" href="@Url.Action("LGWatch","Home")">LG</a>
-                    
+
                     </div>
                 </div>
             </li>
@@ -194,16 +195,19 @@
 
                     <!-- Topbar Search -->
                     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            @using (Html.BeginForm("TimKiemKQ", "TimKiem", FormMethod.Post,new { @tuKhoatk="iphone"}))
+                        <div class="input-group txtTimKiem">
+                            @using (Html.BeginForm("TimKiemKQ", "TimKiem",FormMethod.Post))
                             {
-                    @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "form-control bg-light border-0 small", @placehoder = "Nhập từ khóa" })
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-primary">   <i class="fas fa-search fa-sm"></i></button>
-                                    </div>}
+                                @Html.TextBox("search")
+               
+                                <div class="input-group-append">
+                                   <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
+                                  
+                                </div>
+                                }
 
-
-                        </div>
+                     
+</div>
                     </form>
 
                     <!-- Topbar Navbar -->
@@ -215,36 +219,20 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
-                            <!-- Dropdown - Messages -->
-                            @*<div class="input-group">
-                                @using (Html.BeginForm("TimKiemKQ", "TimKiem", FormMethod.Post))
-                                {
-                                            @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "form-control bg-light border-0 small", @placehoder = "Nhập từ khóa" })
-                                            <div class="input-group-append">
-                                                <button type="submit" class="btn btn-primary">   <i class="fas fa-search fa-sm"></i></button>
-                                            </div>
-                                            }
-
-
-
-                            </div>*@
+                          
                         </li>
 
-                     
-                        
+
+
                         <a href="/giohang" style="margin-top:25px;"><i class="fas fa-shopping-cart"></i></a>
                         <!-- Nav Item - Messages -->
-                        
-
-                       
-
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             @if (Session["tenKH"] != null)
                             {
 
-                                <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["tk"].ToString()</a>
+                <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["tk"].ToString()</a>
 
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                      aria-labelledby="userDropdown">
@@ -256,19 +244,15 @@
                                     <a href="@Url.Action("DangXuat","NguoiDung" )" class="dropdown-item"> <i class="fas fa-sign-in-alt"></i>Đăng xuất</a>
                                     <div class="dropdown-divider"></div>
 
-                                </div>
-
-
-                            }
+                                </div> }
                             else
                             {
-                                <a class="nav-link dropdown-toggle" href="/dangnhap">
+                <a class="nav-link dropdown-toggle" href="/dangnhap">
 
-                                    <span class="dangkydangnhap ">Đăng ký/Đăng nhập  </span>
+                    <span class="dangkydangnhap ">Đăng ký/Đăng nhập  </span>
 
 
-                                </a>
-                            }
+                </a>}
 
 
 
@@ -282,6 +266,7 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    @{ Html.RenderAction("timKiem", "Home");}
                     @{ Html.RenderAction("SanPhamHot", "Home");}
                     @{ Html.RenderAction("DienthoaiHot", "Home");}
                     @{ Html.RenderAction("LaptopHot", "Home");}

@@ -11,14 +11,19 @@ namespace ShopBanHang.Controllers
     {
         QLShopEntities db = new QLShopEntities();
         //databaseEntities db = new databaseEntities();
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
-            var listsp = db.SanPhams.Take(30).ToList();
-            var list = from c in db.SanPhams
+            var kq = db.SanPhams.Where(x => x.tenSP.StartsWith(search)).ToList();
+            
 
-                       select c;
+            return View(kq);
+        }
+        public PartialViewResult timKiem(string search)
+        {
+            var kq = db.SanPhams.Where(x => x.tenSP.Contains(search)).ToList();
 
-            return View(listsp);
+
+            return PartialView(kq);
         }
        public ActionResult SanPhamHot()
         {
@@ -157,6 +162,12 @@ namespace ShopBanHang.Controllers
         public ActionResult GioiThieu()
         {
             return View();
+        }
+        public ActionResult TimKiemKQ(string tukhoa)
+        {
+            
+            var kq = db.SanPhams.Where(x=>x.tenSP.Contains(tukhoa)).ToList();
+            return View(kq);
         }
 
     }
