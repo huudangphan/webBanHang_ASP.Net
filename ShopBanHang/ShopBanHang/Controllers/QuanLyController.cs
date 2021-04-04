@@ -32,6 +32,13 @@ namespace ShopBanHang.Controllers
                 
             return View();
         }
+        public PartialViewResult timKiem(string search)
+        {
+            var kq = db.SanPhams.Where(x => x.tenSP.Contains(search)).ToList();
+
+
+            return PartialView(kq);
+        }
         [HttpPost]
         public ActionResult Add(SanPham sp,HttpPostedFileBase fileUp)
         {
