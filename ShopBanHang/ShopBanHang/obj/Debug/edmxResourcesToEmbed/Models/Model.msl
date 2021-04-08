@@ -70,11 +70,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="LoaiSPs">
-      <EntityTypeMapping TypeName="QLShopModel.LoaiSP">
-        <MappingFragment StoreEntitySet="LoaiSP">
-          <ScalarProperty Name="loaiSP1" ColumnName="loaiSP" />
-          <ScalarProperty Name="ma" ColumnName="ma" />
+    <EntitySetMapping Name="TinNhans">
+      <EntityTypeMapping TypeName="QLShopModel.TinNhan">
+        <MappingFragment StoreEntitySet="TinNhan">
+          <ScalarProperty Name="Mess" ColumnName="Mess" />
+          <ScalarProperty Name="idNhan" ColumnName="idNhan" />
+          <ScalarProperty Name="idGui" ColumnName="idGui" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -41,15 +41,6 @@
     <Property Name="taiKhoan" Type="nvarchar" MaxLength="50" />
     <Property Name="matKhau" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'QLShop.dbo.LoaiSP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="LoaiSP">
-    <Key>
-      <PropertyRef Name="ma" />
-    </Key>
-    <Property Name="ma" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="loaiSP" Type="nvarchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="SanPham">
     <Key>
       <PropertyRef Name="maSP" />
@@ -72,6 +63,15 @@ warning 6002: The table/view 'QLShop.dbo.LoaiSP' does not have a primary key def
     <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TinNhan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idGui" Type="int" />
+    <Property Name="idNhan" Type="int" />
+    <Property Name="Mess" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="FK_ChiTietDonHang_DonHang">
     <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
@@ -128,12 +128,7 @@ warning 6002: The table/view 'QLShop.dbo.LoaiSP' does not have a primary key def
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LoaiSP" EntityType="Self.LoaiSP" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [LoaiSP].[ma] AS [ma], 
-    [LoaiSP].[loaiSP] AS [loaiSP]
-    FROM [dbo].[LoaiSP] AS [LoaiSP]</DefiningQuery>
-    </EntitySet>
+    <EntitySet Name="TinNhan" EntityType="Self.TinNhan" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_ChiTietDonHang_DonHang" Association="Self.FK_ChiTietDonHang_DonHang">
       <End Role="DonHang" EntitySet="DonHang" />
       <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />

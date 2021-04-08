@@ -1,67 +1,92 @@
-﻿@model IEnumerable<ShopBanHang.Models.KhachHang>
+﻿@model ShopBanHang.Models.KhachHang
+
 
 @{
     ViewBag.Title = "HoSoNguoiDung";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>HoSoNguoiDung</h2>
-
 
 <table class="table">
     <tr>
         <th>
-            Tên Người dùng
+            @Html.DisplayNameFor(model => model.tenKH)
         </th>
         <th>
-            Địa chỉ
+            @Html.DisplayNameFor(model => model.diaChi)
         </th>
         <th>
-           Ngày sinh
+            @Html.DisplayNameFor(model => model.ngaySinh)
         </th>
         <th>
-            Email
+            @Html.DisplayNameFor(model => model.emai)
         </th>
         <th>
-            Số điện thoai
+            @Html.DisplayNameFor(model => model.sdt)
         </th>
         <th>
-            Tên tài khoản
+            @Html.DisplayNameFor(model => model.taiKhoan)
         </th>
-        
+
         <th></th>
     </tr>
 
-<tr>
-   
-    <td>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model.tenKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.diaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.ngaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.emai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.sdt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.taiKhoan)
+        </td>
+        <td>
+        </td>
         
-        @Session["tenKH"].ToString()
-    </td>
-    <td>
-       
-        @Session["diaChi"].ToString()
-
-    </td>
-    <td>
-        
-        @Session["ngaySinh"].ToString()
-    </td>
-    <td>
-        
-        @Session["email"].ToString()
-    </td>
-    <td>
-        @Session["sdt"].ToString()
-    </td>
-    <td>
-        @Session["tk"].ToString()
-    </td>
-
-
-</tr>
-
+    </tr>
+    <tr>
+        <td>
+            <a href="@Url.Action("ChangePass","NguoiDung")">Đổi mật khẩu</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Mật khẩu hiện tại
+        </td>
+        <td>
+            <input type="text" name="cur_pass" value="" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Mật khẩu mới
+        </td>
+        <td>
+            <input type="text" name="pass" value="" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+           Xác nhận mật khẩu
+        </td>
+        <td>
+            <input type="text" name="pass2" value="" />
+        </td>
+    </tr>
+    <tr>
+        <td><input type="submit"  value="Đổi mật khẩu" /></td>
+    </tr>
 
 
 </table>
-

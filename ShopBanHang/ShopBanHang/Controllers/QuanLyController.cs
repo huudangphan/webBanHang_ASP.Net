@@ -114,7 +114,25 @@ namespace ShopBanHang.Controllers
             }
             return View(sp);
         }
+        public ViewResult DetailsAcc(int makh)
+        {
+            var kh = db.KhachHangs.Where(x => x.maKH == makh);
+            return View(kh.ToList());
+        }
+        public ViewResult DetailDonHang(int makh)
+        {
+            var detail = (from kh in db.KhachHangs
+                          join dh in db.DonHangs
+                          on kh.maKH equals dh.maKH
+                          join ctdh in db.ChiTietDonHangs
+                          on dh.maDH equals ctdh.maDH
+                          where kh.maKH==makh
+                          select dh).ToList();
+            return View(detail);
+        }
+        [HttpGet]
        
+
         public ActionResult QLDonHang()
         {
             var mymodel = new MultiDataa();
@@ -153,22 +171,20 @@ namespace ShopBanHang.Controllers
                                 join b in db.SanPhams
                                 on a.maSP equals b.maSP
                                 where a.maDH==madh
-                                select b).ToList();           
+                                select b).ToList();        
             
             
-
-
-
-
             return View(mymodel);
         }
         public ActionResult GuiHang(int madh)
         {
             var hang = db.DonHangs.SingleOrDefault(c => c.maDH == madh);
-            hang.tinhTrang = 1;
-            hang.daThanhToan = 1;
-            DateTime date = DateTime.Now;
-            hang.ngayGiao = date;
+            
+            var listsp = (from c in db.ChiTietDonHangs
+                      join dh in db.DonHangs
+                      on c.maDH equals dh.maDH
+                      where c.maDH == madh
+                      select c).ToList();
             var listct = (from ct in db.ChiTietDonHangs
                           join d in db.DonHangs
                           on ct.maDH equals d.maDH
@@ -176,13 +192,37 @@ namespace ShopBanHang.Controllers
                           on ct.maSP equals sp.maSP
                           where ct.maDH == madh && ct.maSP == sp.maSP
                           select sp).ToList();
-            foreach (var item in listct)
+            foreach (var item in listsp)
             {
-                item.slTon -= 1;
+                foreach (var itemct in listct)
+                {
+                    if(item.soLuong>itemct.slTon)
+                    {
+                        hang.tinhTrang = 1;
+                        hang.daThanhToan = 1;
+                        DateTime date = DateTime.Now;
+                        hang.ngayGiao = date;
+                        itemct.slTon -= 1;
+                    }
+                    else
+                    {
+                        ViewBag.error = "Số lượng hàng tồn trong kho không đủ";
+                        return View();
+                    }
+                  
+                }
             }
+            
             
             db.SaveChanges();
             return RedirectToAction("Index", "QuanLy");
+        }
+        public ActionResult QLTaiKhoan()
+        {
+            var acc = db.KhachHangs.ToList();
+
+
+            return View(acc);
         }
     }
 }

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ShopBanHang.Models.TinNhan>
+
+@{
+    ViewBag.Title = "Mess";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table">
+
+
+        @foreach (var item in Model)
+        {
+
+            if (item.idGui == 4)
+            {
+                <tr>
+                    <td style="background-color: #AAAAAA">@Html.DisplayFor(m => item.Mess)</td>
+                </tr>
+            }
+
+            else
+            {
+                <tr>
+                    <td></td>
+                    <td style="background-color:#6699FF;margin-left:30px;">@Html.DisplayFor(m => item.Mess)</td>
+                </tr>
+            }
+
+
+
+        }
+        <tr>
+            
+            <td>   @{ Html.RenderAction("SendMess", "TinNhan");}</td>
+        </tr>
+
+    </table>
+

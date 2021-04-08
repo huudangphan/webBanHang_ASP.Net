@@ -31,6 +31,6 @@ namespace ShopBanHang.Models
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<LoaiSP> LoaiSPs { get; set; }
+        public virtual DbSet<TinNhan> TinNhans { get; set; }
     }
 }

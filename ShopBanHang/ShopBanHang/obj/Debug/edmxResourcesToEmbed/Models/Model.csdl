@@ -143,13 +143,15 @@
       <End Role="Hang" EntitySet="Hangs" />
       <End Role="SanPham" EntitySet="SanPhams" />
     </AssociationSet>
-    <EntitySet Name="LoaiSPs" EntityType="QLShopModel.LoaiSP" />
+    <EntitySet Name="TinNhans" EntityType="QLShopModel.TinNhan" />
   </EntityContainer>
-  <EntityType Name="LoaiSP">
+  <EntityType Name="TinNhan">
     <Key>
-      <PropertyRef Name="ma" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="ma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="loaiSP1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idGui" Type="Int32" />
+    <Property Name="idNhan" Type="Int32" />
+    <Property Name="Mess" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

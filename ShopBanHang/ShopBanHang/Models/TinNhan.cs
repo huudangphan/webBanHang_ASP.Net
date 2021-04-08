@@ -12,9 +12,11 @@ namespace ShopBanHang.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class LoaiSP
+    public partial class TinNhan
     {
-        public int ma { get; set; }
-        public string loaiSP1 { get; set; }
+        public int id { get; set; }
+        public Nullable<int> idGui { get; set; }
+        public Nullable<int> idNhan { get; set; }
+        public string Mess { get; set; }
     }
 }

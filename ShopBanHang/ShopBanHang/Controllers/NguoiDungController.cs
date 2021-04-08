@@ -117,10 +117,10 @@ namespace ShopBanHang.Controllers
         }
       
         public ActionResult HoSoNguoiDung()
-        {
-            
-
-            return View();
+        {           
+            string tenTK=@Session["tk"].ToString();
+            var kh = db.KhachHangs.Where(x => x.taiKhoan == tenTK).SingleOrDefault();
+            return View(kh);
         }
         public ActionResult AdminTT()
         {

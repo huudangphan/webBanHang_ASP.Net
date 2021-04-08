@@ -4,6 +4,7 @@
     ViewBag.Title = "XemChiTietDonHang";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+@ViewBag.error
 @{ WebGrid obj1 = new WebGrid(source: Model.ctdonhang, canPage: true, rowsPerPage: 10);}@obj1.GetHtml(tableStyle: "table table-bordered table-hover",
 alternatingRowStyle: "info", columns: obj1.Columns(
 obj1.Column("maDH", "Mã"),
