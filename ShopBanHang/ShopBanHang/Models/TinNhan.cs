@@ -18,5 +18,6 @@ namespace ShopBanHang.Models
         public Nullable<int> idGui { get; set; }
         public Nullable<int> idNhan { get; set; }
         public string Mess { get; set; }
+        public Nullable<System.DateTime> time { get; set; }
     }
 }

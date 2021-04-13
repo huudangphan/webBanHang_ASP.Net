@@ -72,6 +72,7 @@
     <Property Name="idGui" Type="int" />
     <Property Name="idNhan" Type="int" />
     <Property Name="Mess" Type="nvarchar(max)" />
+    <Property Name="time" Type="datetime" />
   </EntityType>
   <Association Name="FK_ChiTietDonHang_DonHang">
     <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />

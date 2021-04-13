@@ -153,5 +153,6 @@
     <Property Name="idGui" Type="Int32" />
     <Property Name="idNhan" Type="Int32" />
     <Property Name="Mess" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="time" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>

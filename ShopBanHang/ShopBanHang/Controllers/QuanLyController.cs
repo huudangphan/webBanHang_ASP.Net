@@ -224,5 +224,25 @@ namespace ShopBanHang.Controllers
 
             return View(acc);
         }
+        public ActionResult ListTn()
+        {
+            var list = (from kh in db.KhachHangs
+                        join tn in db.TinNhans
+                        on kh.maKH equals tn.idGui
+                        where kh.maKH == tn.idGui
+                        select kh).Distinct().ToList();
+            return View(list);
+                     
+        }
+        [HttpPost]
+        public ActionResult Mess(string tentk="")
+        {
+            var mess = (from tn in db.TinNhans
+                        join kh in db.KhachHangs
+                        on tn.idGui equals kh.maKH
+                        where kh.taiKhoan == tentk
+                        select tn).ToList();
+            return View(mess);
+        }
     }
 }

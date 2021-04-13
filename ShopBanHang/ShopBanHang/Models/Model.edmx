@@ -77,6 +77,7 @@
           <Property Name="idGui" Type="int" />
           <Property Name="idNhan" Type="int" />
           <Property Name="Mess" Type="nvarchar(max)" />
+          <Property Name="time" Type="datetime" />
         </EntityType>
         <Association Name="FK_ChiTietDonHang_DonHang">
           <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
@@ -308,6 +309,7 @@
           <Property Name="idGui" Type="Int32" />
           <Property Name="idNhan" Type="Int32" />
           <Property Name="Mess" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="time" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -387,6 +389,7 @@
           <EntitySetMapping Name="TinNhans">
             <EntityTypeMapping TypeName="QLShopModel.TinNhan">
               <MappingFragment StoreEntitySet="TinNhan">
+                <ScalarProperty Name="time" ColumnName="time" />
                 <ScalarProperty Name="Mess" ColumnName="Mess" />
                 <ScalarProperty Name="idNhan" ColumnName="idNhan" />
                 <ScalarProperty Name="idGui" ColumnName="idGui" />

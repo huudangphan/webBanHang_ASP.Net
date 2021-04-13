@@ -135,10 +135,21 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="@Url.Action("Mess","TinNhan")">
-                    <i class="fas fa-pager"></i>
-                    <span>Liên hệ</span>
-                </a>
+                @if (Session["tenKH"] != null)
+                {
+                    <a class="nav-link" href="@Url.Action("Mess","TinNhan")">
+                        <i class="fas fa-pager"></i>
+                        <span>Liên hệ</span>
+                    </a>
+                }
+                else
+                { 
+                 <a class="nav-link" href="@Url.Action("DangNhap","NguoiDung")">
+                        <i class="fas fa-pager"></i>
+                        <span>Liên hệ</span>
+                    </a>
+                }
+
 
             </li>
 

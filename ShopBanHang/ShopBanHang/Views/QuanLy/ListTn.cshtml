@@ -1,0 +1,16 @@
+﻿@model IEnumerable<ShopBanHang.Models.KhachHang>
+
+@{
+    ViewBag.Title = "ListTn";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><a href="@Url.Action("Mess","QuanLy",new { @tentk=item.taiKhoan})">@Html.DisplayFor(m => item.taiKhoan)</a></td>
+        </tr>
+    }
+
+</table>

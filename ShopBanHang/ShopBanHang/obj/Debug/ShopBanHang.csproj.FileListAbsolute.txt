@@ -163,7 +163,6 @@ D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csproj.CoreC
 D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csproj.CopyComplete
 D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.dll
 D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.pdb
-D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csprojAssemblyReference.cache
 C:\Users\Admin\Downloads\webBanHang_ASP.Net-main\webBanHang_ASP.Net-main\ShopBanHang\ShopBanHang\bin\ShopBanHang.dll.config
 C:\Users\Admin\Downloads\webBanHang_ASP.Net-main\webBanHang_ASP.Net-main\ShopBanHang\ShopBanHang\bin\ShopBanHang.dll
 C:\Users\Admin\Downloads\webBanHang_ASP.Net-main\webBanHang_ASP.Net-main\ShopBanHang\ShopBanHang\bin\ShopBanHang.pdb

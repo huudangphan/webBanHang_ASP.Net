@@ -73,6 +73,7 @@
     <EntitySetMapping Name="TinNhans">
       <EntityTypeMapping TypeName="QLShopModel.TinNhan">
         <MappingFragment StoreEntitySet="TinNhan">
+          <ScalarProperty Name="time" ColumnName="time" />
           <ScalarProperty Name="Mess" ColumnName="Mess" />
           <ScalarProperty Name="idNhan" ColumnName="idNhan" />
           <ScalarProperty Name="idGui" ColumnName="idGui" />

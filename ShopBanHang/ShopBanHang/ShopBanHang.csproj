@@ -1203,7 +1203,8 @@
     <Content Include="Views\QuanLy\DetailsAcc.cshtml" />
     <Content Include="Views\NguoiDung\HoSoNguoiDung.cshtml" />
     <Content Include="Views\TinNhan\Mess.cshtml" />
-    <Content Include="Views\TinNhan\SendMess.cshtml" />
+    <Content Include="Views\QuanLy\ListTn.cshtml" />
+    <Content Include="Views\QuanLy\Mess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
