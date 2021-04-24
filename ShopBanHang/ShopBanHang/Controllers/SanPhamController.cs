@@ -10,10 +10,10 @@ namespace ShopBanHang.Controllers
    
     public class SanPhamController : Controller
     {
-        QLShopEntities db = new QLShopEntities();
+        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
         //databaseEntities db = new databaseEntities();
         // GET: SanPham
-        public ViewResult xemChiTiet(int masp=0)
+        public ViewResult xemChiTiet(int masp = 0)
         {
             SanPham sp = db.SanPhams.SingleOrDefault(n => n.maSP == masp);
             if (sp == null)

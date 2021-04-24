@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ShopBanHang.Models.KhachHang>
+
+@{
+    ViewBag.Title = "TaoHDTG";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("TaoHDTG", "QuanLy"))
+{
+    @Html.TextBox("tuKhoa")
+    <div class="input-group-append">
+        <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
+
+    </div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.MaKH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tenKH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SDT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.tongMua)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaKH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tenKH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.tongMua)
+                </td>
+                <td>
+                    <a href="@Url.Action("TaoCTHDTG","GioHang", new { @MaKH=item.MaKH})">content</a>
+                   
+                </td>
+            </tr>
+        }
+
+    </table>
+
+}

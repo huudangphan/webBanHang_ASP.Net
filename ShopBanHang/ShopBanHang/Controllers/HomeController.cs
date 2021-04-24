@@ -9,8 +9,8 @@ namespace ShopBanHang.Controllers
 {
     public class HomeController : Controller
     {
-        QLShopEntities db = new QLShopEntities();
-        //databaseEntities db = new databaseEntities();
+       
+        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
         public ActionResult Index(string search)
         {
             var kq = db.SanPhams.Where(x => x.tenSP.StartsWith(search)).ToList();
@@ -28,29 +28,36 @@ namespace ShopBanHang.Controllers
        public ActionResult SanPhamHot()
         {
 
-            var list = db.SanPhams.OrderBy(c => c.slTon).Where(c=>c.loaiSP=="phone"||c.loaiSP=="laptop").Take(4).ToList();
-            var listsp = list.ToList();
+            //var list = db.SanPhams.OrderBy(c => c.slTon).Take(4).ToList();
+            var list = (from sp in db.SanPhams
+                        join n in db.CTPNs
+                        on sp.maSP equals n.maSP
+                        join pn in db.HDNhapSPs
+                        on n.maPhieuNhap equals pn.maPhieuNhap
+                        orderby pn.ngayNhap descending
+                        select sp).Take(4).ToList();
+            
 
             return PartialView("SanPhamHot",list);
         }
         public PartialViewResult DienthoaiHot()
         {
 
-            var list = db.SanPhams.OrderBy(c => c.slTon).Where(c => c.loaiSP == "phone").Take(4);
+            var list = db.SanPhams.Where(c => c.maLoai ==1 ).Take(4);
 
             return PartialView("DienThoaiHot", list);
         }
         public PartialViewResult LaptopHot()
         {
 
-            var list = db.SanPhams.OrderBy(c => c.slTon).Where(c => c.loaiSP == "laptop").Take(4);
+            var list = db.SanPhams.Where(c => c.maLoai == 2).Take(4);
             
             return PartialView("LaptopHot", list);
         }
         public PartialViewResult DongHoHot()
         {
 
-            var list = db.SanPhams.OrderBy(c => c.slTon).Where(c => c.loaiSP == "watch").Take(4);
+            var list = db.SanPhams.Where(c => c.maLoai == 3).Take(4);
 
             return PartialView("DongHoHot", list);
         }
@@ -58,28 +65,28 @@ namespace ShopBanHang.Controllers
         public ActionResult AppleLaptop()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "apple"&&c.loaiSP=="laptop"
+                       where c.maLoai==2&&c.maHang==1
                        select c;
             return View(list);
         }
         public ActionResult DellLaptop()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "dell"
+                       where c.maLoai==2 &&c.maHang==2
                        select c;
             return View(list);
         }
         public ActionResult HPLaptop()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "hp"
+                       where c.maLoai==2&&c.maHang==3
                        select c;
             return View(list);
         }
         public ActionResult AsusLaptop()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "asus"
+                       where c.maLoai==2 &&c.maHang==4
                        select c;
             return View(list);
         }
@@ -87,14 +94,14 @@ namespace ShopBanHang.Controllers
         public ActionResult ApplePhone()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "apple"&&c.loaiSP=="phone"
+                       where c.maHang==1&&c.maLoai==1
                        select c;
             return View(list);
         }
         public ActionResult SamsungPhone()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "samsung" 
+                       where c.maLoai==1&&c.maHang==5 
                        select c;
             return View(list);
         }
@@ -102,56 +109,56 @@ namespace ShopBanHang.Controllers
         {
 
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "xiaomi" && c.loaiSP == "phone"
+                       where c.maLoai==1&&c.maHang==6
                        select c;
             return View(list);
         }
         public ActionResult OppoPhone()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "oppo" 
+                       where c.maLoai == 1 && c.maHang == 7
                        select c;
             return View(list);
         }
         public ActionResult CannonCamera()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "cannon" 
+                       where c.maLoai == 4 && c.maHang == 8
                        select c;
             return View(list);
         }
         public ActionResult SonyCamera()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "sony" 
+                       where c.maLoai == 4 && c.maHang == 9
                        select c;
             return View(list);
         }
         public ActionResult AppleWatch()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "apple" && c.loaiSP == "watch"
+                       where c.maLoai == 3 && c.maHang == 1
                        select c;
             return View(list);
         }
         public ActionResult XiaomiWatch()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "xiaomi" && c.loaiSP == "watch"
+                       where c.maLoai == 3 && c.maHang == 6
                        select c;
             return View(list);
         }
         public ActionResult HuaweiWatch()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "huawei" && c.loaiSP == "watch"
+                       where c.maLoai == 3 && c.maHang == 10
                        select c;
             return View(list);
         }
         public ActionResult LGWatch()
         {
             var list = from c in db.SanPhams
-                       where c.Hang.maHang == c.maHang && c.Hang.tenHang == "lg" && c.loaiSP == "watch"
+                       where c.maLoai == 3 && c.maHang == 11
                        select c;
             return View(list);
         }

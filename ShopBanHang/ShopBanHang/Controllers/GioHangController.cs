@@ -10,7 +10,7 @@ namespace ShopBanHang.Controllers
     public class GioHangController : Controller
     {
 
-        QLShopEntities db = new QLShopEntities();
+        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
         //databaseEntities db = new databaseEntities();
         
         // GET: GioHang
@@ -143,32 +143,69 @@ namespace ShopBanHang.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            // Thêm đơn hàng
-            DonHang dh = new DonHang();
-            List<GioHang> giohang = getGioHang();
+            
+            HDOnline hd = new HDOnline();
+            List<GioHang> gioHang = getGioHang();
             KhachHang kh = (KhachHang)Session["taiKhoan"];
-            dh.maKH = kh.maKH;
-            dh.ngayDat = DateTime.Now;
-            dh.tinhTrang = 0;
-            dh.daThanhToan = 0;
-            db.DonHangs.Add(dh);
-            db.SaveChanges();
-            // Thêm chi tiết đơn hàng
-            foreach (var item in giohang)
+            hd.MaKH = kh.MaKH;
+            hd.NgayDat = DateTime.Now;
+            hd.TinhTrang = false;
+            db.HDOnlines.Add(hd);
+            foreach (var item in gioHang)
             {
-                ChiTietDonHang ctdonHang = new ChiTietDonHang();
-
-                ctdonHang.maDH = dh.maDH;
-                ctdonHang.soLuong = item.soLuong;
-                ctdonHang.donGia = item.donGia * item.soLuong;
-                ctdonHang.maSP = item.maSP;
-                db.ChiTietDonHangs.Add(ctdonHang);
+                CTHDOnline cthd = new CTHDOnline();
+                cthd.MaKho = 1;
+                cthd.SL = item.soLuong;
+                cthd.MaHD = hd.MaHD;
+                cthd.MaSP = item.maSP;
+                cthd.GiaBan = item.donGia;
+                db.CTHDOnlines.Add(cthd);
                
+            }
+            
+            db.SaveChanges();
 
+            return RedirectToAction("Index", "Home");
+        }
+       [HttpGet]
+        public ActionResult TaoCTHDTG(int MaKH)
+        {
+            HDTG.maKH = MaKH;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult TaoCTHDTG(HDTG hd)
+        {
+            KhachHang kh = db.KhachHangs.Where(x => x.MaKH == HDTG.maKH).SingleOrDefault();
+            HDTraGop hdtg = new HDTraGop();
+            hdtg.MaKH = HDTG.maKH;
+            hdtg.NgayCoc = DateTime.Now;
+            hdtg.TienCoc = Convert.ToDecimal(hd.TienCoc);
+            hdtg.SoThang = hd.soThang;
+            hdtg.laiSuat = hd.laiSuat;
+            if(hdtg.SoThang==3)
+            {
+                hdtg.laiSuat = 3;
+            }
+            else
+            {
+                hdtg.laiSuat = 2;
+            }
+            db.HDTraGops.Add(hdtg);
+            List<GioHang> gioHang = getGioHang();
+            foreach (var item in gioHang)
+            {
+                CTHDTG cthd = new CTHDTG();
+                cthd.MaKho = hd.maKho;
+                cthd.MaHD = hdtg.MaHD;
+                cthd.MaSP = item.maSP;
+                cthd.SL = item.soLuong;
+                cthd.GiaBan = item.donGia;
+                db.CTHDTGs.Add(cthd);
             }
             db.SaveChanges();
-            
-            return RedirectToAction("Index", "Home");
+
+            return View();
         }
     }
 }

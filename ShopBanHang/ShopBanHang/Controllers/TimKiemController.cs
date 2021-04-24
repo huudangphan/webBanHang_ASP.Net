@@ -9,19 +9,19 @@ namespace ShopBanHang.Controllers
 {
     public class TimKiemController : Controller
     {
-        QLShopEntities db = new QLShopEntities();
-        // GET: TimKiem
-        public ActionResult Index()
-        {
-            return View();
-        }
-      [HttpPost]
-        public ActionResult TimKiemKQ(string search)
-        {
-            var kq = db.SanPhams.Where(x => x.tenSP.StartsWith(search)).ToList();
+      //  QLShopEntities db = new QLShopEntities();
+      //  // GET: TimKiem
+      //  public ActionResult Index()
+      //  {
+      //      return View();
+      //  }
+      //[HttpPost]
+      //  public ActionResult TimKiemKQ(string search)
+      //  {
+      //      var kq = db.SanPhams.Where(x => x.tenSP.StartsWith(search)).ToList();
 
 
-            return View(kq);
-        }
+      //      return View(kq);
+      //  }
     }
 }

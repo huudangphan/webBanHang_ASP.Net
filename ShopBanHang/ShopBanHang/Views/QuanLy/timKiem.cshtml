@@ -9,15 +9,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.tenSP)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.loaiSP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.slTon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ngayCapNhat)
-            </td>
+            
             <td>
                 <a href="@Url.Action("xemChiTiet","QuanLy",new { @masp=item.maSP})" style="color:white"><img src="~/Assit/img/@Html.DisplayFor(modelItem => item.anh)" alt="Alternate Text" style="width:60px;height:70px;" /></a>
                 @*<img src="~/Assit/img/@Html.DisplayFor(modelItem => item.anh)" alt="Alternate Text" style="width:60px;height:70px;"/>*@

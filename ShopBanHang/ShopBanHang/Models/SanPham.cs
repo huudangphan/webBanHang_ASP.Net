@@ -17,20 +17,23 @@ namespace ShopBanHang.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SanPham()
         {
-            this.ChiTietDonHangs = new HashSet<ChiTietDonHang>();
+            this.CTPNs = new HashSet<CTPN>();
+            this.CTTonKhoes = new HashSet<CTTonKho>();
         }
     
         public int maSP { get; set; }
-        public string tenSP { get; set; }
-        public string loaiSP { get; set; }
-        public Nullable<int> slTon { get; set; }
-        public Nullable<System.DateTime> ngayCapNhat { get; set; }
-        public string anh { get; set; }
         public Nullable<int> maHang { get; set; }
-        public Nullable<int> giaSP { get; set; }
+        public Nullable<int> maLoai { get; set; }
+        public string tenSP { get; set; }
+        public string anh { get; set; }
+        public Nullable<decimal> giaSP { get; set; }
+        public string MoTa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
+        public virtual ICollection<CTPN> CTPNs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTTonKho> CTTonKhoes { get; set; }
         public virtual Hang Hang { get; set; }
+        public virtual Loai Loai { get; set; }
     }
 }

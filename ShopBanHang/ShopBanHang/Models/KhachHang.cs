@@ -17,19 +17,28 @@ namespace ShopBanHang.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KhachHang()
         {
-            this.DonHangs = new HashSet<DonHang>();
+            this.CTTNs = new HashSet<CTTN>();
+            this.HDOffLines = new HashSet<HDOffLine>();
+            this.HDOnlines = new HashSet<HDOnline>();
+            this.HDTraGops = new HashSet<HDTraGop>();
         }
     
-        public int maKH { get; set; }
+        public int MaKH { get; set; }
         public string tenKH { get; set; }
-        public string diaChi { get; set; }
-        public Nullable<System.DateTime> ngaySinh { get; set; }
-        public string emai { get; set; }
-        public Nullable<int> sdt { get; set; }
+        public string DiaChi { get; set; }
+        public Nullable<int> SDT { get; set; }
+        public string email { get; set; }
         public string taiKhoan { get; set; }
         public string matKhau { get; set; }
+        public Nullable<decimal> tongMua { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonHang> DonHangs { get; set; }
+        public virtual ICollection<CTTN> CTTNs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HDOffLine> HDOffLines { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HDOnline> HDOnlines { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HDTraGop> HDTraGops { get; set; }
     }
 }

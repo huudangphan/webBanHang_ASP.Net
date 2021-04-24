@@ -147,15 +147,54 @@
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HDTG.cs" />
+    <Compile Include="Models\ThongTinKhachHang.cs" />
+    <Compile Include="Models\XCTDHOffline.cs" />
+    <Compile Include="Models\CTHDOff.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTHDOnline.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTHDTG.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTPN.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTTN.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTTonKho.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\Hang.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HDNhapSP.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HDOffLine.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HDOnline.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HDTraGop.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Kho.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Loai.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MessModel.cs" />
     <Compile Include="Models\Model.Context.cs">
@@ -188,17 +227,39 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModelShopBanHang.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelShopBanHang.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelShopBanHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelShopBanHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelShopBanHang.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\ModelUser.cs" />
+    <Compile Include="Models\Phat.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhieuTraGop.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SanPham.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TinNhan.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs" />
+    <Compile Include="Models\XCTHDTG.cs" />
     <Compile Include="MultiData\MultiDataa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -957,6 +1018,16 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\ModelShopBanHang.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelShopBanHang.edmx</DependentUpon>
+      <LastGenOutput>ModelShopBanHang.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelShopBanHang.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelShopBanHang.edmx</DependentUpon>
+      <LastGenOutput>ModelShopBanHang.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Assit\scss\navs\_global.scss" />
@@ -1131,6 +1202,13 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\ModelShopBanHang.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelShopBanHang.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelShopBanHang.edmx.diagram">
+      <DependentUpon>ModelShopBanHang.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1188,10 +1266,6 @@
     <Content Include="Views\QuanLy\xemChiTiet.cshtml" />
     <Content Include="Views\QuanLy\Add.cshtml" />
     <Content Include="Views\QuanLy\Delete.cshtml" />
-    <Content Include="Views\QuanLy\DonHangChuaGiao.cshtml" />
-    <Content Include="Views\QuanLy\DonHangDaGiao.cshtml" />
-    <Content Include="Views\QuanLy\QLDonHang.cshtml" />
-    <Content Include="Views\QuanLy\XemChiTietDonHang.cshtml" />
     <Content Include="Views\NguoiDung\Hang.cshtml" />
     <Content Include="Views\NguoiDung\XemChiTietDonHang.cshtml" />
     <Content Include="Views\NguoiDung\DangKy2.cshtml" />
@@ -1205,6 +1279,12 @@
     <Content Include="Views\TinNhan\Mess.cshtml" />
     <Content Include="Views\QuanLy\ListTn.cshtml" />
     <Content Include="Views\QuanLy\Mess.cshtml" />
+    <Content Include="Views\QuanLy\QLDonHangOnline.cshtml" />
+    <Content Include="Views\QuanLy\XemChiTietDonHang.cshtml" />
+    <Content Include="Views\QuanLy\TaoHDTG.cshtml" />
+    <Content Include="Views\QuanLy\TaoKhachHang.cshtml" />
+    <Content Include="Views\QuanLy\TimKiemKhachHang.cshtml" />
+    <Content Include="Views\GioHang\TaoCTHDTG.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

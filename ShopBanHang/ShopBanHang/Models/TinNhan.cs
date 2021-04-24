@@ -14,10 +14,16 @@ namespace ShopBanHang.Models
     
     public partial class TinNhan
     {
-        public int id { get; set; }
-        public Nullable<int> idGui { get; set; }
-        public Nullable<int> idNhan { get; set; }
-        public string Mess { get; set; }
-        public Nullable<System.DateTime> time { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TinNhan()
+        {
+            this.CTTNs = new HashSet<CTTN>();
+        }
+    
+        public int maTN { get; set; }
+        public Nullable<System.DateTime> ThoiGian { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTTN> CTTNs { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
+<script src="~/Scripts/jquery-3.4.1.js"></script>
 <head>
 
     <meta charset="utf-8">
@@ -58,10 +58,12 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         @*<a class="collapse-item" href="/appleLaptop">Apple</a>*@
-                        <a class="collapse-item" href="@Url.Action("QLDonHang","QuanLy")">Tất cả đơn hàng</a>
+                        <a class="collapse-item" href="@Url.Action("QLDonHangOnline","QuanLy")">Tất cả đơn hàng</a>
                         <a class="collapse-item" href="@Url.Action("DonHangChuaGiao","QuanLy")">Đơn hàng chưa giao</a>
                         <a class="collapse-item" href="@Url.Action("DonHangDaGiao","QuanLy")">Đơn hàng đã giao</a>
-
+                        <a class="collapse-item" href="@Url.Action("DonHangDaGiao","QuanLy")">Đơn hàng Trả góp</a>
+                        <a class="collapse-item" href="@Url.Action("DonHangDaGiao","QuanLy")">Trả góp</a>
+                        <a class="collapse-item" href="@Url.Action("DonHangDaGiao","QuanLy")">Đơn hàng tại cửa hàng</a>
 
 
 
@@ -176,7 +178,7 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    @{ Html.RenderAction("timKiem", "QuanLy");}
+                    @*@{ Html.RenderAction("timKiem", "QuanLy");}*@
                     @RenderBody()
                 </div>
 

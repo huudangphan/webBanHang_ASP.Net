@@ -5,94 +5,118 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-
+<script src="~/Scripts/jquery-3.4.1.js"></script>
 
 @using (Html.BeginForm("Add","QuanLy",FormMethod.Post,new { @enctype="multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>SanPham</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.tenSP, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tenSP, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.tenSP, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.loaiSP, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @*@Html.EditorFor(model => model.loaiSP, new { htmlAttributes = new { @class = "form-control" } }
-                    )*@
-                
-                    @Html.DropDownListFor(x => x.loaiSP, new[]
-          {
-              new SelectListItem(){Text="phone",Value="phone"},
-              new SelectListItem(){Text="camera",Value="camera"},
-              new SelectListItem(){Text="laptop",Value="laptop"},
-              new SelectListItem(){Text="watch",Value="watch"}
-          })
-                
-               
-               
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.slTon, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.slTon, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.slTon, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ngayCapNhat, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @*@Html.EditorFor(model => model.ngayCapNhat, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ngayCapNhat, "", new { @class = "text-danger" })*@
-                <input class="form-control text-box single-line" data-val="true" data-val-date="The field ngayCapNhat must be a date." id="ngayCapNhat" name="ngayCapNhat" type="date" value="">
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.anh, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input type="file" name="fileUp" value="" />
-            </div>
-            @ViewBag.ThongBao
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.maHang, "maHang", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-
-               @Html.DropDownList("maHang")
-
-
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.giaSP, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.giaSP, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.giaSP, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+<div class="form-horizontal">
+    <h4>SanPham</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.tenSP, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tenSP, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tenSP, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.loaiSP, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.loaiSP, new { htmlAttributes = new { @class = "form-control" } }
+                )*@
+
+            @Html.DropDownListFor(x => x.maLoai, new[]
+  {
+      new SelectListItem(){Text="Dien thoai",Value="1"},
+      new SelectListItem(){Text="Laptop",Value="2"},
+      new SelectListItem(){Text="Dong ho",Value="3"},
+      new SelectListItem(){Text="Camera",Value="4"}
+  })
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.anh, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="fileUp" onchange="previewFile()" value="" />
+        </div>
+        @ViewBag.ThongBao
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.maHang, "maHang", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+
+            @Html.DropDownList("maHang")
+
+
+        </div>
+    </div>
+    <div class="form-group">
+
+        <div class="col-md-10">
+
+            <img src="~/Assit/img/product.png" alt="Alternate Text" />
+
+
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.giaSP, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.giaSP, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.giaSP, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.MoTa, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
 }
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+    
+   
+<script>
+    function previewFile() {
+        var preview = document.querySelector('img');
+        var file = document.querySelector('input[type=file]').files[0];
+        var reader = new FileReader();
+
+        reader.addEventListener("load", function () {
+            preview.src = reader.result;
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+  
