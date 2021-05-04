@@ -1,0 +1,22 @@
+﻿@model IEnumerable<ShopBanHang.Models.HDOffLine>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayMua)
+        </th>
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayMua)
+        </td>
+        
+    </tr>
+}
+
+</table>

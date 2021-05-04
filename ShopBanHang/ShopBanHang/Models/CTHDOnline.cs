@@ -19,8 +19,11 @@ namespace ShopBanHang.Models
         public int MaHD { get; set; }
         public Nullable<int> SL { get; set; }
         public Nullable<decimal> GiaBan { get; set; }
-    
+        public double thanhTien { get; set; }
+        public  double tongTien { get; set; }
+
         public virtual CTTonKho CTTonKho { get; set; }
         public virtual HDOnline HDOnline { get; set; }
+     
     }
 }

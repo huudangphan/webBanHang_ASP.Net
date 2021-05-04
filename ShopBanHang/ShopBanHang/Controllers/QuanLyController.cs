@@ -113,7 +113,7 @@ namespace ShopBanHang.Controllers
             }
             return View(sp);
         }
-        #region code cu
+        #region quan ly hoa don online
         //public ViewResult DetailsAcc(int makh)
         //{
         //    var kh = db.KhachHangs.Where(x => x.maKH == makh);
@@ -156,147 +156,52 @@ namespace ShopBanHang.Controllers
         //    mymodel.donhang = db.DonHangs.Where(x => x.tinhTrang == 1).ToList();
         //    return View(mymodel);
         //}
-        public ActionResult XemChiTietDonHang(int madh)
-        {
-
-            var mymodel = new MultiDataa();
-            mymodel.donhang = db.HDOnlines.Where(x => x.MaHD== madh).ToList();
-            mymodel.ctdonhang = db.CTHDOnlines.Where(x => x.MaHD == madh).ToList();
-            var makh = (from c in mymodel.donhang
-                        where c.MaHD == madh
-                        select c.MaKH).FirstOrDefault();
-
-            mymodel.khachhang = db.KhachHangs.Where(c => c.MaKH == makh);
-            mymodel.sanPhams = (from a in db.CTHDOnlines
-                                join b in db.SanPhams
-                                on a.MaSP equals b.maSP
-                                where a.MaHD == madh
-                                select b).ToList();
-
-
-            return View(mymodel);
-        }
-        //public ActionResult GuiHang(int madh)
-        //{
-        //    var hang = db.DonHangs.SingleOrDefault(c => c.maDH == madh);
-
-        //    var listsp = (from c in db.ChiTietDonHangs
-        //                  join dh in db.DonHangs
-        //                  on c.maDH equals dh.maDH
-        //                  where c.maDH == madh
-        //                  select c).ToList();
-        //    var listct = (from ct in db.ChiTietDonHangs
-        //                  join d in db.DonHangs
-        //                  on ct.maDH equals d.maDH
-        //                  join sp in db.SanPhams
-        //                  on ct.maSP equals sp.maSP
-        //                  where ct.maDH == madh && ct.maSP == sp.maSP
-        //                  select sp).ToList();
-        //    foreach (var item in listsp)
-        //    {
-        //        foreach (var itemct in listct)
-        //        {
-        //            if (item.soLuong > itemct.slTon)
-        //            {
-        //                hang.tinhTrang = 1;
-        //                hang.daThanhToan = 1;
-        //                DateTime date = DateTime.Now;
-        //                hang.ngayGiao = date;
-        //                itemct.slTon -= 1;
-        //            }
-        //            else
-        //            {
-        //                ViewBag.error = "Số lượng hàng tồn trong kho không đủ";
-        //                return View();
-        //            }
-
-        //        }
-        //    }
-
-
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index", "QuanLy");
-        //}
-        //public ActionResult QLTaiKhoan()
-        //{
-        //    var acc = db.KhachHangs.ToList();
-
-
-        //    return View(acc);
-        //}
-        //public ActionResult ListTn()
-        //{
-        //    var list = (from kh in db.KhachHangs
-        //                join tn in db.TinNhans
-        //                on kh.maKH equals tn.idGui
-        //                where kh.maKH == tn.idGui
-        //                select kh).Distinct().ToList();
-        //    return View(list);
-
-        //}
-        //[HttpPost]
-        //public ActionResult Mess(string tentk = "")
-        //{
-        //    var mess = (from tn in db.TinNhans
-        //                join kh in db.KhachHangs
-        //                on tn.idGui equals kh.maKH
-        //                where kh.taiKhoan == tentk
-        //                select tn).ToList();
-        //    return View(mess);
-        //}
-        #endregion
         public ViewResult QLDonHangOnline()
         {
             var result = db.HDOnlines.ToList();
             return View(result);
         }
-        public ViewResult QlDonHangOffline()
+        public ActionResult XemChiTietDonHang(int mahd)
         {
-            return View(db.HDOffLines.ToList());
+            ModelCTDHOnline.mahd = mahd;                  
+
+            return View();
         }
-        public ActionResult XemCTHDOff(int mahd)
+       
+       public PartialViewResult viewKhach()
         {
-            var mymodel = new XCTDHOffline();
-            mymodel.hdOffline = db.HDOffLines.Where(x => x.MaHD==mahd).ToList();
-            mymodel.cthdOffline = db.CTHDOffs.Where(x => x.MaHD==mahd).ToList();
-            var makh = (from c in mymodel.hdOffline
-                        where c.MaHD == mahd
-                        select c.MaKH).FirstOrDefault();
-
-            mymodel.khachang = db.KhachHangs.Where(c => c.MaKH == makh);
-            mymodel.sapham = (from a in db.CTHDOffs
-                                join b in db.SanPhams
-                                on a.MaSP equals b.maSP
-                                where a.MaHD == mahd
-                                select b).ToList();
-
-            return View(mymodel);
-
+            var listkh = (from kh in db.KhachHangs
+                          join hd in db.HDOnlines
+                          on kh.MaKH equals hd.MaKH
+                          where hd.MaHD == ModelCTDHOnline.mahd
+            select kh
+                        ).ToList();
+            return PartialView(listkh);
         }
-        public ViewResult QLHDTG()
+        public PartialViewResult viewSP()
         {
-            return View(db.HDTraGops.ToList());
+            var listsp = (from ct in db.CTHDOnlines
+                          join sp in db.SanPhams
+                          on ct.MaSP equals sp.maSP
+                          where ct.MaHD == ModelCTDHOnline.mahd
+                          select sp
+                       ).ToList();
+            return PartialView(listsp);
         }
-        public ViewResult CTHDTG(int mahd)
+        public PartialViewResult viewHDOnline()
         {
-            var mymodel = new XCTHDTG();
-            mymodel.hdtragop = db.HDTraGops.Where(x => x.MaHD == mahd).ToList();
-            mymodel.cthdtg = db.CTHDTGs.Where(x => x.MaHD == mahd).ToList();
-            var makh = (from c in mymodel.hdtragop
-                        where c.MaHD == mahd
-                        select c.MaKH).FirstOrDefault();
-
-            mymodel.khachang = db.KhachHangs.Where(c => c.MaKH == makh);
-            mymodel.sapham = (from a in db.CTHDTGs
-                              join b in db.SanPhams
-                              on a.MaSP equals b.maSP
-                              where a.MaHD == mahd
-                              select b).ToList();
-
-
-            return View(mymodel);
+            var listDH = db.HDOnlines.Where(x => x.MaHD == ModelCTDHOnline.mahd).ToList();
+            return PartialView(listDH);
         }
-        public ActionResult GuiHang(int madh,FormCollection f)
+        public PartialViewResult viewCTHDOnline()
+        {
+            var listcDH = db.CTHDOnlines.Where(x => x.MaHD == ModelCTDHOnline.mahd).ToList();
+            
+           
+            return PartialView(listcDH);
+        }
+
+        public ActionResult GuiHang(int madh, FormCollection f)
         {
             int maKho = 1 /*Int32.Parse(f["txtMaKho"]);*/;
             var hang = db.HDOnlines.SingleOrDefault(c => c.MaHD == madh);
@@ -319,7 +224,8 @@ namespace ShopBanHang.Controllers
             {
                 foreach (var itemct in listct)
                 {
-                    try                    {
+                    try
+                    {
 
                         var s = (from k in db.CTTonKhoes
                                  where k.MaKho == maKho && k.MaSP == itemct.maSP
@@ -327,7 +233,7 @@ namespace ShopBanHang.Controllers
                         //list san pham ton kho
                         foreach (var Tonkho in s)
                         {
-                            if (item.SL <Tonkho.SL)
+                            if (item.SL < Tonkho.SL)
                             // kiem tra so luong hang trong kho > so luong hang ban???
                             {
                                 hang.TinhTrang = true;
@@ -346,14 +252,14 @@ namespace ShopBanHang.Controllers
                             }
                         }
 
-                        
+
                     }
                     catch (Exception ex)
                     {
 
                         ViewBag.error = ex.ToString();
-                    }                   
-                   
+                    }
+
                 }
             }
 
@@ -361,12 +267,113 @@ namespace ShopBanHang.Controllers
             db.SaveChanges();
             return RedirectToAction("Index", "QuanLy");
         }
-                
+
+        #endregion
+        #region quan ly hoa don offline
+
+        public PartialViewResult viewKhachOff()
+        {
+            var listkhOff = (from kh in db.KhachHangs
+                          join hd in db.HDOffLines
+                          on kh.MaKH equals hd.MaKH
+                          where hd.MaHD == ModelCTDHOnline.mahd
+                          select kh
+                        ).ToList();
+            return PartialView(listkhOff);
+        }
+        public PartialViewResult viewSPOff()
+        {
+            var listspOff = (from ct in db.CTHDOffs
+                          join sp in db.SanPhams
+                          on ct.MaSP equals sp.maSP
+                          where ct.MaHD == ModelCTDHOnline.mahd
+                          select sp
+                       ).ToList();
+            return PartialView(listspOff);
+        }
+        public PartialViewResult viewHDOffline()
+        {
+            var listDHOff = db.HDOffLines.Where(x => x.MaHD == ModelCTDHOnline.mahd).ToList();
+            return PartialView(listDHOff);
+        }
+        public PartialViewResult viewCTHDOffline()
+        {
+            var listcDH = db.CTHDOffs.Where(x => x.MaHD == ModelCTDHOnline.mahd).ToList();
+
+
+            return PartialView(listcDH);
+        }
+        public ViewResult QlDonHangOffline()
+        {
+            return View(db.HDOffLines.ToList());
+        }
+        public ActionResult XemCTHDOff(int mahd)
+        {
+            ModelCTDHOnline.mahd = mahd;                    
+            
+
+            return View();
+
+        }
+        #endregion
+        #region quan ly hoa don tra gop
+        public ViewResult QLHDTG()
+        {
+            return View(db.HDTraGops.ToList());
+        }
+        public PartialViewResult viewKhachTG()
+        {
+            var listkhOff = (from kh in db.KhachHangs
+                             join hd in db.HDTraGops
+                             on kh.MaKH equals hd.MaKH
+                             where hd.MaHD == ModelCTDHOnline.mahd
+                             select kh
+                        ).ToList();
+            return PartialView(listkhOff);
+        }
+        public PartialViewResult viewSPTG()
+        {
+            var listspOff = (from ct in db.CTHDTGs
+                             join sp in db.SanPhams
+                             on ct.MaSP equals sp.maSP
+                             where ct.MaHD == ModelCTDHOnline.mahd
+                             select sp
+                       ).ToList();
+            return PartialView(listspOff);
+        }
+        public PartialViewResult viewHDTG()
+        {
+            var listDHOff = db.HDTraGops.Where(x => x.MaHD == ModelCTDHOnline.mahd).ToList();
+            return PartialView(listDHOff);
+        }
+        public PartialViewResult viewCTHDTG()
+        {
+            var listcDH = db.CTHDTGs.Where(x => x.MaHD == ModelCTDHOnline.mahd).ToList();
+
+
+            return PartialView(listcDH);
+        }
+        public ViewResult XemCTHDTG(int mahd)
+        {
+            ModelCTDHOnline.mahd = mahd;
+
+            return View();
+        }
+        #endregion
+       
+           // tim thong tin khach hang neu khach da tung mua hang o cua hang
+           // nếu không thì tạo thông tin khách hàng trước khi mua
+           // chọn sản phẩm vào giỏ hàng trước rồi mới chọn hình thức thanh toán
         public ActionResult TaoHDTG(string tuKhoa)
         {
             var result = db.KhachHangs.Where(x => x.tenKH.Contains(tuKhoa)).ToList();
             return View(result);
         }   
+        public ActionResult TaoHDOff(string tuKhoa)
+        {
+            var result = db.KhachHangs.Where(x => x.tenKH.Contains(tuKhoa)).ToList();
+            return View(result);
+        }
        
         [HttpGet]
         public ActionResult TaoKhachHang()
@@ -376,7 +383,15 @@ namespace ShopBanHang.Controllers
         [HttpPost]
         public ActionResult TaoKhachHang(ThongTinKhachHang kh)
         {
-            return View();
+            KhachHang khach = new KhachHang();
+            khach.tenKH = kh.tenKH;
+            khach.DiaChi = kh.diaChi;
+            khach.SDT = kh.sdt;
+            khach.email = kh.email;
+            khach.tongMua = 0;
+            db.KhachHangs.Add(khach);
+            db.SaveChanges();
+            return RedirectToAction("TaoHDTG", "QuanLy");
         }
         public PartialViewResult TimKiemKhachHang(string tuKhoa)
         {

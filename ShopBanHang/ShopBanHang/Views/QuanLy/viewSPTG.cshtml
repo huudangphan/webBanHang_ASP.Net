@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ShopBanHang.Models.SanPham>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tenSP)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.giaSP)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Hang.tenHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Loai.TenLoaiSP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tenSP)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.giaSP)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Hang.tenHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Loai.TenLoaiSP)
+        </td>
+      
+    </tr>
+}
+
+</table>

@@ -21,7 +21,7 @@ namespace ShopBanHang.Controllers
         public PartialViewResult timKiem(string search)
         {
             var kq = db.SanPhams.Where(x => x.tenSP.Contains(search)).ToList();
-
+            
 
             return PartialView(kq);
         }

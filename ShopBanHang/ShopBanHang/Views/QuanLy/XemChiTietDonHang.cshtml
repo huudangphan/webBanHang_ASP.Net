@@ -1,52 +1,15 @@
-﻿@model ShopBanHang.MultiData.MultiDataa
+﻿
 
 @{
     ViewBag.Title = "XemChiTietDonHang";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-@{ WebGrid obj1 = new WebGrid(source: Model.ctdonhang, canPage: true, rowsPerPage: 10);}@obj1.GetHtml(tableStyle: "table table-bordered table-hover",
-alternatingRowStyle: "info", columns: obj1.Columns(
-obj1.Column("MaHD", "Mã"),
-obj1.Column("MaSP", "Mã sản phẩm"),
-obj1.Column("SL", "Số lượng"),
-obj1.Column("GiaBan", "DonGia"),
-obj1.Column(format: (item) => Html.ActionLink("Gửi hàng", "GuiHang", new { madh = item.MaHD }))
-
-));
-@ViewBag.error
-
-@{ WebGrid obj = new WebGrid(source: Model.donhang, canPage: true, rowsPerPage: 10); }
-@obj.GetHtml(tableStyle: "table table-bordered table-hover",
-alternatingRowStyle: "info", columns: obj.Columns(
 
 
+@{ Html.RenderAction("viewKhach", "QuanLy");}
+@{ Html.RenderAction("viewSP", "QuanLy");}
 
-obj.Column("NgayDat", "Ngày đặt"),
-obj.Column("NgayGiao", "Ngày giao")
+@{ Html.RenderAction("viewCTHDOnline", "QuanLy");}
 
-
-));
-
-
-
-
-
-@{ WebGrid obj2 = new WebGrid(source: Model.khachhang, canPage: true, rowsPerPage: 10);}@obj2.GetHtml(tableStyle: "table table-bordered table-hover",
-alternatingRowStyle: "info", columns: obj1.Columns(
-obj1.Column("tenKH", "Tên"),
-obj1.Column("DiaChi", "Địa chỉ"),
-obj1.Column("SDT", "sdt")
-
-
-));
-@{ WebGrid obj3 = new WebGrid(source: Model.sanPhams, canPage: true, rowsPerPage: 10);}@obj3.GetHtml(tableStyle: "table table-bordered table-hover",
-alternatingRowStyle: "info", columns: obj1.Columns(
-obj3.Column("tenSP", "Tên sản phẩm")
-
-
-
-
-));
-
-
+@{ Html.RenderAction("viewHDOnline", "QuanLy");}

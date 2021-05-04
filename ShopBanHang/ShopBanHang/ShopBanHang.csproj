@@ -147,7 +147,9 @@
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HDOff.cs" />
     <Compile Include="Models\HDTG.cs" />
+    <Compile Include="Models\ModelCTDHOnline.cs" />
     <Compile Include="Models\ThongTinKhachHang.cs" />
     <Compile Include="Models\XCTDHOffline.cs" />
     <Compile Include="Models\CTHDOff.cs">
@@ -989,11 +991,14 @@
     <Content Include="Assit\vendor\fontawesome-free\svgs\solid\align-right.svg" />
     <Content Include="Assit\vendor\fontawesome-free\svgs\solid\allergies.svg" />
     <Content Include="Assit\vendor\fontawesome-free\svgs\solid\ambulance.svg" />
+    <Content Include="Content\Admin.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CustomerNoAD.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\trangchukhachhang.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1280,11 +1285,31 @@
     <Content Include="Views\QuanLy\ListTn.cshtml" />
     <Content Include="Views\QuanLy\Mess.cshtml" />
     <Content Include="Views\QuanLy\QLDonHangOnline.cshtml" />
-    <Content Include="Views\QuanLy\XemChiTietDonHang.cshtml" />
     <Content Include="Views\QuanLy\TaoHDTG.cshtml" />
     <Content Include="Views\QuanLy\TaoKhachHang.cshtml" />
     <Content Include="Views\QuanLy\TimKiemKhachHang.cshtml" />
     <Content Include="Views\GioHang\TaoCTHDTG.cshtml" />
+    <Content Include="Views\QuanLy\XemChiTietDonHang.cshtml" />
+    <Content Include="Views\QuanLy\viewKhach.cshtml" />
+    <Content Include="Views\QuanLy\viewSP.cshtml" />
+    <Content Include="Views\QuanLy\viewHDOnline.cshtml" />
+    <Content Include="Views\QuanLy\viewCTHDOnline.cshtml" />
+    <Content Include="Views\QuanLy\QlDonHangOffline.cshtml" />
+    <Content Include="Views\QuanLy\XemCTHDOff.cshtml" />
+    <Content Include="Views\QuanLy\viewKhachOff.cshtml" />
+    <Content Include="Views\QuanLy\viewSPOff.cshtml" />
+    <Content Include="Views\QuanLy\viewHDOffline.cshtml" />
+    <Content Include="Views\QuanLy\viewCTHDOffline.cshtml" />
+    <Content Include="Views\QuanLy\QLHDTG.cshtml" />
+    <Content Include="Views\QuanLy\viewKhachTG.cshtml" />
+    <Content Include="Views\QuanLy\viewSPTG.cshtml" />
+    <Content Include="Views\QuanLy\viewHDTG.cshtml" />
+    <Content Include="Views\QuanLy\XemCTHDTG.cshtml" />
+    <Content Include="Views\QuanLy\viewCTHDTG.cshtml" />
+    <Content Include="Views\QuanLy\TaoHDOff.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdminCT.cshtml" />
+    <Content Include="Views\Shared\_LayoutKhach1.cshtml" />
+    <Content Include="Views\Shared\_LayoutKhach2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -41,29 +41,58 @@ namespace ShopBanHang.Controllers
 
 
         //}
+
+        [HttpGet]
+        public ActionResult DangKy2()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult DangKy2(ModelUser kh)
         {
-            var check = db.KhachHangs.SingleOrDefault(c => c.taiKhoan == kh.username);
-            if (check == null && kh.password == kh.confirmPassword)
+            //var check = db.KhachHangs.SingleOrDefault(c => c.taiKhoan == kh.username);
+            try
             {
                 KhachHang khach = new KhachHang();
                 khach.tenKH = kh.tenKH;
-                khach.DiaChi = kh.diaChi;               
+                khach.DiaChi = kh.diaChi;
                 khach.email = kh.email;
                 khach.SDT = kh.sdt;
-               
+
                 khach.taiKhoan = kh.username;
                 khach.matKhau = kh.password;
                 db.KhachHangs.Add(khach);
                 db.SaveChanges();
                 return RedirectToAction("DangNhap", "NguoiDung");
             }
-
-            else
+            catch (Exception ex)
             {
 
+                ViewBag.thongBao = "Tài khoản bị trùng";
                 return View();
             }
+
+            //if (check == null && kh.password == kh.confirmPassword)
+            //{
+            //    KhachHang khach = new KhachHang();
+            //    khach.tenKH = kh.tenKH;
+            //    khach.DiaChi = kh.diaChi;
+            //    khach.email = kh.email;
+            //    khach.SDT = kh.sdt;
+
+            //    khach.taiKhoan = kh.username;
+            //    khach.matKhau = kh.password;
+            //    db.KhachHangs.Add(khach);
+            //    db.SaveChanges();
+            //    return RedirectToAction("DangNhap", "NguoiDung");
+            //}
+
+            //else
+            //{
+
+            //    return View();
+            //}
 
 
         }

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<ShopBanHang.Models.KhachHang>
 
 @{
-    ViewBag.Title = "TaoHDTG";
+    ViewBag.Title = "TaoHDOff";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-@using (Html.BeginForm("TaoHDTG", "QuanLy"))
+@using (Html.BeginForm("TaoHDOff", "QuanLy"))
 {
     @Html.TextBox("tuKhoa")
     <div class="input-group-append">
@@ -15,7 +15,7 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model=>model.MaKH)
+                @Html.DisplayNameFor(model => model.MaKH)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.tenKH)
@@ -30,9 +30,7 @@
                 @Html.DisplayNameFor(model => model.email)
             </th>
 
-            <th>
-                @Html.DisplayNameFor(model => model.tongMua)
-            </th>
+            
             <th></th>
         </tr>
 
@@ -55,12 +53,10 @@
                     @Html.DisplayFor(modelItem => item.email)
                 </td>
 
+                
                 <td>
-                    @Html.DisplayFor(modelItem => item.tongMua)
-                </td>
-                <td>
-                    <a href="@Url.Action("TaoCTHDTG","GioHang", new { @MaKH=item.MaKH})">Chọn</a>
-                   
+                    <a href="@Url.Action("TaoCTHDOff","GioHang", new { @MaKH=item.MaKH})">Chọn</a>
+
                 </td>
             </tr>
         }

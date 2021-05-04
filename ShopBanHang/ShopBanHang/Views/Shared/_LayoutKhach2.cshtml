@@ -1,0 +1,163 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-a11y="true"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/trangchukhachhang.css">
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+            <div class="topofweb">
+                <div style="width: 70%; height: 40px;margin-left: 15%;float: left;">
+                    <ul style="float: right; text-align: center;">
+                        <li class="topmenu">Đăng Nhập</li>
+                        <li class="topmenu">Đăng kí</li>
+                    </ul>
+                    <p style="font-size: 20px; color: hotpink; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: 30px;">Hotline: 0706883095</p>
+                </div>
+            </div>
+            <div class="search">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        <img src="~/image/logo.png" alt="" style="width: 100%;height: 120px;">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="search-txt" placeholder="Tìm Kiếm..." style="width: 300px;height: 40px;margin-top: 40px;">
+                        <a href="" class="search-btn">
+                            <i class="fas fa-search" style="width: 60px;height: 40px; vertical-align: middle;"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+            <div class="mid">
+                <ul>
+                    <li>
+                        <a href="">Trang Chủ</a>
+                    </li>
+                    <li>
+                        <a href="">Laptop</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Apple</a></li>
+                            <li><a href="">Dell</a></li>
+                            <li><a href="">HP</a></li>
+                            <li><a href="">Asus</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Phone</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Apple</a></li>
+                            <li><a href="">SamSung</a></li>
+                            <li><a href="">Xiaomi</a></li>
+                            <li><a href="">Oppo</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Watch</a>
+                        <ul class="sub-menu" style="color: white;">
+                            <li><a href="">Apple</a></li>
+                            <li><a href="">Xiaomi</a></li>
+                            <li><a href="">Huewei</a></li>
+                            <li><a href="">LG</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Camera</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Sony</a></li>
+                            <li><a href="">Cannon</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Liên Hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="quangcao">
+                <div id="slider">
+                    <img src="~/image/qc1.png" alt="" class="slide" id="imgqc" onclick="changeimg">
+                </div>
+            </div>
+            <div class="left">
+                <div id="sliderleft">
+                    <img src="~/image/l1.png" alt="" class="slideleft" id="imgqcl" onclick="changeimgleft">
+                </div>
+            </div>
+            <div class="listsp">
+                @{ Html.RenderAction("timKiem", "Home");}
+                @{ Html.RenderAction("SanPhamHot", "Home");}
+                @{ Html.RenderAction("DienthoaiHot", "Home");}
+                @{ Html.RenderAction("LaptopHot", "Home");}
+                @{ Html.RenderAction("DongHoHot", "Home");}
+                @RenderBody()
+            </div>
+            <div class="right">
+                <div id="sliderright">
+                    <img src="~/image/l1.png" alt="" class="slideright" id="imgqcr" onclick="changeimgright">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div style="width: 30%;height: 100%;float: left;background-color: blue;"></div>
+            <div style="width: 40%;height: 100%;float: left;background-color: red;"></div>
+            <div style="width: 30%;height: 100%;float: left;background-color: green;"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        var index=0;
+        var indexleft=0;
+        var indexright=0;
+        changeimg= function(){
+
+            var imgs = ["../image/qc2.png", "../image/gearvn.png", "../image/qc4.png","../image/qc1.png"];
+            document.getElementById('imgqc').src=imgs[index];
+            index++;
+            if(index==4){
+                index=0;
+            }
+        }
+        changeimgleft=function(){
+            var imgls = ["../image/l2.png","../image/l1.png"];
+            document.getElementById('imgqcl').src=imgls[indexleft];
+            indexleft++;
+            if(indexleft==2){
+                indexleft=0;
+            }
+        }
+        changeimgright=function(){
+            var imgrs = ["../image/l2.png","../image/l1.png"];
+            document.getElementById('imgqcr').src=imgrs[indexright];
+            indexright++;
+            if(indexright==2){
+                indexright=0;
+            }
+        }
+        setInterval(changeimg,3000);
+        setInterval(changeimgleft,3000);
+        setInterval(changeimgright,3000);
+    </script>
+</body>
+</html>

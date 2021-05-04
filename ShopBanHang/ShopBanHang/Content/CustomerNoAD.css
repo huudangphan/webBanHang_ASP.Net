@@ -1,0 +1,106 @@
+﻿.main {
+    width: 100%;
+    height: auto;
+}
+
+.top {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.topofweb {
+    width: 100%;
+    height: auto;
+}
+
+.topmenu {
+    list-style-type: none;
+    display: inline-table;
+    width: 140px;
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.search {
+    width: 100%;
+    height: auto;
+    float: left;
+    border: 0.4px solid #ccc9c9;
+}
+
+.mid {
+    width: 100%;
+    height: auto;
+    float: left;
+    color: white;
+    font-weight: bold;
+    background-color: #4f4e4b;
+}
+
+
+    .mid ul {
+        list-style-type: none;
+        float: left;
+        margin-left: 18%;
+        text-align: center;
+    }
+
+        .mid ul li {
+            display: inline-table;
+            width: 110px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            position: relative;
+        }
+
+            .mid ul li a {
+                text-decoration: none;
+                color: white;
+                display: block;
+                position: relative;
+            }
+                .mid ul li a:hover {
+                    background-color: brown;
+                }
+
+                .mid ul li a::after {
+                    content: "";
+                    height: 5px;
+                    width: 0px;
+                    background: white;
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .mid ul li a:hover::after {
+                    width: 100%;
+                    
+                }
+
+            .mid ul li > .sub-menu {
+                display: none;
+            }
+
+            .mid ul li:hover .sub-menu {
+                display: block;
+                background-color: brown;
+                position: absolute;
+            }
+
+.content {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.footer {
+    width: 100%;
+    height: 200px;
+    float: left;
+    background-color: #4f4e4b;
+    color: white;
+}

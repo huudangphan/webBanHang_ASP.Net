@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ShopBanHang.Models.CTHDOnline>
+
+
+<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiaBan)
+            </th>
+            <th>
+                Thành tiền
+            </th>
+            <th>
+                Tổng tiền
+            </th>
+
+
+        </tr>
+
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            @if (true)
+            {
+                item.thanhTien = (double)(item.SL * item.GiaBan);
+              
+            }
+            @Html.DisplayFor(modelItem => item.thanhTien)
+        </td>
+       ]
+
+
+    </tr>
+
+
+
+    }
+
+
+    </table>
+
+
+

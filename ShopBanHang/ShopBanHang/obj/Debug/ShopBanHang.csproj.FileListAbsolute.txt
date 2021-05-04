@@ -287,7 +287,6 @@ E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csproj.CoreC
 E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csproj.CopyComplete
 E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.dll
 E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.pdb
-D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csprojAssemblyReference.cache
 E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\roslyn\csc.exe
 E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\roslyn\csc.exe.config
 E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\roslyn\csc.rsp
@@ -338,3 +337,4 @@ E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\roslyn\vbc.rsp
 E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\roslyn\VBCSCompiler.exe
 E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\roslyn\VBCSCompiler.exe.config
 E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csprojAssemblyReference.cache
+D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csprojAssemblyReference.cache

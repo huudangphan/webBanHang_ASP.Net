@@ -11,6 +11,8 @@
 <div>Tên sản phẩm: @Model.tenSP</div>
 <div>Giá:@String.Format("{0:0,0}", Model.giaSP) VNĐ </div>
 <div>@Model.MoTa</div>
-
+@using (Html.BeginForm("ThemGioHang", "GioHang", new { @masp = Model.maSP, @url = Request.Url.ToString() }))
+{
+<input type="submit" class="btn btn-primary" name="name" value="Mua" />}
 
 
