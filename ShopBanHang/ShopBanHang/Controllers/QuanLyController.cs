@@ -400,5 +400,25 @@ namespace ShopBanHang.Controllers
                        
             return PartialView(result);
         }
+    
+        public ActionResult TaoPhieuTraGop()
+        {
+            int mahd = ModelCTDHOnline.mahd;
+            return View(db.PhieuTraGops.Where(x=>x.MaHD==mahd).ToList());
+
+        }
+       
+        public ActionResult TaoPhieuTraGop2(int maPhieu)
+        {
+
+            int mahd = ModelCTDHOnline.mahd;
+            PhieuTraGop ptg = db.PhieuTraGops.Where(x => x.MaPhieu == maPhieu).FirstOrDefault();
+            ptg.NgayTra = DateTime.Parse(DateTime.Now.ToString()); /*DateTime.Parse("2022-10-10");*/
+            db.SaveChanges();
+            return View(db.PhieuTraGops.Where(x=>x.MaPhieu==maPhieu).SingleOrDefault());
+
+        }
+
+
     }
 }

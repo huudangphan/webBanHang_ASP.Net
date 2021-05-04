@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ShopBanHang.Models.GioHang>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.maSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hinhAnh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.donGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thanhTien)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.maSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tenSP)
+        </td>
+        <td><img src="@Url.Content("~/Assit/img/"+item.hinhAnh)" alt="Alternate Text" width="50" height="50" /></td>
+        <td>
+            @Html.DisplayFor(modelItem => item.donGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.thanhTien)
+        </td>
+      
+    </tr>
+}
+
+</table>

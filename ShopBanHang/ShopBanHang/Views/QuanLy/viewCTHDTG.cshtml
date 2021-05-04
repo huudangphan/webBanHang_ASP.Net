@@ -15,16 +15,17 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GiaBan)
-        </td>
-     
-      
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.SL)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GiaBan)
+    </td>
+    
+
+
+</tr>
 }
 
 </table>

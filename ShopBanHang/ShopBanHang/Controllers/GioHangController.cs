@@ -100,6 +100,13 @@ namespace ShopBanHang.Controllers
 
             return View(listGioHang);
         }
+        public PartialViewResult PartialGioHang()
+        {
+            
+            List<GioHang> listGioHang = getGioHang();
+
+            return PartialView(listGioHang);
+        }
         // tính tổng số lượng và tổng tiền 
         private int TongSoLuong()
         {
@@ -176,90 +183,99 @@ namespace ShopBanHang.Controllers
         [HttpPost]
         public ActionResult TaoCTHDTG(HDTG hd)
         {
-            KhachHang kh = db.KhachHangs.Where(x => x.MaKH == HDTG.maKH).SingleOrDefault();
-            HDTraGop hdtg = new HDTraGop();
-            hdtg.MaKH = HDTG.maKH;
-            hdtg.NgayCoc = DateTime.Now;
-            hdtg.TienCoc = Convert.ToDecimal(hd.TienCoc);
-            hdtg.SoThang = hd.soThang;
-            hdtg.laiSuat = hd.laiSuat;
-            if (hdtg.SoThang == 3)
+            try
             {
-                hdtg.laiSuat = 3;
-            }
-            else
-            {
-                hdtg.laiSuat = 2;
-            }
-            db.HDTraGops.Add(hdtg);
-            List<GioHang> gioHang = getGioHang();
-            foreach (var item in gioHang)
-            {
-                CTHDTG cthd = new CTHDTG();
-                cthd.MaKho = hd.maKho;
-                cthd.MaHD = hdtg.MaHD;
-                cthd.MaSP = item.maSP;
-                cthd.SL = item.soLuong;
-                cthd.GiaBan = item.donGia;
-                db.CTHDTGs.Add(cthd);
-            }
-            double tongTien = TongTien();
-            double tienHangThang = tongTien / hd.soThang;
-            int day = 31;
-            int month = 11;
-            int year = DateTime.Now.Year;
-            int j = 0;
-            string time = "";
-            for (int i = 1; i <= hd.soThang; i++)
-            {
-                PhieuTraGop tg = new PhieuTraGop();
-                tg.MaHD = hdtg.MaHD;
-                tg.Ki = i;
-                tg.MaMucPhat = 1;
-                tg.TienDong = (decimal?)tienHangThang;
-                tg.TienPhat = 0;
-                j = month + i;
-                if(j>12)
+                KhachHang kh = db.KhachHangs.Where(x => x.MaKH == HDTG.maKH).SingleOrDefault();
+                HDTraGop hdtg = new HDTraGop();
+                hdtg.MaKH = HDTG.maKH;
+                hdtg.NgayCoc = DateTime.Now;
+                hdtg.TienCoc = Convert.ToDecimal(hd.TienCoc);
+                hdtg.SoThang = hd.soThang;
+                hdtg.laiSuat = hd.laiSuat;
+                if (hdtg.SoThang == 3)
                 {
-                    year = 2022;
-                    int count = hd.soThang - i;
-                    for(int a=1;a<count+2;a++)
-                    {
-                        time = year + "-" + a + "-" + day;
-                        if (thang30(a) && day == 31)
-                        {
-                            time = year + "-" + a + "-30";
-                        }
-                        if (a == 2 && day > 29)
-                        {
-                            time = year + "-" + a + "-28";
-                        }
-                        tg.NgayDenHan = DateTime.Parse(time);
-                        db.PhieuTraGops.Add(tg);
-                    }
+                    hdtg.laiSuat = 3;
                 }
                 else
                 {
-                    time = year + "-" + j + "-" + day;
-                    if (thang30(j) && day == 31)
-                    {
-                        time = year + "-" + j + "-30";
-                    }
-                    if (j == 2 && day > 29)
-                    {
-                        time = year + "-" + j + "-28";
-                    }
-
-                    tg.NgayDenHan = DateTime.Parse(time);
-                    db.PhieuTraGops.Add(tg);
+                    hdtg.laiSuat = 2;
                 }
-               
-              
-                    
+                db.HDTraGops.Add(hdtg);
+                List<GioHang> gioHang = getGioHang();
+                foreach (var item in gioHang)
+                {
+                    CTHDTG cthd = new CTHDTG();
+                    cthd.MaKho = hd.maKho;
+                    cthd.MaHD = hdtg.MaHD;
+                    cthd.MaSP = item.maSP;
+                    cthd.SL = item.soLuong;
+                    cthd.GiaBan = item.donGia;
+                    db.CTHDTGs.Add(cthd);
+                }
+                double tongTien = TongTien();
+                double tienHangThang = tongTien / hd.soThang;
+                int day = 31;
+                int month = 11;
+                int year = DateTime.Now.Year;
+                int j = 0;
+                string time = "";
+                for (int i = 1; i <= hd.soThang; i++)
+                {
+                    PhieuTraGop tg = new PhieuTraGop();
+                    tg.MaHD = hdtg.MaHD;
+                    tg.Ki = i;
+                    tg.MaMucPhat = 1;
+                    tg.TienDong = (decimal?)tienHangThang;
+                    tg.TienPhat = 0;
+                    j = month + i;
+                    if (j > 12)
+                    {
+                        year = 2022;
+                        int count = hd.soThang - i;
+                        for (int a = 1; a < count + 2; a++)
+                        {
+                            time = year + "-" + a + "-" + day;
+                            if (thang30(a) && day == 31)
+                            {
+                                time = year + "-" + a + "-30";
+                            }
+                            if (a == 2 && day > 29)
+                            {
+                                time = year + "-" + a + "-28";
+                            }
+                            tg.NgayDenHan = DateTime.Parse(time);
+                            db.PhieuTraGops.Add(tg);
+                        }
+                    }
+                    else
+                    {
+                        time = year + "-" + j + "-" + day;
+                        if (thang30(j) && day == 31)
+                        {
+                            time = year + "-" + j + "-30";
+                        }
+                        if (j == 2 && day > 29)
+                        {
+                            time = year + "-" + j + "-28";
+                        }
+
+                        tg.NgayDenHan = DateTime.Parse(time);
+                        db.PhieuTraGops.Add(tg);
+                    }
 
 
+
+
+
+                }
+                db.SaveChanges();
             }
-            db.SaveChanges();
+            catch (Exception)
+            {
+
+                ViewBag.Error = "Tiền cọc ít nhất phải bằng 1 nửa giá trị đơn hàng";
+            }
+          
 
             return View();
         }
@@ -273,53 +289,25 @@ namespace ShopBanHang.Controllers
         [HttpPost]
         public ActionResult TaoCTHDOff(HDOff hd)
         {
-            KhachHang kh = db.KhachHangs.Where(x => x.MaKH == HDOff.MaKH).SingleOrDefault();
-            double tongMua = (double)kh.tongMua;
+           
             HDOffLine hdOff = new HDOffLine();
             hdOff.MaKH = HDOff.MaKH;
             hdOff.NgayMua = hd.NgayMua;
             db.HDOffLines.Add(hdOff);
             List<GioHang> gioHang = getGioHang();
-            double tongMuaMoi = TongTien();
-            if(tongMua<20000000)
+          
+            
+           
+            foreach (var item in gioHang)
             {
-                kh.tongMua += (decimal)tongMuaMoi;
-                foreach (var item in gioHang)
-                {
-                    CTHDOff cthd = new CTHDOff();
-                    cthd.MaKho = hd.maKho;
-                    cthd.MaSP = item.maSP;
-                    cthd.SL = item.soLuong;
-                    cthd.GiaBan = item.donGia;
-                    db.CTHDOffs.Add(cthd);
-                }
+                CTHDOff cthd = new CTHDOff();
+                cthd.MaKho = hd.maKho;
+                cthd.MaSP = item.maSP;
+                cthd.SL = item.soLuong;
+                cthd.GiaBan = item.donGia;
+                db.CTHDOffs.Add(cthd);
             }
-            if(tongMua>20000000&&tongMua<30000000)
-            {
-                kh.tongMua += (decimal)(tongMuaMoi*0.97);
-                foreach (var item in gioHang)
-                {
-                    CTHDOff cthd = new CTHDOff();
-                    cthd.MaKho = hd.maKho;
-                    cthd.MaSP = item.maSP;
-                    cthd.SL = item.soLuong;
-                    cthd.GiaBan = (decimal?)(item.donGia * 0.97);
-                    db.CTHDOffs.Add(cthd);
-                }
-            }
-            else
-            {
-                kh.tongMua += (decimal)(tongMuaMoi * 0.95);
-                foreach (var item in gioHang)
-                {
-                    CTHDOff cthd = new CTHDOff();
-                    cthd.MaKho = hd.maKho;
-                    cthd.MaSP = item.maSP;
-                    cthd.SL = item.soLuong;
-                    cthd.GiaBan = (decimal?)(item.donGia * 0.95);
-                    db.CTHDOffs.Add(cthd);
-                }
-            }
+           
             db.SaveChanges();
 
             return View();
