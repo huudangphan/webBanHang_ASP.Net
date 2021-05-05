@@ -2,9 +2,9 @@
 
 @{
     ViewBag.Title = "TaoHDTG";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdminCT.cshtml";
 }
-
+<a href="@Url.Action("TaoKhachHang","QuanLy")">Khách hàng mới</a>
 @using (Html.BeginForm("TaoHDTG", "QuanLy"))
 {
     @Html.TextBox("tuKhoa")

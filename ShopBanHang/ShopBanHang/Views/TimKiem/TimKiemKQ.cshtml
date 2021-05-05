@@ -2,21 +2,40 @@
 
 @{
     ViewBag.Title = "TimKiemKQ";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdminCT.cshtml";
 }
 
-@foreach (var item in Model)
-{
+<p>
+    @Html.ActionLink("Thêm sản phẩm", "Add")
+</p>
+<table class="table">
 
-<div class="col-md-3">
-    <a href="@Url.Action("xemChiTiet","SanPham",new { @masp=item.maSP})" style="color:white"><img src="~/Assit/img/@Html.DisplayFor(modelItem=>item.anh)" alt="Alternate Text" style="width:270px;height:250px;" /></a>
 
-    <div style="text-align:center;margin-bottom:10px;">
-        @Html.DisplayFor(modelItem => item.tenSP)
-        <br />
-        @String.Format("{0:0,0}", Html.DisplayFor(modelItem => item.giaSP)) VNĐ
-        <br />
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenSP)
+            </td>
 
-    </div>
+            <td>
+                <a href="@Url.Action("xemChiTiet","QuanLy",new { @masp=item.maSP})" style="color:white"><img src="~/Assit/img/@Html.DisplayFor(modelItem => item.anh)" alt="Alternate Text" style="width:60px;height:70px;" /></a>
+                @*<img src="~/Assit/img/@Html.DisplayFor(modelItem => item.anh)" alt="Alternate Text" style="width:60px;height:70px;"/>*@
+            </td>
+            <td>
 
-</div>}
+                <div>Giá:@String.Format("{0:0,0}", @Html.DisplayFor(modelItem => item.giaSP)) VNĐ </div>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hang.tenHang)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.maSP }) |
+
+
+                @Html.ActionLink("Xóa", "Delete", new { id = item.maSP })
+            </td>
+        </tr>
+    }
+
+</table>

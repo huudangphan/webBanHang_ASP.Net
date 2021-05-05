@@ -16,8 +16,7 @@
             <div class="topofweb">
                 <div style="width: 70%; height: 40px;margin-left: 15%;float: left;">
                     <ul style="float: right; text-align: center;">
-                        <li class="topmenu">Đăng Nhập</li>
-                        <li class="topmenu">Đăng kí</li>
+                        
                     </ul>
                     <p style="font-size: 20px; color: hotpink; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: 30px;">Hotline: 0706883095</p>
                 </div>
@@ -29,10 +28,23 @@
                         <img src="~/image/logo.png" alt="" style="width: 100%;height: 120px;">
                     </div>
                     <div class="col-md-4">
-                        <input type="text" class="search-txt" placeholder="Tìm Kiếm..." style="width: 300px;height: 40px;margin-top: 40px;">
-                        <a href="" class="search-btn">
-                            <i class="fas fa-search" style="width: 60px;height: 40px; vertical-align: middle;"></i>
-                        </a>
+                        @*<input type="text" class="search-txt" placeholder="Tìm Kiếm..." style="width: 300px;height: 40px;margin-top: 40px;">
+        <a href="" class="search-btn">
+            <i class="fas fa-search" style="width: 60px;height: 40px; vertical-align: middle;"></i>
+        </a>*@
+                        <div class="input-group txtTimKiem">
+                            @using (Html.BeginForm("TimKiemKQ", "TimKiem", FormMethod.Post))
+                            {
+                    @Html.TextBox("search")<span>
+    <div class="input-group-append">
+        <button type="submit"> <i class="fas fa-search" style="width: 30px;height: 20px; vertical-align: middle;"></i></button>
+
+    </div>
+</span>
+
+                                   
+                             }
+                        </div>
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-2"></div>
@@ -43,25 +55,25 @@
                     <li>
                         <a href="">Quản Lý Đơn Hàng</a>
                         <ul class="sub-menu">
-                            <li><a href="" style="color:white">Đơn Hàng Offline</a></li>
-                            <li><a href="" style="color:white">Đơn Hàng Trả Góp</a></li>
-                            <li><a href="" style="color:white">Đơn Hàng Online</a></li>
+                            <li><a href="@Url.Action("QLDonHangOffline","QuanLy")" style="color:white">Đơn Hàng Offline</a></li>
+                            <li><a href="@Url.Action("QLHDTG","QuanLy")" style="color:white">Đơn Hàng Trả Góp</a></li>
+                            <li><a href="@Url.Action("QLDonHangOnline","QuanLy")" style="color:white">Đơn Hàng Online</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="">Quản Lý Tài Khoản</a>
+                        <a href="@Url.Action("QLTaiKhoan","QuanLy")">Quản Lý Tài Khoản</a>
                     </li>
                     <li>
-                        <a href="">Tạo Hóa đơn Trả Góp</a>
+                        <a href="@Url.Action("TaoHDTG","QuanLy")">Tạo Hóa đơn Trả Góp</a>
                     </li>
                     <li>
-                        <a href="">Tạo Hóa Đơn Offline</a>
+                        <a href="@Url.Action("TaoHDOff","QuanLy")">Tạo Hóa Đơn Offline</a>
                     </li>
                     <li>
                         <a href="">Liên Hệ</a>
                     </li>
                     <li>
-                        <a href="">Quản Lý Sản Phẩm</a>
+                        <a href="@Url.Action("Index","QuanLy")">Quản Lý Sản Phẩm</a>
                     </li>
                 </ul>
             </div>

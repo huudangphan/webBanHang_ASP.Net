@@ -1,11 +1,10 @@
 ﻿@model IEnumerable<ShopBanHang.Models.TinNhan>
 
-@{
+@*@{
     ViewBag.Title = "Mess";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
+    Layout = "~/Views/Shared/_LayoutAdminCT.cshtml";*@
 
-<table class="table">
+@*<table class="table">
     @foreach (var item in Model)
     {
 
@@ -27,9 +26,9 @@
     }
 
 
-</table>
+</table>*@
 
-@using (Html.BeginForm())
+@*@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
@@ -45,7 +44,7 @@
             </div>
         </div>
     </div>
-}
+}*@
 
 
 
