@@ -21,8 +21,29 @@
             <div class="topofweb">
                 <div style="width: 70%; height: 40px;margin-left: 15%;float: left;">
                     <ul style="float: right; text-align: center;">
-                        <li class="topmenu">Đăng Nhập</li>
-                        <li class="topmenu">Đăng kí</li>
+                        @if (Session["tenKH"] != null)
+                        {
+
+                <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["tk"].ToString()</a>
+
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="@Url.Action("HoSoNguoiDung","NguoiDung")">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Tài khoản
+                                    </a>
+                                    <a href="@Url.Action("Hang","NguoiDung")"><i class="fas fa-shopping-cart"></i> Đơn hàng</a>
+
+                                    <a href="@Url.Action("DangXuat","NguoiDung" )" class="dropdown-item"> <i class="fas fa-sign-in-alt"></i>Đăng xuất</a>
+                                    <div class="dropdown-divider"></div>
+
+                                </div> }
+                                            else
+                                            {
+                                <li class="topmenu"><a href="@Url.Action("DangNhap","NguoiDung")">Đăng Nhập</a> </li>
+                                <li class="topmenu"><a href="@Url.Action("DangKy2","NguoiDung")">Đăng kí</a> </li>}
+
                     </ul>
                     <p style="font-size: 20px; color: hotpink; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: 30px;">Hotline: 0706883095</p>
                 </div>

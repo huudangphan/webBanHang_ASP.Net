@@ -1317,6 +1317,8 @@
     <Content Include="Views\GioHang\TaoCTHDOff.cshtml" />
     <Content Include="Views\TimKiem\TimKiemKQ.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutQuanLy.cshtml" />
+    <Content Include="Views\QuanLy\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
