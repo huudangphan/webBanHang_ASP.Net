@@ -134,15 +134,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Controllers\QuanLyController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Controllers\TimKiemController.cs" />
-    <Compile Include="Controllers\TinNhanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -1280,7 +1283,6 @@
     <Content Include="Views\QuanLy\DetailDonHang.cshtml" />
     <Content Include="Views\QuanLy\DetailsAcc.cshtml" />
     <Content Include="Views\NguoiDung\HoSoNguoiDung.cshtml" />
-    <Content Include="Views\TinNhan\Mess.cshtml" />
     <Content Include="Views\QuanLy\ListTn.cshtml" />
     <Content Include="Views\QuanLy\Mess.cshtml" />
     <Content Include="Views\QuanLy\QLDonHangOnline.cshtml" />
@@ -1314,6 +1316,7 @@
     <Content Include="Views\GioHang\PartialGioHang.cshtml" />
     <Content Include="Views\GioHang\TaoCTHDOff.cshtml" />
     <Content Include="Views\TimKiem\TimKiemKQ.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

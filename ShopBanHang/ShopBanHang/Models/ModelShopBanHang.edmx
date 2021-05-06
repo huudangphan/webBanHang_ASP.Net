@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ShopDoCongNgheModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="userAdmin" />
+          </Key>
+          <Property Name="userAdmin" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="passAdmin" Type="nvarchar" MaxLength="50" />
+          <Property Name="tenAdmin" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="CTHDOff">
           <Key>
             <PropertyRef Name="MaKho" />
@@ -437,6 +445,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ShopDoCongNgheModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CTHDOff" EntityType="Self.CTHDOff" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CTHDOnline" EntityType="Self.CTHDOnline" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CTHDTG" EntityType="Self.CTHDTG" Schema="dbo" store:Type="Tables" />
@@ -1112,7 +1121,16 @@
             <End Role="Phat" EntitySet="Phats" />
             <End Role="PhieuTraGop" EntitySet="PhieuTraGops" />
           </AssociationSet>
+          <EntitySet Name="Admins" EntityType="ShopDoCongNgheModel.Admin" />
         </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="userAdmin" />
+          </Key>
+          <Property Name="userAdmin" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="passAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tenAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1311,6 +1329,15 @@
               <MappingFragment StoreEntitySet="TinNhan">
                 <ScalarProperty Name="maTN" ColumnName="maTN" />
                 <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="ShopDoCongNgheModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="tenAdmin" ColumnName="tenAdmin" />
+                <ScalarProperty Name="passAdmin" ColumnName="passAdmin" />
+                <ScalarProperty Name="userAdmin" ColumnName="userAdmin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

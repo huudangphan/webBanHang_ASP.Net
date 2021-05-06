@@ -571,5 +571,14 @@
       <End Role="Phat" EntitySet="Phats" />
       <End Role="PhieuTraGop" EntitySet="PhieuTraGops" />
     </AssociationSet>
+    <EntitySet Name="Admins" EntityType="ShopDoCongNgheModel.Admin" />
   </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="userAdmin" />
+    </Key>
+    <Property Name="userAdmin" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="passAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

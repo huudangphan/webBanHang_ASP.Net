@@ -12,15 +12,10 @@ namespace ShopBanHang.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CTHDOnline
+    public partial class Admin
     {
-        public int MaKho { get; set; }
-        public int MaSP { get; set; }
-        public int MaHD { get; set; }
-        public Nullable<int> SL { get; set; }
-        public Nullable<decimal> GiaBan { get; set; }
-    
-        public virtual CTTonKho CTTonKho { get; set; }
-        public virtual HDOnline HDOnline { get; set; }
+        public string userAdmin { get; set; }
+        public string passAdmin { get; set; }
+        public string tenAdmin { get; set; }
     }
 }
