@@ -1,8 +1,54 @@
-﻿
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model PagedList.PagedList<ShopBanHang.Models.SanPham>
+
 @{
-    ViewBag.Title = "Index2";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutQuanLy.cshtml";
 }
 
-<h2>Index2</h2>
 
+
+<p>
+    @Html.ActionLink("Thêm sản phẩm", "Add")
+</p>
+<table class="table">
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenSP)
+            </td>
+
+            <td>
+                <a href="@Url.Action("xemChiTiet","QuanLy",new { @masp=item.maSP})" style="color:white"><img src="~/Assit/img/@Html.DisplayFor(modelItem => item.anh)" alt="Alternate Text" style="width:60px;height:70px;" /></a>
+                @*<img src="~/Assit/img/@Html.DisplayFor(modelItem => item.anh)" alt="Alternate Text" style="width:60px;height:70px;"/>*@
+            </td>
+            <td>
+
+                <div>Giá:@String.Format("{0:0,0}", @Html.DisplayFor(modelItem => item.giaSP)) VNĐ </div>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hang.tenHang)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.maSP }) |
+
+
+                @Html.ActionLink("Xóa", "Delete", new { id = item.maSP })
+            </td>
+        </tr>
+    }
+
+</table>
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+<div class="menu">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+<style>
+    .menu li {
+        display: inline;
+    }
+</style>

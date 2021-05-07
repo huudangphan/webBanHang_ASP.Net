@@ -269,6 +269,7 @@ namespace ShopBanHang.Controllers
 
                 }
                 db.SaveChanges();
+                return RedirectToAction("Index", "QuanLy");
             }
             catch (Exception)
             {

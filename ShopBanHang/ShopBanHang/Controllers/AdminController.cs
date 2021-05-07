@@ -34,7 +34,7 @@ namespace ShopBanHang.Controllers
                 Admin ad = db.Admins.Where(x => x.userAdmin == username && x.passAdmin == password).SingleOrDefault();
                 if (ad != null)
                 {
-                    if (username == "quanLy")
+                    if (username == "Admin")
                         return RedirectToAction("IndexQuanLy", "QuanLy");
                     return RedirectToAction("Index", "QuanLy");
                 }

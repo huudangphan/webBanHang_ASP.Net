@@ -24,9 +24,12 @@ namespace ShopBanHang.Controllers
             var list = db.SanPhams.OrderBy(c => c.tenSP).ToPagedList(pageNum, pageSize);
             return View(list);
         }
-        public ActionResult Index2()
+        public ActionResult Index2(int? page)
         {
-            return View();
+            int pageNum = (page ?? 1);
+            int pageSize = 10;
+            var list = db.SanPhams.OrderBy(c => c.tenSP).ToPagedList(pageNum, pageSize);
+            return View(list);
         }
         [HttpGet]
         public ActionResult Add()
