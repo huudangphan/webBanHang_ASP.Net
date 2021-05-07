@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<ShopBanHang.Models.HDOnline>
+ @using ShopBanHang.Models;
 
 
 <table class="table">
@@ -25,10 +26,22 @@
             @Html.DisplayFor(modelItem => item.NgayGiao)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TinhTrang)
+            @if (item.TinhTrang == false)
+            {
+                <input type="checkbox" name="name" value="false" disabled="disabled" />
+                ModelCTDHOnline.mahd = item.MaHD;
+                @Html.ActionLink("Gửi hàng", "GuiHang", new { @madh=ModelCTDHOnline.mahd})
+            }
+            else
+            {
+                <input type="checkbox" name="name" value="true" checked="checked" disabled="disabled" />
+            }
         </td>
        
+       
     </tr>
+   
+    
 }
 
 </table>
