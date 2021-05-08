@@ -15,7 +15,7 @@
 
         @ViewBag.Error
         <div class="form-group">
-            @Html.LabelFor(model => model.tenKH, htmlAttributes: new { @class = "control-label col-md-2" })
+            Tên khách hàng
             <div class="col-md-10">
                 @Html.EditorFor(model => model.tenKH, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.tenKH, "", new { @class = "text-danger" })
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.diaChi, htmlAttributes: new { @class = "control-label col-md-2" })
+            Địa chỉ
             <div class="col-md-10">
                 @Html.EditorFor(model => model.diaChi, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.diaChi, "", new { @class = "text-danger" })
@@ -33,14 +33,14 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+            Email
             <div class="col-md-10">
                 @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.sdt, htmlAttributes: new { @class = "control-label col-md-2" })
+            Số điện thoại
             <div class="col-md-10">
                 @Html.EditorFor(model => model.sdt, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.sdt, "", new { @class = "text-danger" })

@@ -10,7 +10,7 @@ namespace ShopBanHang.Controllers
     public class HomeController : Controller
     {
        
-        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
+        ShopDoCongNgheEntities1 db = new ShopDoCongNgheEntities1();
         public ActionResult Index(string search)
         {
             var kq = db.SanPhams.Where(x => x.tenSP.StartsWith(search)).ToList();

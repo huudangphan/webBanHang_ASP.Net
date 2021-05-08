@@ -43,6 +43,8 @@
         list-style-type: none;
         float: left;
         text-align: center;
+        margin-bottom:0;
+
     }
 
         .mid ul li {
@@ -88,6 +90,8 @@
                 display: block;
                 background-color: brown;
                 position: absolute;
+                padding:0;
+                margin:0;
             }
 
 .content {

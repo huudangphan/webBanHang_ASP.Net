@@ -145,61 +145,76 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDOff.cs" />
     <Compile Include="Models\HDTG.cs" />
+    <Compile Include="Models\ModelBanDoCongNghe.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBanDoCongNghe.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBanDoCongNghe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBanDoCongNghe.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBanDoCongNghe.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\ModelCTDHOnline.cs" />
     <Compile Include="Models\ThongTinKhachHang.cs" />
     <Compile Include="Models\XCTDHOffline.cs" />
     <Compile Include="Models\CTHDOff.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTHDOnline.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTHDTG.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTPN.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTTN.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTTonKho.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\Hang.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDNhapSP.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDOffLine.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDOnline.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDTraGop.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Kho.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Loai.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MessModel.cs" />
     <Compile Include="Models\Model.Context.cs">
@@ -249,19 +264,19 @@
     </Compile>
     <Compile Include="Models\ModelUser.cs" />
     <Compile Include="Models\Phat.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PhieuTraGop.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SanPham.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TinNhan.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs" />
     <Compile Include="Models\XCTHDTG.cs" />
@@ -1006,6 +1021,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="image\gearvn.png" />
+    <Content Include="image\l1.png" />
+    <Content Include="image\l2.png" />
+    <Content Include="image\logo.png" />
+    <Content Include="image\qc1.png" />
+    <Content Include="image\qc1t1.png" />
+    <Content Include="image\qc2.png" />
+    <Content Include="image\qc4.png" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -1025,6 +1048,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelBanDoCongNghe.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBanDoCongNghe.edmx</DependentUpon>
+      <LastGenOutput>ModelBanDoCongNghe.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelBanDoCongNghe.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBanDoCongNghe.edmx</DependentUpon>
+      <LastGenOutput>ModelBanDoCongNghe.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ModelShopBanHang.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -1216,6 +1249,13 @@
     </EntityDeploy>
     <Content Include="Models\ModelShopBanHang.edmx.diagram">
       <DependentUpon>ModelShopBanHang.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelBanDoCongNghe.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelBanDoCongNghe.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelBanDoCongNghe.edmx.diagram">
+      <DependentUpon>ModelBanDoCongNghe.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
