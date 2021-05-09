@@ -150,6 +150,7 @@
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CTKho.cs" />
     <Compile Include="Models\HDOff.cs" />
     <Compile Include="Models\HDTG.cs" />
     <Compile Include="Models\ModelBanDoCongNghe.Context.cs">
@@ -1319,7 +1320,6 @@
     <Content Include="Views\NguoiDung\DangKy2.cshtml" />
     <Content Include="Views\Home\timKiem.cshtml" />
     <Content Include="Views\QuanLy\timKiem.cshtml" />
-    <Content Include="Views\QuanLy\QLTaiKhoan.cshtml" />
     <Content Include="Views\QuanLy\DetailDonHang.cshtml" />
     <Content Include="Views\QuanLy\DetailsAcc.cshtml" />
     <Content Include="Views\NguoiDung\HoSoNguoiDung.cshtml" />
@@ -1359,6 +1359,12 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutQuanLy.cshtml" />
     <Content Include="Views\QuanLy\Index2.cshtml" />
+    <Content Include="Views\Admin\QLTKNV.cshtml" />
+    <Content Include="Views\Admin\QTTKKH.cshtml" />
+    <Content Include="Views\Admin\CTNV.cshtml" />
+    <Content Include="Views\Admin\CTKH.cshtml" />
+    <Content Include="Views\Admin\TaoHDNhap.cshtml" />
+    <Content Include="Views\Admin\addKho.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

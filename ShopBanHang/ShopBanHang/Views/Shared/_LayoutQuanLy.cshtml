@@ -9,6 +9,22 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="~/Content/Admin.css">
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Assit/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Assit/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/Assit/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/Assit/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/Assit/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Assit/js/demo/chart-area-demo.js"></script>
+    <script src="~/Assit/js/demo/chart-pie-demo.js"></script>
 </head>
 <body>
     <div class="main">
@@ -16,6 +32,36 @@
             <div class="topofweb">
                 <div style="width: 70%; height: 40px;margin-left: 15%;float: left;">
                     <ul style="float: right; text-align: center;">
+                        @if (Session["tenKH"] != null)
+                        {
+
+                            <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["tenKH"].ToString()</a>
+
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="/hoso">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Tài khoản
+                                </a>
+                                
+                                <a href="@Url.Action("DangXuat","NguoiDung" )" class="dropdown-item"> <i class="fas fa-sign-in-alt"></i>Đăng xuất</a>
+                                <div class="dropdown-divider"></div>
+
+                            </div>
+                        }
+                        else
+                        {
+                            <a class="nav-link dropdown-toggle" href="/dangnhap">
+
+                                <span class="dangkydangnhap ">Đăng ký/Đăng nhập  </span>
+
+
+                            </a>
+                        }
+
+
+
                     </ul>
                     <p style="font-size: 20px; color: hotpink; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: 30px;">Hotline: 0706883095</p>
                 </div>
@@ -62,8 +108,8 @@
                     <li>
                         Quản Lý Tài Khoản
                         <ul class="sub-menu">
-                            <li> <a href="@Url.Action("QLTaiKhoan","QuanLy")"> Tài Khoản khách</a></li>
-                            <li> <a href="@Url.Action("QLTaiKhoanNV","QuanLy")"> Tài Khoản nhân viên</a></li>
+                            <li> <a href="@Url.Action("QTTKKH","Admin")"> Tài Khoản khách</a></li>
+                            <li> <a href="@Url.Action("QLTKNV","Admin")"> Tài Khoản nhân viên</a></li>
                         </ul>
 
                     </li>

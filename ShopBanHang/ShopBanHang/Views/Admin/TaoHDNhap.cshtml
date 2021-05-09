@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ShopBanHang.Models.SanPham>
+
+@{
+    ViewBag.Title = "TaoHDNhap";
+    Layout = "~/Views/Shared/_LayoutQuanLy.cshtml";
+}
+<a href="@Url.Action("Add","QuanLy")">Nhập sản phẩm mới</a>
+@using (Html.BeginForm())
+{
+    @Html.TextBox("ma")
+    <div class="input-group-append">
+        <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
+
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giaSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hang.tenHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Loai.TenLoaiSP)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.giaSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hang.tenHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loai.TenLoaiSP)
+            </td>
+            <td>
+                <a href="@Url.Action("xemChiTiet","QuanLy",new { @masp=item.maSP})">Chi tiết</a>
+                <a href="@Url.Action("Edit","QuanLy",new { @id=item.maSP})">Sửa</a>
+                <a href="@Url.Action("Delete","QuanLy",new { @id=item.maSP})">Xóa</a>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ShopBanHang.Models.Admin>
+
+@{
+    ViewBag.Title = "QLTKNV";
+    Layout = "~/Views/Shared/_LayoutQuanLy.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.TextBox("tenNV")
+    <div class="input-group-append">
+        <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
+
+    </div>
+    <table class="table">
+        <tr>
+            <th>
+               Tài khoản
+            </th>
+            <th>
+               Tên nhân viên
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userAdmin)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.tenAdmin)
+                </td>
+                <td>
+                    <a href="@Url.Action("CTNV","Admin",new { @user=item.userAdmin})">Chọn</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+}

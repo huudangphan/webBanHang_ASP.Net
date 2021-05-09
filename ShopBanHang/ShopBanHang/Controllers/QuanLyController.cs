@@ -62,14 +62,16 @@ namespace ShopBanHang.Controllers
                 else { fileUp.SaveAs(path); }
                 SanPham a = new SanPham() { anh = fileUp.FileName };
                 sp.anh = fileUp.FileName;
+                CTKho.anh = fileName.ToString();
+                CTKho.ten = sp.tenSP;
                 db.SanPhams.Add(sp);
-                //db.SanPhams.Add(sp);
+             
 
                 db.SaveChanges();
             }
 
             ViewBag.maHang = new SelectList(db.Hangs.ToList(), "maHang", "tenHang");
-            return RedirectToAction("Index", "QuanLy");
+            return RedirectToAction("addKho", "Admin");
         }
 
         [HttpGet]
