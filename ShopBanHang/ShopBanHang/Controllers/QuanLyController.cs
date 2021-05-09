@@ -106,6 +106,8 @@ namespace ShopBanHang.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
+            var spkho = db.CTTonKhoes.Where(x => x.MaSP == id).SingleOrDefault();
+            db.CTTonKhoes.Remove(spkho);
             var sanpham = db.SanPhams.Find(id);
             db.SanPhams.Remove(sanpham);
             db.SaveChanges();
