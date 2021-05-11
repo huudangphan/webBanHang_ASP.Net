@@ -125,48 +125,7 @@ namespace ShopBanHang.Controllers
             return View(sp);
         }
         #region quan ly hoa don online
-        //public ViewResult DetailsAcc(int makh)
-        //{
-        //    var kh = db.KhachHangs.Where(x => x.maKH == makh);
-        //    return View(kh.ToList());
-        //}
-        //public ViewResult DetailDonHang(int makh)
-        //{
-        //    var detail = (from kh in db.KhachHangs
-        //                  join dh in db.DonHangs
-        //                  on kh.maKH equals dh.maKH
-        //                  join ctdh in db.ChiTietDonHangs
-        //                  on dh.maDH equals ctdh.maDH
-        //                  where kh.maKH == makh
-        //                  select dh).ToList();
-        //    return View(detail);
-        //}
-        //[HttpGet]
-
-
-        //public ActionResult QLDonHang()
-        //{
-        //    var mymodel = new MultiDataa();
-        //    mymodel.donhang = db.DonHangs.ToList();
-
-        //    return View(mymodel);
-        //}
-
-        //public ActionResult DonHangChuaGiao()
-        //{
-
-        //    var mymodel = new MultiDataa();
-        //    mymodel.donhang = db.DonHangs.Where(x => x.tinhTrang == 0).ToList();
-        //    return View(mymodel);
-        //}
-
-
-        //public ActionResult DonHangDaGiao()
-        //{
-        //    var mymodel = new MultiDataa();
-        //    mymodel.donhang = db.DonHangs.Where(x => x.tinhTrang == 1).ToList();
-        //    return View(mymodel);
-        //}
+        
         public ViewResult QLDonHangOnline()
         {
             var result = db.HDOnlines.ToList();
@@ -174,7 +133,8 @@ namespace ShopBanHang.Controllers
         }
         public ActionResult XemChiTietDonHang(int mahd)
         {
-            ModelCTDHOnline.mahd = mahd;                  
+            ModelCTDHOnline.mahd = mahd;
+            HoaDonXuat.mahd = mahd;
 
             return View();
         }
@@ -320,8 +280,8 @@ namespace ShopBanHang.Controllers
         }
         public ActionResult XemCTHDOff(int mahd)
         {
-            ModelCTDHOnline.mahd = mahd;                    
-            
+            ModelCTDHOnline.mahd = mahd;
+            HoaDonXuat.mahd = mahd;
 
             return View();
 
