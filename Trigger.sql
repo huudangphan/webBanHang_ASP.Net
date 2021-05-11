@@ -38,6 +38,8 @@ begin
 end
 
 
+
+
 alter trigger check_tien_Phat
 on PhieuTraGop
 after insert,update
