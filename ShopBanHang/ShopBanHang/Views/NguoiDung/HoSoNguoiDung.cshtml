@@ -6,87 +6,86 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <tr>
+            <th>
+                Họ và tên
+            </th>
+            <th>
+                Địa Chỉ
+            </th>
 
-<table class="table">
-    <tr>
-        <th>
-            Họ và tên
-        </th>
-        <th>
-            Địa Chỉ
-        </th>
-        <th>
-            Ngày sinh 
-        </th>
-        <th>
-            Email
-        </th>
-        <th>
-            Số điện thoại
-        </th>
-        <th>
-            Tài Khoản
-        </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Số điện thoại
+            </th>
+            <th>
+                Tài Khoản
+            </th>
 
-        <th></th>
-    </tr>
-
-
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => Model.tenKH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => Model.diaChi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => Model.ngaySinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => Model.emai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => Model.sdt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => Model.taiKhoan)
-        </td>
-        <td>
-        </td>
-        
-    </tr>
-    <tr>
-        <td>
-            <a href="@Url.Action("ChangePass","NguoiDung")">Đổi mật khẩu</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Mật khẩu hiện tại
-        </td>
-        <td>
-            <input type="text" name="cur_pass" value="" />
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Mật khẩu mới
-        </td>
-        <td>
-            <input type="text" name="pass" value="" />
-        </td>
-    </tr>
-    <tr>
-        <td>
-           Xác nhận mật khẩu
-        </td>
-        <td>
-            <input type="text" name="pass2" value="" />
-        </td>
-    </tr>
-    <tr>
-        <td><input type="submit"  value="Đổi mật khẩu" /></td>
-    </tr>
+            <th></th>
+        </tr>
 
 
-</table>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => Model.tenKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.DiaChi)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => Model.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.SDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.taiKhoan)
+            </td>
+            <td>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <a href="@Url.Action("ChangePass","NguoiDung")">Đổi mật khẩu</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Mật khẩu hiện tại
+            </td>
+            <td>
+                <input type="text" name="cur_pass" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Mật khẩu mới
+            </td>
+            <td>
+                <input type="text" name="pass" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Xác nhận mật khẩu
+            </td>
+            <td>
+                <input type="text" name="pass2" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Đổi mật khẩu" /></td>
+        </tr>
+
+
+    </table>
+}
+

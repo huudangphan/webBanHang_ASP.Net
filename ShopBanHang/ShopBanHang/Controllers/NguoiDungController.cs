@@ -134,12 +134,24 @@ namespace ShopBanHang.Controllers
             Session.Clear();
             return RedirectToAction("Index", "Home");
         }
-
+        [HttpGet]
         public ActionResult HoSoNguoiDung()
         {
-            string tenTK = @Session["tk"].ToString();
+            string tenTK = @Session["tk"].ToString();        
+
             var kh = db.KhachHangs.Where(x => x.taiKhoan == tenTK).SingleOrDefault();
             return View(kh);
+        }
+        [HttpPost]
+        public ActionResult HoSoNguoiDung(FormCollection f)
+        {
+            string newPass = f["pass"].ToString();
+            string tenTK = @Session["tk"].ToString();
+
+            var kh = db.KhachHangs.Where(x => x.taiKhoan == tenTK).SingleOrDefault();
+            kh.matKhau = newPass;
+            db.SaveChanges();
+            return RedirectToAction("Index", "Home");
         }
         //public ActionResult AdminTT()
         //{
