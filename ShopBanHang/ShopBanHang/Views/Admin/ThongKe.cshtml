@@ -1,0 +1,23 @@
+﻿
+
+@{
+    ViewBag.Title = "ThongKe";
+    Layout = "~/Views/Shared/_LayoutQuanLy.cshtml";
+}
+
+<h2>ThongKe</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+
+    <input type="month" name="Thang" id="Thang" value="" />
+    <input type="submit" name="name" value="Tìm" />
+
+}
+@ViewBag.tongmua
+@ViewBag.tongnhap
+
+

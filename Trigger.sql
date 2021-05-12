@@ -115,23 +115,69 @@ begin
 
 end
 
-update PhieuTraGop
-set ngayTra='2021-5-4'
-where MaPhieu=32
 
-	select *
-	from PhieuTraGop
-where MaPhieu=32
+alter trigger ttien_online
+on CTHDOnline
+after insert
+as
+begin
+	declare @sl int,@giaBan decimal(18,0),@maHD int,@maSP int
+	select @sl=SL from inserted
+	select @giaBan= GiaBan from inserted
+	select @maHD=MaHD from inserted
+	select @maSP=MaSP from inserted
+
+	update CTHDOnline
+	set thanhTien=@sl*@giaBan
+	where MaHD=@maHD and MaSP=@maSP
+	
+end
+
+ create trigger ttien_offline
+ on CTHDOff
+ after insert
+ as
+ begin
+	declare @sl int,@giaBan decimal(18,0),@maHD int,@maSP int
+	select @sl=SL from inserted
+	select @giaBan= GiaBan from inserted
+	select @maHD=MaHD from inserted
+	select @maSP=MaSP from inserted
+	update CTHDOff
+	set thanhTien=@sl*@giaBan
+	where MaHD=@maHD and MaSP=@maSP
+ end
+
+ create trigger ttien_tg
+ on CTHDTG
+ after insert
+ as
+ begin
+	declare @sl int,@giaBan decimal(18,0),@maHD int,@maSP int
+	select @sl=SL from inserted
+	select @giaBan= GiaBan from inserted
+	select @maHD=MaHD from inserted
+	select @maSP=MaSP from inserted
+	update CTHDTG
+	set thanhTien=@sl*@giaBan
+	where MaHD=@maHD and MaSP=@maSP
+ end
 
 
+ create trigger ttien_nhap
+ on CTPN
+ after insert
+ as
+ begin
+	declare @sl int,@giaBan decimal(18,0),@maHD int,@maSP int
+	select @sl=SLNhap from inserted
+	select @giaBan= giaNhap from inserted
+	select @maHD=maPhieuNhap from inserted
+	select @maSP=MaSP from inserted
+	update CTPN
+	set thanhTien=@sl*@giaBan
+	where maPhieuNhap=@maHD and MaSP=@maSP
+ end
 
-insert into HDTraGop(MaKH,NgayCoc,TienCoc,SoThang,laiSuat)
-values(4,'2021-1-1',30050,3,3)
-
-insert into CTHDTG(MaKho,MaSP,MaHD,SL,GiaBan)
-values(1,1,23,1,5000000)
-select * from HDTraGop
-select * from CTHDTG
-select sum(SL*GiaBan)
-from CTHDTG
-where MaHD=1
+ select *
+ from HDOnline

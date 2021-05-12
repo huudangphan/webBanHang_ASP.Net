@@ -117,5 +117,57 @@ namespace ShopBanHang.Controllers
             ViewBag.maKho = new SelectList(db.Khoes.ToList(), "maKho", "tenKho");
             return RedirectToAction("Index2", "QuanLy");
         }
+        [HttpGet]
+        public ActionResult ThongKe()
+        {
+            return View();
+        }
+        public ActionResult ThongKe(ThongKe tk)
+        {
+            int month = Int32.Parse( tk.Thang.Month.ToString());
+            int year =Int32.Parse( tk.Thang.Year.ToString());
+            double tongMuaOnline = Convert.ToDouble((from a in db.CTHDOnlines
+                                                     join b in db.HDOnlines
+                                                     on a.MaHD equals b.MaHD
+                                                     where b.NgayDat.Value.Month == month
+                                                     && b.NgayDat.Value.Year == year
+                                                     && a.MaHD == b.MaHD
+
+                                                     select a.thanhTien
+                                                  ).ToList().Sum());
+            double tongMuaOff= Convert.ToDouble((from a in db.CTHDOffs
+                                                 join b in db.HDOffLines
+                                                 on a.MaHD equals b.MaHD
+                                                 where b.NgayMua.Value.Month == month
+                                                 && b.NgayMua.Value.Year == year
+                                                 && a.MaHD == b.MaHD
+
+                                                 select a.thanhTien
+                                                  ).ToList().Sum());
+            double tongMuaTG= Convert.ToDouble((from a in db.CTHDTGs
+                                                join b in db.HDTraGops
+                                                on a.MaHD equals b.MaHD
+                                                where b.NgayCoc.Value.Month == month
+                                                && b.NgayCoc.Value.Year == year
+                                                && a.MaHD == b.MaHD
+
+                                                select a.thanhTien
+                                                  ).ToList().Sum());
+            double tongChi = Convert.ToDouble((from a in db.HDNhapSPs
+                                               join b in db.CTPNs
+                                               on a.maPhieuNhap equals b.maPhieuNhap
+                                               where a.ngayNhap.Value.Year == year && a.ngayNhap.Value.Month == month
+
+                                               select b.thanhTien
+                                             ).ToList().Sum());
+            double tongMua = tongMuaOff + tongMuaOnline + tongMuaTG;
+            ViewBag.tongmua = tongMua;
+            ViewBag.tongnhap = tongChi;
+
+
+
+            return View();
+        }
+
     }
 }

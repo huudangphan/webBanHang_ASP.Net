@@ -44,6 +44,7 @@
         <AssociationConnector Association="ShopDoCongNgheModel1.FK_PhieuTraGop_HDTraGop" ManuallyRouted="false" />
         <AssociationConnector Association="ShopDoCongNgheModel1.FK_Loai" ManuallyRouted="false" />
         <AssociationConnector Association="ShopDoCongNgheModel1.FK_PhieuTraGop_Phat" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel1.sysdiagram" Width="1.5" PointX="7.375" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

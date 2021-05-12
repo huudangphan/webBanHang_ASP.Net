@@ -18,6 +18,7 @@ namespace ShopBanHang.Models
         public int maSP { get; set; }
         public Nullable<int> SLNhap { get; set; }
         public Nullable<decimal> giaNhap { get; set; }
+        public Nullable<decimal> thanhTien { get; set; }
     
         public virtual HDNhapSP HDNhapSP { get; set; }
         public virtual SanPham SanPham { get; set; }

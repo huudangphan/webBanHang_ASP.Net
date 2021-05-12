@@ -337,7 +337,6 @@ E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\roslyn\vbc.rsp
 E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\roslyn\VBCSCompiler.exe
 E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\roslyn\VBCSCompiler.exe.config
 E:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csprojAssemblyReference.cache
-D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csprojAssemblyReference.cache
 D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ShopBanHang.dll.config
 D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ShopBanHang.dll
 D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ShopBanHang.pdb

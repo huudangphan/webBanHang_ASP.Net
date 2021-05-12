@@ -189,6 +189,7 @@
       <DependentUpon>ModelBanDoCongNghe.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelCTDHOnline.cs" />
+    <Compile Include="Models\ThongKe.cs" />
     <Compile Include="Models\ThongTinKhachHang.cs" />
     <Compile Include="Models\XCTDHOffline.cs" />
     <Compile Include="Models\CTHDOff.cs">
@@ -294,7 +295,7 @@
       <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TinNhan.cs">
       <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
@@ -1394,6 +1395,7 @@
     <Content Include="Views\Shared\_LayoutRegister.cshtml" />
     <Content Include="Views\Test\Register.cshtml" />
     <Content Include="Views\GioHang\DatHangThanhCong.cshtml" />
+    <Content Include="Views\Admin\ThongKe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

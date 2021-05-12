@@ -44,5 +44,6 @@ namespace ShopBanHang.Models
         public virtual DbSet<PhieuTraGop> PhieuTraGops { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<TinNhan> TinNhans { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

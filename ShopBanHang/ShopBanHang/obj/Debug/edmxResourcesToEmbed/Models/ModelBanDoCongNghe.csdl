@@ -21,6 +21,7 @@
     <Property Name="GiaBan" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="CTTonKho" Relationship="Self.FK_CTHDOff_CTTonKho" FromRole="CTHDOff" ToRole="CTTonKho" />
     <NavigationProperty Name="HDOffLine" Relationship="Self.FK_CTHDOff_HDOffLine" FromRole="CTHDOff" ToRole="HDOffLine" />
+    <Property Name="thanhTien" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="CTHDOnline">
     <Key>
@@ -35,6 +36,7 @@
     <Property Name="GiaBan" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="CTTonKho" Relationship="Self.FK_CTHDOnline_CTTonKho" FromRole="CTHDOnline" ToRole="CTTonKho" />
     <NavigationProperty Name="HDOnline" Relationship="Self.FK_CTHDOnline_HDOnline" FromRole="CTHDOnline" ToRole="HDOnline" />
+    <Property Name="thanhTien" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="CTHDTG">
     <Key>
@@ -49,6 +51,7 @@
     <Property Name="GiaBan" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="CTTonKho" Relationship="Self.FK_CTHDTG_CTTonKho" FromRole="CTHDTG" ToRole="CTTonKho" />
     <NavigationProperty Name="HDTraGop" Relationship="Self.FK_CTHDTG_HDTraGop" FromRole="CTHDTG" ToRole="HDTraGop" />
+    <Property Name="thanhTien" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="CTPN">
     <Key>
@@ -61,6 +64,7 @@
     <Property Name="giaNhap" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="HDNhapSP" Relationship="Self.FK_HDNhapSP2" FromRole="CTPN" ToRole="HDNhapSP" />
     <NavigationProperty Name="SanPham" Relationship="Self.FK_SanPham" FromRole="CTPN" ToRole="SanPham" />
+    <Property Name="thanhTien" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="CTTN">
     <Key>
@@ -569,5 +573,16 @@
       <End Role="Phat" EntitySet="Phats" />
       <End Role="PhieuTraGop" EntitySet="PhieuTraGops" />
     </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="ShopDoCongNgheModel1.sysdiagram" />
   </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
 </Schema>
