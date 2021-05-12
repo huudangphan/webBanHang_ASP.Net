@@ -23,15 +23,18 @@
                 @RenderBody()
             </div>
             @*<div class="form-field">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Username">
-            </div>
-            <div class="form-field">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Password">
-            </div>*@
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username">
+        </div>
+        <div class="form-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password">
+        </div>*@
             <button>Đăng Nhập</button>
             <button>Đăng Ký</button>
+            <div>
+                <p style="color:white">@Html.ActionLink("Back to Login Trang Chu", "Index", "Home")</p>
+            </div>
         </form>
     </div>
 </body>

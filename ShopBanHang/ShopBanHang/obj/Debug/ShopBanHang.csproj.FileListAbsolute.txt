@@ -433,3 +433,11 @@ D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ClosedXML.pdb
 D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ClosedXML.xml
 D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\DocumentFormat.OpenXml.xml
 D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ExcelNumberFormat.xml
+D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ClosedXML.dll
+D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\DocumentFormat.OpenXml.dll
+D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ExcelNumberFormat.dll
+D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\System.IO.Packaging.dll
+D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ClosedXML.pdb
+D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ClosedXML.xml
+D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\DocumentFormat.OpenXml.xml
+D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ExcelNumberFormat.xml
