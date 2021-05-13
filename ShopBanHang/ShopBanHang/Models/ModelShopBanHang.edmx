@@ -24,6 +24,7 @@
           <Property Name="MaHD" Type="int" Nullable="false" />
           <Property Name="SL" Type="int" />
           <Property Name="GiaBan" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="thanhTien" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="CTHDOnline">
           <Key>
@@ -36,6 +37,7 @@
           <Property Name="MaHD" Type="int" Nullable="false" />
           <Property Name="SL" Type="int" />
           <Property Name="GiaBan" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="thanhTien" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="CTHDTG">
           <Key>
@@ -48,6 +50,7 @@
           <Property Name="MaHD" Type="int" Nullable="false" />
           <Property Name="SL" Type="int" />
           <Property Name="GiaBan" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="thanhTien" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="CTPN">
           <Key>
@@ -58,6 +61,7 @@
           <Property Name="maSP" Type="int" Nullable="false" />
           <Property Name="SLNhap" Type="int" />
           <Property Name="giaNhap" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="thanhTien" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="CTTN">
           <Key>
@@ -198,20 +202,6 @@
           <Property Name="maTN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ThoiGian" Type="date" />
         </EntityType>
-        <Association Name="FK_CTHDOff_CTTonKho">
-          <End Role="CTTonKho" Type="Self.CTTonKho" Multiplicity="1" />
-          <End Role="CTHDOff" Type="Self.CTHDOff" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CTTonKho">
-              <PropertyRef Name="MaKho" />
-              <PropertyRef Name="MaSP" />
-            </Principal>
-            <Dependent Role="CTHDOff">
-              <PropertyRef Name="MaSP" />
-              <PropertyRef Name="MaKho" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_CTHDOff_HDOffLine">
           <End Role="HDOffLine" Type="Self.HDOffLine" Multiplicity="1" />
           <End Role="CTHDOff" Type="Self.CTHDOff" Multiplicity="*" />
@@ -444,6 +434,37 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="ShopDoCongNgheModelStoreContainer">
           <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CTHDOff" EntityType="Self.CTHDOff" Schema="dbo" store:Type="Tables" />
@@ -465,10 +486,6 @@
           <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TinNhan" EntityType="Self.TinNhan" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_CTHDOff_CTTonKho" Association="Self.FK_CTHDOff_CTTonKho">
-            <End Role="CTTonKho" EntitySet="CTTonKho" />
-            <End Role="CTHDOff" EntitySet="CTHDOff" />
-          </AssociationSet>
           <AssociationSet Name="FK_CTHDOff_HDOffLine" Association="Self.FK_CTHDOff_HDOffLine">
             <End Role="HDOffLine" EntitySet="HDOffLine" />
             <End Role="CTHDOff" EntitySet="CTHDOff" />
@@ -563,6 +580,7 @@
           <Property Name="GiaBan" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="CTTonKho" Relationship="Self.FK_CTHDOff_CTTonKho" FromRole="CTHDOff" ToRole="CTTonKho" />
           <NavigationProperty Name="HDOffLine" Relationship="Self.FK_CTHDOff_HDOffLine" FromRole="CTHDOff" ToRole="HDOffLine" />
+          <Property Name="thanhTien" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="CTHDOnline">
           <Key>
@@ -577,6 +595,7 @@
           <Property Name="GiaBan" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="CTTonKho" Relationship="Self.FK_CTHDOnline_CTTonKho" FromRole="CTHDOnline" ToRole="CTTonKho" />
           <NavigationProperty Name="HDOnline" Relationship="Self.FK_CTHDOnline_HDOnline" FromRole="CTHDOnline" ToRole="HDOnline" />
+          <Property Name="thanhTien" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="CTHDTG">
           <Key>
@@ -591,6 +610,7 @@
           <Property Name="GiaBan" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="CTTonKho" Relationship="Self.FK_CTHDTG_CTTonKho" FromRole="CTHDTG" ToRole="CTTonKho" />
           <NavigationProperty Name="HDTraGop" Relationship="Self.FK_CTHDTG_HDTraGop" FromRole="CTHDTG" ToRole="HDTraGop" />
+          <Property Name="thanhTien" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="CTPN">
           <Key>
@@ -603,6 +623,7 @@
           <Property Name="giaNhap" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="HDNhapSP" Relationship="Self.FK_HDNhapSP2" FromRole="CTPN" ToRole="HDNhapSP" />
           <NavigationProperty Name="SanPham" Relationship="Self.FK_SanPham" FromRole="CTPN" ToRole="SanPham" />
+          <Property Name="thanhTien" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="CTTN">
           <Key>
@@ -1122,6 +1143,36 @@
             <End Role="PhieuTraGop" EntitySet="PhieuTraGops" />
           </AssociationSet>
           <EntitySet Name="Admins" EntityType="ShopDoCongNgheModel.Admin" />
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ShopDoCongNgheModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ShopDoCongNgheModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
         <EntityType Name="Admin">
           <Key>
@@ -1131,6 +1182,17 @@
           <Property Name="passAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="tenAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1140,6 +1202,7 @@
           <EntitySetMapping Name="CTHDOffs">
             <EntityTypeMapping TypeName="ShopDoCongNgheModel.CTHDOff">
               <MappingFragment StoreEntitySet="CTHDOff">
+                <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
                 <ScalarProperty Name="MaKho" ColumnName="MaKho" />
                 <ScalarProperty Name="MaSP" ColumnName="MaSP" />
                 <ScalarProperty Name="MaHD" ColumnName="MaHD" />
@@ -1151,6 +1214,7 @@
           <EntitySetMapping Name="CTHDOnlines">
             <EntityTypeMapping TypeName="ShopDoCongNgheModel.CTHDOnline">
               <MappingFragment StoreEntitySet="CTHDOnline">
+                <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
                 <ScalarProperty Name="MaKho" ColumnName="MaKho" />
                 <ScalarProperty Name="MaSP" ColumnName="MaSP" />
                 <ScalarProperty Name="MaHD" ColumnName="MaHD" />
@@ -1162,6 +1226,7 @@
           <EntitySetMapping Name="CTHDTGs">
             <EntityTypeMapping TypeName="ShopDoCongNgheModel.CTHDTG">
               <MappingFragment StoreEntitySet="CTHDTG">
+                <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
                 <ScalarProperty Name="MaKho" ColumnName="MaKho" />
                 <ScalarProperty Name="MaSP" ColumnName="MaSP" />
                 <ScalarProperty Name="MaHD" ColumnName="MaHD" />
@@ -1173,6 +1238,7 @@
           <EntitySetMapping Name="CTPNs">
             <EntityTypeMapping TypeName="ShopDoCongNgheModel.CTPN">
               <MappingFragment StoreEntitySet="CTPN">
+                <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
                 <ScalarProperty Name="maPhieuNhap" ColumnName="maPhieuNhap" />
                 <ScalarProperty Name="maSP" ColumnName="maSP" />
                 <ScalarProperty Name="SLNhap" ColumnName="SLNhap" />
@@ -1341,6 +1407,30 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ShopDoCongNgheModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ShopDoCongNgheModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ShopDoCongNgheModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ShopDoCongNgheModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ShopDoCongNgheModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ShopDoCongNgheModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ShopDoCongNgheModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ShopDoCongNgheModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ShopDoCongNgheModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

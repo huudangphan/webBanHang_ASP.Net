@@ -19,6 +19,7 @@
     <Property Name="MaHD" Type="int" Nullable="false" />
     <Property Name="SL" Type="int" />
     <Property Name="GiaBan" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="thanhTien" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="CTHDOnline">
     <Key>
@@ -31,6 +32,7 @@
     <Property Name="MaHD" Type="int" Nullable="false" />
     <Property Name="SL" Type="int" />
     <Property Name="GiaBan" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="thanhTien" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="CTHDTG">
     <Key>
@@ -43,6 +45,7 @@
     <Property Name="MaHD" Type="int" Nullable="false" />
     <Property Name="SL" Type="int" />
     <Property Name="GiaBan" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="thanhTien" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="CTPN">
     <Key>
@@ -53,6 +56,7 @@
     <Property Name="maSP" Type="int" Nullable="false" />
     <Property Name="SLNhap" Type="int" />
     <Property Name="giaNhap" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="thanhTien" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="CTTN">
     <Key>
@@ -193,20 +197,6 @@
     <Property Name="maTN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ThoiGian" Type="date" />
   </EntityType>
-  <Association Name="FK_CTHDOff_CTTonKho">
-    <End Role="CTTonKho" Type="Self.CTTonKho" Multiplicity="1" />
-    <End Role="CTHDOff" Type="Self.CTHDOff" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CTTonKho">
-        <PropertyRef Name="MaKho" />
-        <PropertyRef Name="MaSP" />
-      </Principal>
-      <Dependent Role="CTHDOff">
-        <PropertyRef Name="MaSP" />
-        <PropertyRef Name="MaKho" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_CTHDOff_HDOffLine">
     <End Role="HDOffLine" Type="Self.HDOffLine" Multiplicity="1" />
     <End Role="CTHDOff" Type="Self.CTHDOff" Multiplicity="*" />
@@ -439,6 +429,37 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="ShopDoCongNgheModelStoreContainer">
     <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTHDOff" EntityType="Self.CTHDOff" Schema="dbo" store:Type="Tables" />
@@ -460,10 +481,6 @@
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TinNhan" EntityType="Self.TinNhan" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_CTHDOff_CTTonKho" Association="Self.FK_CTHDOff_CTTonKho">
-      <End Role="CTTonKho" EntitySet="CTTonKho" />
-      <End Role="CTHDOff" EntitySet="CTHDOff" />
-    </AssociationSet>
     <AssociationSet Name="FK_CTHDOff_HDOffLine" Association="Self.FK_CTHDOff_HDOffLine">
       <End Role="HDOffLine" EntitySet="HDOffLine" />
       <End Role="CTHDOff" EntitySet="CTHDOff" />

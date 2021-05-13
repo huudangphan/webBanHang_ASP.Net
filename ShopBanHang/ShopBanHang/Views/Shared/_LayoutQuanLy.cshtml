@@ -93,13 +93,13 @@
             <div class="mid">
                 <ul>
                     @*<li>
-                        <a href="">Quản Lý Đơn Hàng</a>
-                        <ul class="sub-menu">
-                            <li><a href="@Url.Action("QLDonHangOffline","QuanLy")" style="color:white">Đơn Hàng Offline</a></li>
-                            <li><a href="@Url.Action("QLHDTG","QuanLy")" style="color:white">Đơn Hàng Trả Góp</a></li>
-                            <li><a href="@Url.Action("QLDonHangOnline","QuanLy")" style="color:white">Đơn Hàng Online</a></li>
-                        </ul>
-                    </li>*@
+            <a href="">Quản Lý Đơn Hàng</a>
+            <ul class="sub-menu">
+                <li><a href="@Url.Action("QLDonHangOffline","QuanLy")" style="color:white">Đơn Hàng Offline</a></li>
+                <li><a href="@Url.Action("QLHDTG","QuanLy")" style="color:white">Đơn Hàng Trả Góp</a></li>
+                <li><a href="@Url.Action("QLDonHangOnline","QuanLy")" style="color:white">Đơn Hàng Online</a></li>
+            </ul>
+        </li>*@
                     <li>
                         Quản Lý Tài Khoản
                         <ul class="sub-menu">
@@ -109,14 +109,15 @@
 
                     </li>
                     <li>
+                        <a href="@Url.Action("TaoHDOff","QuanLy")">Tạo Hóa Đơn Offline</a>
+                    </li>
+                    <li>
                         <a href="@Url.Action("TaoHDTG","QuanLy")">Tạo Hóa đơn Trả Góp</a>
                     </li>
                     <li>
                         <a href="@Url.Action("ThongKe","Admin")">Doanh thu</a>
                     </li>
-                    <li>
-                        <a href="">Liên Hệ</a>
-                    </li>
+                   
                     <li>
                         <a href="@Url.Action("Index2","QuanLy")">Quản Lý Sản Phẩm</a>
                     </li>

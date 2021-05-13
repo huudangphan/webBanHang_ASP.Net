@@ -5,8 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f4cae96e89594703ac7513a888fa6145" Name="Diagram1">
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTHDOff" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTHDOnline" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTHDOff" Width="1.5" PointX="6.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTHDOnline" Width="1.5" PointX="9.875" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="ShopDoCongNgheModel.CTHDTG" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="ShopDoCongNgheModel.CTPN" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ShopDoCongNgheModel.CTTN" Width="1.5" PointX="6" PointY="19.125" IsExpanded="true" />

@@ -164,7 +164,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -189,54 +189,60 @@
       <DependentUpon>ModelBanDoCongNghe.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelCTDHOnline.cs" />
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ThongKe.cs" />
     <Compile Include="Models\ThongTinKhachHang.cs" />
     <Compile Include="Models\XCTDHOffline.cs" />
     <Compile Include="Models\CTHDOff.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTHDOnline.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTHDTG.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTPN.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTTN.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTTonKho.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\Hang.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDNhapSP.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDOffLine.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDOnline.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDTraGop.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Kho.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Loai.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MessModel.cs" />
     <Compile Include="Models\Model.Context.cs">
@@ -286,19 +292,19 @@
     </Compile>
     <Compile Include="Models\ModelUser.cs" />
     <Compile Include="Models\Phat.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PhieuTraGop.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SanPham.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TinNhan.cs">
-      <DependentUpon>ModelBanDoCongNghe.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs" />
     <Compile Include="Models\XCTHDTG.cs" />

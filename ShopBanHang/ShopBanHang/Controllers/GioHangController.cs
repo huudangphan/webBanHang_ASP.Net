@@ -132,6 +132,7 @@ namespace ShopBanHang.Controllers
             {
                 tongTien = listGioHang.Sum(x => x.thanhTien);
             }
+            ViewBag.tongtien = tongTien;
             return tongTien;
         }
         public ActionResult SuaGioHang()
@@ -302,6 +303,8 @@ namespace ShopBanHang.Controllers
                 List<GioHang> gioHang = getGioHang();
                 foreach (var item in gioHang)
                 {
+                    CTTonKho kho = db.CTTonKhoes.Where(x => x.MaSP == item.maSP && x.MaKho == hd.maKho).SingleOrDefault();
+                    kho.SL -= item.soLuong;
                     CTHDTG cthd = new CTHDTG();
                     cthd.MaKho = hd.maKho;
                     cthd.MaHD = hdtg.MaHD;
@@ -391,25 +394,27 @@ namespace ShopBanHang.Controllers
            
             HDOffLine hdOff = new HDOffLine();
             hdOff.MaKH = HDOff.MaKH;
-            hdOff.NgayMua = hd.NgayMua;
+            hdOff.NgayMua = DateTime.Now;
             db.HDOffLines.Add(hdOff);
+
             List<GioHang> gioHang = getGioHang();
-          
-            
-           
+
             foreach (var item in gioHang)
             {
+                CTTonKho lstKho = db.CTTonKhoes.Where(x => x.MaKho == hd.maKho && x.MaSP == item.maSP).SingleOrDefault();
+                lstKho.SL -= item.soLuong;
                 CTHDOff cthd = new CTHDOff();
+                cthd.MaHD = hdOff.MaHD;
                 cthd.MaKho = hd.maKho;
                 cthd.MaSP = item.maSP;
                 cthd.SL = item.soLuong;
                 cthd.GiaBan = item.donGia;
                 db.CTHDOffs.Add(cthd);
             }
-           
+
             db.SaveChanges();
 
-            return View();
+            return RedirectToAction("Index", "QuanLy");
         }
 
         public bool thang30(int month)

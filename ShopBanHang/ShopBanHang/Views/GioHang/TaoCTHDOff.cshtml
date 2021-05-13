@@ -4,6 +4,24 @@
     ViewBag.Title = "TaoCTHDOff";
     Layout = "~/Views/Shared/_LayoutAdminCT.cshtml";
 }
+@using (Html.BeginForm("TaoCTHDOff", "GioHang", FormMethod.Post))
+{
+    <div class="form-group">
 
-<h2>TaoCTHDOff</h2>
+        <div class="col-md-10">
+
+            @Html.DropDownListFor(x => x.maKho, new[]
+  {
+      new SelectListItem(){Text="Sư Vạn Hạnh",Value="1"},
+      new SelectListItem(){Text="Nguyễn Đình Chiểu",Value="2"},
+       new SelectListItem(){Text="Xô Viết Nghệ Tĩnh",Value="3"},
+
+  })
+
+        </div>
+    </div>
+    <input type="submit" name="name" value="Lưu" />
+}
+@{ Html.RenderAction("PartialGioHang", "GioHang");}
+
 

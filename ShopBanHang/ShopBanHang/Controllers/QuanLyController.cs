@@ -131,11 +131,21 @@ namespace ShopBanHang.Controllers
             var result = db.HDOnlines.ToList();
             return View(result);
         }
+        public double tongTienOnline()
+        {
+           
+            var tong =  ( (from a in db.CTHDOnlines
+                           where a.MaHD == ModelCTDHOnline.mahd
+                           select a.thanhTien
+                         ).ToList().Sum());
+            return (double)tong;
+        }
+
         public ActionResult XemChiTietDonHang(int mahd)
         {
             ModelCTDHOnline.mahd = mahd;
             HoaDonXuat.mahd = mahd;
-
+            //ViewBag.tongtien = tongTienOnline();
             return View();
         }
        
@@ -166,8 +176,7 @@ namespace ShopBanHang.Controllers
         }
         public PartialViewResult viewCTHDOnline()
         {
-            var listcDH = db.CTHDOnlines.Where(x => x.MaHD == ModelCTDHOnline.mahd).ToList();
-            
+            var listcDH = db.CTHDOnlines.Where(x => x.MaHD == ModelCTDHOnline.mahd).ToList();           
            
             return PartialView(listcDH);
         }

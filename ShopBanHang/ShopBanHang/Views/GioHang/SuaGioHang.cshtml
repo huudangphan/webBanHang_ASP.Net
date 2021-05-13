@@ -2,7 +2,7 @@
 @model List<GioHang>
 @{
     ViewBag.Title = "Sửa giỏ hàng";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutKhach1.cshtml";
 }
 
 <table border="1px">
@@ -33,7 +33,9 @@
 
                 <td>@String.Format("{0:0,0}", item.donGia.ToString()) VNĐ </td>
 
-                <td>@Html.TextBox("txtSoLuong", item.soLuong) </td>
+                @*<td>@Html.TextBox("txtSoLuong", item.soLuong) </td>*@
+                <td><input type="number" name="txtSoLuong" min="1" value="@item.soLuong" /></td>
+            
 
 
                 <td>@item.thanhTien</td>
