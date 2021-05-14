@@ -164,7 +164,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -173,6 +173,21 @@
     <Compile Include="Models\HDOff.cs" />
     <Compile Include="Models\HDTG.cs" />
     <Compile Include="Models\HoaDonXuat.cs" />
+    <Compile Include="Models\Model2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model2.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\ModelBanDoCongNghe.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -199,50 +214,50 @@
     <Compile Include="Models\ThongTinKhachHang.cs" />
     <Compile Include="Models\XCTDHOffline.cs" />
     <Compile Include="Models\CTHDOff.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTHDOnline.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTHDTG.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTPN.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTTN.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTTonKho.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\Hang.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDNhapSP.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDOffLine.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDOnline.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDTraGop.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Kho.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Loai.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MessModel.cs" />
     <Compile Include="Models\Model.Context.cs">
@@ -292,19 +307,19 @@
     </Compile>
     <Compile Include="Models\ModelUser.cs" />
     <Compile Include="Models\Phat.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PhieuTraGop.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SanPham.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TinNhan.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
+      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs" />
     <Compile Include="Models\XCTHDTG.cs" />
@@ -1081,6 +1096,16 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Model2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model2.edmx</DependentUpon>
+      <LastGenOutput>Model2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model2.edmx</DependentUpon>
+      <LastGenOutput>Model2.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\ModelBanDoCongNghe.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelBanDoCongNghe.edmx</DependentUpon>
@@ -1288,6 +1313,13 @@
     </EntityDeploy>
     <Content Include="Models\ModelBanDoCongNghe.edmx.diagram">
       <DependentUpon>ModelBanDoCongNghe.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Model2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model2.edmx.diagram">
+      <DependentUpon>Model2.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

@@ -142,6 +142,7 @@
     width: 70%;
     height: auto;
     float: left;
+    border: 0.5px solid #d3cdcd;
 }
 
 .right {

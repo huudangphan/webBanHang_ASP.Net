@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="databaseModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="userAdmin" />
+    </Key>
+    <Property Name="userAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="passAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CTHDOff">
+    <Key>
+      <PropertyRef Name="MaKho" />
+      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaKho" Type="Int32" Nullable="false" />
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+    <Property Name="SL" Type="Int32" />
+    <Property Name="GiaBan" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="thanhTien" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="CTTonKho" Relationship="Self.FK_CTHDOff_CTTonKho" FromRole="CTHDOff" ToRole="CTTonKho" />
+    <NavigationProperty Name="HDOffLine" Relationship="Self.FK_CTHDOff_HDOffLine" FromRole="CTHDOff" ToRole="HDOffLine" />
+  </EntityType>
+  <EntityType Name="CTHDOnline">
+    <Key>
+      <PropertyRef Name="MaKho" />
+      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaKho" Type="Int32" Nullable="false" />
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+    <Property Name="SL" Type="Int32" />
+    <Property Name="GiaBan" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="thanhTien" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="CTTonKho" Relationship="Self.FK_CTHDOnline_CTTonKho" FromRole="CTHDOnline" ToRole="CTTonKho" />
+    <NavigationProperty Name="HDOnline" Relationship="Self.FK_CTHDOnline_HDOnline" FromRole="CTHDOnline" ToRole="HDOnline" />
+  </EntityType>
+  <EntityType Name="CTHDTG">
+    <Key>
+      <PropertyRef Name="MaKho" />
+      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaKho" Type="Int32" Nullable="false" />
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+    <Property Name="SL" Type="Int32" />
+    <Property Name="GiaBan" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="thanhTien" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="CTTonKho" Relationship="Self.FK_CTHDTG_CTTonKho" FromRole="CTHDTG" ToRole="CTTonKho" />
+    <NavigationProperty Name="HDTraGop" Relationship="Self.FK_CTHDTG_HDTraGop" FromRole="CTHDTG" ToRole="HDTraGop" />
+  </EntityType>
+  <EntityType Name="CTPN">
+    <Key>
+      <PropertyRef Name="maPhieuNhap" />
+      <PropertyRef Name="maSP" />
+    </Key>
+    <Property Name="maPhieuNhap" Type="Int32" Nullable="false" />
+    <Property Name="maSP" Type="Int32" Nullable="false" />
+    <Property Name="SLNhap" Type="Int32" />
+    <Property Name="giaNhap" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="thanhTien" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="HDNhapSP" Relationship="Self.FK_HDNhapSP2" FromRole="CTPN" ToRole="HDNhapSP" />
+    <NavigationProperty Name="SanPham" Relationship="Self.FK_SanPham" FromRole="CTPN" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="CTTN">
+    <Key>
+      <PropertyRef Name="maKHGui" />
+      <PropertyRef Name="maTN" />
+    </Key>
+    <Property Name="maKHGui" Type="Int32" Nullable="false" />
+    <Property Name="maTN" Type="Int32" Nullable="false" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idNguoiNhan" Type="Int32" />
+    <NavigationProperty Name="KhachHang" Relationship="Self.FK_CTTN" FromRole="CTTN" ToRole="KhachHang" />
+    <NavigationProperty Name="TinNhan" Relationship="Self.FK_CTTN2" FromRole="CTTN" ToRole="TinNhan" />
+  </EntityType>
+  <EntityType Name="CTTonKho">
+    <Key>
+      <PropertyRef Name="MaKho" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaKho" Type="Int32" Nullable="false" />
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="SL" Type="Int32" />
+    <NavigationProperty Name="CTHDOffs" Relationship="Self.FK_CTHDOff_CTTonKho" FromRole="CTTonKho" ToRole="CTHDOff" />
+    <NavigationProperty Name="CTHDOnlines" Relationship="Self.FK_CTHDOnline_CTTonKho" FromRole="CTTonKho" ToRole="CTHDOnline" />
+    <NavigationProperty Name="CTHDTGs" Relationship="Self.FK_CTHDTG_CTTonKho" FromRole="CTTonKho" ToRole="CTHDTG" />
+    <NavigationProperty Name="Kho" Relationship="Self.FK_CTTonKho" FromRole="CTTonKho" ToRole="Kho" />
+    <NavigationProperty Name="SanPham" Relationship="Self.FK_CTTonKho2" FromRole="CTTonKho" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="Hang">
+    <Key>
+      <PropertyRef Name="maHang" />
+    </Key>
+    <Property Name="maHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tenHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SanPhams" Relationship="Self.FK_Hang" FromRole="Hang" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="HDNhapSP">
+    <Key>
+      <PropertyRef Name="maPhieuNhap" />
+    </Key>
+    <Property Name="maPhieuNhap" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ngayNhap" Type="DateTime" Precision="0" />
+    <Property Name="maKho" Type="Int32" />
+    <NavigationProperty Name="CTPNs" Relationship="Self.FK_HDNhapSP2" FromRole="HDNhapSP" ToRole="CTPN" />
+    <NavigationProperty Name="Kho" Relationship="Self.FK_HDNhapSP" FromRole="HDNhapSP" ToRole="Kho" />
+  </EntityType>
+  <EntityType Name="HDOffLine">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaKH" Type="Int32" Nullable="false" />
+    <Property Name="NgayMua" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="CTHDOffs" Relationship="Self.FK_CTHDOff_HDOffLine" FromRole="HDOffLine" ToRole="CTHDOff" />
+    <NavigationProperty Name="KhachHang" Relationship="Self.FK_HDOffLine" FromRole="HDOffLine" ToRole="KhachHang" />
+  </EntityType>
+  <EntityType Name="HDOnline">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaKH" Type="Int32" Nullable="false" />
+    <Property Name="NgayDat" Type="DateTime" Precision="0" />
+    <Property Name="NgayGiao" Type="DateTime" Precision="0" />
+    <Property Name="TinhTrang" Type="Boolean" />
+    <NavigationProperty Name="CTHDOnlines" Relationship="Self.FK_CTHDOnline_HDOnline" FromRole="HDOnline" ToRole="CTHDOnline" />
+    <NavigationProperty Name="KhachHang" Relationship="Self.FK_HDOnline" FromRole="HDOnline" ToRole="KhachHang" />
+  </EntityType>
+  <EntityType Name="HDTraGop">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaKH" Type="Int32" />
+    <Property Name="NgayCoc" Type="DateTime" Precision="0" />
+    <Property Name="TienCoc" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SoThang" Type="Int32" />
+    <Property Name="laiSuat" Type="Int32" />
+    <NavigationProperty Name="CTHDTGs" Relationship="Self.FK_CTHDTG_HDTraGop" FromRole="HDTraGop" ToRole="CTHDTG" />
+    <NavigationProperty Name="KhachHang" Relationship="Self.FK_HDTraGop_KhachHang" FromRole="HDTraGop" ToRole="KhachHang" />
+    <NavigationProperty Name="PhieuTraGops" Relationship="Self.FK_PhieuTraGop_HDTraGop" FromRole="HDTraGop" ToRole="PhieuTraGop" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="taiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="matKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tongMua" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="CTTNs" Relationship="Self.FK_CTTN" FromRole="KhachHang" ToRole="CTTN" />
+    <NavigationProperty Name="HDOffLines" Relationship="Self.FK_HDOffLine" FromRole="KhachHang" ToRole="HDOffLine" />
+    <NavigationProperty Name="HDOnlines" Relationship="Self.FK_HDOnline" FromRole="KhachHang" ToRole="HDOnline" />
+    <NavigationProperty Name="HDTraGops" Relationship="Self.FK_HDTraGop_KhachHang" FromRole="KhachHang" ToRole="HDTraGop" />
+  </EntityType>
+  <EntityType Name="Kho">
+    <Key>
+      <PropertyRef Name="maKho" />
+    </Key>
+    <Property Name="maKho" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tenKho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CTTonKhoes" Relationship="Self.FK_CTTonKho" FromRole="Kho" ToRole="CTTonKho" />
+    <NavigationProperty Name="HDNhapSPs" Relationship="Self.FK_HDNhapSP" FromRole="Kho" ToRole="HDNhapSP" />
+  </EntityType>
+  <EntityType Name="Loai">
+    <Key>
+      <PropertyRef Name="maLoai" />
+    </Key>
+    <Property Name="maLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoaiSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SanPhams" Relationship="Self.FK_Loai" FromRole="Loai" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="Phat">
+    <Key>
+      <PropertyRef Name="maMucPhat" />
+    </Key>
+    <Property Name="maMucPhat" Type="Int32" Nullable="false" />
+    <Property Name="mucPhat" Type="Int32" />
+    <NavigationProperty Name="PhieuTraGops" Relationship="Self.FK_PhieuTraGop_Phat" FromRole="Phat" ToRole="PhieuTraGop" />
+  </EntityType>
+  <EntityType Name="PhieuTraGop">
+    <Key>
+      <PropertyRef Name="MaPhieu" />
+    </Key>
+    <Property Name="MaPhieu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaHD" Type="Int32" />
+    <Property Name="NgayTra" Type="DateTime" Precision="0" />
+    <Property Name="NgayDenHan" Type="DateTime" Precision="0" />
+    <Property Name="Ki" Type="Int32" />
+    <Property Name="MaMucPhat" Type="Int32" />
+    <Property Name="TienDong" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TienPhat" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="HDTraGop" Relationship="Self.FK_PhieuTraGop_HDTraGop" FromRole="PhieuTraGop" ToRole="HDTraGop" />
+    <NavigationProperty Name="Phat" Relationship="Self.FK_PhieuTraGop_Phat" FromRole="PhieuTraGop" ToRole="Phat" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="maSP" />
+    </Key>
+    <Property Name="maSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="maHang" Type="Int32" />
+    <Property Name="maLoai" Type="Int32" />
+    <Property Name="tenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="anh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="giaSP" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CTPNs" Relationship="Self.FK_SanPham" FromRole="SanPham" ToRole="CTPN" />
+    <NavigationProperty Name="CTTonKhoes" Relationship="Self.FK_CTTonKho2" FromRole="SanPham" ToRole="CTTonKho" />
+    <NavigationProperty Name="Hang" Relationship="Self.FK_Hang" FromRole="SanPham" ToRole="Hang" />
+    <NavigationProperty Name="Loai" Relationship="Self.FK_Loai" FromRole="SanPham" ToRole="Loai" />
+  </EntityType>
+  <EntityType Name="TinNhan">
+    <Key>
+      <PropertyRef Name="maTN" />
+    </Key>
+    <Property Name="maTN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ThoiGian" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="CTTNs" Relationship="Self.FK_CTTN2" FromRole="TinNhan" ToRole="CTTN" />
+  </EntityType>
+  <Association Name="FK_CTHDOff_CTTonKho">
+    <End Role="CTTonKho" Type="Self.CTTonKho" Multiplicity="1" />
+    <End Role="CTHDOff" Type="Self.CTHDOff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CTTonKho">
+        <PropertyRef Name="MaKho" />
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="CTHDOff">
+        <PropertyRef Name="MaSP" />
+        <PropertyRef Name="MaKho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHDOff_HDOffLine">
+    <End Role="HDOffLine" Type="Self.HDOffLine" Multiplicity="1" />
+    <End Role="CTHDOff" Type="Self.CTHDOff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HDOffLine">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="CTHDOff">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHDOnline_CTTonKho">
+    <End Role="CTTonKho" Type="Self.CTTonKho" Multiplicity="1" />
+    <End Role="CTHDOnline" Type="Self.CTHDOnline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CTTonKho">
+        <PropertyRef Name="MaKho" />
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="CTHDOnline">
+        <PropertyRef Name="MaKho" />
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHDOnline_HDOnline">
+    <End Role="HDOnline" Type="Self.HDOnline" Multiplicity="1" />
+    <End Role="CTHDOnline" Type="Self.CTHDOnline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HDOnline">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="CTHDOnline">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHDTG_CTTonKho">
+    <End Role="CTTonKho" Type="Self.CTTonKho" Multiplicity="1" />
+    <End Role="CTHDTG" Type="Self.CTHDTG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CTTonKho">
+        <PropertyRef Name="MaKho" />
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="CTHDTG">
+        <PropertyRef Name="MaKho" />
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHDTG_HDTraGop">
+    <End Role="HDTraGop" Type="Self.HDTraGop" Multiplicity="1" />
+    <End Role="CTHDTG" Type="Self.CTHDTG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HDTraGop">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="CTHDTG">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDNhapSP2">
+    <End Role="HDNhapSP" Type="Self.HDNhapSP" Multiplicity="1" />
+    <End Role="CTPN" Type="Self.CTPN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HDNhapSP">
+        <PropertyRef Name="maPhieuNhap" />
+      </Principal>
+      <Dependent Role="CTPN">
+        <PropertyRef Name="maPhieuNhap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="CTPN" Type="Self.CTPN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="maSP" />
+      </Principal>
+      <Dependent Role="CTPN">
+        <PropertyRef Name="maSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTTN">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
+    <End Role="CTTN" Type="Self.CTTN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="CTTN">
+        <PropertyRef Name="maKHGui" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTTN2">
+    <End Role="TinNhan" Type="Self.TinNhan" Multiplicity="1" />
+    <End Role="CTTN" Type="Self.CTTN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TinNhan">
+        <PropertyRef Name="maTN" />
+      </Principal>
+      <Dependent Role="CTTN">
+        <PropertyRef Name="maTN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTTonKho">
+    <End Role="Kho" Type="Self.Kho" Multiplicity="1" />
+    <End Role="CTTonKho" Type="Self.CTTonKho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kho">
+        <PropertyRef Name="maKho" />
+      </Principal>
+      <Dependent Role="CTTonKho">
+        <PropertyRef Name="MaKho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTTonKho2">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="CTTonKho" Type="Self.CTTonKho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="maSP" />
+      </Principal>
+      <Dependent Role="CTTonKho">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hang">
+    <End Role="Hang" Type="Self.Hang" Multiplicity="0..1" />
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hang">
+        <PropertyRef Name="maHang" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="maHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDNhapSP">
+    <End Role="Kho" Type="Self.Kho" Multiplicity="0..1" />
+    <End Role="HDNhapSP" Type="Self.HDNhapSP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kho">
+        <PropertyRef Name="maKho" />
+      </Principal>
+      <Dependent Role="HDNhapSP">
+        <PropertyRef Name="maKho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDOffLine">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
+    <End Role="HDOffLine" Type="Self.HDOffLine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="HDOffLine">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDOnline">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
+    <End Role="HDOnline" Type="Self.HDOnline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="HDOnline">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDTraGop_KhachHang">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+    <End Role="HDTraGop" Type="Self.HDTraGop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="HDTraGop">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuTraGop_HDTraGop">
+    <End Role="HDTraGop" Type="Self.HDTraGop" Multiplicity="0..1" />
+    <End Role="PhieuTraGop" Type="Self.PhieuTraGop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HDTraGop">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="PhieuTraGop">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Loai">
+    <End Role="Loai" Type="Self.Loai" Multiplicity="0..1" />
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Loai">
+        <PropertyRef Name="maLoai" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="maLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuTraGop_Phat">
+    <End Role="Phat" Type="Self.Phat" Multiplicity="0..1" />
+    <End Role="PhieuTraGop" Type="Self.PhieuTraGop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phat">
+        <PropertyRef Name="maMucPhat" />
+      </Principal>
+      <Dependent Role="PhieuTraGop">
+        <PropertyRef Name="MaMucPhat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="databaseEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="CTHDOffs" EntityType="Self.CTHDOff" />
+    <EntitySet Name="CTHDOnlines" EntityType="Self.CTHDOnline" />
+    <EntitySet Name="CTHDTGs" EntityType="Self.CTHDTG" />
+    <EntitySet Name="CTPNs" EntityType="Self.CTPN" />
+    <EntitySet Name="CTTNs" EntityType="Self.CTTN" />
+    <EntitySet Name="CTTonKhoes" EntityType="Self.CTTonKho" />
+    <EntitySet Name="Hangs" EntityType="Self.Hang" />
+    <EntitySet Name="HDNhapSPs" EntityType="Self.HDNhapSP" />
+    <EntitySet Name="HDOffLines" EntityType="Self.HDOffLine" />
+    <EntitySet Name="HDOnlines" EntityType="Self.HDOnline" />
+    <EntitySet Name="HDTraGops" EntityType="Self.HDTraGop" />
+    <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+    <EntitySet Name="Khoes" EntityType="Self.Kho" />
+    <EntitySet Name="Loais" EntityType="Self.Loai" />
+    <EntitySet Name="Phats" EntityType="Self.Phat" />
+    <EntitySet Name="PhieuTraGops" EntityType="Self.PhieuTraGop" />
+    <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
+    <EntitySet Name="TinNhans" EntityType="Self.TinNhan" />
+    <AssociationSet Name="FK_CTHDOff_CTTonKho" Association="Self.FK_CTHDOff_CTTonKho">
+      <End Role="CTTonKho" EntitySet="CTTonKhoes" />
+      <End Role="CTHDOff" EntitySet="CTHDOffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHDOff_HDOffLine" Association="Self.FK_CTHDOff_HDOffLine">
+      <End Role="HDOffLine" EntitySet="HDOffLines" />
+      <End Role="CTHDOff" EntitySet="CTHDOffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHDOnline_CTTonKho" Association="Self.FK_CTHDOnline_CTTonKho">
+      <End Role="CTTonKho" EntitySet="CTTonKhoes" />
+      <End Role="CTHDOnline" EntitySet="CTHDOnlines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHDOnline_HDOnline" Association="Self.FK_CTHDOnline_HDOnline">
+      <End Role="HDOnline" EntitySet="HDOnlines" />
+      <End Role="CTHDOnline" EntitySet="CTHDOnlines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHDTG_CTTonKho" Association="Self.FK_CTHDTG_CTTonKho">
+      <End Role="CTTonKho" EntitySet="CTTonKhoes" />
+      <End Role="CTHDTG" EntitySet="CTHDTGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHDTG_HDTraGop" Association="Self.FK_CTHDTG_HDTraGop">
+      <End Role="HDTraGop" EntitySet="HDTraGops" />
+      <End Role="CTHDTG" EntitySet="CTHDTGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDNhapSP2" Association="Self.FK_HDNhapSP2">
+      <End Role="HDNhapSP" EntitySet="HDNhapSPs" />
+      <End Role="CTPN" EntitySet="CTPNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham" Association="Self.FK_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="CTPN" EntitySet="CTPNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTTN" Association="Self.FK_CTTN">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="CTTN" EntitySet="CTTNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTTN2" Association="Self.FK_CTTN2">
+      <End Role="TinNhan" EntitySet="TinNhans" />
+      <End Role="CTTN" EntitySet="CTTNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTTonKho" Association="Self.FK_CTTonKho">
+      <End Role="Kho" EntitySet="Khoes" />
+      <End Role="CTTonKho" EntitySet="CTTonKhoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTTonKho2" Association="Self.FK_CTTonKho2">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="CTTonKho" EntitySet="CTTonKhoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hang" Association="Self.FK_Hang">
+      <End Role="Hang" EntitySet="Hangs" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDNhapSP" Association="Self.FK_HDNhapSP">
+      <End Role="Kho" EntitySet="Khoes" />
+      <End Role="HDNhapSP" EntitySet="HDNhapSPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDOffLine" Association="Self.FK_HDOffLine">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="HDOffLine" EntitySet="HDOffLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDOnline" Association="Self.FK_HDOnline">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="HDOnline" EntitySet="HDOnlines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDTraGop_KhachHang" Association="Self.FK_HDTraGop_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="HDTraGop" EntitySet="HDTraGops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuTraGop_HDTraGop" Association="Self.FK_PhieuTraGop_HDTraGop">
+      <End Role="HDTraGop" EntitySet="HDTraGops" />
+      <End Role="PhieuTraGop" EntitySet="PhieuTraGops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Loai" Association="Self.FK_Loai">
+      <End Role="Loai" EntitySet="Loais" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuTraGop_Phat" Association="Self.FK_PhieuTraGop_Phat">
+      <End Role="Phat" EntitySet="Phats" />
+      <End Role="PhieuTraGop" EntitySet="PhieuTraGops" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

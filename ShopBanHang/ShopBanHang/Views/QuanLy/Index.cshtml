@@ -11,12 +11,18 @@
 
 
 <table class="table">
-    
+    <tr>
+        <td><p style="font-weight:bold;font-size:20px;">Tên Sản Phẩm</p></td>
+        <td><p style="font-weight:bold;font-size:20px;">Hình Ảnh</p></td>
+        <td><p style="font-weight:bold;font-size:20px;">Gía</p></td>
+        <td><p style="font-weight:bold;font-size:20px;">Hãng</p></td>
+
+    </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            Tên sản phẩm
+            @Html.DisplayFor(modelItem => item.anh)
         </td>
         
         <td>

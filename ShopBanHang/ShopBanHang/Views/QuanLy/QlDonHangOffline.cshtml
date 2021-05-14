@@ -6,32 +6,36 @@
 }
 
 
-<table class="table">
-    <tr>
-        <th>
-            Ngày mua hàng
-        </th>
-        <th>
-            Tên khách hàng mua trực tiếp
-        </th>
-        <th>
-        
-        </th>
-    </tr>
+<div style="width:70%">
+    <table class="table">
+        <tr>
+            <th>
+                Ngày mua hàng
+            </th>
+            <th>
+                Tên khách hàng mua trực tiếp
+            </th>
+            <th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayMua)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.KhachHang.tenKH)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "XemCTHDOff", new { mahd = item.MaHD })
-        </td>
-        
-    </tr>
-}
+            </th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayMua)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KhachHang.tenKH)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "XemCTHDOff", new { mahd = item.MaHD })
+                </td>
+
+            </tr>
+        }
+
+    </table>
+
+</div>
