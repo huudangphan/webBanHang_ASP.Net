@@ -9,7 +9,7 @@ namespace ShopBanHang.Controllers
 {
     public class AdminController : Controller
     {
-        ShopDoCongNgheEntities1 db = new ShopDoCongNgheEntities1();
+        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
 
         // GET: Admin
         public ActionResult Index()
@@ -36,11 +36,15 @@ namespace ShopBanHang.Controllers
                 Admin ad = db.Admins.Where(x => x.userAdmin == username && x.passAdmin == password).SingleOrDefault();
                 if (ad != null)
                 {
-                    Session["tenKH"] = data.tenAdmin;
-                    if (username == "Admin")
+                    Session["tk"] = data.tenAdmin;
+                    if (ad.Loai==1)
                         return RedirectToAction("Index2", "QuanLy");
-                  
-                    return RedirectToAction("Index", "QuanLy");
+                    if(ad.Loai==3)
+                        return RedirectToAction("Index", "QuanLy");
+                    else
+                        return RedirectToAction("Index3", "QuanLy");
+
+
                 }
                 else
                     ViewBag.Loi2 = "Tên đăng nhập hoặc mật khẩu sai";

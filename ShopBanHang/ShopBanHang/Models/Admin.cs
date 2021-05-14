@@ -17,5 +17,6 @@ namespace ShopBanHang.Models
         public string userAdmin { get; set; }
         public string passAdmin { get; set; }
         public string tenAdmin { get; set; }
+        public Nullable<int> Loai { get; set; }
     }
 }

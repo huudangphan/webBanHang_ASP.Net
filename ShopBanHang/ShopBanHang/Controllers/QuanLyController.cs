@@ -15,7 +15,7 @@ namespace ShopBanHang.Controllers
 {
     public class QuanLyController : Controller
     {
-        databaseEntities1 db = new databaseEntities1();
+        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
 
         public ActionResult Index(int? page)
         {
@@ -106,12 +106,14 @@ namespace ShopBanHang.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
-            var spkho = db.CTTonKhoes.Where(x => x.MaSP == id).SingleOrDefault();
-            db.CTTonKhoes.Remove(spkho);
+            
+            
             var sanpham = db.SanPhams.Find(id);
-            db.SanPhams.Remove(sanpham);
+            sanpham.tenSP = "Đã ngừng kinh doanh";
+            //var kho = db.CTTonKhoes.Where(x => x.MaSP == id).SingleOrDefault();
+            //db.CTTonKhoes.Remove(kho);
             db.SaveChanges();
-            return RedirectToAction("Index", "QuanLy");
+            return RedirectToAction("Index3", "QuanLy");
 
         }
         public ViewResult xemChiTiet(int masp = 0)
@@ -176,8 +178,12 @@ namespace ShopBanHang.Controllers
         }
         public PartialViewResult viewCTHDOnline()
         {
-            var listcDH = db.CTHDOnlines.Where(x => x.MaHD == ModelCTDHOnline.mahd).ToList();           
-           
+            var listcDH = db.CTHDOnlines.Where(x => x.MaHD == ModelCTDHOnline.mahd).ToList();
+            var tongTien = (from a in db.CTHDOnlines
+                            where a.MaHD == ModelCTDHOnline.mahd
+                            select a.thanhTien
+                          ).ToList().Sum();
+            ViewBag.tongtien = tongTien;
             return PartialView(listcDH);
         }
 
@@ -279,7 +285,11 @@ namespace ShopBanHang.Controllers
         public PartialViewResult viewCTHDOffline()
         {
             var listcDH = db.CTHDOffs.Where(x => x.MaHD == ModelCTDHOnline.mahd).ToList();
-
+            var tongtienOff = (from a in db.CTHDOffs
+                               where a.MaHD == ModelCTDHOnline.mahd
+                               select a.thanhTien
+                             ).ToList().Sum();
+            ViewBag.tongtienoff = tongtienOff;
 
             return PartialView(listcDH);
         }
@@ -329,6 +339,11 @@ namespace ShopBanHang.Controllers
         public PartialViewResult viewCTHDTG()
         {
             var listcDH = db.CTHDTGs.Where(x => x.MaHD == ModelCTDHOnline.mahd).ToList();
+            var tongTienTG = (from a in db.CTHDTGs
+                             where a.MaHD == ModelCTDHOnline.mahd
+                             select a.thanhTien
+                           ).ToList().Sum();
+            ViewBag.tongtientg = tongTienTG;
 
 
             return PartialView(listcDH);
@@ -381,23 +396,44 @@ namespace ShopBanHang.Controllers
             return PartialView(result);
         }
     
-        public ActionResult TaoPhieuTraGop()
+        public ActionResult TaoPhieuTraGop(string tuKhoa)
         {
-            int mahd = ModelCTDHOnline.mahd;
-            return View(db.PhieuTraGops.Where(x=>x.MaHD==mahd).ToList());
+            var result = db.KhachHangs.Where(x => x.tenKH.Contains(tuKhoa)).ToList();
+            return View(result);
 
         }
        
-        public ActionResult TaoPhieuTraGop2(int maPhieu)
+        public ActionResult TaoPhieuTraGop2(int MaKH)
         {
+            return View(db.HDTraGops.Where(x => x.MaKH == MaKH).ToList());
 
-            int mahd = ModelCTDHOnline.mahd;
-            PhieuTraGop ptg = db.PhieuTraGops.Where(x => x.MaPhieu == maPhieu).FirstOrDefault();
-            ptg.NgayTra = DateTime.Parse(DateTime.Now.ToString()); /*DateTime.Parse("2022-10-10");*/
-            db.SaveChanges();
-            return View(db.PhieuTraGops.Where(x=>x.MaPhieu==maPhieu).SingleOrDefault());
-
+           
         }
+       
+        public ActionResult TraGop(int id)
+        {            
+            return View(db.PhieuTraGops.Where(x=>x.MaHD==id).ToList());
+        }
+        public ActionResult Tra(int id)
+        {
+            ModelCTDHOnline.mahd = id;
+            PhieuTraGop ptg = db.PhieuTraGops.Where(x => x.MaPhieu == id).FirstOrDefault();
+            ptg.NgayTra = DateTime.Parse(DateTime.Now.ToString());
+            db.SaveChanges();
+            return View(db.PhieuTraGops.Where(x=>x.MaPhieu==id).ToList());
+        }
+       public ActionResult Index3()
+        {
+            return View();
+        }
+        public ActionResult qlsp(int? page)
+        {
+            int pageNum = (page ?? 1);
+            int pageSize = 10;
+            var list = db.SanPhams.OrderBy(c => c.tenSP).ToPagedList(pageNum, pageSize);
+            return View(list);
+        }
+        
 
 
     }

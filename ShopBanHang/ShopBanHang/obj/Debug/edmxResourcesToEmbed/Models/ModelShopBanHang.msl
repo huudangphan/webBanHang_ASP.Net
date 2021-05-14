@@ -203,6 +203,7 @@
     <EntitySetMapping Name="Admins">
       <EntityTypeMapping TypeName="ShopDoCongNgheModel.Admin">
         <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Loai" ColumnName="Loai" />
           <ScalarProperty Name="tenAdmin" ColumnName="tenAdmin" />
           <ScalarProperty Name="passAdmin" ColumnName="passAdmin" />
           <ScalarProperty Name="userAdmin" ColumnName="userAdmin" />

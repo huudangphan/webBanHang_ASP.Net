@@ -1,31 +1,32 @@
-﻿@model IEnumerable<ShopBanHang.Models.PhieuTraGop>
+﻿@model IEnumerable<ShopBanHang.Models.KhachHang>
 
 @{
     ViewBag.Title = "TaoPhieuTraGop";
     Layout = "~/Views/Shared/_LayoutAdminCT.cshtml";
 }
 
+@using (Html.BeginForm("TaoPhieuTraGop", "QuanLy"))
+{
 
-<h2 style="margin-top:15px;margin-bottom:15px;color:#1baf08">Tạo Phiếu Trả Góp</h2>
-
-<div style="width:60%">
+    <div style="margin-top:15px;margin-bottom:15px;">@Html.TextBox("tuKhoa")<button type="submit" class="btn btn-primary" style="margin-left:10px;"><i class="fas fa-search fa-sm"></i></button></div>
     <table class="table">
         <tr>
             <th>
-                Ngày trả
+                Mã khách hàng
             </th>
             <th>
-                Ngày đến hạn
+                Tên khách hàng
             </th>
             <th>
-                Kỳ
+                Địa chỉ khách hàng
             </th>
             <th>
-                Tiền đóng
+                Số điện thoại
             </th>
             <th>
-                Tiền phạt
+                Email
             </th>
+
 
             <th></th>
         </tr>
@@ -34,27 +35,29 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.NgayTra)
+                    @Html.DisplayFor(modelItem => item.MaKH)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.NgayDenHan)
+                    @Html.DisplayFor(modelItem => item.tenKH)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Ki)
+                    @Html.DisplayFor(modelItem => item.DiaChi)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.TienDong)
+                    @Html.DisplayFor(modelItem => item.SDT)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.TienPhat)
-                </td>
-                <td>
-                    @Html.ActionLink("Đóng tiền", "TaoPhieuTraGop2", new { @MaPhieu = item.MaPhieu })
+                    @Html.DisplayFor(modelItem => item.email)
                 </td>
 
+
+                <td>
+                    <a href="@Url.Action("TaoPhieuTraGop2","QuanLy", new { @MaKH=item.MaKH})">Chọn</a>
+
+                </td>
             </tr>
         }
 
     </table>
 
-</div>
+}

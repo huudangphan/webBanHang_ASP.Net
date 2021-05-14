@@ -4,12 +4,15 @@
 <table class="table">
     <tr>
         <th>
-            Số lượng
+            @Html.DisplayNameFor(model => model.SL)
         </th>
         <th>
-            Gía bán
+            @Html.DisplayNameFor(model => model.GiaBan)
         </th>
-       
+        <th>
+            @Html.DisplayNameFor(model => model.thanhTien)
+        </th>
+        
         <th></th>
     </tr>
 
@@ -24,7 +27,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.thanhTien)
         </td>
+        
     </tr>
 }
-
+    <tr>
+        <td>Tổng tiền</td>
+        <td></td>
+        <td>@ViewBag.tongtienoff</td>
+    </tr>
 </table>

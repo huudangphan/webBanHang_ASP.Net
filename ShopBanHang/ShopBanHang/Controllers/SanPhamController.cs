@@ -10,7 +10,7 @@ namespace ShopBanHang.Controllers
    
     public class SanPhamController : Controller
     {
-        databaseEntities1 db = new databaseEntities1();
+        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
 
         //databaseEntities db = new databaseEntities();
         // GET: SanPham

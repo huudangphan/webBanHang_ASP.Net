@@ -32,7 +32,7 @@
             <div class="topofweb">
                 <div style="width: 70%; height: 40px;margin-left: 15%;float: left;">
                     <ul style="float: right; text-align: center;">
-                        @if (Session["tk"]!= null)
+                        @if (Session["tk"] != null)
                         {
 
                             <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
@@ -40,8 +40,8 @@
 
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                  aria-labelledby="userDropdown">
-                               
-                                
+                             
+
                                 <a href="@Url.Action("DangXuat","NguoiDung" )" class="dropdown-item"> <i class="fas fa-sign-in-alt"></i>Đăng xuất</a>
                                 <div class="dropdown-divider"></div>
 
@@ -89,28 +89,14 @@
             </div>
             <div class="mid">
                 <ul>
-                    @*<li>
-            <a href="">Quản Lý Đơn Hàng</a>
-            <ul class="sub-menu">
-                <li><a href="@Url.Action("QLDonHangOffline","QuanLy")" style="color:white">Đơn Hàng Offline</a></li>
-                <li><a href="@Url.Action("QLHDTG","QuanLy")" style="color:white">Đơn Hàng Trả Góp</a></li>
-                <li><a href="@Url.Action("QLDonHangOnline","QuanLy")" style="color:white">Đơn Hàng Online</a></li>
-            </ul>
-        </li>*@
-                    <li>
-                        Quản Lý Tài Khoản
-                        <ul class="sub-menu">
-                            <li> <a href="@Url.Action("QTTKKH","Admin")"> Tài Khoản khách</a></li>
-                            <li> <a href="@Url.Action("QLTKNV","Admin")"> Tài Khoản nhân viên</a></li>
-                        </ul>
 
-                    </li>
-                   
+
                     <li>
-                        <a href="@Url.Action("ThongKe","Admin")">Doanh thu</a>
+                        <a href="@Url.Action("qlsp","QuanLy")">Quản Lý Sản Phẩm</a>
                     </li>
-                   
-                   
+                    <li>
+                        <a href="@Url.Action("Add","QuanLy")">Nhập Sản Phẩm</a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -1,31 +1,41 @@
 ﻿@model IEnumerable<ShopBanHang.Models.CTHDTG>
 
-
-
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 <table class="table">
     <tr>
         <th>
-            Số lượng
+            @Html.DisplayNameFor(model => model.SL)
         </th>
         <th>
-            Gía bán
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thanhTien)
         </th>
         
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.SL)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.GiaBan)
-    </td>
-    
-
-
-</tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.thanhTien)
+        </td>
+       
+    </tr>
 }
-
+<tr>
+    <td>Tổng tiền</td>
+    <td></td>
+    <td>@ViewBag.tongtientg</td>
+</tr>
 </table>
+
+

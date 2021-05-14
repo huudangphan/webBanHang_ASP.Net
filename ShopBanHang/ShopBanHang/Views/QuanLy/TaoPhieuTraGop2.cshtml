@@ -1,75 +1,54 @@
-﻿@model ShopBanHang.Models.PhieuTraGop
+﻿@model IEnumerable<ShopBanHang.Models.HDTraGop>
 
 @{
     ViewBag.Title = "TaoPhieuTraGop2";
     Layout = "~/Views/Shared/_LayoutAdminCT.cshtml";
 }
 
-<h2 style="margin-top:15px;margin-bottom:15px;color:#1baf08">Tạo Phiếu Trả Góp</h2>
 
-<div style="width:60%">
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayCoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TienCoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoThang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.laiSuat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KhachHang.tenKH)
+        </th>
+        <th></th>
+    </tr>
 
-        <div class="form-horizontal">
-            <h4>PhieuTraGop</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayCoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TienCoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoThang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.laiSuat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KhachHang.tenKH)
+        </td>
+        <td>
+           
+           <a href="@Url.Action("TraGop","QuanLy",new { @id=item.MaHD})">Chon</a>
+           
+        </td>
+    </tr>
+}
 
-
-            <div class="form-group">
-                Ngày trả
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.NgayTra, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.NgayTra, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                Ngày đến hạn
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.NgayDenHan, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.NgayDenHan, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                Kỳ
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Ki, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Ki, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-
-
-            <div class="form-group">
-                Tiền đóng
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.TienDong, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.TienDong, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                Tiền phạt
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.TienPhat, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.TienPhat, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group" style="margin-top:15px">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Tạo" class="btn btn-primary" />
-                </div>
-            </div>
-        </div>
-    }
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-
-</div>
+</table>

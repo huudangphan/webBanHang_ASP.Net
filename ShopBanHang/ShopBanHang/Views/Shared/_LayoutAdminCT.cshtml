@@ -32,18 +32,15 @@
             <div class="topofweb">
                 <div style="width: 70%; height: 40px;margin-left: 15%;float: left;">
                     <ul style="float: right; text-align: center;">
-                        @if (Session["tenKH"] != null)
+                        @if (Session["tk"] != null)
                         {
 
                             <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["tenKH"].ToString()</a>
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["tk"].ToString()</a>
 
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                  aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="/hoso">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Tài khoản
-                                </a>
+                               
                                 
                                 <a href="@Url.Action("DangXuat","NguoiDung" )" class="dropdown-item"> <i class="fas fa-sign-in-alt"></i>Đăng xuất</a>
                                 <div class="dropdown-divider"></div>
@@ -101,18 +98,19 @@
                         </ul>
                     </li>
                     @*<li>
-                        <a href="@Url.Action("QLTaiKhoan","QuanLy")">Quản Lý Tài Khoản</a>
-                    </li>*@
+            <a href="@Url.Action("QLTaiKhoan","QuanLy")">Quản Lý Tài Khoản</a>
+        </li>*@
                     <li>
                         <a href="@Url.Action("TaoHDTG","QuanLy")">Tạo Hóa đơn Trả Góp</a>
                     </li>
                     <li>
+                        <a href="@Url.Action("TaoPhieuTraGop","QuanLy")">Tạo phiếu Trả Góp</a>
+                    </li>
+                    <li>
                         <a href="@Url.Action("TaoHDOff","QuanLy")">Tạo Hóa Đơn Offline</a>
                     </li>
-                    
-                    <li>
-                        <a href="@Url.Action("Index","QuanLy")">Quản Lý Sản Phẩm</a>
-                    </li>
+
+
                 </ul>
             </div>
         </div>

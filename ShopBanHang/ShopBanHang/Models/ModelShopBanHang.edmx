@@ -12,6 +12,7 @@
           <Property Name="userAdmin" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="passAdmin" Type="nvarchar" MaxLength="50" />
           <Property Name="tenAdmin" Type="nvarchar" MaxLength="50" />
+          <Property Name="Loai" Type="int" />
         </EntityType>
         <EntityType Name="CTHDOff">
           <Key>
@@ -1181,6 +1182,7 @@
           <Property Name="userAdmin" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="passAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="tenAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Loai" Type="Int32" />
         </EntityType>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1401,6 +1403,7 @@
           <EntitySetMapping Name="Admins">
             <EntityTypeMapping TypeName="ShopDoCongNgheModel.Admin">
               <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Loai" ColumnName="Loai" />
                 <ScalarProperty Name="tenAdmin" ColumnName="tenAdmin" />
                 <ScalarProperty Name="passAdmin" ColumnName="passAdmin" />
                 <ScalarProperty Name="userAdmin" ColumnName="userAdmin" />

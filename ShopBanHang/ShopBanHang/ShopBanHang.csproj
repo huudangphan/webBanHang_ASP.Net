@@ -164,7 +164,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -214,50 +214,50 @@
     <Compile Include="Models\ThongTinKhachHang.cs" />
     <Compile Include="Models\XCTDHOffline.cs" />
     <Compile Include="Models\CTHDOff.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTHDOnline.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTHDTG.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTPN.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTTN.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTTonKho.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\Hang.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDNhapSP.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDOffLine.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDOnline.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDTraGop.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Kho.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Loai.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MessModel.cs" />
     <Compile Include="Models\Model.Context.cs">
@@ -307,19 +307,19 @@
     </Compile>
     <Compile Include="Models\ModelUser.cs" />
     <Compile Include="Models\Phat.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PhieuTraGop.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SanPham.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TinNhan.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs" />
     <Compile Include="Models\XCTHDTG.cs" />
@@ -1397,7 +1397,6 @@
     <Content Include="Views\QuanLy\viewKhach.cshtml" />
     <Content Include="Views\QuanLy\viewSP.cshtml" />
     <Content Include="Views\QuanLy\viewHDOnline.cshtml" />
-    <Content Include="Views\QuanLy\viewCTHDOnline.cshtml" />
     <Content Include="Views\QuanLy\QlDonHangOffline.cshtml" />
     <Content Include="Views\QuanLy\XemCTHDOff.cshtml" />
     <Content Include="Views\QuanLy\viewKhachOff.cshtml" />
@@ -1434,6 +1433,12 @@
     <Content Include="Views\Test\Register.cshtml" />
     <Content Include="Views\GioHang\DatHangThanhCong.cshtml" />
     <Content Include="Views\Admin\ThongKe.cshtml" />
+    <Content Include="Views\QuanLy\viewCTHDOnline.cshtml" />
+    <Content Include="Views\QuanLy\TraGop.cshtml" />
+    <Content Include="Views\QuanLy\Tra.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdminKho.cshtml" />
+    <Content Include="Views\QuanLy\Index3.cshtml" />
+    <Content Include="Views\QuanLy\qlsp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
