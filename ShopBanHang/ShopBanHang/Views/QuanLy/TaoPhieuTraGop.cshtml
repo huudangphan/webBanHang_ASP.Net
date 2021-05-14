@@ -6,51 +6,55 @@
 }
 
 
+<h2 style="margin-top:15px;margin-bottom:15px;color:#1baf08">Tạo Phiếu Trả Góp</h2>
 
+<div style="width:60%">
+    <table class="table">
+        <tr>
+            <th>
+                Ngày trả
+            </th>
+            <th>
+                Ngày đến hạn
+            </th>
+            <th>
+                Kỳ
+            </th>
+            <th>
+                Tiền đóng
+            </th>
+            <th>
+                Tiền phạt
+            </th>
 
-<table class="table">
-    <tr>
-        <th>
-            Ngày trả
-        </th>
-        <th>
-            Ngày đến hạn
-        </th>
-        <th>
-            Kỳ
-        </th>
-        <th>
-           Tiền đóng
-        </th>
-        <th>
-        Tiền phạt
-        </th>
-        
-        <th></th>
-    </tr>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayTra)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayDenHan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ki)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TienDong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TienPhat)
-        </td>
-        <td>
-            @Html.ActionLink("Đóng tiền","TaoPhieuTraGop2",new { @MaPhieu=item.MaPhieu})
-        </td>
-        
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayTra)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDenHan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ki)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TienDong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TienPhat)
+                </td>
+                <td>
+                    @Html.ActionLink("Đóng tiền", "TaoPhieuTraGop2", new { @MaPhieu = item.MaPhieu })
+                </td>
 
-</table>
+            </tr>
+        }
+
+    </table>
+
+</div>

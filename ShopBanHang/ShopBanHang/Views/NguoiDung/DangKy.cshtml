@@ -10,88 +10,91 @@
 
 
 
-@using (Html.BeginForm("DangKy","NguoiDung",FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
-    
+<div style=" width: 50%; height: auto;">
+    <h2 style="color:rebeccapurple">Đăng Ký Khách Hàng</h2>
+    @using (Html.BeginForm("DangKy", "NguoiDung", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        
-        <hr />
-     
-        <div class="form-group">
-            <div class="control-label col-md-2">Họ và tên</div>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tenKH, new { htmlAttributes = new { @class = "form-control" } })
-                <span id="loiTen"></span>
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="control-label col-md-2">Địa chỉ</div>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
-                <span id="loiDiaChi"></span>
-            </div>
-        </div>
+        <div class="form-horizontal">
 
-        <div class="form-group">
-            <div class="control-label col-md-2">Ngày sinh</div>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" id="ngaySinh" name="ngaySinh" type="datetime" value="">
-               
-                <span id="loiNgaySinh"></span>
-            </div>
-        </div>
+            <hr />
 
-        <div class="form-group">
-            <div class="control-label col-md-2">Email</div>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-                <span id="loiEmail"></span>
+            <div class="form-group">
+                <div class="control-label col-md-2">Họ và tên</div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.tenKH, new { htmlAttributes = new { @class = "form-control" } })
+                    <span id="loiTen"></span>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="control-label col-md-2">Số điện thoại</div>
-            <div class="col-md-10">
-           
-                <input class="form-control text-box single-line" id="sdt" name="sdt" type="text" value="">
-                <span id="loiSodienThoai"></span>
+            <div class="form-group">
+                <div class="control-label col-md-2">Địa chỉ</div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+                    <span id="loiDiaChi"></span>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="control-label col-md-2">Tên đăng nhập</div>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.taiKhoan, new { htmlAttributes = new { @class = "form-control" } })
-               
-                <span style="color:red;">* @ViewBag.Error</span>
-            </div>
-        </div>
+            <div class="form-group">
+                <div class="control-label col-md-2">Ngày sinh</div>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="ngaySinh" name="ngaySinh" type="datetime" value="">
 
-        <div class="form-group">
-            <div class="control-label col-md-2">Mật khẩu</div>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" id="matKhau" name="matKhau" type="password" value="">
-               
+                    <span id="loiNgaySinh"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-2">Email</div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                    <span id="loiEmail"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-2">Số điện thoại</div>
+                <div class="col-md-10">
+
+                    <input class="form-control text-box single-line" id="sdt" name="sdt" type="text" value="">
+                    <span id="loiSodienThoai"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-2">Tên đăng nhập</div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.taiKhoan, new { htmlAttributes = new { @class = "form-control" } })
+
+                    <span style="color:red;">* @ViewBag.Error</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-2">Mật khẩu</div>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="matKhau" name="matKhau" type="password" value="">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="control-label col-md-2">Xác nhận Mật khẩu</div>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="matKhau2" name="matKhau" type="password" value="">
+
+                </div>
+            </div>
+            <div class="form-group" style="margin-top:15px;margin-bottom:15px;">
+                <div class="col-md-offset-2 col-md-10">
+                    <input id="btnSubmit" type="submit" onclick="return checkDK()" value="Tạo Tài Khoản" class="btn btn-primary" />
+
+                </div>
             </div>
         </div>
-        <div class="form-group">
-            <div class="control-label col-md-2">Xác nhận Mật khẩu</div>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" id="matKhau2" name="matKhau" type="password" value="">
-               
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input id="btnSubmit" type="submit" onclick="return checkDK()" value="Create" class="btn btn-primary" />
-               
-            </div>
-        </div>
-    </div>
-}
+    }
+</div>
 
 
 <script type="text/javascript">

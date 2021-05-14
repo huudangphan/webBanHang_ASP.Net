@@ -5,49 +5,53 @@
     Layout = "~/Views/Shared/_LayoutAdminCT.cshtml";
 }
 
-@using (Html.BeginForm())
-{
-@Html.AntiForgeryToken()
+<div style="width:50%;height:auto;color:rebeccapurple;">
+    <h2>Đăng Nhập Vào Tài Khoản Quản Lý</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-                <div class="form-horizontal">
+        <div class="form-horizontal">
 
-                    <hr />
+            <hr />
 
 
 
-                    <div class="form-group">
-                      
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-6">
-                                Tài khoản
-                                @Html.EditorFor(model => model.userAdmin, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="form-group">
 
-                            </div>
-                        </div>
-                       
-                    </div>
+                <div class="row">
 
-                    <div class="form-group">
-                       
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-6">
-                                Mật khẩu
-                                <input class="form-control text-box single-line" id="passAdmin" name="passAdmin" type="password" value="">
-                            </div>
-                        </div>
-                      
-                        <span style="color:red;"> @ViewBag.Loi1</span>
-                        <span style="color:red;"> @ViewBag.Loi2</span>
-                    </div>
+                    <div class="col-md-10">
+                        Tài khoản
+                        @Html.EditorFor(model => model.userAdmin, new { htmlAttributes = new { @class = "form-control" } })
 
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Đăng nhập" class="btn btn-primary" />
-                        </div>
-                        
                     </div>
                 </div>
-                }
 
+            </div>
+
+            <div class="form-group">
+
+                <div class="row">
+
+                    <div class="col-md-10">
+                        Mật khẩu
+                        <input class="form-control text-box single-line" id="passAdmin" name="passAdmin" type="password" value="">
+                    </div>
+                </div>
+
+                <span style="color:red;"> @ViewBag.Loi1</span>
+                <span style="color:red;"> @ViewBag.Loi2</span>
+            </div>
+
+            <div class="form-group" style="margin-top:15px;">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Đăng nhập Với Vai Trò Admin" class="btn btn-primary" />
+                </div>
+
+            </div>
+        </div>
+    }
+
+
+</div>
