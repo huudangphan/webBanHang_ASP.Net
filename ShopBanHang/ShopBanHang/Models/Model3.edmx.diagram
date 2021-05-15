@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44ab6a5f3f6b4f518648eef79b614c3c" Name="Diagram1">
+        <EntityTypeShape EntityType="databaseModel2.Admin" Width="1.5" PointX="2.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.CTHDOff" Width="1.5" PointX="10.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.CTHDOnline" Width="1.5" PointX="10.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.CTHDTG" Width="1.5" PointX="13.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.CTPN" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.CTTN" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.CTTonKho" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.Hang" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.HDNhapSP" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.HDOffLine" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.HDOnline" Width="1.5" PointX="8.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.HDTraGop" Width="1.5" PointX="11.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.KhachHang" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.Kho" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.Loai" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.Phat" Width="1.5" PointX="11.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.PhieuTraGop" Width="1.5" PointX="13.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.SanPham" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="databaseModel2.TinNhan" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="databaseModel2.FK_CTHDOff_HDOffLine" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_CTHDOnline_CTTonKho" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_CTHDOnline_HDOnline" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_CTHDTG_CTTonKho" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_CTHDTG_HDTraGop" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_HDNhapSP2" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_CTTN" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_CTTN2" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_CTTonKho" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_CTTonKho2" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_Hang" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_HDNhapSP" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_HDOffLine" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_HDOnline" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_HDTraGop_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_PhieuTraGop_HDTraGop" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_Loai" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseModel2.FK_PhieuTraGop_Phat" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

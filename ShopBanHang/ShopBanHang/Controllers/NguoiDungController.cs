@@ -10,7 +10,7 @@ namespace ShopBanHang.Controllers
 {
     public class NguoiDungController : Controller
     {
-        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
+        databaseEntities2 db = new databaseEntities2();
 
         //databaseEntities db = new databaseEntities();
         // GET: NguoiDung
