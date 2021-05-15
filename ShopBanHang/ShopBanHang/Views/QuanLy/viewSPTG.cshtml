@@ -6,18 +6,12 @@
         <th>
             Tên sản phẩm
         </th>
-       
-        <th>
-            Gía sản phẩm
-        </th>
-       
         <th>
             Hãng
         </th>
         <th>
             Loại sản phẩm
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -25,11 +19,6 @@
         <td>
             @Html.DisplayFor(modelItem => item.tenSP)
         </td>
-       
-        <td>
-            @Html.DisplayFor(modelItem => item.giaSP)
-        </td>
-       
         <td>
             @Html.DisplayFor(modelItem => item.Hang.tenHang)
         </td>

@@ -35,39 +35,42 @@
     <div class="main">
         <div class="top">
             <div class="topofweb">
-                <a href="/giohang" style="margin-top:25px;"><i class="fas fa-shopping-cart"></i></a>
                 <div style="width: 70%; height: 40px;margin-left: 15%;float: left;">
 
-                    <ul style="float: right; text-align: center;">
-                        @if (Session["tenKH"] != null)
-                        {
+                    <ul style="float: right; text-align: center;list-style-type:none;">
+                        <li style="list-style-type: none; display: inline-table; width: 140px; font-size: 17px; line-height: 20px; }">
+                            <a href="/giohang" style="margin-top:25px;"><i class="fas fa-shopping-cart"></i></a>
+                        </li>
+                       <li style="list-style-type: none; display: inline-table; width: 140px; font-size: 17px; line-height: 38px; }">
+                           @if (Session["tenKH"] != null)
+                           {
 
-                            <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["tenKH"].ToString()</a>
+                               <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
+                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["tenKH"].ToString()</a>
 
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="/hoso">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Tài khoản
-                                </a>
+                               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                    aria-labelledby="userDropdown">
+                                   <a class="dropdown-item" href="/hoso">
+                                       <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                       Tài khoản
+                                   </a>
 
-                                <a href="@Url.Action("DangXuat","NguoiDung" )" class="dropdown-item"> <i class="fas fa-sign-in-alt"></i>Đăng xuất</a>
-                                <div class="dropdown-divider"></div>
+                                   <a href="@Url.Action("DangXuat","NguoiDung" )" class="dropdown-item"> <i class="fas fa-sign-in-alt"></i>Đăng xuất</a>
+                                   <div class="dropdown-divider"></div>
 
-                            </div>
-                        }
-                        else
-                        {
-                            <a class="nav-link dropdown-toggle" href="/dangnhap">
+                               </div>
+                           }
+                           else
+                           {
+                               <a class="nav-link dropdown-toggle" href="/dangnhap">
 
-                                <span class="dangkydangnhap ">Đăng ký/Đăng nhập  </span>
-
-
-                            </a>
-                        }
+                                   <span class="dangkydangnhap ">Đăng ký/Đăng nhập  </span>
 
 
+                               </a>
+                           }
+
+                       </li>
 
                     </ul>
                     <p style="font-size: 20px; color: hotpink; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: 30px;">Hotline: 0706883095</p>
@@ -85,7 +88,7 @@
                             {
                         @Html.TextBox("search")
 
-                            <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
+                            <button type="submit" class="btn btn-secondary"><i class="fas fa-search fa-sm"></i></button>
                             }
 
 

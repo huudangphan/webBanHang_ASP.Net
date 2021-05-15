@@ -5,8 +5,8 @@
     Layout = "~/Views/Shared/_LayoutAdminCT.cshtml";
 }
 
-<div style="width:50%;height:auto;color:rebeccapurple;">
-    <h2>Đăng Nhập Vào Tài Khoản Quản Lý</h2>
+<div style="width:50%;height:auto;">
+    <h2 style="color: rebeccapurple;">Đăng Nhập Vào Tài Khoản Quản Lý</h2>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -50,6 +50,7 @@
                 </div>
 
             </div>
+            <div>@Html.ActionLink("Back to customer login page","DangNhap","NguoiDung")</div>
         </div>
     }
 

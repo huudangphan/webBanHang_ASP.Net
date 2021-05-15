@@ -17,7 +17,6 @@ namespace ShopBanHang.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CTTonKho()
         {
-            this.CTHDOffs = new HashSet<CTHDOff>();
             this.CTHDOnlines = new HashSet<CTHDOnline>();
             this.CTHDTGs = new HashSet<CTHDTG>();
         }
@@ -26,8 +25,6 @@ namespace ShopBanHang.Models
         public int MaSP { get; set; }
         public Nullable<int> SL { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHDOff> CTHDOffs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHDOnline> CTHDOnlines { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

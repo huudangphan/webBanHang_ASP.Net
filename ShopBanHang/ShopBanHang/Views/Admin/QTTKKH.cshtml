@@ -5,56 +5,59 @@
     Layout = "~/Views/Shared/_LayoutQuanLy.cshtml";
 }
 
-@using (Html.BeginForm())
-{
-    @Html.TextBox("tenKH")
-    <div class="input-group-append">
-        <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
-
-    </div>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.tenKH)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DiaChi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SDT)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.email)
-            </th>
-
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
+<div style="width:70%;height:auto;margin-top:20px;">
+    <h4 style="color:#0026ff">
+        Quản Lý Tài Khoản Khách Hàng
+    </h4>
+    @using (Html.BeginForm())
+    {
+        @Html.TextBox("tenKH")
+        <button type="submit" class="btn btn-secondary" style="margin-left:10px;"><i class="fas fa-search fa-sm"></i></button>
+        <table class="table">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.tenKH)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DiaChi)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SDT)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.email)
-                </td>
+                <th>
+                    Tên Khách hàng
+                </th>
+                <th>
+                    Địa chỉ
+                </th>
+                <th>
+                    Số điện thoại
+                </th>
+                <th>
+                    Email
+                </th>
 
-                
-                <td>
-
-                    @Html.ActionLink("Chọn", "CTKH", new { makh = item.MaKH }) 
-
-                </td>
+                <th></th>
             </tr>
-        }
 
-    </table>
-}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tenKH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiaChi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SDT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
 
+
+                    <td>
+
+                        @Html.ActionLink("Chọn", "CTKH", new { makh = item.MaKH })
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+
+
+</div>

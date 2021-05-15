@@ -6,9 +6,9 @@
 }
 @using (Html.BeginForm("TaoCTHDOff", "GioHang", FormMethod.Post))
 {
-    <div class="form-group">
+    <div class="form-group" style="margin-top:15px;margin-bottom:15px;">
 
-        <div class="col-md-10">
+        <div class="col-md-10" style="margin-top:15px;margin-bottom:15px;">
 
             @Html.DropDownListFor(x => x.maKho, new[]
   {
@@ -20,7 +20,7 @@
 
         </div>
     </div>
-    <input type="submit" name="name" value="Lưu" />
+    <input type="submit" name="name" value="Lưu" class="btn btn-secondary" style="margin-top:15px;margin-left:15px;"/>
 }
 @{ Html.RenderAction("PartialGioHang", "GioHang");}
 

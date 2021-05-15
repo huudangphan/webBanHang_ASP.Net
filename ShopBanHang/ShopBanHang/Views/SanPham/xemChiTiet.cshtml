@@ -5,10 +5,12 @@
     Layout = "~/Views/Shared/_LayoutKhach1.cshtml";
 }
 
-<div class="ctsp">
-    <div style="margin-top:20px;margin-bottom:20px;margin-left:20px;">
+<div style="width: 100%; height: auto;margin-top: 40px;">
+    <div style="width: 30%;height: 400px; float: left;margin-top:10px;">
+        <img src="~/Assit/img/@Model.anh" alt="Alternate Text" style="width:100%;height:100%;"/>
+    </div>
+    <div style="width:60%;height:auto;float:left;margin-left:20px;">
         <h2 style="color:orange">Xem chi tiết sản phẩm : @Model.tenSP</h2>
-        <div style="margin-bottom:30px;margin-top:20px"><img src="~/Assit/img/@Model.anh" alt="Alternate Text" /></div>
 
         <p style="font-size:20px;color:orangered;">Tên sản phẩm: @Model.tenSP</p>
         <p style="font-size:20px;color:palevioletred;">Giá:@String.Format("{0:0,0}", Model.giaSP) VNĐ </p>
@@ -16,18 +18,11 @@
         <div style="margin-top:15px;">
             @using (Html.BeginForm("ThemGioHang", "GioHang", new { @masp = Model.maSP, @url = Request.Url.ToString() }))
             {
-                <input type="submit" class="btn btn-primary" name="name" value="Mua" />}
+                <input type="submit" class="btn btn-secondary" name="name" value="Thêm Vào Gỉo Hàng" />}
         </div>
     </div>
 </div>
 
-<style>
-    .ctsp {
-        width: 70%;
-        height: auto;
-        border: 0.5px solid #d3cdcd;
-    }
-</style>
 
 @*<button class="btn btn-primary">Thêm vào giỏ hàng</button>*@
 

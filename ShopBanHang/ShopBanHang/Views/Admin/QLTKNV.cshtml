@@ -5,40 +5,43 @@
     Layout = "~/Views/Shared/_LayoutQuanLy.cshtml";
 }
 
-@using (Html.BeginForm())
-{
-    @Html.TextBox("tenNV")
-    <div class="input-group-append">
-        <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
+<div style="width:50%;height:auto;margin-top:20px;">
 
-    </div>
-    <table class="table">
-        <tr>
-            <th>
-               Tài khoản
-            </th>
-            <th>
-               Tên nhân viên
-            </th>
-            <th></th>
-        </tr>
+    <h4 style="color:#0026ff;">Quản Lý Tài Khoản Nhân Viên</h4>
 
-        @foreach (var item in Model)
-        {
+    @using (Html.BeginForm())
+    {
+        @Html.TextBox("tenNV")
+<button type="submit" class="btn btn-secondary" style="margin-left:10px;"><i class="fas fa-search fa-sm"></i></button>
+        <table class="table">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.userAdmin)
-                </td>
-                
-                <td>
-                    @Html.DisplayFor(modelItem => item.tenAdmin)
-                </td>
-                <td>
-                    <a href="@Url.Action("CTNV","Admin",new { @user=item.userAdmin})">Chọn</a>
-                </td>
+                <th>
+                    Tài khoản
+                </th>
+                <th>
+                    Tên nhân viên
+                </th>
+                <th></th>
             </tr>
-        }
 
-    </table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.userAdmin)
+                    </td>
 
-}
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tenAdmin)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("CTNV","Admin",new { @user=item.userAdmin})">Chọn</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    }
+
+</div>
