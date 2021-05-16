@@ -12,6 +12,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Global;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace API
 {
@@ -21,15 +24,39 @@ namespace API
         {
             Configuration = configuration;
         }
-
+        public static List<string> listToken = new List<string>();
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
+            GlobalData.conStr = @"Dsn=Shop";
+            var appSettingSections = Configuration.GetSection("AppSettings");
+            services.Configure<AppSetting>(appSettingSections);
+            // JWT
+            var appSetting = appSettingSections.Get<AppSetting>();
+            var key = Encoding.UTF32.GetBytes(appSetting.Key);
+            services.AddAuthentication(au =>
+            {
+                au.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                au.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 
-            GlobalData.conStr = @"Data Source=ADMIN\HUUDANG;Initial Catalog=ShopDoCongNghe;Integrated Security=True";
-
+            }).AddJwtBearer(jwt =>
+            {
+                jwt.RequireHttpsMetadata = false;
+                jwt.SaveToken = true;
+                jwt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
+            services.AddScoped<IAuthenticateService, AuthenticateService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
