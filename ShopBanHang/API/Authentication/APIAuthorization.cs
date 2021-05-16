@@ -30,7 +30,7 @@ namespace API.Authentication
     {
         public void OnAuthorization(AuthorizationFilterContext filterContext)
         {
-            if (Startup.listToken.Count != 0 && ValidateJwtToken(User.token) != null)
+            if (Startup.listToken.Count != 0 )
             {
                 return;
             }

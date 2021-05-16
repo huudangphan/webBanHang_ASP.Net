@@ -31,7 +31,7 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
            
-            GlobalData.conStr = @"Dsn=Shop";
+            GlobalData.conStr = @"Dsn=Data";
             var appSettingSections = Configuration.GetSection("AppSettings");
             services.Configure<AppSetting>(appSettingSections);
             // JWT

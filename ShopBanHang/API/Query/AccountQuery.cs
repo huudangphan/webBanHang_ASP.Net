@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.Global;
 using Newtonsoft.Json;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace API.Query
 {
@@ -56,6 +58,21 @@ namespace API.Query
         public string getAccount()
         {
             string querry = "select * from Admin";
+            return ExcuteQuery(querry);
+        }
+        public string loginAdmin(string username,string password,int role)
+        {
+            string querry = "select userAdmin from Admin where userAdmin='" + username + "' and passAdmin='" + password + "' and Loai='"+role+"'";
+            return ExcuteQuery(querry);
+        }
+        public string loginBanHang(string username, string password, int role)
+        {
+            string querry = "select userAdmin from Admin where userAdmin='" + username + "' and passAdmin='" + password + "' and Loai='" + role + "'";
+            return ExcuteQuery(querry);
+        }
+        public string loginKho(string username, string password, int role)
+        {
+            string querry = "select userAdmin from Admin where userAdmin='" + username + "' and passAdmin='" + password + "' and Loai='" + role + "'";
             return ExcuteQuery(querry);
         }
     }

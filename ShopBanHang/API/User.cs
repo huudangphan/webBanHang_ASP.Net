@@ -10,6 +10,7 @@ namespace API
        
         public string username { get; set; }
         public string password { get; set; }
-        public static string token { get; set; }
+        public  string token { get; set; }
+        public string loai { get; set; }
     }
 }

@@ -12,11 +12,22 @@ namespace API.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        AccountQuery acc = new AccountQuery();
-        [HttpGet]
-        public string getAccount()
+        
+        private IAuthenticateService _authenticateService;
+        public AccountController(IAuthenticateService authenticateService)
         {
-            return acc.getAccount();
+            _authenticateService = authenticateService;
+        }
+
+
+        [HttpPost]
+        public IActionResult Post([FromBody] User model)
+        {
+            var user = _authenticateService.Authenticate(model.username, model.password);
+            if (user == null)
+                return BadRequest();
+            return Ok(user);
+
         }
     }
 }

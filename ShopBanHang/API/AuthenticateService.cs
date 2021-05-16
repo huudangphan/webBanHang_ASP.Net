@@ -23,47 +23,61 @@ namespace API
             _appSettings = appsttings.Value;
         }
         DataTable dt;
-        private string ExcuteQuery(string query)
+        private string ExcuteQuery(string query,string para)
         {
             OdbcConnection conn = new OdbcConnection(GlobalData.conStr);
             OdbcCommand cmd = new OdbcCommand(query, conn);
             OdbcDataAdapter adapter = new OdbcDataAdapter(cmd);
             dt = new DataTable();
+            string result = "";
             try
             {
                 conn.Open();
                 adapter.Fill(dt);
+                OdbcDataReader dRead = cmd.ExecuteReader();
+                while (dRead.Read())
+                {
+                    result = dRead[para].ToString();
+                }
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine(ex.ToString());
             }
-            return JsonConvert.SerializeObject(dt);
+            return result;
 
         }
         private string GetUserName(string username,string password)
         {
             string query = "select userAdmin from Admin where userAdmin='" + username + "' and passAdmin='" + password + "'";
-            return ExcuteQuery(query);
+            return ExcuteQuery(query,"userAdmin");
         }
         private string GetPassword(string username, string password)
         {
             string query = "select passAdmin from Admin where userAdmin='" + username + "' and passAdmin='" + password + "'";
-            return ExcuteQuery(query);
+            return ExcuteQuery(query,"passAdmin");
+        }
+        private string GetRole(string username, string password)
+        {
+            string query = "select Loai from Admin where userAdmin='" + username + "' and passAdmin='" + password + "'";
+            return ExcuteQuery(query,"Loai");
         }
         public User Authenticate(string username, string password)
         {
             string uName = GetUserName(username, password);
             string pWord = GetPassword(username, password);
+            string loai = GetRole(username, password);
             List<User> ListUser = new List<User>()
             {
-                new User{username=uName,password=pWord}
+                new User{username=uName,password=pWord,loai=loai}
             };
             // tao token
             var user = ListUser.SingleOrDefault(x => x.username == username && x.password == password);
             if (user == null)
+
                 return null;
+           
             var tokenHandle = new JwtSecurityTokenHandler();
             var key = Encoding.UTF32.GetBytes(_appSettings.Key);
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -79,7 +93,9 @@ namespace API
             user.password = "";
             var token = tokenHandle.CreateToken(tokenDescriptor);
             string tokenRes = tokenHandle.WriteToken(token);
-            User.token = tokenRes;
+
+            user.token = tokenRes;
+            
             Startup.listToken.Add(tokenRes);
             return user;
             
