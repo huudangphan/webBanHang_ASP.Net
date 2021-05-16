@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e10434efeebf464faf747b5a145a53ac" Name="Diagram1">
+        <EntityTypeShape EntityType="ShopModel.Admin" Width="1.5" PointX="2.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.CTHDOff" Width="1.5" PointX="10.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.CTHDOnline" Width="1.5" PointX="10.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.CTHDTG" Width="1.5" PointX="13.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.CTPN" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.CTTN" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.CTTonKho" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Hang" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.HDNhapSP" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.HDOffLine" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.HDOnline" Width="1.5" PointX="8.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.HDTraGop" Width="1.5" PointX="11.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.KhachHang" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Kho" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Loai" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Phat" Width="1.5" PointX="11.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.PhieuTraGop" Width="1.5" PointX="13.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.SanPham" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.sysdiagram" Width="1.5" PointX="4.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.TinNhan" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="ShopModel.FK_CTHDOff_HDOffLine" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_CTHDOnline_CTTonKho" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_CTHDOnline_HDOnline" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_CTHDTG_CTTonKho" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_CTHDTG_HDTraGop" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_HDNhapSP2" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_CTTN" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_CTTN2" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_CTTonKho" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_CTTonKho2" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_Hang" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_HDNhapSP" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_HDOffLine" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_HDOnline" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_HDTraGop_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_PhieuTraGop_HDTraGop" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_Loai" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_PhieuTraGop_Phat" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

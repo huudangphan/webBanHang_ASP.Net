@@ -9,12 +9,10 @@ namespace ShopBanHang.Controllers
 {
     public class HomeController : Controller
     {
-
-        databaseEntities2 db = new databaseEntities2();
+        ShopEntities db = new ShopEntities();
         public ActionResult Index(string search)
         {
             var kq = db.SanPhams.Where(x => x.tenSP.StartsWith(search)).ToList();
-            
 
             return View(kq);
         }

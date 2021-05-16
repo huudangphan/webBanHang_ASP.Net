@@ -440,3 +440,4 @@ D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ClosedXML.pdb
 D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ClosedXML.xml
 D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\DocumentFormat.OpenXml.xml
 D:\Desktop\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\bin\ExcelNumberFormat.xml
+D:\webBanHang_ASP.Net\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csprojAssemblyReference.cache

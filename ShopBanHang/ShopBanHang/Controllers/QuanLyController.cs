@@ -15,7 +15,7 @@ namespace ShopBanHang.Controllers
 {
     public class QuanLyController : Controller
     {
-        databaseEntities2 db = new databaseEntities2();
+        ShopEntities db = new ShopEntities();
 
         public ActionResult Index(int? page)
         {

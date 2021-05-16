@@ -14,7 +14,7 @@ namespace ShopBanHang.Controllers
     public class GioHangController : Controller
     {
 
-        databaseEntities2 db = new databaseEntities2();
+        ShopEntities db = new ShopEntities();
 
         //databaseEntities db = new databaseEntities();
 

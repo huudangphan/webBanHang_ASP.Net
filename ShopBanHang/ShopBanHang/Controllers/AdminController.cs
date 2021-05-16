@@ -9,7 +9,8 @@ namespace ShopBanHang.Controllers
 {
     public class AdminController : Controller
     {
-        databaseEntities2 db = new databaseEntities2();
+       
+        ShopEntities db = new ShopEntities();
 
         // GET: Admin
         public ActionResult Index()

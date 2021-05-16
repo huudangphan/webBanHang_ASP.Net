@@ -164,44 +164,53 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>ModelSop.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ChiTietDonHang.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+    <Compile Include="Models\CTHDOff.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTHDOnline.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTHDTG.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTKho.cs" />
+    <Compile Include="Models\CTPN.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTTN.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTTonKho.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hang.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HDNhapSP.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HDOff.cs" />
+    <Compile Include="Models\HDOffLine.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HDOnline.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HDTG.cs" />
+    <Compile Include="Models\HDTraGop.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HoaDonXuat.cs" />
-    <Compile Include="Models\Model2.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.Context.tt</DependentUpon>
+    <Compile Include="Models\KhachHang.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.tt</DependentUpon>
+    <Compile Include="Models\Kho.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model3.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model3.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.edmx</DependentUpon>
+    <Compile Include="Models\Loai.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelBanDoCongNghe.Context.cs">
       <AutoGen>True</AutoGen>
@@ -219,6 +228,30 @@
       <DependentUpon>ModelBanDoCongNghe.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelCTDHOnline.cs" />
+    <Compile Include="Models\ModelSop.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSop.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSop.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSop.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Phat.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhieuTraGop.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SanPham.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>ModelShopBanHang.tt</DependentUpon>
     </Compile>
@@ -227,84 +260,12 @@
     </Compile>
     <Compile Include="Models\ThongKe.cs" />
     <Compile Include="Models\ThongTinKhachHang.cs" />
+    <Compile Include="Models\TinNhan.cs">
+      <DependentUpon>ModelSop.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\XCTDHOffline.cs" />
-    <Compile Include="Models\CTHDOff.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CTHDOnline.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CTHDTG.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CTPN.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CTTN.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CTTonKho.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DonHang.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\GioHang.cs" />
-    <Compile Include="Models\Hang.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\HDNhapSP.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\HDOffLine.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\HDOnline.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\HDTraGop.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\KhachHang.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Kho.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Loai.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\MessModel.cs" />
-    <Compile Include="Models\Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\ModelShopBanHang.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -321,20 +282,8 @@
       <DependentUpon>ModelShopBanHang.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelUser.cs" />
-    <Compile Include="Models\Phat.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PhieuTraGop.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SanPham.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>ModelShopBanHang.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TinNhan.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+      <DependentUpon>ModelSop.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs" />
     <Compile Include="Models\XCTHDTG.cs" />
@@ -1091,46 +1040,6 @@
     <Content Include="image\qc1t1.png" />
     <Content Include="image\qc2.png" />
     <Content Include="image\qc4.png" />
-    <Content Include="Models\Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model2.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model2.edmx</DependentUpon>
-      <LastGenOutput>Model2.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model2.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model2.edmx</DependentUpon>
-      <LastGenOutput>Model2.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model3.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model3.edmx</DependentUpon>
-      <LastGenOutput>Model3.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model3.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model3.edmx</DependentUpon>
-      <LastGenOutput>Model3.cs</LastGenOutput>
-    </Content>
     <Content Include="Models\ModelBanDoCongNghe.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelBanDoCongNghe.edmx</DependentUpon>
@@ -1150,6 +1059,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelShopBanHang.edmx</DependentUpon>
       <LastGenOutput>ModelShopBanHang.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSop.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSop.edmx</DependentUpon>
+      <LastGenOutput>ModelSop.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSop.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSop.edmx</DependentUpon>
+      <LastGenOutput>ModelSop.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1311,20 +1230,6 @@
     <Content Include="Assit\vendor\fontawesome-free\scss\_shims.scss" />
     <Content Include="Assit\vendor\fontawesome-free\scss\_stacked.scss" />
     <Content Include="Assit\vendor\fontawesome-free\scss\_variables.scss" />
-    <EntityDeploy Include="Models\Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Models\ModelShopBanHang.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelShopBanHang.Designer.cs</LastGenOutput>
@@ -1339,19 +1244,12 @@
     <Content Include="Models\ModelBanDoCongNghe.edmx.diagram">
       <DependentUpon>ModelBanDoCongNghe.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\Model2.edmx">
+    <EntityDeploy Include="Models\ModelSop.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model2.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelSop.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model2.edmx.diagram">
-      <DependentUpon>Model2.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\Model3.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model3.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model3.edmx.diagram">
-      <DependentUpon>Model3.edmx</DependentUpon>
+    <Content Include="Models\ModelSop.edmx.diagram">
+      <DependentUpon>ModelSop.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
