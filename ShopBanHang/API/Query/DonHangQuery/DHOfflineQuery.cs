@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace API.Query.DonHangQuery
+{
+    public class DHOfflineQuery
+    {
+        public void TaoDHOffline(int maKH)
+        {
+            string date = DateTime.Now.ToString();
+            string query = "insert into HDOffline(MaKH,NgayMua) values('" + maKH + "','" + date + "')";
+            Execute.ExcuteNonquery(query);
+
+        }
+        public void  TaoCTDOff(int makho, int mahd,int masp,int sl,double giaban)
+        {
+            string query = "insert into CTHDOff(MaKho,MaSP,MaHD,SL,GiaBan) values(" + makho + "," + masp + "," + mahd + "," + sl + "," + giaban + ")";
+            Execute.ExcuteNonquery(query);
+        }
+    }
+}
