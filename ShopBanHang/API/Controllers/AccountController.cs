@@ -18,7 +18,12 @@ namespace API.Controllers
         {
             _authenticateService = authenticateService;
         }
-
+        AccountQuery acc = new AccountQuery();
+        [HttpGet]
+        public string getAccount()
+        {
+            return acc.getAccount();
+        }
 
         [HttpPost]
         public IActionResult Post([FromBody] User model)
