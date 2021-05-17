@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopBanHang", "ShopBanHang\ShopBanHang.csproj", "{1D7C649E-EE3C-4E9A-A660-87997AFFF47A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{417968FF-1926-4569-9351-CDBAB7513241}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{417968FF-1926-4569-9351-CDBAB7513241}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLy", "QuanLy\QuanLy.csproj", "{1D0F4033-8DF7-4107-BF4F-40F7A966CB16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{417968FF-1926-4569-9351-CDBAB7513241}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{417968FF-1926-4569-9351-CDBAB7513241}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{417968FF-1926-4569-9351-CDBAB7513241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D0F4033-8DF7-4107-BF4F-40F7A966CB16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D0F4033-8DF7-4107-BF4F-40F7A966CB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D0F4033-8DF7-4107-BF4F-40F7A966CB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D0F4033-8DF7-4107-BF4F-40F7A966CB16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
