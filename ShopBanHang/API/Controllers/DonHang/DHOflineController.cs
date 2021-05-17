@@ -23,5 +23,10 @@ namespace API.Controllers.DonHang
         {
             dh.TaoCTDOff(makho, mahd, masp, SL, giaBan);
         }
+        [HttpGet]
+        public string HDOff(int makh)
+        {
+            return dh.HDOff(makh);
+        }
     }
 }

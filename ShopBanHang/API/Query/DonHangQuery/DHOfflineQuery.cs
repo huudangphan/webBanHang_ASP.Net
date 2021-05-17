@@ -19,5 +19,10 @@ namespace API.Query.DonHangQuery
             string query = "insert into CTHDOff(MaKho,MaSP,MaHD,SL,GiaBan) values(" + makho + "," + masp + "," + mahd + "," + sl + "," + giaban + ")";
             Execute.ExcuteNonquery(query);
         }
+        public string HDOff(int maKH)
+        {
+            string query = "select * from HDOffline where MaKH=" + maKH;
+            return Execute.ExcuteQuery(query);
+        }
     }
 }
