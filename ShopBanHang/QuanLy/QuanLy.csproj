@@ -78,11 +78,24 @@
     <Compile Include="Index\IndexKho.Designer.cs">
       <DependentUpon>IndexKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\GlobalData.cs" />
     <Compile Include="Model\ModelNV.cs" />
     <Compile Include="Model\ModelUser.cs" />
     <Compile Include="Model\Session.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLy\fThemTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\fThemTaiKhoan.Designer.cs">
+      <DependentUpon>fThemTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy\fSuathongtin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\fSuathongtin.Designer.cs">
+      <DependentUpon>fSuathongtin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services.cs" />
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
@@ -100,6 +113,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QuanLy\fSuathongtin.resx">
+      <DependentUpon>fSuathongtin.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

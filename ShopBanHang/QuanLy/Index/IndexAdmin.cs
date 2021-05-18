@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraBars;
 using Newtonsoft.Json;
 using QuanLy.Model;
+using QuanLy.QuanLy;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +50,25 @@ namespace QuanLy.Index
 
                 }
             }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+            fThemTaiKhoan f = new fThemTaiKhoan(Sess);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void Update_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            GlobalData.username = dtgvAcc.Rows[dtgvAcc.CurrentRow.Index].Cells[0].Value.ToString();
+            GlobalData.tennv= dtgvAcc.Rows[dtgvAcc.CurrentRow.Index].Cells[1].Value.ToString();
+            fSuathongtin f = new fSuathongtin(Sess);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

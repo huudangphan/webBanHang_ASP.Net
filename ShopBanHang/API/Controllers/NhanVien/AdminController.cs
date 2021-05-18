@@ -22,5 +22,15 @@ namespace API.Controllers.NhanVien
         {
             return nv.GetNhanVien();
         }
+        [HttpPost]
+        public void InsertNhanVien(string username,string password,string tennv,int loai)
+        {
+            nv.InsertNhanVien(username, password, tennv, loai);
+        }
+        [HttpPut]
+        public void UpdateNhanVien(string username,string password,string ten,int loai)
+        {
+            nv.UpdateNhanVien(username, password,ten,loai);  
+        }
     }
 }

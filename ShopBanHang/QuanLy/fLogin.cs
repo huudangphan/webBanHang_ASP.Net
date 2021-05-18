@@ -76,7 +76,7 @@ namespace QuanLy
             Login(username, password);
             if (s.role == 1)
             {
-                MessageBox.Show(s.token);
+                
                 IndexAdmin f = new IndexAdmin(s);
                 this.Hide();
                 f.ShowDialog();

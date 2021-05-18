@@ -55,3 +55,4 @@ D:\webBanHang_ASP.Net\ShopBanHang\QuanLy\obj\Debug\QuanLy.csproj.CopyComplete
 D:\webBanHang_ASP.Net\ShopBanHang\QuanLy\obj\Debug\QuanLy.exe
 D:\webBanHang_ASP.Net\ShopBanHang\QuanLy\obj\Debug\QuanLy.pdb
 D:\webBanHang_ASP.Net\ShopBanHang\QuanLy\obj\Debug\QuanLy.Index.IndexAdmin.resources
+D:\webBanHang_ASP.Net\ShopBanHang\QuanLy\obj\Debug\QuanLy.QuanLy.fSuathongtin.resources

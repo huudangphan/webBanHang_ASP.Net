@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace QuanLy.Model
 {
-    public class ModelNV
+    public class GlobalData
     {
-        public string userAdmin { get; set; }
-        public string tenAdmin { get; set; }
-        
+        public static string username { get; set; }
+        public static string tennv { get; set; }
     }
 }

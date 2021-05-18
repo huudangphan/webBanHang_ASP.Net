@@ -12,9 +12,14 @@ namespace API.Query
             string query = "select * from Admin where Loai=2 or Loai =3";
             return Execute.ExcuteQuery(query);
         }
-        public void UpdateNhanVien(string username,string password)
+        public void UpdateNhanVien(string username,string password,string tenAdmin,int loai)
         {
-            string query = "Update Admin set passAdmin= '" + password + "' where userAdmin='" + username + "'";
+            string query = "Update Admin set passAdmin= '" + password + "',tenAdmin='"+tenAdmin+"',Loai="+loai+" where userAdmin='" + username + "'";
+            Execute.ExcuteNonquery(query);
+        }
+        public void InsertNhanVien(string username,string password,string tennhanvien,int loai)
+        {
+            string query = "insert into Admin(userAdmin,passAdmin,tenAdmin,Loai) values('" + username + "','" + password + "','" + tennhanvien + "'," + loai + ")";
             Execute.ExcuteNonquery(query);
         }
     }
