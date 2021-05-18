@@ -12,5 +12,10 @@ namespace API.Query
             string query = "select * from Admin where Loai=2 or Loai =3";
             return Execute.ExcuteQuery(query);
         }
+        public void UpdateNhanVien(string username,string password)
+        {
+            string query = "Update Admin set passAdmin= '" + password + "' where userAdmin='" + username + "'";
+            Execute.ExcuteNonquery(query);
+        }
     }
 }

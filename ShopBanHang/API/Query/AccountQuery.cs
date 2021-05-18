@@ -17,7 +17,7 @@ namespace API.Query
 
         public string getAccount()
         {
-            string querry = "select * from Admin";
+            string querry = "select userAdmin,tenAdmin,Loai from Admin where Loai <> 1";
             return Execute.ExcuteQuery(querry);
         }
        
