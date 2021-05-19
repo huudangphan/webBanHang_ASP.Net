@@ -102,6 +102,7 @@
     <Compile Include="Index\IndexKho.Designer.cs">
       <DependentUpon>IndexKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\DonHang\ModelDHOnline.cs" />
     <Compile Include="Model\GlobalData.cs" />
     <Compile Include="Model\ModelNV.cs" />
     <Compile Include="Model\ModelUser.cs" />

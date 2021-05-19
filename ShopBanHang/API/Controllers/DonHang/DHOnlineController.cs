@@ -33,6 +33,11 @@ namespace API.Controllers.DonHang
         {
             return dh.GuiHangOnline(MaDH, MaKho);
         }
+        [HttpGet]
+        public string GetDHOnline()
+        {
+            return dh.GetHDOnline();
+        }
 
     }
 }

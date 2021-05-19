@@ -89,7 +89,7 @@ namespace QuanLy
                 f.ShowDialog();
                 this.Show();
             }
-            else
+            else if(s.role==3)
             {
                 IndexBanHang f = new IndexBanHang(s);
                 this.Hide();

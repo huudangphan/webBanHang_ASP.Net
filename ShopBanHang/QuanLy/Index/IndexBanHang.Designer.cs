@@ -152,6 +152,7 @@ namespace QuanLy.Index
             this.Controls.Add(this.ribbon);
             this.Name = "IndexBanHang";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "IndexBanHang";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
