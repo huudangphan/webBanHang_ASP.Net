@@ -23,7 +23,7 @@ namespace API.Controllers.DonHang
         //{
         //    return dh.GetHDOnline();
         //}
-        [HttpGet("{madh}")]
+        [HttpGet]
         public string GetCTHDOnline(int mahd)
         {
             return dh.GetCTHDOnline(mahd);
@@ -37,6 +37,11 @@ namespace API.Controllers.DonHang
         public string GetDHOnline()
         {
             return dh.GetHDOnline();
+        }
+        [HttpGet]
+        public string GetHDOnlineID(int mahd)
+        {
+            return dh.GetHDOnlineID(mahd);
         }
 
     }

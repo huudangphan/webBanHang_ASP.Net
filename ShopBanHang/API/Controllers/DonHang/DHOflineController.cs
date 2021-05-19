@@ -17,7 +17,7 @@ namespace API.Controllers.DonHang
     public class DHOflineController : ControllerBase
     {
         DHOfflineQuery dh = new DHOfflineQuery();
-        [HttpPost("{makh}")]
+        [HttpPost]
         public void TaoHDOffline(int makh)
         {
             dh.TaoDHOffline(makh);
@@ -31,6 +31,11 @@ namespace API.Controllers.DonHang
         public string HDOff(int makh)
         {
             return dh.HDOff(makh);
+        }
+        [HttpGet]
+        public string getHDOff()
+        {
+            return dh.getHDOffline();
         }
     }
 }

@@ -120,3 +120,4 @@ E:\WebBanHangASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.BanHang.DHOffline.resources
 E:\WebBanHangASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.BanHang.DHOnline.resources
 E:\WebBanHangASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.BanHang.DHTG.resources
 E:\WebBanHangASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.BanHang.PTG.resources
+E:\WebBanHangASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.BanHang.CTDHOnline.resources

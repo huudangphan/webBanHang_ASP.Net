@@ -60,5 +60,14 @@ namespace QuanLy.BanHang
                 }
             }
         }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ModelCT.mahd = txtmadh.Text;
+            CTDHOnline f = new CTDHOnline(Sess);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

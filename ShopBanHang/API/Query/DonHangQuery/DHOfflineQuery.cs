@@ -14,6 +14,11 @@ namespace API.Query.DonHangQuery
             Execute.ExcuteNonquery(query);
 
         }
+        public string getHDOffline()
+        {
+            string query = "select * from HDOffline";
+            return Execute.ExcuteQuery(query);
+        }
         public void  TaoCTDOff(int makho, int mahd,int masp,int sl,double giaban)
         {
             string query = "insert into CTHDOff(MaKho,MaSP,MaHD,SL,GiaBan) values(" + makho + "," + masp + "," + mahd + "," + sl + "," + giaban + ")";

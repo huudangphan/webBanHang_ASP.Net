@@ -14,17 +14,27 @@ namespace API.Query.DonHangQuery
             string query = "select * from  HDOnline";
             return Execute.ExcuteQuery(query);
         }
+        public string GetHDOnlineID(int mahd)
+        {
+            string query = "select * from  HDOnline where MaHD="+mahd;
+            return Execute.ExcuteQuery(query);
+        }
         public string GetCTHDOnline(int maHD)
         {
-            string query = "select * from  HDOnline where MaHD='"+maHD+"'";
+            string query = "select SanPham.tenSP,CTHDOnline.SL,CTHDOnline.thanhTien,MaKho from CTHDOnline,SanPham " +
+                "where SanPham.maSP = CTHDOnline.MaSP and CTHDOnline.MaHD = '"+maHD+"'";
+
             return Execute.ExcuteQuery(query);
         }
         public int GuiHangOnline(int maDH,int maKho)
         {
+            string date = DateTime.Now.ToString();
             if(checkdh(maDH)==true)
             {
                 foreach (var item in listSP(maDH))
                 {
+                    string query2 = "Update HDOnline set NgayGiao='" + date + "',TinhTrang='true' where MaHD='"+maDH+"'";
+                    Execute.ExcuteNonquery(query2);
                     string query = "update CTTonKho set SL-= (select SL from CTHDOnline ct where ct.MaKho ='"+maKho+"' and ct.MaSP ='"+item+"'   ) where MaKho = '"+maKho+"' and MaSP = '"+item+"'";
                     Execute.ExcuteNonquery(query);
                 }
