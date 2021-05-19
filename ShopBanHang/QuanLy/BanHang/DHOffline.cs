@@ -28,6 +28,16 @@ namespace QuanLy.BanHang
             InitializeComponent();
             this.sess = sess;
             loadData();
+            Binding();
+        }
+        public void Binding()
+        {
+            txtmahd.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "MaHD"));
+            txtmakh.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "MaKH"));
+            txtngaymua.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "NgayMua"));
+
+
+
         }
         public void loadData()
         {
@@ -49,6 +59,15 @@ namespace QuanLy.BanHang
 
                 }
             }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ModelCT.mahd = txtmahd.Text;
+            CTHDOffline f = new CTHDOffline(Sess);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

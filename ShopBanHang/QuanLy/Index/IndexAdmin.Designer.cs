@@ -204,7 +204,7 @@ namespace QuanLy.Index
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "IndexAdmin";
+            this.Text = "Trang chủ quản lý";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAcc)).EndInit();
             this.ResumeLayout(false);

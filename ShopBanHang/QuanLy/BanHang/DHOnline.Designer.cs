@@ -153,7 +153,7 @@ namespace QuanLy.BanHang
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(779, 295);
+            this.label2.Location = new System.Drawing.Point(779, 286);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 6;
@@ -162,7 +162,7 @@ namespace QuanLy.BanHang
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(779, 377);
+            this.label3.Location = new System.Drawing.Point(779, 368);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 7;
@@ -171,7 +171,7 @@ namespace QuanLy.BanHang
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(779, 464);
+            this.label4.Location = new System.Drawing.Point(779, 455);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 17);
             this.label4.TabIndex = 8;
@@ -186,14 +186,14 @@ namespace QuanLy.BanHang
             // 
             // txtngaydat
             // 
-            this.txtngaydat.Location = new System.Drawing.Point(919, 295);
+            this.txtngaydat.Location = new System.Drawing.Point(919, 286);
             this.txtngaydat.Name = "txtngaydat";
             this.txtngaydat.Size = new System.Drawing.Size(138, 23);
             this.txtngaydat.TabIndex = 10;
             // 
             // txtngaygiao
             // 
-            this.txtngaygiao.Location = new System.Drawing.Point(919, 377);
+            this.txtngaygiao.Location = new System.Drawing.Point(919, 368);
             this.txtngaygiao.Name = "txtngaygiao";
             this.txtngaygiao.Size = new System.Drawing.Size(138, 23);
             this.txtngaygiao.TabIndex = 11;
@@ -201,7 +201,7 @@ namespace QuanLy.BanHang
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(919, 464);
+            this.checkBox1.Location = new System.Drawing.Point(919, 455);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(76, 21);
             this.checkBox1.TabIndex = 12;
@@ -228,7 +228,7 @@ namespace QuanLy.BanHang
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "DHOnline";
+            this.Text = "Đơn hàng online";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
