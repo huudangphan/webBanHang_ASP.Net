@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars;
+using QuanLy.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,16 @@ namespace QuanLy.Index
 {
     public partial class IndexKho : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public IndexKho()
+        private Session sess;
+        Session Sess
+        {
+            get { return sess; }
+            set { sess = value; }
+        }
+        public IndexKho(Session sess)
         {
             InitializeComponent();
+            this.sess = sess;
         }
     }
 }

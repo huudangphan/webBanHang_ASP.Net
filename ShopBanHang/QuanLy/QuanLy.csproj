@@ -54,6 +54,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHang\DHOffline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\DHOffline.Designer.cs">
+      <DependentUpon>DHOffline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang\DHOnline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\DHOnline.Designer.cs">
+      <DependentUpon>DHOnline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang\DHTG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\DHTG.Designer.cs">
+      <DependentUpon>DHTG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang\PTG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\PTG.Designer.cs">
+      <DependentUpon>PTG.cs</DependentUpon>
+    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,11 +121,26 @@
       <DependentUpon>fSuathongtin.cs</DependentUpon>
     </Compile>
     <Compile Include="Services.cs" />
+    <EmbeddedResource Include="BanHang\DHOffline.resx">
+      <DependentUpon>DHOffline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\DHOnline.resx">
+      <DependentUpon>DHOnline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\DHTG.resx">
+      <DependentUpon>DHTG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\PTG.resx">
+      <DependentUpon>PTG.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index\IndexAdmin.resx">
       <DependentUpon>IndexAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Index\IndexBanHang.resx">
+      <DependentUpon>IndexBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -115,6 +154,9 @@
     </Compile>
     <EmbeddedResource Include="QuanLy\fSuathongtin.resx">
       <DependentUpon>fSuathongtin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\fThemTaiKhoan.resx">
+      <DependentUpon>fThemTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

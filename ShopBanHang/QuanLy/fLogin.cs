@@ -31,7 +31,7 @@ namespace QuanLy
 
             try
             {
-                string Urlbase = "https://localhost:44373/api/Account/Post";              
+                string Urlbase = "http://localhost:55543/api/Account/Post";              
 
                 user.username = username;
                 user.password = password;
@@ -82,6 +82,21 @@ namespace QuanLy
                 f.ShowDialog();
                 this.Show();
             }
+            else if (s.role == 2)
+            {
+                IndexKho f = new IndexKho(s);
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                IndexBanHang f = new IndexBanHang(s);
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }    
+
         }
     }
 }

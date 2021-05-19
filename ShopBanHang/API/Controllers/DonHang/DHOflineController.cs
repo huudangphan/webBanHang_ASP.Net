@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers.DonHang
 {
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class DHOflineController : ControllerBase

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace API.Query
 {
-    public class NhanVienQuery
+    public class AdminQuery
     {
         public string GetNhanVien()
         {

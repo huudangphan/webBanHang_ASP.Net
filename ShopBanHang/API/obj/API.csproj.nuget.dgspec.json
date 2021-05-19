@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\webBanHang_ASP.Net\\ShopBanHang\\API\\API.csproj": {}
+    "E:\\WebBanHangASP\\ShopBanHang\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\webBanHang_ASP.Net\\ShopBanHang\\API\\API.csproj": {
+    "E:\\WebBanHangASP\\ShopBanHang\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\webBanHang_ASP.Net\\ShopBanHang\\API\\API.csproj",
+        "projectUniqueName": "E:\\WebBanHangASP\\ShopBanHang\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\webBanHang_ASP.Net\\ShopBanHang\\API\\API.csproj",
+        "projectPath": "E:\\WebBanHangASP\\ShopBanHang\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\webBanHang_ASP.Net\\ShopBanHang\\API\\obj\\",
+        "outputPath": "E:\\WebBanHangASP\\ShopBanHang\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

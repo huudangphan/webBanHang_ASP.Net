@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/6uMT0a6zhxseS9+uepEDVnwp7GpehkLcWhGAfdfJ6rUr0ekiOcZLSR/CkkAcBpb2NTQo6qdN5idOMsoqLNYYw==",
+  "dgSpecHash": "vjDbUt04kQvm8zX4JTAh3ihOiayGv6lU/ZmsoeIoynoo+sCp6LptT94jSaHRiE68p02DfelrB+QG5PQCMVeHeQ==",
   "success": true,
-  "projectFilePath": "D:\\webBanHang_ASP.Net\\ShopBanHang\\API\\API.csproj",
+  "projectFilePath": "E:\\WebBanHangASP\\ShopBanHang\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.6\\microsoft.aspnetcore.authentication.jwtbearer.5.0.6.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

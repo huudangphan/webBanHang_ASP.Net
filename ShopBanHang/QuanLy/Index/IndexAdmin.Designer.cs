@@ -68,15 +68,15 @@ namespace QuanLy.Index
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
-            this.ribbon.Size = new System.Drawing.Size(1051, 193);
+            this.ribbon.Size = new System.Drawing.Size(740, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // Update
             // 
             this.Update.Caption = "Sửa thông tin";
             this.Update.Id = 1;
-            this.Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.Update.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Update.ImageOptions.Image")));
+            this.Update.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Update.ImageOptions.LargeImage")));
             this.Update.Name = "Update";
             this.Update.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Update_ItemClick);
             // 
@@ -161,7 +161,7 @@ namespace QuanLy.Index
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 581);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1051, 30);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(740, 30);
             // 
             // dtgvAcc
             // 
@@ -173,7 +173,7 @@ namespace QuanLy.Index
             this.dtgvAcc.Name = "dtgvAcc";
             this.dtgvAcc.RowHeadersWidth = 51;
             this.dtgvAcc.RowTemplate.Height = 24;
-            this.dtgvAcc.Size = new System.Drawing.Size(764, 359);
+            this.dtgvAcc.Size = new System.Drawing.Size(738, 363);
             this.dtgvAcc.TabIndex = 2;
             // 
             // Column1
@@ -182,7 +182,7 @@ namespace QuanLy.Index
             this.Column1.HeaderText = "Tên nhân viên";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
+            this.Column1.Width = 300;
             // 
             // Column2
             // 
@@ -190,18 +190,19 @@ namespace QuanLy.Index
             this.Column2.HeaderText = "Tài khoản";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 175;
+            this.Column2.Width = 300;
             // 
             // IndexAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 611);
+            this.ClientSize = new System.Drawing.Size(740, 611);
             this.Controls.Add(this.dtgvAcc);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Name = "IndexAdmin";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "IndexAdmin";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();

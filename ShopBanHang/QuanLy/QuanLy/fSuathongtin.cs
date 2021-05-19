@@ -39,7 +39,7 @@ namespace QuanLy.QuanLy
                 type = 2;
             else
                 type = 3;
-            string urlbase = "https://localhost:44373/api/Admin/UpdateNhanVien?username="+GlobalData.username+"&password="+password+"&ten="+ten+"&loai="+type+"";
+            string urlbase = "http://localhost:55543/api/Admin/UpdateNhanVien?username=" + GlobalData.username+"&password="+password+"&ten="+ten+"&loai="+type+"";
             Services.PUT(urlbase, sess.token);
             MessageBox.Show("Sửa thông tin thành công");
         }

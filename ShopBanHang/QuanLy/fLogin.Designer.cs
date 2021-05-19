@@ -50,7 +50,6 @@ namespace QuanLy
             // 
             this.txtPassword.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(345, 230);
-            this.txtPassword.Mask = "123";
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(205, 35);
             this.txtPassword.TabIndex = 1;

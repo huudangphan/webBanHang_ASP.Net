@@ -16,7 +16,7 @@ namespace API.Controllers.NhanVien
     [ApiController]
     public class AdminController : ControllerBase
     {
-        NhanVienQuery nv = new NhanVienQuery();
+        AdminQuery nv = new AdminQuery();
         [HttpGet]
         public string getNhanVien()
         {
