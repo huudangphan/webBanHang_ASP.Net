@@ -29,5 +29,13 @@ namespace API.Query.DonHangQuery
             string query = "select * from HDOffline where MaKH=" + maKH;
             return Execute.ExcuteQuery(query);
         }
+       
+        public string GetLastDH()
+        {
+
+            string query = "select max(MaDH) from HDOffline";
+            return Execute.ExcuteQuery(query);
+        }
+       
     }
 }

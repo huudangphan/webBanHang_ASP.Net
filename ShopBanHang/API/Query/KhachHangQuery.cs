@@ -13,6 +13,11 @@ namespace API.Query
             string query = "insert into KhachHang(tenKH,DiaChi,SDT,email,taiKhoan,matKhau) values('"+tenkh+"', '"+diaChi+"', '"+sdt+"', '"+email+"', '"+taiKhoan+"', '"+matKhau+"')";
             Execute.ExcuteNonquery(query);
         }
+        public void ThemKhachHangkUser(string tenkh, string diaChi, int sdt, string email)
+        {
+            string query = "insert into KhachHang(tenKH,DiaChi,SDT,email) values('" + tenkh + "', '" + diaChi + "', '" + sdt + "', '" + email + "')";
+            Execute.ExcuteNonquery(query);
+        }
         public string TimKhachHang(string ten)
         {
             string query="select * from KhachHang where tenKh like'"+ten+"'";

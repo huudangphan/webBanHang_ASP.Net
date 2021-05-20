@@ -21,6 +21,11 @@ namespace API.Controllers
         {
             kh.ThemKhachHang(tenkh,diachi,sdt,email,taikhoan,matkhau);
         }
+        [HttpPost]
+        public void ThemKhachHangkUser(string tenkh, string diachi, int sdt, string email)
+        {
+            kh.ThemKhachHangkUser(tenkh, diachi, sdt, email);
+        }
         //[HttpGet("{Ten}")]
         //public string TimKhachHang(string tenkh)
         //{

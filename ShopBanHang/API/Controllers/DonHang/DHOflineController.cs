@@ -37,5 +37,10 @@ namespace API.Controllers.DonHang
         {
             return dh.getHDOffline();
         }
+        [HttpGet]
+        public string getlastdh()
+        {
+            return dh.GetLastDH();
+        }
     }
 }
