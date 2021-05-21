@@ -34,10 +34,12 @@ namespace QuanLy.BanHang
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,8 +51,6 @@ namespace QuanLy.BanHang
             this.txtmahd = new System.Windows.Forms.TextBox();
             this.txtmakh = new System.Windows.Forms.TextBox();
             this.txtngaymua = new System.Windows.Forms.TextBox();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +72,7 @@ namespace QuanLy.BanHang
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
-            this.ribbon.Size = new System.Drawing.Size(762, 158);
+            this.ribbon.Size = new System.Drawing.Size(889, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1
@@ -99,6 +99,16 @@ namespace QuanLy.BanHang
             this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
             this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Khách hàng";
+            this.barButtonItem4.Id = 4;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -125,13 +135,18 @@ namespace QuanLy.BanHang
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 462);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 568);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(762, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(889, 30);
             // 
             // dataGridView1
             // 
@@ -140,12 +155,12 @@ namespace QuanLy.BanHang
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 162);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 199);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(479, 295);
+            this.dataGridView1.Size = new System.Drawing.Size(559, 363);
             this.dataGridView1.TabIndex = 2;
             // 
             // Column1
@@ -175,72 +190,59 @@ namespace QuanLy.BanHang
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(520, 210);
+            this.label1.Location = new System.Drawing.Point(607, 258);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Mã hóa đơn";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(520, 279);
+            this.label2.Location = new System.Drawing.Point(607, 343);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 13);
+            this.label2.Size = new System.Drawing.Size(101, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Mã khách hàng";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(520, 347);
+            this.label3.Location = new System.Drawing.Point(607, 427);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.Size = new System.Drawing.Size(71, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Ngày mua";
             // 
             // txtmahd
             // 
-            this.txtmahd.Location = new System.Drawing.Point(625, 210);
+            this.txtmahd.Location = new System.Drawing.Point(729, 258);
             this.txtmahd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtmahd.Name = "txtmahd";
-            this.txtmahd.Size = new System.Drawing.Size(60, 21);
+            this.txtmahd.Size = new System.Drawing.Size(69, 23);
             this.txtmahd.TabIndex = 8;
             // 
             // txtmakh
             // 
-            this.txtmakh.Location = new System.Drawing.Point(625, 279);
+            this.txtmakh.Location = new System.Drawing.Point(729, 343);
             this.txtmakh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtmakh.Name = "txtmakh";
-            this.txtmakh.Size = new System.Drawing.Size(60, 21);
+            this.txtmakh.Size = new System.Drawing.Size(69, 23);
             this.txtmakh.TabIndex = 9;
             // 
             // txtngaymua
             // 
-            this.txtngaymua.Location = new System.Drawing.Point(625, 347);
+            this.txtngaymua.Location = new System.Drawing.Point(729, 427);
             this.txtngaymua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtngaymua.Name = "txtngaymua";
-            this.txtngaymua.Size = new System.Drawing.Size(120, 21);
+            this.txtngaymua.Size = new System.Drawing.Size(139, 23);
             this.txtngaymua.TabIndex = 10;
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Khách hàng";
-            this.barButtonItem4.Id = 4;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // DHOffline
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 486);
+            this.ClientSize = new System.Drawing.Size(889, 598);
             this.Controls.Add(this.txtngaymua);
             this.Controls.Add(this.txtmakh);
             this.Controls.Add(this.txtmahd);

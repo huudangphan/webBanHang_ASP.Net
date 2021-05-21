@@ -90,6 +90,18 @@
     <Compile Include="BanHang\PTG.Designer.cs">
       <DependentUpon>PTG.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\TaoHDOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\TaoHDOff.Designer.cs">
+      <DependentUpon>TaoHDOff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang\TaoHDTG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\TaoHDTG.Designer.cs">
+      <DependentUpon>TaoHDTG.cs</DependentUpon>
+    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,12 +126,27 @@
     <Compile Include="Index\IndexKho.Designer.cs">
       <DependentUpon>IndexKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhachHang\KhachHangOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhachHang\KhachHangOff.Designer.cs">
+      <DependentUpon>KhachHangOff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang\TaoKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhachHang\TaoKhachHang.Designer.cs">
+      <DependentUpon>TaoKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DonHang\GioHang.cs" />
     <Compile Include="Model\DonHang\ModelCT.cs" />
     <Compile Include="Model\DonHang\ModelCTHDOnline.cs" />
     <Compile Include="Model\DonHang\ModelDHOffline.cs" />
     <Compile Include="Model\DonHang\ModelDHOnline.cs" />
     <Compile Include="Model\GlobalData.cs" />
+    <Compile Include="Model\ModelKhachHang.cs" />
     <Compile Include="Model\ModelNV.cs" />
+    <Compile Include="Model\ModelSanPham.cs" />
     <Compile Include="Model\ModelUser.cs" />
     <Compile Include="Model\Session.cs" />
     <Compile Include="Program.cs" />
@@ -155,6 +182,9 @@
     <EmbeddedResource Include="BanHang\PTG.resx">
       <DependentUpon>PTG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\TaoHDOff.resx">
+      <DependentUpon>TaoHDOff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Index\IndexKho.resx">
       <DependentUpon>IndexKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHang\KhachHangOff.resx">
+      <DependentUpon>KhachHangOff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHang\TaoKhachHang.resx">
+      <DependentUpon>TaoKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

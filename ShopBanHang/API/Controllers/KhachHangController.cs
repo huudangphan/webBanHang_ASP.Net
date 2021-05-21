@@ -36,5 +36,10 @@ namespace API.Controllers
         {
             return kh.TimKhachHang(sdt);
         }
+        [HttpGet]
+        public string getAll()
+        {
+            return kh.getAll();
+        }
     }
 }

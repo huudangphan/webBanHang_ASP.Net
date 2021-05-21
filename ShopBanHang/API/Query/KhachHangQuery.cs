@@ -15,7 +15,7 @@ namespace API.Query
         }
         public void ThemKhachHangkUser(string tenkh, string diaChi, int sdt, string email)
         {
-            string query = "insert into KhachHang(tenKH,DiaChi,SDT,email) values('" + tenkh + "', '" + diaChi + "', '" + sdt + "', '" + email + "')";
+            string query = "insert into KhachHang(tenKH,DiaChi,SDT,email,tongMua) values('" + tenkh + "', '" + diaChi + "', '" + sdt + "', '" + email + "',0)";
             Execute.ExcuteNonquery(query);
         }
         public string TimKhachHang(string ten)
@@ -26,6 +26,11 @@ namespace API.Query
         public string TimKhachHangSDt(string sdt)
         {
             string query = "select * from KhachHang where tenKh like'" + sdt + "'";
+            return Execute.ExcuteQuery(query);
+        }
+        public string getAll()
+        {
+            string query = "select * from KhachHang";
             return Execute.ExcuteQuery(query);
         }
     }

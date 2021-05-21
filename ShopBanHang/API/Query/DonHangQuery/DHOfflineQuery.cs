@@ -33,8 +33,8 @@ namespace API.Query.DonHangQuery
         public string GetLastDH()
         {
 
-            string query = "select max(MaDH) from HDOffline";
-            return Execute.ExcuteQuery(query);
+            string query = "select MaHD from HDOffline order by MaHD asc";
+            return Execute.ExcuteQueryReead(query, "MaHD");
         }
        
     }

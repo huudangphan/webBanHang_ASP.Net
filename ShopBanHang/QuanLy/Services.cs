@@ -79,6 +79,32 @@ namespace QuanLy
 
             }
         }
+        public static string GET(string urlbase, string token)
+        {
+            string r;
+            try
+            {
+                string strUrl = String.Format(urlbase);
+                WebRequest request = WebRequest.Create(strUrl);
+                request.Method = "PUT";
+                request.ContentType = "application/json";
+                request.Headers.Add("Authorization", "Bearer " + token);
+                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    var response = request.GetResponse();
+                    using (var streamReader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        r = result;
+                    }
+                }
+                return r;
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
 
     }
 }

@@ -10,5 +10,8 @@ namespace QuanLy.Model
     {
         public static string username { get; set; }
         public static string tennv { get; set; }
+        public static string makh { get; set; }
+        public static string madh { get; set; }
+
     }
 }

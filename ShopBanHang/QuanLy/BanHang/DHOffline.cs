@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using QuanLy.Model.DonHang;
 using Newtonsoft.Json;
 using System.Net;
+using QuanLy.KhachHang;
 
 namespace QuanLy.BanHang
 {
@@ -63,6 +64,22 @@ namespace QuanLy.BanHang
         {
             ModelCT.mahd = txtmahd.Text;         
             CTHDOffline f = new CTHDOffline(Sess);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            TaoKhachHang f = new TaoKhachHang(Sess);            
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            KhachHangOff f = new KhachHangOff(Sess);
             this.Hide();
             f.ShowDialog();
             this.Show();
