@@ -42,5 +42,10 @@ namespace API.Controllers.DonHang
         {
             return dh.GetLastDH();
         }
+        [HttpGet]
+        public string getCTHDOff(int mahd)
+        {
+            return dh.getCTHDOff(mahd);
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace QuanLy.BanHang
             this.sess = sess;
             loadData();
         }
-        //http://localhost:55543/api/SanPham
+      
         public void loadData()
         {
             string baseURL = "http://localhost:55543/api/SanPham/getAllSanPham";
@@ -84,9 +84,11 @@ namespace QuanLy.BanHang
                 {
                     foreach (var item in lst)
                     {
-                        string url = "http://localhost:55543/api/DHOfline/TaoCTHDOff?mahd=" + GlobalData.madh + "&masp=" + item.masp + "&giaBan=" + item.giaBan + "&SL=" + item.soluong + "&makho=" + item.makho;
+                        string url = "http://localhost:55543/api/dhofline/taocthdoff?mahd=" + GlobalData.madh + "&masp=" + item.masp + "&giaban=" + item.giaBan + "&sl=" + item.soluong + "&makho=" + item.makho;
                         Services.POST(url, sess.token);
+                        
                     }
+                    MessageBox.Show("Tạo đơn hàng thành công");
                 }
                 catch (Exception ex)
                 {
@@ -127,7 +129,7 @@ namespace QuanLy.BanHang
             try
             {
 
-                lst.Add(new GioHang() { masp = masp, mahd = Int32.Parse(GlobalData.madh), soluong = soluong, giaBan = giaban, makho = makho });
+                lst.Add(new GioHang() { masp = masp.ToString(), mahd = GlobalData.madh, soluong = soluong.ToString(), giaBan = giaban.ToString(), makho = makho.ToString() });
             }
             catch(Exception ex)
             {

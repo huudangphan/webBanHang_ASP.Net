@@ -36,6 +36,10 @@ namespace API.Query.DonHangQuery
             string query = "select MaHD from HDOffline order by MaHD asc";
             return Execute.ExcuteQueryReead(query, "MaHD");
         }
-       
+       public string getCTHDOff(int mahd)
+        {
+            string query = "select * from CTHDOff where MaHD=" + mahd;
+            return Execute.ExcuteQuery(query);
+        }
     }
 }

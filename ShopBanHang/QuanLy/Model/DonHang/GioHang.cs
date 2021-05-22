@@ -8,11 +8,11 @@ namespace QuanLy.Model.DonHang
 {
     class GioHang
     {
-        public int masp { get; set; }
-        public int mahd { get; set; }
-        public int soluong { get; set; }
-        public double giaBan { get; set; }
-        public int makho { get; set; }
+        public string masp { get; set; }
+        public string mahd { get; set; }
+        public string soluong { get; set; }
+        public string giaBan { get; set; }
+        public string makho { get; set; }
        
 
 

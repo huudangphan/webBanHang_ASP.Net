@@ -35,6 +35,18 @@ namespace QuanLy.BanHang
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtmahd = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtkho = new System.Windows.Forms.TextBox();
+            this.txtthanhtien = new System.Windows.Forms.TextBox();
+            this.txtsl = new System.Windows.Forms.TextBox();
+            this.txtTensp = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -90,11 +102,120 @@ namespace QuanLy.BanHang
             this.dataGridView2.Size = new System.Drawing.Size(584, 203);
             this.dataGridView2.TabIndex = 3;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(608, 253);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 17);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Ngày mua";
+            // 
+            // txtmahd
+            // 
+            this.txtmahd.Location = new System.Drawing.Point(723, 197);
+            this.txtmahd.Name = "txtmahd";
+            this.txtmahd.Size = new System.Drawing.Size(100, 23);
+            this.txtmahd.TabIndex = 30;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(608, 203);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 17);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Mã hóa đơn";
+            // 
+            // txtkho
+            // 
+            this.txtkho.Location = new System.Drawing.Point(723, 426);
+            this.txtkho.Name = "txtkho";
+            this.txtkho.Size = new System.Drawing.Size(135, 23);
+            this.txtkho.TabIndex = 28;
+            // 
+            // txtthanhtien
+            // 
+            this.txtthanhtien.Location = new System.Drawing.Point(723, 380);
+            this.txtthanhtien.Name = "txtthanhtien";
+            this.txtthanhtien.Size = new System.Drawing.Size(135, 23);
+            this.txtthanhtien.TabIndex = 27;
+            // 
+            // txtsl
+            // 
+            this.txtsl.Location = new System.Drawing.Point(723, 335);
+            this.txtsl.Name = "txtsl";
+            this.txtsl.Size = new System.Drawing.Size(100, 23);
+            this.txtsl.TabIndex = 26;
+            // 
+            // txtTensp
+            // 
+            this.txtTensp.Location = new System.Drawing.Point(723, 289);
+            this.txtTensp.Name = "txtTensp";
+            this.txtTensp.Size = new System.Drawing.Size(135, 23);
+            this.txtTensp.TabIndex = 25;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(617, 426);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 17);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Kho";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(608, 380);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Thành tiền";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(608, 341);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 17);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Số lượng";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(608, 295);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 17);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Tên sản phẩm";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(723, 247);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(135, 23);
+            this.dateTimePicker1.TabIndex = 34;
+            // 
             // CTHDOffline
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 677);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtmahd);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtkho);
+            this.Controls.Add(this.txtthanhtien);
+            this.Controls.Add(this.txtsl);
+            this.Controls.Add(this.txtTensp);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.ribbonStatusBar);
@@ -119,5 +240,17 @@ namespace QuanLy.BanHang
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtmahd;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtkho;
+        private System.Windows.Forms.TextBox txtthanhtien;
+        private System.Windows.Forms.TextBox txtsl;
+        private System.Windows.Forms.TextBox txtTensp;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
