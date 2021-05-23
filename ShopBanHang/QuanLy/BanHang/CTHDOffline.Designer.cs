@@ -78,7 +78,7 @@ namespace QuanLy.BanHang
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 647);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 580);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(907, 30);
@@ -99,13 +99,13 @@ namespace QuanLy.BanHang
             this.dataGridView2.Location = new System.Drawing.Point(0, 438);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(584, 203);
+            this.dataGridView2.Size = new System.Drawing.Size(584, 118);
             this.dataGridView2.TabIndex = 3;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(608, 253);
+            this.label7.Location = new System.Drawing.Point(609, 255);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 17);
             this.label7.TabIndex = 33;
@@ -113,15 +113,15 @@ namespace QuanLy.BanHang
             // 
             // txtmahd
             // 
-            this.txtmahd.Location = new System.Drawing.Point(723, 197);
+            this.txtmahd.Location = new System.Drawing.Point(724, 199);
             this.txtmahd.Name = "txtmahd";
-            this.txtmahd.Size = new System.Drawing.Size(100, 23);
+            this.txtmahd.Size = new System.Drawing.Size(70, 23);
             this.txtmahd.TabIndex = 30;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(608, 203);
+            this.label5.Location = new System.Drawing.Point(609, 205);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 17);
             this.label5.TabIndex = 29;
@@ -129,28 +129,28 @@ namespace QuanLy.BanHang
             // 
             // txtkho
             // 
-            this.txtkho.Location = new System.Drawing.Point(723, 426);
+            this.txtkho.Location = new System.Drawing.Point(724, 428);
             this.txtkho.Name = "txtkho";
             this.txtkho.Size = new System.Drawing.Size(135, 23);
             this.txtkho.TabIndex = 28;
             // 
             // txtthanhtien
             // 
-            this.txtthanhtien.Location = new System.Drawing.Point(723, 380);
+            this.txtthanhtien.Location = new System.Drawing.Point(724, 382);
             this.txtthanhtien.Name = "txtthanhtien";
             this.txtthanhtien.Size = new System.Drawing.Size(135, 23);
             this.txtthanhtien.TabIndex = 27;
             // 
             // txtsl
             // 
-            this.txtsl.Location = new System.Drawing.Point(723, 335);
+            this.txtsl.Location = new System.Drawing.Point(724, 337);
             this.txtsl.Name = "txtsl";
-            this.txtsl.Size = new System.Drawing.Size(100, 23);
+            this.txtsl.Size = new System.Drawing.Size(70, 23);
             this.txtsl.TabIndex = 26;
             // 
             // txtTensp
             // 
-            this.txtTensp.Location = new System.Drawing.Point(723, 289);
+            this.txtTensp.Location = new System.Drawing.Point(724, 291);
             this.txtTensp.Name = "txtTensp";
             this.txtTensp.Size = new System.Drawing.Size(135, 23);
             this.txtTensp.TabIndex = 25;
@@ -158,7 +158,7 @@ namespace QuanLy.BanHang
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(617, 426);
+            this.label4.Location = new System.Drawing.Point(609, 431);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 17);
             this.label4.TabIndex = 24;
@@ -167,7 +167,7 @@ namespace QuanLy.BanHang
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(608, 380);
+            this.label3.Location = new System.Drawing.Point(609, 382);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 23;
@@ -176,7 +176,7 @@ namespace QuanLy.BanHang
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(608, 341);
+            this.label2.Location = new System.Drawing.Point(609, 343);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 17);
             this.label2.TabIndex = 22;
@@ -185,7 +185,7 @@ namespace QuanLy.BanHang
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(608, 295);
+            this.label1.Location = new System.Drawing.Point(609, 297);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 17);
             this.label1.TabIndex = 21;
@@ -194,7 +194,7 @@ namespace QuanLy.BanHang
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(723, 247);
+            this.dateTimePicker1.Location = new System.Drawing.Point(724, 249);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(135, 23);
             this.dateTimePicker1.TabIndex = 34;
@@ -203,7 +203,7 @@ namespace QuanLy.BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 677);
+            this.ClientSize = new System.Drawing.Size(907, 610);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtmahd);
@@ -222,6 +222,7 @@ namespace QuanLy.BanHang
             this.Controls.Add(this.ribbon);
             this.Name = "CTHDOffline";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "CTHDOffline";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();

@@ -140,9 +140,11 @@
     </Compile>
     <Compile Include="Model\DonHang\GioHang.cs" />
     <Compile Include="Model\DonHang\ModelCT.cs" />
+    <Compile Include="Model\DonHang\ModelCTDHOff.cs" />
     <Compile Include="Model\DonHang\ModelCTHDOnline.cs" />
     <Compile Include="Model\DonHang\ModelDHOffline.cs" />
     <Compile Include="Model\DonHang\ModelDHOnline.cs" />
+    <Compile Include="Model\DonHang\ModelHDTG.cs" />
     <Compile Include="Model\GlobalData.cs" />
     <Compile Include="Model\ModelKhachHang.cs" />
     <Compile Include="Model\ModelNV.cs" />

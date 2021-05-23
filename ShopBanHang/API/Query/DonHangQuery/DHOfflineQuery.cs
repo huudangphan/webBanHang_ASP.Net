@@ -26,7 +26,7 @@ namespace API.Query.DonHangQuery
         }
         public string HDOff(int maKH)
         {
-            string query = "select * from HDOffline where MaKH=" + maKH;
+            string query = "select * from HDOffline where MaHD=" + maKH;
             return Execute.ExcuteQuery(query);
         }
        
@@ -38,8 +38,10 @@ namespace API.Query.DonHangQuery
         }
        public string getCTHDOff(int mahd)
         {
-            string query = "select * from CTHDOff where MaHD=" + mahd;
+            string query = "select SanPham.tenSP,CTHDOff.SL,CTHDOff.GiaBan,CTHDOff.thanhTien,CTHDOff.thanhTien,CTHDOff.MaKho from SanPham, CTHDOff where CTHDOff.MaSP = SanPham.maSP and CTHDOff.MaHD =" + mahd;
+
             return Execute.ExcuteQuery(query);
         }
+      
     }
 }

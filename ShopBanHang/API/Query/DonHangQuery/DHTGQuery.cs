@@ -112,5 +112,35 @@ namespace API.Query.DonHangQuery
         {
 
         }
+        public string getHDTG()
+        {
+            string query = "select * from HDTraGop";
+            return Execute.ExcuteQuery(query);
+        }
+        public string GetCTHDTG(int mahd)
+        {
+            string query = "select SanPham.tenSP,CTHDTG.SL,CTHDTG.GiaBan,CTHDTG.thanhTien,CTHDTG.MaKho from SanPham, CTHDTG where CTHDTG.MaSP = SanPham.maSP and CTHDTG.MaHD = "+mahd;
+            return Execute.ExcuteQuery(query);
+
+        }
+        public string GetPTG(int mahd)
+        {
+            string query = "select * from PhieuTraGop where MaHD = "+mahd;
+            return Execute.ExcuteQuery(query);
+        }
+        public string GetCTPTG(int maphieu)
+        {
+            string query = "select * from PhieuTraGop where MaPhieu = " + maphieu;
+            return Execute.ExcuteQuery(query);
+        }
+        public void TraGop(int maphieu)
+        {
+            string year = DateTime.Now.Year.ToString();
+            string month = DateTime.Now.Month.ToString();
+            string day= DateTime.Now.Day.ToString();
+            string date = year + "-" + month + "-" + day;
+            string query = "Update PhieuTraGop set NgayTra = '" + date + "'  where MaPhieu=" + maphieu;
+            Execute.ExcuteNonquery(query);
+        }
     }
 }

@@ -37,6 +37,30 @@ namespace API.Controllers.DonHang
         {
             dh.TaoCTTG(makho, masp, sl, giaban);
         }
-
+        [HttpGet]
+        public string GetHDTG()
+        {
+            return dh.getHDTG();
+        }
+        [HttpGet]
+        public string GetCTHDTG(int mahd)
+        {
+            return dh.GetCTHDTG(mahd);
+        }
+        [HttpGet]
+        public string GetPTG(int mahd)
+        {
+            return dh.GetPTG(mahd);
+        }
+        [HttpGet]
+        public string GetCTPTG(int maphieu)
+        {
+            return dh.GetCTPTG(maphieu);
+        }
+        [HttpPost]
+        public void TraGop(int maphieu)
+        {
+            dh.TraGop(maphieu);
+        }
     }
 }

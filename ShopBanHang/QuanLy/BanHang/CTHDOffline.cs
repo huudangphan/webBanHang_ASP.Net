@@ -27,6 +27,19 @@ namespace QuanLy.BanHang
         {
             InitializeComponent();
             this.sess = sess;
+            loadData();
+            loadData2();
+            binding();
+        }
+        public void binding()
+        {
+            txtmahd.DataBindings.Add(new Binding("Text", dataGridView2.DataSource, "MaHD"));
+            dateTimePicker1.DataBindings.Add(new Binding("Value", dataGridView2.DataSource, "NgayMua"));
+
+            txtTensp.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "tenSP"));
+            txtsl.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "SL"));
+            txtthanhtien.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "thanhTien"));
+            txtkho.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "MaKho"));
         }
         public void loadData()
         {
@@ -39,10 +52,32 @@ namespace QuanLy.BanHang
                     wc.Headers.Add("Authorization", "Bearer " + sess.token);
                     var json = wc.DownloadString(baseURL);
 
-                    var data = JsonConvert.DeserializeObject<List<ModelCTHDOnline>>(json);
+                    var data = JsonConvert.DeserializeObject<List<ModelCTDHOff>>(json);
 
 
                     dataGridView1.DataSource = data;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+        public void loadData2()
+        {
+            string baseURL = "http://localhost:55543/api/DHOfline/HDOff?makh=2" + ModelCT.mahd;
+            using (WebClient wc = new WebClient())
+            {
+                try
+                {
+
+                    wc.Headers.Add("Authorization", "Bearer " + sess.token);
+                    var json = wc.DownloadString(baseURL);
+
+                    var data = JsonConvert.DeserializeObject<List<ModelDHOffline>>(json);
+
+
+                    dataGridView2.DataSource = data;
                 }
                 catch (Exception ex)
                 {
