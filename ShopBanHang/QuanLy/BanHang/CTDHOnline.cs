@@ -33,11 +33,12 @@ namespace QuanLy.BanHang
             Binding();
             formatt();
         }
+
         public void Binding()
         {
             txtmahd.DataBindings.Add(new Binding("Text", dataGridView2.DataSource, "MaHD"));
             txtngaydat.DataBindings.Add(new Binding("Text", dataGridView2.DataSource, "NgayDat"));
-            txtngaygiao.DataBindings.Add(new Binding("Text", dataGridView2.DataSource, "NgayGiao"));
+            dateTimePicker1.DataBindings.Add(new Binding("Text", dataGridView2.DataSource, "NgayGiao"));
             checkBox1.DataBindings.Add(new Binding("Checked", dataGridView2.DataSource, "TinhTrang"));
 
             txtTensp.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "tenSP"));

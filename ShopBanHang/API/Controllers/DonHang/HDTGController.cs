@@ -48,6 +48,12 @@ namespace API.Controllers.DonHang
             return dh.GetCTHDTG(mahd);
         }
         [HttpGet]
+        public string GetHDTGId(int mahd)
+        {
+            return dh.GetHDTGId(mahd);
+        }
+
+        [HttpGet]
         public string GetPTG(int mahd)
         {
             return dh.GetPTG(mahd);

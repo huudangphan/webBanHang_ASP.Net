@@ -117,12 +117,18 @@ namespace API.Query.DonHangQuery
             string query = "select * from HDTraGop";
             return Execute.ExcuteQuery(query);
         }
+        public string GetHDTGId( int mahd)
+        {
+            string query = "select * from HDTraGop where MaHD="+mahd;
+            return Execute.ExcuteQuery(query);
+        }
         public string GetCTHDTG(int mahd)
         {
             string query = "select SanPham.tenSP,CTHDTG.SL,CTHDTG.GiaBan,CTHDTG.thanhTien,CTHDTG.MaKho from SanPham, CTHDTG where CTHDTG.MaSP = SanPham.maSP and CTHDTG.MaHD = "+mahd;
             return Execute.ExcuteQuery(query);
 
         }
+        
         public string GetPTG(int mahd)
         {
             string query = "select * from PhieuTraGop where MaHD = "+mahd;

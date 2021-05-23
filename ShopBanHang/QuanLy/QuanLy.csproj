@@ -66,6 +66,12 @@
     <Compile Include="BanHang\CTHDOffline.Designer.cs">
       <DependentUpon>CTHDOffline.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\CTHDTG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\CTHDTG.Designer.cs">
+      <DependentUpon>CTHDTG.cs</DependentUpon>
+    </Compile>
     <Compile Include="BanHang\DHOffline.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,9 +148,11 @@
     <Compile Include="Model\DonHang\ModelCT.cs" />
     <Compile Include="Model\DonHang\ModelCTDHOff.cs" />
     <Compile Include="Model\DonHang\ModelCTHDOnline.cs" />
+    <Compile Include="Model\DonHang\ModelCTHDTG.cs" />
     <Compile Include="Model\DonHang\ModelDHOffline.cs" />
     <Compile Include="Model\DonHang\ModelDHOnline.cs" />
     <Compile Include="Model\DonHang\ModelHDTG.cs" />
+    <Compile Include="Model\DonHang\PhieuTraGop.cs" />
     <Compile Include="Model\GlobalData.cs" />
     <Compile Include="Model\ModelKhachHang.cs" />
     <Compile Include="Model\ModelNV.cs" />
@@ -171,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\CTHDOffline.resx">
       <DependentUpon>CTHDOffline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\CTHDTG.resx">
+      <DependentUpon>CTHDTG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\DHOffline.resx">
       <DependentUpon>DHOffline.cs</DependentUpon>

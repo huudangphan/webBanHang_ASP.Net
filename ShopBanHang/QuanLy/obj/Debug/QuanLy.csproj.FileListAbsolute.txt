@@ -191,3 +191,4 @@ D:\webBanHang_ASP\ShopBanHang\QuanLy\bin\Debug\es\DevExpress.Sparkline.v19.2.Cor
 D:\webBanHang_ASP\ShopBanHang\QuanLy\bin\Debug\ja\DevExpress.Sparkline.v19.2.Core.resources.dll
 D:\webBanHang_ASP\ShopBanHang\QuanLy\bin\Debug\ru\DevExpress.Sparkline.v19.2.Core.resources.dll
 D:\webBanHang_ASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.csproj.CopyComplete
+D:\webBanHang_ASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.BanHang.CTHDTG.resources

@@ -12,5 +12,7 @@ namespace QuanLy.Model.DonHang
         public string MaKH { get; set; }
         public string NgayCoc { get; set; }
         public string TienCoc { get; set; }
+        public string SoThang { get; set; }
+        public string laiSuat { get; set; }
     }
 }

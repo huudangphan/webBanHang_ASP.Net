@@ -44,11 +44,11 @@ namespace QuanLy.BanHang
             this.mahd = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtmahd = new System.Windows.Forms.TextBox();
+            this.txtmakh = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txttiencoc = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,7 @@ namespace QuanLy.BanHang
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -128,7 +129,7 @@ namespace QuanLy.BanHang
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 635);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 572);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
@@ -141,7 +142,7 @@ namespace QuanLy.BanHang
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(670, 439);
+            this.dataGridView1.Size = new System.Drawing.Size(670, 376);
             this.dataGridView1.TabIndex = 2;
             // 
             // mahd
@@ -156,7 +157,7 @@ namespace QuanLy.BanHang
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(703, 358);
+            this.label2.Location = new System.Drawing.Point(703, 320);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 17);
             this.label2.TabIndex = 6;
@@ -171,35 +172,19 @@ namespace QuanLy.BanHang
             this.label3.TabIndex = 7;
             this.label3.Text = "Ngày cọc";
             // 
-            // label4
+            // txtmahd
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(703, 567);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Tiền cọc";
+            this.txtmahd.Location = new System.Drawing.Point(843, 240);
+            this.txtmahd.Name = "txtmahd";
+            this.txtmahd.Size = new System.Drawing.Size(77, 23);
+            this.txtmahd.TabIndex = 9;
             // 
-            // textBox1
+            // txtmakh
             // 
-            this.textBox1.Location = new System.Drawing.Point(843, 240);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(77, 23);
-            this.textBox1.TabIndex = 9;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(843, 339);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(77, 23);
-            this.textBox2.TabIndex = 10;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(843, 564);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(138, 23);
-            this.textBox3.TabIndex = 11;
+            this.txtmakh.Location = new System.Drawing.Point(843, 314);
+            this.txtmakh.Name = "txtmakh";
+            this.txtmakh.Size = new System.Drawing.Size(77, 23);
+            this.txtmakh.TabIndex = 10;
             // 
             // dateTimePicker1
             // 
@@ -209,16 +194,32 @@ namespace QuanLy.BanHang
             this.dateTimePicker1.Size = new System.Drawing.Size(138, 23);
             this.dateTimePicker1.TabIndex = 12;
             // 
+            // txttiencoc
+            // 
+            this.txttiencoc.Location = new System.Drawing.Point(843, 387);
+            this.txttiencoc.Name = "txttiencoc";
+            this.txttiencoc.Size = new System.Drawing.Size(138, 23);
+            this.txttiencoc.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(703, 393);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 17);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Tiền cọc";
+            // 
             // DHTG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 665);
+            this.ClientSize = new System.Drawing.Size(1079, 602);
+            this.Controls.Add(this.txttiencoc);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtmakh);
+            this.Controls.Add(this.txtmahd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.mahd);
@@ -254,10 +255,10 @@ namespace QuanLy.BanHang
         private System.Windows.Forms.Label mahd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtmahd;
+        private System.Windows.Forms.TextBox txtmakh;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txttiencoc;
+        private System.Windows.Forms.Label label1;
     }
 }
