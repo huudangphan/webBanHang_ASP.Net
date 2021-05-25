@@ -291,6 +291,45 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assit\css2\css\bootstrap.min.css" />
+    <Content Include="Assit\css2\css\font-awesome.min.css" />
+    <Content Include="Assit\css2\css\owl.carousel.css" />
+    <Content Include="Assit\css2\css\responsive.css" />
+    <Content Include="Assit\css2\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assit\css2\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assit\css2\img\brand1.png" />
+    <Content Include="Assit\css2\img\brand2.png" />
+    <Content Include="Assit\css2\img\brand3.png" />
+    <Content Include="Assit\css2\img\brand4.png" />
+    <Content Include="Assit\css2\img\brand5.png" />
+    <Content Include="Assit\css2\img\brand6.png" />
+    <Content Include="Assit\css2\img\brand7.png" />
+    <Content Include="Assit\css2\img\brand8.png" />
+    <Content Include="Assit\css2\img\crossword.png" />
+    <Content Include="Assit\css2\img\h4-slide.png" />
+    <Content Include="Assit\css2\img\h4-slide2.png" />
+    <Content Include="Assit\css2\img\h4-slide3.png" />
+    <Content Include="Assit\css2\img\h4-slide4.png" />
+    <Content Include="Assit\css2\img\h4-slide7.png" />
+    <Content Include="Assit\css2\img\logo.png" />
+    <Content Include="Assit\css2\img\product-1.jpg" />
+    <Content Include="Assit\css2\img\product-2.jpg" />
+    <Content Include="Assit\css2\img\product-3.jpg" />
+    <Content Include="Assit\css2\img\product-4.jpg" />
+    <Content Include="Assit\css2\img\product-5.jpg" />
+    <Content Include="Assit\css2\img\product-6.jpg" />
+    <Content Include="Assit\css2\img\product-thumb-1.jpg" />
+    <Content Include="Assit\css2\img\product-thumb-2.jpg" />
+    <Content Include="Assit\css2\img\product-thumb-3.jpg" />
+    <Content Include="Assit\css2\img\product-thumb-4.jpg" />
+    <Content Include="Assit\css2\img\vertu.jpg" />
+    <Content Include="Assit\css2\js\bxslider.min.js" />
+    <Content Include="Assit\css2\js\jquery.easing.1.3.min.js" />
+    <Content Include="Assit\css2\js\jquery.sticky.js" />
+    <Content Include="Assit\css2\js\main.js" />
+    <Content Include="Assit\css2\js\owl.carousel.min.js" />
+    <Content Include="Assit\css2\js\script.slider.js" />
+    <Content Include="Assit\css2\style.css" />
     <Content Include="Assit\css\sb-admin-2.css" />
     <Content Include="Assit\css\sb-admin-2.min.css" />
     <Content Include="Assit\css\trangchu.css" />
@@ -1251,6 +1290,13 @@
     <Content Include="Models\ModelSop.edmx.diagram">
       <DependentUpon>ModelSop.edmx</DependentUpon>
     </Content>
+    <Content Include="Assit\css2\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assit\css2\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assit\css2\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assit\css2\fonts\FontAwesome.otf" />
+    <Content Include="Assit\css2\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assit\css2\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assit\css2\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1369,6 +1415,7 @@
     <Content Include="Views\Shared\_LayoutAdminKho.cshtml" />
     <Content Include="Views\QuanLy\Index3.cshtml" />
     <Content Include="Views\QuanLy\qlsp.cshtml" />
+    <Content Include="Views\Shared\_LayoutTrangChuNew.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

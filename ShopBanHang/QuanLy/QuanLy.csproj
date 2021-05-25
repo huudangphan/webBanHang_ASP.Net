@@ -72,6 +72,12 @@
     <Compile Include="BanHang\CTHDTG.Designer.cs">
       <DependentUpon>CTHDTG.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\CTPhieuTraGop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\CTPhieuTraGop.Designer.cs">
+      <DependentUpon>CTPhieuTraGop.cs</DependentUpon>
+    </Compile>
     <Compile Include="BanHang\DHOffline.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,7 @@
     <Compile Include="KhachHang\TaoKhachHang.Designer.cs">
       <DependentUpon>TaoKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\DonHang\CTPhieuTraGop.cs" />
     <Compile Include="Model\DonHang\GioHang.cs" />
     <Compile Include="Model\DonHang\ModelCT.cs" />
     <Compile Include="Model\DonHang\ModelCTDHOff.cs" />
@@ -182,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\CTHDTG.resx">
       <DependentUpon>CTHDTG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\CTPhieuTraGop.resx">
+      <DependentUpon>CTPhieuTraGop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\DHOffline.resx">
       <DependentUpon>DHOffline.cs</DependentUpon>

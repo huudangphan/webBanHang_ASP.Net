@@ -39,7 +39,7 @@ namespace QuanLy.BanHang
                     wc.Headers.Add("Authorization", "Bearer " + sess.token);
                     var json = wc.DownloadString(baseURL);
 
-                    var data = JsonConvert.DeserializeObject<List<ModelHDTG>>(json);
+                    var data = JsonConvert.DeserializeObject<List<PhieuTraGop>>(json);
 
 
                     dataGridView1.DataSource = data;
@@ -51,6 +51,13 @@ namespace QuanLy.BanHang
             }
         }
 
-
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            GlobalData.madh = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+            CTPhieuTraGop f = new CTPhieuTraGop(sess);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }
