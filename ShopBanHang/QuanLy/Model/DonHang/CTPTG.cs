@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLy.Model.DonHang
 {
-    public class CTPhieuTraGop
+    public class CTPTG
     {
         public string MaPhieu { get; set; }
         public string MaHD { get; set; }

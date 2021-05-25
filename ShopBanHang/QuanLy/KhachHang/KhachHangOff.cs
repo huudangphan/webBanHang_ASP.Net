@@ -56,7 +56,7 @@ namespace QuanLy.KhachHang
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
             GlobalData.makh = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-            TaoHDTG f = new TaoHDTG(Sess);
+            TaoCTHDTG f = new TaoCTHDTG(Sess);
             this.Hide();
             f.ShowDialog();
             this.Show();

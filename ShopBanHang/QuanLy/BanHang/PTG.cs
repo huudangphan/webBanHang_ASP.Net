@@ -54,6 +54,22 @@ namespace QuanLy.BanHang
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
             GlobalData.madh = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+           
+            if(string.IsNullOrEmpty(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString()))
+            {
+                string url = "http://localhost:55543/api/HDTG/TraGop?maphieu=" + GlobalData.madh;
+                Services.POST(url, sess.token);
+            }
+           
+            CTPhieuTraGop f = new CTPhieuTraGop(sess);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            GlobalData.madh = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
             CTPhieuTraGop f = new CTPhieuTraGop(sess);
             this.Hide();
             f.ShowDialog();

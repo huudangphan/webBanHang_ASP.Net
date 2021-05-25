@@ -49,7 +49,7 @@ namespace QuanLy.BanHang
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(954, 193);
+            this.ribbon.Size = new System.Drawing.Size(953, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // ribbonPage1
@@ -64,10 +64,10 @@ namespace QuanLy.BanHang
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 638);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 516);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(954, 30);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(953, 30);
             // 
             // dataGridView1
             // 
@@ -76,20 +76,19 @@ namespace QuanLy.BanHang
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(939, 264);
+            this.dataGridView1.Size = new System.Drawing.Size(953, 260);
             this.dataGridView1.TabIndex = 2;
             // 
             // CTPhieuTraGop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 668);
+            this.ClientSize = new System.Drawing.Size(953, 546);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Name = "CTPhieuTraGop";
             this.Ribbon = this.ribbon;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "CTPhieuTraGop";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();

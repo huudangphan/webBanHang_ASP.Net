@@ -108,6 +108,12 @@
     <Compile Include="BanHang\TaoHDOff.Designer.cs">
       <DependentUpon>TaoHDOff.cs</DependentUpon>
     </Compile>
+    <Compile Include="BanHang\TaoCTHDTG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\TaoCTHDTG.Designer.cs">
+      <DependentUpon>TaoCTHDTG.cs</DependentUpon>
+    </Compile>
     <Compile Include="BanHang\TaoHDTG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,7 +156,7 @@
     <Compile Include="KhachHang\TaoKhachHang.Designer.cs">
       <DependentUpon>TaoKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\DonHang\CTPhieuTraGop.cs" />
+    <Compile Include="Model\DonHang\CTPTG.cs" />
     <Compile Include="Model\DonHang\GioHang.cs" />
     <Compile Include="Model\DonHang\ModelCT.cs" />
     <Compile Include="Model\DonHang\ModelCTDHOff.cs" />
@@ -207,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BanHang\TaoHDOff.resx">
       <DependentUpon>TaoHDOff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\TaoCTHDTG.resx">
+      <DependentUpon>TaoCTHDTG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\TaoHDTG.resx">
+      <DependentUpon>TaoHDTG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>

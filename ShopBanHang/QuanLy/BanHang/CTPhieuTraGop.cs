@@ -39,7 +39,7 @@ namespace QuanLy.BanHang
                     wc.Headers.Add("Authorization", "Bearer " + sess.token);
                     var json = wc.DownloadString(baseURL);
 
-                    var data = JsonConvert.DeserializeObject<List<CTPhieuTraGop>>(json);
+                    var data = JsonConvert.DeserializeObject<List<CTPTG>>(json);
 
 
                     dataGridView1.DataSource = data;
@@ -49,7 +49,7 @@ namespace QuanLy.BanHang
 
                 }
             }
-        }
+
         }
     }
 }

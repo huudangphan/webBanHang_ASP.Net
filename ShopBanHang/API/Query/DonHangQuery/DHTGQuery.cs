@@ -102,9 +102,9 @@ namespace API.Query.DonHangQuery
             string query = "select MAX(MaHD) as MaHD from HDTraGop where NgayCoc='" + date + "'";
             return Execute.ExcuteQueryReead(query, "MaHD");
         }
-        public void TaoCTTG(int makho,  int masp, int sl, double giaban)
+        public void TaoCTTG(int mahd, int makho,  int masp, int sl, double giaban)
         {
-            int mahd = Int32.Parse(getmahd());
+            //int mahd = Int32.Parse(getmahd());
             string query = "insert into CTHDTG(MaKho,MaSP,MaHD,SL,GiaBan) values(" + makho + "," + masp + "," + mahd + "," + sl + "," + giaban + ")";
             Execute.ExcuteNonquery(query);
         }
