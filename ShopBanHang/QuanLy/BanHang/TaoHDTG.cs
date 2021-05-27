@@ -25,5 +25,12 @@ namespace QuanLy.BanHang
             InitializeComponent();
             this.sess = sess;
         }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string url = "http://localhost:55543/api/HDTG/updateMaHD";
+            Services.PUT(url, sess.token);
+            GlobalData.madh = Services.GET("http://localhost:55543/api/HDTG/test", sess.token);
+        }
     }
 }

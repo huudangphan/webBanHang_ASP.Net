@@ -171,6 +171,7 @@ namespace QuanLy.KhachHang
             this.Controls.Add(this.ribbon);
             this.Name = "KhachHangOff";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "KhachHangOff";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();

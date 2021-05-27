@@ -31,12 +31,12 @@ namespace QuanLy.BanHang
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CTHDTG));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txtmahd = new System.Windows.Forms.TextBox();
@@ -79,6 +79,15 @@ namespace QuanLy.BanHang
             this.ribbon.Size = new System.Drawing.Size(1023, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Phiếu trả góp";
+            this.barButtonItem1.Id = 1;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -116,15 +125,6 @@ namespace QuanLy.BanHang
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(900, 175);
             this.dataGridView2.TabIndex = 3;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Phiếu trả góp";
-            this.barButtonItem1.Id = 1;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // dateTimePicker1
             // 

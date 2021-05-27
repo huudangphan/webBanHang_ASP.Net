@@ -99,12 +99,12 @@ namespace API.Query.DonHangQuery
         public string getmahd()
         {
             string date = DateTime.Now.ToString();
-            string query = "select MAX(MaHD) as MaHD from HDTraGop where NgayCoc='" + date + "'";
+            string query = "select MAX(MaHD) as MaHD from HDTraGop ";
             return Execute.ExcuteQueryReead(query, "MaHD");
         }
-        public void TaoCTTG(int mahd, int makho,  int masp, int sl, double giaban)
+        public void TaoCTTG( int makho,  int masp, int sl, double giaban)
         {
-            //int mahd = Int32.Parse(getmahd());
+            int mahd = Int32.Parse(getmahd());
             string query = "insert into CTHDTG(MaKho,MaSP,MaHD,SL,GiaBan) values(" + makho + "," + masp + "," + mahd + "," + sl + "," + giaban + ")";
             Execute.ExcuteNonquery(query);
         }
@@ -147,6 +147,23 @@ namespace API.Query.DonHangQuery
             string date = year + "-" + month + "-" + day;
             string query = "Update PhieuTraGop set NgayTra = '" + date + "'  where MaPhieu=" + maphieu;
             Execute.ExcuteNonquery(query);
+        }
+        public void updateDay()
+        {
+            string year = DateTime.Now.Year.ToString();
+            string month = DateTime.Now.Month.ToString();
+            string day = DateTime.Now.Day.ToString();
+            string date = year + "-" + month + "-" + day;
+            string query = "Update HDTraGop set NgayCoc=" + date + "where mahd=52";
+        }
+        public void updatemadh()
+        {
+            //updateDay();
+            int mahd = Int32.Parse(getmahd());
+            string query = "update CTHDTG set MaHD = "+mahd+" where MaHD = 51";
+            Execute.ExcuteNonquery(query);
+
+
         }
     }
 }

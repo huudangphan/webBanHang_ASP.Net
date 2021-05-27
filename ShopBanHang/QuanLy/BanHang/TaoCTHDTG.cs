@@ -86,17 +86,31 @@ namespace QuanLy.BanHang
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
+            string ngaycoc = dateTimePicker1.Value.ToString();
+            string tiencoc = txttiencoc.Text;
+            string thang = sothang.Text;
+            string thangcoc = "";
+            double check = 0;
+           
+            if (thang == "3 tháng")
+                thangcoc = "3";
+            else
+                thangcoc = "6";
             if (lst.Count == 0)
                 MessageBox.Show("Giỏ hàng không được để trống");
               
             else
             {
+
                 try
                 {
+                    string urltaohd = "http://localhost:55543/api/HDTG/TaoHDTG?makh=" + GlobalData.makh + "&tiencoc=" + tiencoc + "&sothang=" + thangcoc;
+                    Services.POST(urltaohd, sess.token);
+
                     foreach (var item in lst)
                     {
-                        //string url = "http://localhost:55543/api/HDTG/TaoCTTG?mahd=51" + "&makho=" + item.makho + "&masp=" + item.masp + "&sl=" + item.soluong + "&giaban=" + item.giaBan  ;
-                        string baseurl = "http://localhost:55543/api/HDTG/TaoCTHDTG?mahd=51&makho="+item.makho+"&masp="+item.masp+"&sl="+item.soluong+"&giaban="+item.giaBan;
+                        
+                        string baseurl = "http://localhost:55543/api/HDTG/TaoCTHDTG?makho="+item.makho+"&masp="+item.masp+"&sl="+item.soluong+"&giaban="+item.giaBan;
                         Services.POST(baseurl, sess.token);
 
                     }
@@ -109,6 +123,25 @@ namespace QuanLy.BanHang
                 }
 
             }
+        }
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if(lst.Count==0)
+            {
+                MessageBox.Show("Giỏ hàng không được để trống");
+            }
+            else
+            {
+                
+                TaoHDTG f = new TaoHDTG(Sess);
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            //
+            
+
         }
     }
 }

@@ -33,9 +33,12 @@ namespace QuanLy.BanHang
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -47,9 +50,19 @@ namespace QuanLy.BanHang
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.sothang = new System.Windows.Forms.ComboBox();
+            this.txttiencoc = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -59,13 +72,15 @@ namespace QuanLy.BanHang
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
             this.barButtonItem1,
-            this.barButtonItem2});
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 4;
+            this.ribbon.MaxItemId = 6;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(973, 193);
+            this.ribbon.Size = new System.Drawing.Size(1178, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1
@@ -84,11 +99,24 @@ namespace QuanLy.BanHang
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Id = 4;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Id = 5;
+            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
             // 
             // ribbonPageGroup1
@@ -101,12 +129,18 @@ namespace QuanLy.BanHang
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 625);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 635);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(973, 30);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1178, 30);
             // 
             // label2
             // 
@@ -119,7 +153,7 @@ namespace QuanLy.BanHang
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(743, 370);
+            this.numericUpDown1.Location = new System.Drawing.Point(751, 370);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
@@ -137,7 +171,7 @@ namespace QuanLy.BanHang
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(631, 324);
+            this.label1.Location = new System.Drawing.Point(631, 310);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 17);
             this.label1.TabIndex = 19;
@@ -150,7 +184,7 @@ namespace QuanLy.BanHang
             "Sư Vạn Hạnh",
             "Nguyễn Đình Chiểu",
             "Xô Viết Nghệ Tĩnh"});
-            this.comboBox1.Location = new System.Drawing.Point(743, 317);
+            this.comboBox1.Location = new System.Drawing.Point(751, 303);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(168, 24);
             this.comboBox1.TabIndex = 18;
@@ -158,7 +192,7 @@ namespace QuanLy.BanHang
             // simpleButton1
             // 
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(808, 199);
+            this.simpleButton1.Location = new System.Drawing.Point(816, 199);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(103, 47);
             this.simpleButton1.TabIndex = 17;
@@ -167,7 +201,7 @@ namespace QuanLy.BanHang
             // txtTenSP
             // 
             this.txtTenSP.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSP.Location = new System.Drawing.Point(622, 218);
+            this.txtTenSP.Location = new System.Drawing.Point(630, 218);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(160, 28);
             this.txtTenSP.TabIndex = 16;
@@ -210,11 +244,100 @@ namespace QuanLy.BanHang
             this.Column3.Name = "Column3";
             this.Column3.Width = 175;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.sothang);
+            this.groupBox2.Controls.Add(this.txttiencoc);
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Location = new System.Drawing.Point(618, 432);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(555, 169);
+            this.groupBox2.TabIndex = 24;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thông tin";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Enabled = false;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(372, 98);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 24);
+            this.comboBox2.TabIndex = 7;
+            // 
+            // sothang
+            // 
+            this.sothang.FormattingEnabled = true;
+            this.sothang.Items.AddRange(new object[] {
+            "3 tháng",
+            "6 tháng"});
+            this.sothang.Location = new System.Drawing.Point(372, 23);
+            this.sothang.Name = "sothang";
+            this.sothang.Size = new System.Drawing.Size(121, 24);
+            this.sothang.TabIndex = 6;
+            // 
+            // txttiencoc
+            // 
+            this.txttiencoc.Location = new System.Drawing.Point(110, 105);
+            this.txttiencoc.Name = "txttiencoc";
+            this.txttiencoc.Size = new System.Drawing.Size(152, 23);
+            this.txttiencoc.TabIndex = 5;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(110, 30);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(152, 23);
+            this.dateTimePicker1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(285, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Lãi suất";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(285, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Số tháng";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 17);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Tiền cọc";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Ngày cọc";
+            // 
             // TaoCTHDTG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 655);
+            this.ClientSize = new System.Drawing.Size(1178, 665);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label1);
@@ -232,6 +355,8 @@ namespace QuanLy.BanHang
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +381,17 @@ namespace QuanLy.BanHang
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox sothang;
+        private System.Windows.Forms.TextBox txttiencoc;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -33,9 +33,9 @@ namespace API.Controllers.DonHang
             return dh.getmahd();
         }
         [HttpPost]
-        public void TaoCTHDTG(int mahd, int makho,int masp,int sl,double giaban)
+        public void TaoCTHDTG( int makho,int masp,int sl,double giaban)
         {
-            dh.TaoCTTG(mahd, makho, masp, sl, giaban);
+            dh.TaoCTTG( makho, masp, sl, giaban);
         }
         [HttpGet]
         public string GetHDTG()
@@ -67,6 +67,11 @@ namespace API.Controllers.DonHang
         public void TraGop(int maphieu)
         {
             dh.TraGop(maphieu);
+        }
+        [HttpPut]
+        public void updateMaHD()
+        {
+            dh.updatemadh();
         }
     }
 }

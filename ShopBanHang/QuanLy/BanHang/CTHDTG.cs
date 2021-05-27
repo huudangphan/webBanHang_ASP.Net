@@ -17,6 +17,7 @@ namespace QuanLy.BanHang
 {
     public partial class CTHDTG : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        
         private Session sess;
         Session Sess
         {
@@ -43,6 +44,7 @@ namespace QuanLy.BanHang
             txtsl.DataBindings.Add(new Binding("Text", dataGridView2.DataSource, "SL"));
             txtThanhTien.DataBindings.Add(new Binding("Text", dataGridView2.DataSource, "thanhTien"));
             txtKho.DataBindings.Add(new Binding("Text", dataGridView2.DataSource, "MaKho"));
+          
         }
         public void loadData()
         {
@@ -93,6 +95,11 @@ namespace QuanLy.BanHang
             this.Hide();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
