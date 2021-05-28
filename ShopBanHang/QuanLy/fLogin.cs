@@ -14,6 +14,7 @@ using System.Net;
 using System.IO;
 using Newtonsoft.Json.Linq;
 using QuanLy.Index;
+using QuanLy.Kho;
 
 namespace QuanLy
 {
@@ -84,7 +85,7 @@ namespace QuanLy
             }
             else if (s.role == 2)
             {
-                IndexKho f = new IndexKho(s);
+                QLSP f = new QLSP(s);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

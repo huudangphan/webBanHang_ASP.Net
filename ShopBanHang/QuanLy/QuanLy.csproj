@@ -176,6 +176,7 @@
     <Compile Include="Model\ModelKhachHang.cs" />
     <Compile Include="Model\ModelNV.cs" />
     <Compile Include="Model\ModelSanPham.cs" />
+    <Compile Include="Model\ModelSPKho.cs" />
     <Compile Include="Model\ModelUser.cs" />
     <Compile Include="Model\Session.cs" />
     <Compile Include="Program.cs" />

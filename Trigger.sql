@@ -181,3 +181,24 @@ end
 
  select *
  from HDOnline
+
+ insert into HDOnline(MaKH,NgayDat,NgayGiao,TinhTrang)
+ values(4,'2021-1-1','2021-1-1','0')
+ 
+
+ alter Table HDOnline
+ add constraint PK_HDOnline primary key(MaHDCT)
+
+ delete 
+ from CTHDOnline
+ 
+ select * from CTHDOnline
+
+ alter table CTHDOnline
+ drop column MaHD
+
+ select *
+ from HDOnline
+
+ insert into HDOnline(MaKH,NgayDat,NgayGiao,TinhTrang)
+ values(4,'2021-1-1','2021-1-1','0')
