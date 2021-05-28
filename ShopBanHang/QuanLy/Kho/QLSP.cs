@@ -33,9 +33,11 @@ namespace QuanLy.Kho
         {
             txtmasp.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "maSP"));
             txtten.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "tenSP"));
-            txtgia.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, " giaSP"));
+            txtgia.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "giaSP"));
             txtmota.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "MoTa"));
-            //pictureBox1.DataBindings.Add(new Binding("Image", dataGridView1.DataSource, "anh"));
+            //textBox1.DataBindings.Add(new Binding("text", dataGridView1.DataSource, "anh"));
+            
+
 
 
         }
@@ -61,5 +63,11 @@ namespace QuanLy.Kho
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox1.Text = dataGridView1.Rows[dataGridView1.CurrentRow].Cells[3].Value.ToString();
+            string url = @"D:\webBanHang_ASP\ShopBanHang\ShopBanHang\Assit\img\" + textBox1.Text;
+            pictureBox1.Image = Image.FromFile(url);
+        }
     }
 }

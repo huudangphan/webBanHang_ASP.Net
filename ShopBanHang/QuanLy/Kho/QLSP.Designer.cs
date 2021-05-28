@@ -54,6 +54,7 @@ namespace QuanLy.Kho
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -138,9 +139,11 @@ namespace QuanLy.Kho
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(708, 310);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.txtmota);
             this.groupBox1.Controls.Add(this.txtgia);
             this.groupBox1.Controls.Add(this.txtten);
@@ -268,6 +271,13 @@ namespace QuanLy.Kho
             this.comboBox1.Size = new System.Drawing.Size(168, 24);
             this.comboBox1.TabIndex = 20;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(417, 216);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(166, 23);
+            this.textBox1.TabIndex = 9;
+            // 
             // QLSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -322,5 +332,6 @@ namespace QuanLy.Kho
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
