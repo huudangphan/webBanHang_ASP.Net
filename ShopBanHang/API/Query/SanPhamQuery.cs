@@ -18,6 +18,17 @@ namespace API.Query
             string query = "select * from SanPham where tenSP like '" + tensp + "%'";
             return Execute.ExcuteQuery(query);
         }
+        public string getHang()
+        {
+            string query = "select * from Hang ";
+            return Execute.ExcuteQuery(query);
+
+        }
+        public string GetLoaiSP()
+        {
+            string query = "select * from Loai ";
+            return Execute.ExcuteQuery(query);
+        }
 
 
     }

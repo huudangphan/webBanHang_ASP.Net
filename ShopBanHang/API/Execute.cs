@@ -85,6 +85,7 @@ namespace API
 
         }
 
+
         public static void ExcuteNonquery(string querry)
         {
             OdbcCommand cmd = new OdbcCommand(querry);

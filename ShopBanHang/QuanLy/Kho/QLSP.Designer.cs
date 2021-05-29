@@ -91,6 +91,7 @@ namespace QuanLy.Kho
             this.barButtonItem2.Id = 2;
             this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -191,9 +192,10 @@ namespace QuanLy.Kho
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(712, 45);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(395, 243);
+            this.pictureBox1.Size = new System.Drawing.Size(395, 218);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 

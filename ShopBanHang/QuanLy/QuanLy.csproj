@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -156,6 +157,12 @@
     <Compile Include="KhachHang\TaoKhachHang.Designer.cs">
       <DependentUpon>TaoKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kho\NhapSPMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kho\NhapSPMoi.Designer.cs">
+      <DependentUpon>NhapSPMoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kho\QLSP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +180,8 @@
     <Compile Include="Model\DonHang\ModelHDTG.cs" />
     <Compile Include="Model\DonHang\PhieuTraGop.cs" />
     <Compile Include="Model\GlobalData.cs" />
+    <Compile Include="Model\Hang.cs" />
+    <Compile Include="Model\LoaiSp.cs" />
     <Compile Include="Model\ModelKhachHang.cs" />
     <Compile Include="Model\ModelNV.cs" />
     <Compile Include="Model\ModelSanPham.cs" />
@@ -244,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang\TaoKhachHang.resx">
       <DependentUpon>TaoKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kho\NhapSPMoi.resx">
+      <DependentUpon>NhapSPMoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kho\QLSP.resx">
       <DependentUpon>QLSP.cs</DependentUpon>

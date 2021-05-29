@@ -65,9 +65,17 @@ namespace QuanLy.Kho
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBox1.Text = dataGridView1.Rows[dataGridView1.CurrentRow].Cells[3].Value.ToString();
+            textBox1.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
             string url = @"D:\webBanHang_ASP\ShopBanHang\ShopBanHang\Assit\img\" + textBox1.Text;
             pictureBox1.Image = Image.FromFile(url);
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            NhapSPMoi f = new NhapSPMoi(Sess);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

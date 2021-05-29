@@ -24,7 +24,15 @@ namespace API.Controllers
         {
             return sp.getSP(tensp);
         }
-
-
+        [HttpGet]
+        public string GetHang()
+        {
+            return sp.getHang();
+        }
+        [HttpGet]
+        public string GetLoai()
+        {
+            return sp.GetLoaiSP();
+        }
     }
 }
