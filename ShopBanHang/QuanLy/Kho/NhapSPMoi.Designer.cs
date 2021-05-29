@@ -215,7 +215,7 @@ namespace QuanLy.Kho
             this.groupBox3.Controls.Add(this.image);
             this.groupBox3.Location = new System.Drawing.Point(402, 199);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(463, 237);
+            this.groupBox3.Size = new System.Drawing.Size(541, 311);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Hình ảnh";
@@ -225,13 +225,13 @@ namespace QuanLy.Kho
             this.image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.image.Location = new System.Drawing.Point(6, 22);
             this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(451, 209);
+            this.image.Size = new System.Drawing.Size(529, 283);
             this.image.TabIndex = 0;
             this.image.TabStop = false;
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(408, 457);
+            this.simpleButton1.Location = new System.Drawing.Point(402, 516);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(114, 43);
             this.simpleButton1.TabIndex = 10;
