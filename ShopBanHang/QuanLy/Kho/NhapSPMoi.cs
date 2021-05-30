@@ -114,7 +114,7 @@ namespace QuanLy.Kho
         {
             try
             {
-                // D:\webBanHang_ASP\ShopBanHang\ShopBanHang\Assit\img
+                
                 File.Copy(filename, Path.Combine(@"D:\webBanHang_ASP\ShopBanHang\ShopBanHang\Assit\img", Path.GetFileName(filename)), true);
                 string hang = "";
                 string loai = "";

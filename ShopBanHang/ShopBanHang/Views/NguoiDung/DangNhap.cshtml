@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "DangNhap";
-    Layout = "~/Views/Shared/_LayoutKhach1.cshtml";
+    Layout = "~/Views/Shared/_LayoutTrangChuNewNoAd.cshtml";
 }
 
 
@@ -39,9 +39,9 @@
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Đăng nhập" class="btn btn-primary" />
                 </div>
-                <div class="col-md-offset-2 col-md-10">
+                @*<div class="col-md-offset-2 col-md-10">
                     <span><a href="@Url.Action("Login","Admin")"> Đăng nhập bằng tài khoản hệ thống</a></span>
-                </div>
+                </div>*@
                 <div class="col-md-offset-2 col-md-10">
                     Chưa có tài khoản? <span><a href="/dangKy">Đăng ký ngay</a></span>
                 </div>
