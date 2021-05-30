@@ -84,7 +84,24 @@ namespace API
             return result;
 
         }
+        public static void test(string query)
+        {
+            SqlCommand command = new SqlCommand(query);
+            using(SqlConnection conn=new SqlConnection(conStr))
+            {
+                try
+                {
+                    command.Connection = conn;
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
 
+                    throw;
+                }
+            }
+
+        }
 
         public static void ExcuteNonquery(string querry)
         {

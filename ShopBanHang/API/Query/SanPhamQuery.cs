@@ -29,6 +29,12 @@ namespace API.Query
             string query = "select * from Loai ";
             return Execute.ExcuteQuery(query);
         }
+        public void ThemSP(string maHang,string maLoai,string tenSP,string anh,string giaSP,string MoTa)
+        {
+
+            string query = "insert into SanPham(maHang,maLoai,tenSP,anh,giaSP,Mota) values("+maHang+","+maLoai+",'"+tenSP+"','"+anh+"','"+giaSP+"','"+MoTa+"') ";
+            Execute.ExcuteNonquery(query);
+        }
 
 
     }

@@ -34,5 +34,10 @@ namespace API.Controllers
         {
             return sp.GetLoaiSP();
         }
+        [HttpPost]
+        public void ThemSP(string maHang,string maLoai,string tenSP,string anh,string giaSP,string MoTa)
+        {
+            sp.ThemSP(maHang, maLoai, tenSP, anh, giaSP, MoTa);
+        }
     }
 }

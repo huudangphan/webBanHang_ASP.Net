@@ -122,6 +122,65 @@ namespace QuanLy.Kho
                 string giasp = txtgiasp.Text;
                 string mota = txtmota.Text;
                 string anh = format(filename);
+                switch (cbHang.Text)
+                {
+                    case "Apple":
+                        hang = "1";
+                        break;
+                    case "Dell":
+                        hang = "2";
+                        break;
+                    case "HP":
+                        hang = "3";
+                        break;
+                    case "Asus":
+                        hang = "4";
+                        break;
+                    case "SamSung":
+                        hang = "5";
+                        break;
+                    case "Xiaomi":
+                        hang = "6";
+                        break;
+                    case "Oppo":
+                        hang = "7";
+                        break;
+                    case "Cannon":
+                        hang = "8";
+                        break;
+                    case "Sony":
+                        hang = "9";
+                        break;
+                    case "Huawei":
+                        hang = "10";
+                        break;
+                    case "LG":
+                        hang = "11";
+                        break;
+
+
+
+                }
+                switch (cbLoai.Text)
+                {
+                    case "Dien Thoai":
+                        loai = "1";
+                        break;
+                    case "Laptop":
+                        loai = "2";
+                        break;
+                    case "Dong Ho":
+                        loai = "3";
+                        break;
+                    case "Camera":
+                        loai="4";
+                        break;
+                    
+                }
+                //url    ThemSP
+                string baseURL = "http://localhost:55543/api/SanPham/ThemSP";
+
+
 
                 MessageBox.Show("Thêm sản phẩm thành công");
             }
