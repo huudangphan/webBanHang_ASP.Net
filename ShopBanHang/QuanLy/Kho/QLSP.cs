@@ -77,5 +77,20 @@ namespace QuanLy.Kho
             f.ShowDialog();
             this.Show();
         }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string kho = comboBox1.Text;
+            int makho = 3;
+            if (kho == "Sư Vạn Hạnh")
+                makho = 1;
+            if (kho == "Nguyễn Đình Chiểu")
+                makho = 2;
+        }
     }
 }

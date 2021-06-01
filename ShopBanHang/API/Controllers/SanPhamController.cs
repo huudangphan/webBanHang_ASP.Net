@@ -39,5 +39,15 @@ namespace API.Controllers
         {
             sp.ThemSP(maHang, maLoai, tenSP, anh, giaSP, MoTa);
         }
+        [HttpGet]
+        public string GetChiTietKho(string makho)
+        {
+            return sp.ChiTietKho(makho);
+        }
+        [HttpPost]
+        public void themCTTonKho(int makho,int sl)
+        {
+            sp.ThemKho(makho, sl);
+        }
     }
 }
