@@ -86,11 +86,30 @@ namespace QuanLy.Kho
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
         {
             string kho = comboBox1.Text;
-            int makho = 3;
-            if (kho == "Sư Vạn Hạnh")
-                makho = 1;
-            if (kho == "Nguyễn Đình Chiểu")
-                makho = 2;
+            if (string.IsNullOrEmpty(kho))
+            {
+                MessageBox.Show("Vui lòng chọn kho muốn xem");
+            }
+            else
+            {
+                int makho = 3;
+                if (kho == "Sư Vạn Hạnh")
+                {
+                    makho = 1;
+                }
+
+                if (kho == "Nguyễn Đình Chiểu")
+                {
+                    makho = 2;
+                }
+                GlobalData.makho = makho.ToString();
+                XemCTKho f = new XemCTKho(Sess);
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            
+
         }
     }
 }

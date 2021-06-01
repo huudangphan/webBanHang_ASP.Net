@@ -51,6 +51,13 @@ namespace API.Query
             string query = "select max(MaSP) as masp from SanPham";
             return Execute.ExcuteQueryReead(query, "masp");
         }
+        public string xemCTkho(int makho)
+        {
+            string query = "select * from CTTonKho where MaKho = " + makho;
+            return Execute.ExcuteQuery(query);
+
+
+        }
 
 
     }

@@ -49,5 +49,10 @@ namespace API.Controllers
         {
             sp.ThemKho(makho, sl);
         }
+        [HttpGet]
+        public string XemCTKho(int makho)
+        {
+            return sp.xemCTkho(makho);
+        }
     }
 }
