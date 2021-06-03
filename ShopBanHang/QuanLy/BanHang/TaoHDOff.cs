@@ -117,27 +117,36 @@ namespace QuanLy.BanHang
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
+            
             string kho = comboBox1.Text;
-            int soluong = Int32.Parse(numericUpDown1.Value.ToString());
-            int masp= Int32.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
-            double giaban= double.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString());
-            int makho = 3;
-            if (kho == "Sư Vạn Hạnh")
-                makho = 1;
-            if (kho == "Nguyễn Đình Chiểu")
-                makho = 2;
-            try
+            if (kho == "")
             {
+                MessageBox.Show("Vui lòng chọn kho ");
+            }
+            else
+            {
+                int soluong = Int32.Parse(numericUpDown1.Value.ToString());
+                int masp = Int32.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
+                double giaban = double.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString());
+                int makho = 0;
+                if (kho == "Sư Vạn Hạnh")
+                    makho = 1;
+                if (kho == "Nguyễn Đình Chiểu")
+                    makho = 2;
+                else
+                    makho = 3;
+                try
+                {
 
-                lst.Add(new GioHang() { masp = masp.ToString(), mahd = GlobalData.madh, soluong = soluong.ToString(), giaBan = giaban.ToString(), makho = makho.ToString() });
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+                    lst.Add(new GioHang() { masp = masp.ToString(), mahd = GlobalData.madh, soluong = soluong.ToString(), giaBan = giaban.ToString(), makho = makho.ToString() });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }          
                 
-
-          
+                    
 
 
         }
@@ -145,6 +154,47 @@ namespace QuanLy.BanHang
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            dataGridView2.DataSource = lst;
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            //lst.Add(new GioHang() { masp = masp.ToString(), mahd = GlobalData.madh, soluong = soluong.ToString(), giaBan = giaban.ToString(), makho = makho.ToString() });
+            List<GioHangTemp> lstTemp = new List<GioHangTemp>();
+            string masp, sl, gia, kho;
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                masp = dataGridView2.Rows[i].Cells[0].Value.ToString();
+                sl = dataGridView2.Rows[i].Cells[1].Value.ToString();
+                gia = dataGridView2.Rows[i].Cells[2].Value.ToString();
+                kho= dataGridView2.Rows[i].Cells[3].Value.ToString();
+                lstTemp.Add(new GioHangTemp() { masp=masp,mahd=GlobalData.madh,soluong=sl,giaBan=gia,makho=kho});
+            }
+            lst.Clear();
+            foreach (var item in lstTemp)
+            {
+                lst.Add(new GioHang() { masp=item.masp,mahd=item.mahd,soluong=item.soluong,giaBan=item.giaBan,makho=item.makho });
+            }
+
+            foreach (var item in lst)
+            {
+                MessageBox.Show(item.soluong.ToString());
+            }
+            lstTemp.Clear();
+            dataGridView2.DataSource = lst;
+        }
+
+        private void dataGridView2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData==Keys.Delete)
+            {
+                lst.Clear();
+                MessageBox.Show("Xóa giỏ hàng thành công");
+            }    
         }
     }
 }

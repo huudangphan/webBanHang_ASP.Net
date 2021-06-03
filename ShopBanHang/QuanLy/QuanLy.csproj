@@ -177,6 +177,7 @@
     </Compile>
     <Compile Include="Model\DonHang\CTPTG.cs" />
     <Compile Include="Model\DonHang\GioHang.cs" />
+    <Compile Include="Model\DonHang\GioHangTemp.cs" />
     <Compile Include="Model\DonHang\ModelCT.cs" />
     <Compile Include="Model\DonHang\ModelCTDHOff.cs" />
     <Compile Include="Model\DonHang\ModelCTHDOnline.cs" />
