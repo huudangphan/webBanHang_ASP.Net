@@ -71,7 +71,10 @@ namespace API.Query
         public void themctphieunhap(string masp,string slnhap,string gianhap,string thanhtien)
         {
             int maph = Int32.Parse(getmapn());
-
+            string queryKho="select maKho from HDNhapSP where maPhieuNhap=" + maph;
+            string makho = Execute.ExcuteQueryReead(queryKho, "maKho");
+            string queryUpdate = "Update  CTTonKho  set SL+="+slnhap+" where MaKho = "+makho+" and MaSP = "+masp;
+            Execute.ExcuteNonquery(queryUpdate);
             string query = "insert into CTPN(maPhieuNhap,maSP,SLNhap,giaNhap,thanhTien) values("+maph+"," + masp + "," + slnhap + "," + gianhap + "," + thanhtien + ")";
             Execute.ExcuteNonquery(query);
 

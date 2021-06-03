@@ -89,6 +89,7 @@ namespace QuanLy.Kho
 
                 }
                 MessageBox.Show("Nhập hàng thành công");
+                loadData();
                 
             }
         }
@@ -108,6 +109,7 @@ namespace QuanLy.Kho
                 {
                     lst.Add(new SanPhamThem() { masp = masp.ToString(), slnhap = slnhap, gianhap = gianhap });
                     MessageBox.Show("Chọn sản phẩm thành công");
+                    
                 }
                 catch (Exception ex)
                 {

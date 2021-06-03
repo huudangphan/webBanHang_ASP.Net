@@ -44,7 +44,7 @@ namespace QuanLy
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(205, 35);
             this.txtUsername.TabIndex = 0;
-            this.txtUsername.Text = "k01";
+            this.txtUsername.Text = "nv01";
             // 
             // txtPassword
             // 
@@ -53,7 +53,7 @@ namespace QuanLy
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(205, 35);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "1234";
+            this.txtPassword.Text = "7777";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label1
