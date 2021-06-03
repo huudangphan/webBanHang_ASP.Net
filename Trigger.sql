@@ -202,3 +202,21 @@ end
 
  insert into HDOnline(MaKH,NgayDat,NgayGiao,TinhTrang)
  values(4,'2021-1-1','2021-1-1','0')
+
+
+
+ create trigger update_SL_TonKho
+ on CTPN
+ after insert,update
+ as
+ begin
+	declare @slNhap int,@maKho int,@maSP int,@maphieu int
+	select @maphieu=maPhieuNhap from inserted
+	select @maKho=maKho from HDNhapSP,CTPN  where HDNhapSP.maPhieuNhap=@maphieu
+	select @maSP= maSP from inserted
+	select @slNhap=SLNhap from inserted
+	update CTTonKho
+	set SL+=@slNhap
+	where MaKho=@maKho and MaSP=@maSP
+
+ end

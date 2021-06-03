@@ -103,12 +103,14 @@ namespace QuanLy.Kho
                     makho = 2;
                 }
                 GlobalData.makho = makho.ToString();
-                XemCTKho f = new XemCTKho(Sess);
+                CTK f = new CTK(Sess);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
+
             }
             
+
 
         }
     }

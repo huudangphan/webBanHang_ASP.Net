@@ -37,7 +37,7 @@ namespace API.Query
         }
         public string ChiTietKho(string makho)
         {
-            string query = "Select MaSp,tenSP,SL from SanPham, CTTonKho where MaKho=" + makho;
+            string query = "Select CTTonKho.MaSp,SanPham.tenSP,CTTonKho.SL from SanPham, CTTonKho where CTTonKho.MaSP=SanPham.maSP and MaKho=" + makho;
             return Execute.ExcuteQuery(query);
         }
         public void ThemKho(int makho,int sl)
@@ -58,7 +58,24 @@ namespace API.Query
 
 
         }
+        public void themphieunhap(string ngaynhap,string makho)
+        {
+            string query = "insert into HDNhapSP(ngayNhap,maKho) values('" + ngaynhap + "'," + makho + ")";
+            Execute.ExcuteNonquery(query);
+        }
+        public string getmapn()
+        {
+            string query = "select max(maPhieuNhap) as maphieu from HDNhapSP";
+            return Execute.ExcuteQueryReead(query, "maphieu");
+        }
+        public void themctphieunhap(string masp,string slnhap,string gianhap,string thanhtien)
+        {
+            int maph = Int32.Parse(getmapn());
 
+            string query = "insert into CTPN(maPhieuNhap,maSP,SLNhap,giaNhap,thanhTien) values("+maph+"," + masp + "," + slnhap + "," + gianhap + "," + thanhtien + ")";
+            Execute.ExcuteNonquery(query);
+
+        }
 
     }
 }

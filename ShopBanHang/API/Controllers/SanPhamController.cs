@@ -50,9 +50,20 @@ namespace API.Controllers
             sp.ThemKho(makho, sl);
         }
         [HttpGet]
-        public string XemCTKho(int makho)
+        public string XemCTKho(string makho)
         {
-            return sp.xemCTkho(makho);
+            return sp.ChiTietKho(makho);
+        }
+        [HttpPost]
+        public void themphieunhap(string ngaynhap,string makho)
+        {
+            sp.themphieunhap(ngaynhap,makho);
+
+        }
+        [HttpPost]
+        public void themctpn(string masp,string slnhap,string gianhap,string thanhtien)
+        {
+            sp.themctphieunhap(masp, slnhap, gianhap, thanhtien);
         }
     }
 }
