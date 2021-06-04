@@ -169,9 +169,9 @@ namespace QuanLy.BanHang
             for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
                 masp = dataGridView2.Rows[i].Cells[0].Value.ToString();
-                sl = dataGridView2.Rows[i].Cells[1].Value.ToString();
-                gia = dataGridView2.Rows[i].Cells[2].Value.ToString();
-                kho= dataGridView2.Rows[i].Cells[3].Value.ToString();
+                sl = dataGridView2.Rows[i].Cells[2].Value.ToString();
+                gia = dataGridView2.Rows[i].Cells[3].Value.ToString();
+                kho= dataGridView2.Rows[i].Cells[4].Value.ToString();
                 lstTemp.Add(new GioHangTemp() { masp=masp,mahd=GlobalData.madh,soluong=sl,giaBan=gia,makho=kho});
             }
             lst.Clear();
@@ -190,10 +190,26 @@ namespace QuanLy.BanHang
 
         private void dataGridView2_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData==Keys.Delete)
+
+            List<GioHangTemp> lstTemp = new List<GioHangTemp>();
+            if (e.KeyData==Keys.Delete)
             {
+                string masp = dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells[0].Value.ToString();
+                int index = lst.FindIndex(x => x.masp == masp);
+                foreach (var item in lst)
+                {
+                    if (item.masp != masp)
+                    {
+                        lstTemp.Add(new GioHangTemp() { masp = masp, mahd = GlobalData.madh, soluong = item.soluong, giaBan = item.giaBan, makho = item.makho });
+                    }
+                }
                 lst.Clear();
-                MessageBox.Show("Xóa giỏ hàng thành công");
+                foreach (var item in lstTemp)
+                {
+                    lst.Add(new GioHang() { masp = item.masp, mahd = item.mahd, soluong = item.soluong, giaBan = item.giaBan, makho = item.makho });
+                }
+
+                dataGridView2.DataSource = lstTemp;
             }    
         }
     }

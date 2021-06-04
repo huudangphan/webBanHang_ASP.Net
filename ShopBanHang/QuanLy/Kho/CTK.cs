@@ -126,7 +126,16 @@ namespace QuanLy.Kho
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
         {
-            dataGridView2.DataSource = lst;
+            try
+            {
+                dataGridView2.DataSource = lst;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -152,7 +161,46 @@ namespace QuanLy.Kho
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtmasp.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+            
+        }
+
+        private void dataGridView2_KeyDown(object sender, KeyEventArgs e)
+        {
+            List<SanPhamThemTemp> lstTemp = new List<SanPhamThemTemp>();
+            if (e.KeyData == Keys.Delete)
+            {
+                string maspp = dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells[0].Value.ToString();
+                int index = lst.FindIndex(x => x.masp == maspp);
+               
+                try
+                {
+                    foreach (var item in lst)
+                    {
+                        if (item.masp != maspp)
+                        {
+                            lstTemp.Add(new SanPhamThemTemp() { masp = item.masp, slnhap = item.slnhap, gianhap = item.gianhap });
+                        }
+                    }
+                    lst.Clear();
+                    foreach (var item in lstTemp)
+                    {
+                        lst.Add(new SanPhamThem() { masp = item.masp, slnhap = item.slnhap, gianhap = item.gianhap });
+                    }
+
+                    dataGridView2.DataSource = lstTemp;
+
+                    
+                }
+                catch (Exception ex)
+                {
+
+                    
+                }
+               
+
+
+            }
+           
         }
     }
 }

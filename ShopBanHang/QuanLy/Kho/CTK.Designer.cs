@@ -344,6 +344,7 @@ namespace QuanLy.Kho
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(522, 171);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView2_KeyDown);
             // 
             // simpleButton1
             // 

@@ -114,6 +114,8 @@ namespace QuanLy.BanHang
                         Services.POST(baseurl, sess.token);
 
                     }
+                    string urlday = "http://localhost:55543/api/HDTG/UpdateNgayTra";
+                    Services.POST(urlday, sess.token);
                     MessageBox.Show("Tạo đơn hàng thành công");
                 }
                 catch (Exception ex)
@@ -127,21 +129,66 @@ namespace QuanLy.BanHang
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if(lst.Count==0)
-            {
-                MessageBox.Show("Giỏ hàng không được để trống");
-            }
-            else
-            {
-                
-                TaoHDTG f = new TaoHDTG(Sess);
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
-            }
-            //
+           
             
 
+        }
+
+        private void barButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            dataGridView2.DataSource = lst;
+        }
+
+        private void dataGridView2_KeyDown(object sender, KeyEventArgs e)
+        {
+            List<GioHangTemp> lstTemp = new List<GioHangTemp>();
+            if (e.KeyData == Keys.Delete)
+            {
+                string masp = dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells[0].Value.ToString();
+                int index = lst.FindIndex(x => x.masp == masp);
+                foreach (var item in lst)
+                {
+                    if (item.masp != masp)
+                    {
+                        lstTemp.Add(new GioHangTemp() { masp = masp, mahd = GlobalData.madh, soluong = item.soluong, giaBan = item.giaBan, makho = item.makho });
+                    }
+                }
+                lst.Clear();
+                foreach (var item in lstTemp)
+                {
+                    lst.Add(new GioHang() { masp = item.masp, mahd = item.mahd, soluong = item.soluong, giaBan = item.giaBan, makho = item.makho });
+                }
+
+                dataGridView2.DataSource = lstTemp;
+            }
+
+            
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            List<GioHangTemp> lstTemp = new List<GioHangTemp>();
+            string masp, sl, gia, kho;
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                masp = dataGridView2.Rows[i].Cells[0].Value.ToString();
+                sl = dataGridView2.Rows[i].Cells[2].Value.ToString();
+                gia = dataGridView2.Rows[i].Cells[3].Value.ToString();
+                kho = dataGridView2.Rows[i].Cells[4].Value.ToString();
+                lstTemp.Add(new GioHangTemp() { masp = masp, mahd = GlobalData.madh, soluong = sl, giaBan = gia, makho = kho });
+            }
+            lst.Clear();
+            foreach (var item in lstTemp)
+            {
+                lst.Add(new GioHang() { masp = item.masp, mahd = item.mahd, soluong = item.soluong, giaBan = item.giaBan, makho = item.makho });
+            }
+
+            foreach (var item in lst)
+            {
+                MessageBox.Show(item.soluong.ToString());
+            }
+            lstTemp.Clear();
+            dataGridView2.DataSource = lst;
         }
     }
 }

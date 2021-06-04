@@ -165,5 +165,12 @@ namespace API.Query.DonHangQuery
 
 
         }
+        public void autoupdate()
+        {
+            string query = " update PhieuTraGop set NgayTra = null where NgayTra = '1900-01-01'";
+            Execute.ExcuteNonquery(query);
+
+
+        }
     }
 }

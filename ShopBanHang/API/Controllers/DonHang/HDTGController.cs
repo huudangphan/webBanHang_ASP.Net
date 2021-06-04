@@ -73,5 +73,10 @@ namespace API.Controllers.DonHang
         {
             dh.updatemadh();
         }
+        [HttpPost]
+        public void UpdateNgayTra()
+        {
+            dh.autoupdate();
+        }
     }
 }
