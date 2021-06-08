@@ -15,6 +15,7 @@
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-a11y="true"></script>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="~/Assit/css2/css/bootstrap.min.css">
@@ -23,8 +24,8 @@
     <link rel="stylesheet" href="~/Assit/css2/css/font-awesome.min.css">
 
     <!-- Custom CSS -->
-    
-    <link href="~/Assit/css2/css/owl.carousel.css" rel="stylesheet"  />
+
+    <link href="~/Assit/css2/css/owl.carousel.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Assit/css2/style.css">
     <link rel="stylesheet" href="~/Assit/css2/css/responsive.css">
 
@@ -70,6 +71,27 @@
                                 }
 
                             </li>
+                            <li>
+                                <div class="col-md-4">
+                                    <div class="input-group txtTimKiem" style="margin-left:40px;margin-top:40px">
+                                         @using (Html.BeginForm())
+                                         {
+                                             <table>
+                                                 <tr>
+                                                     <td>@Html.TextBox("search")</td>
+                                                     <td><button type="submit" class="btn btn-secondary"><i class="fas fa-search fa-sm"></i></button></td>
+                                                 </tr>
+                                             </table>
+                                                                            
+
+                                               
+                                         }
+                        
+
+                                      </div>
+                                </div>
+                            </li>
+                          
                         </ul>
                     </div>
                 </div>
@@ -150,25 +172,25 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo promo1">
                         <i class="fa fa-refresh"></i>
-                        <p>30 Days return</p>
+                        <p>Mua trực tiếp</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo promo2">
                         <i class="fa fa-truck"></i>
-                        <p>Free shipping</p>
+                        <p>FreeShip</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo promo3">
                         <i class="fa fa-lock"></i>
-                        <p>Secure payments</p>
+                        <p>Mua trực tiếp</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo promo4">
                         <i class="fa fa-gift"></i>
-                        <p>New products</p>
+                        <p>Mua trả góp</p>
                     </div>
                 </div>
             </div>
@@ -182,9 +204,9 @@
             <div class="row">
                 <div class="col-md-12">
                    
-                        <h2 class="section-title">Latest Products</h2>
+                        
                         <div class="product-carousel">
-                            @{ Html.RenderAction("SanPhamHot", "Home");}
+                            
                             @RenderBody()
                         </div>
                     </div>
