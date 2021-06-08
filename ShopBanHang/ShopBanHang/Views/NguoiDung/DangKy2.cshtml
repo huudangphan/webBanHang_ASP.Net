@@ -18,8 +18,9 @@
 
             @ViewBag.Error
             <p style="color:red;">@ViewBag.thongBao</p>
+            <p> Họ và tên khách hàng</p>
             <div class="form-group">
-                Họ và tên khách hàng
+               
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.tenKH, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.tenKH, "", new { @class = "text-danger" })
@@ -27,46 +28,49 @@
 
                 </div>
             </div>
-
+            <p>Địa Chỉ</p>
             <div class="form-group">
-                Địa Chỉ
+                
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.diaChi, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.diaChi, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+            <p>Email</p>
             <div class="form-group">
-                Email
+              
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
                 </div>
             </div>
+            <p>Số Điện Thoại</p>
             <div class="form-group">
-                Số Điện Thoại
+              
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.sdt, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.sdt, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+            <p>Tài khoản</p>
             <div class="form-group">
-                UserName
+                
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
                 </div>
             </div>
+            <p>Mật khẩu</p>
             <div class="form-group">
-                Password
+             
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
                 </div>
             </div>
+            <p>Nhập lại mật khẩu</p>
             <div class="form-group">
-                Nhập Lại Password
+                
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "text-danger" })

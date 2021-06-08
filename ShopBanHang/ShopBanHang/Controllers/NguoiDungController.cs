@@ -55,17 +55,22 @@ namespace ShopBanHang.Controllers
             //var check = db.KhachHangs.SingleOrDefault(c => c.taiKhoan == kh.username);
             try
             {
-                KhachHang khach = new KhachHang();
-                khach.tenKH = kh.tenKH;
-                khach.DiaChi = kh.diaChi;
-                khach.email = kh.email;
-                khach.SDT = kh.sdt;
+                if (ModelState.IsValid)
+                {
+                    KhachHang khach = new KhachHang();
+                    khach.tenKH = kh.tenKH;
+                    khach.DiaChi = kh.diaChi;
+                    khach.email = kh.email;
+                    khach.SDT = kh.sdt;
 
-                khach.taiKhoan = kh.username;
-                khach.matKhau = kh.password;
-                db.KhachHangs.Add(khach);
-                db.SaveChanges();
-                return RedirectToAction("DangNhap", "NguoiDung");
+                    khach.taiKhoan = kh.username;
+                    khach.matKhau = kh.password;
+                    db.KhachHangs.Add(khach);
+                    db.SaveChanges();
+                    return RedirectToAction("DangNhap", "NguoiDung");
+                }
+                return View();
+                
             }
             catch (Exception ex)
             {
@@ -105,28 +110,36 @@ namespace ShopBanHang.Controllers
         [HttpPost]
         public ActionResult DangNhap(KhachHang kh)
         {
-
-            var data = db.KhachHangs.Where(c => c.taiKhoan.Equals(kh.taiKhoan) && c.matKhau.Equals(kh.matKhau)).ToList();
-            var khachhang = db.KhachHangs.SingleOrDefault(n => n.taiKhoan == kh.taiKhoan && n.matKhau == kh.matKhau);
-            
-             if (data.Count() > 0)
+            if (kh.taiKhoan == null || kh.matKhau == null)
             {
-                Session["taiKhoan"] = khachhang;
-                Session["tk"] = data.FirstOrDefault().taiKhoan;
-                Session["tenKH"] = data.FirstOrDefault().tenKH;
-
-                Session["matKhau"] = data.FirstOrDefault().matKhau;
-                Session["diaChi"] = data.FirstOrDefault().DiaChi;
-
-                Session["email"] = data.FirstOrDefault().email;
-                Session["sdt"] = data.FirstOrDefault().SDT;
-                return RedirectToAction("Index", "Home");
+                ViewBag.error = "Tài khoản và mật khẩu không thể để trống";
+                return View();
             }
             else
             {
-                ViewBag.error = "Tên đăng nhập hoặc mật khẩu sai";
-                return View();
+                var data = db.KhachHangs.Where(c => c.taiKhoan.Equals(kh.taiKhoan) && c.matKhau.Equals(kh.matKhau)).ToList();
+                var khachhang = db.KhachHangs.SingleOrDefault(n => n.taiKhoan == kh.taiKhoan && n.matKhau == kh.matKhau);
+
+                if (data.Count() > 0)
+                {
+                    Session["taiKhoan"] = khachhang;
+                    Session["tk"] = data.FirstOrDefault().taiKhoan;
+                    Session["tenKH"] = data.FirstOrDefault().tenKH;
+
+                    Session["matKhau"] = data.FirstOrDefault().matKhau;
+                    Session["diaChi"] = data.FirstOrDefault().DiaChi;
+
+                    Session["email"] = data.FirstOrDefault().email;
+                    Session["sdt"] = data.FirstOrDefault().SDT;
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ViewBag.error = "Tên đăng nhập hoặc mật khẩu sai";
+                    return View();
+                }
             }
+            
 
         }
         public ActionResult DangXuat()
@@ -145,13 +158,47 @@ namespace ShopBanHang.Controllers
         [HttpPost]
         public ActionResult HoSoNguoiDung(FormCollection f)
         {
+            string curPass = f["cur_pass"].ToString();
             string newPass = f["pass"].ToString();
+            string conPass = f["pass2"].ToString();
             string tenTK = @Session["tk"].ToString();
+            if (string.IsNullOrEmpty(curPass)||string.IsNullOrEmpty(newPass)||string.IsNullOrEmpty(conPass))
+            {
+                ViewBag.error = "Vui lòng nhập đầy đủ thông tin";
+                return View();
+            }
+            if(newPass!=conPass)
+            {
+                ViewBag.error = "Mật khẩu mới và xác nhận mật khẩu phải giống nhau";
+                return View();
+            }
+            else
+            {
+                try
+                {
+                    var kh = db.KhachHangs.Where(x => x.taiKhoan == tenTK && x.matKhau == curPass).SingleOrDefault();
+                    if(kh!=null)
+                    {
+                        kh.matKhau = newPass;
+                        db.SaveChanges();
+                        return RedirectToAction("Index", "Home");
+                    }   
+                    else
+                    {
+                        ViewBag.error = "Mật khẩu hiện tại sai";
+                        return View();
+                    }    
+                   
+                }
+                catch (Exception)
+                {
 
-            var kh = db.KhachHangs.Where(x => x.taiKhoan == tenTK).SingleOrDefault();
-            kh.matKhau = newPass;
-            db.SaveChanges();
-            return RedirectToAction("Index", "Home");
+                    throw;
+                }
+               
+            }
+            return View();
+           
         }
         
     }

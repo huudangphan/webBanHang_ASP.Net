@@ -52,17 +52,19 @@
             </td>
 
         </tr>
-        <tr>
+        @*<tr>
             <td>
                 <a href="@Url.Action("ChangePass","NguoiDung")">Đổi mật khẩu</a>
             </td>
-        </tr>
+        </tr>*@
+        <div style="color:red;">  @ViewBag.error</div>
+      
         <tr>
             <td>
                 Mật khẩu hiện tại
             </td>
             <td>
-                <input type="text" name="cur_pass" value="" />
+                <input type="password" name="cur_pass" value="" />
             </td>
         </tr>
         <tr>
@@ -70,7 +72,7 @@
                 Mật khẩu mới
             </td>
             <td>
-                <input type="text" name="pass" value="" />
+                <input type="password" name="pass" value="" />
             </td>
         </tr>
         <tr>
@@ -78,7 +80,7 @@
                 Xác nhận mật khẩu
             </td>
             <td>
-                <input type="text" name="pass2" value="" />
+                <input type="password" name="pass2" value="" />
             </td>
         </tr>
         <tr>
