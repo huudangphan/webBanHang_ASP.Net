@@ -32,5 +32,45 @@ namespace API.Controllers.NhanVien
         {
             nv.UpdateNhanVien(username, password,ten,loai);  
         }
+        [HttpGet]
+        public string DoanhThuOnline(string thang,string nam)
+        {
+            return nv.DoanhThuOnline(thang, nam);
+        }
+        [HttpGet]
+        public string DoanhThuOffline(string thang,string nam)
+        {
+            return nv.DoanhThuOffline(thang,nam);
+        }
+        [HttpGet]
+        public string DoanhThuTG(string nam,string thang)
+        {
+            return nv.DoanhThuTG(thang,nam);
+        }
+        [HttpGet]
+        public string DoanhThuTGThang(string nam, string thang)
+        {
+            return nv.DoanhThuTGHangThang(thang, nam);
+        }
+        [HttpGet]
+        public string DoanhThuPhat(string nam,string thang)
+        {
+            return nv.DoanhThuPhat(thang,nam);
+        }
+        [HttpGet]
+        public string TongChi(string nam,string thang)
+        {
+            return nv.TongChi(thang,nam);
+        }
+        [HttpGet]
+        public string GetPass(string password)
+        {
+            return nv.GetPass(password);
+        }
+        [HttpPut]
+        public void DoiMatKhau(string password)
+        {
+            nv.DoiMatKhau(password);
+        }
     }
 }

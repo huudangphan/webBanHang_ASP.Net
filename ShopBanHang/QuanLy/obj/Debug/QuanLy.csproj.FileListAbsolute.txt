@@ -198,3 +198,5 @@ D:\webBanHang_ASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.BanHang.TaoCTHDTG.resource
 D:\webBanHang_ASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.Kho.QLSP.resources
 D:\webBanHang_ASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.Kho.NhapSPMoi.resources
 D:\webBanHang_ASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.Kho.CTK.resources
+D:\webBanHang_ASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.QuanLy.DoanhThu.resources
+D:\webBanHang_ASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.QuanLy.DoiMatKhau.resources

@@ -13,6 +13,7 @@ namespace QuanLy.Model
         public static string makh { get; set; }
         public static string madh { get; set; }
         public static string makho { get; set; }
+        public static string pass { get; set; }
 
     }
 }

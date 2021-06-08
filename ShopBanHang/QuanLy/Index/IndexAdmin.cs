@@ -70,5 +70,21 @@ namespace QuanLy.Index
             f.ShowDialog();
             this.Show();
         }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DoanhThu f = new DoanhThu(Sess);
+            this.Hide();
+            f.ShowDialog();
+            this.Hide();
+        }
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DoiMatKhau f = new DoiMatKhau(Sess);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

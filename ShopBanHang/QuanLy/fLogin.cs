@@ -74,6 +74,7 @@ namespace QuanLy
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
+            GlobalData.pass = password;
             Login(username, password);
             if (s.role == 1)
             {

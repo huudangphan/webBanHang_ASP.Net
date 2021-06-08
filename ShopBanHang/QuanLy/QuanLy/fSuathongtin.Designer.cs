@@ -91,60 +91,60 @@ namespace QuanLy.QuanLy
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(115, 248);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(73, 252);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 21);
+            this.label1.Size = new System.Drawing.Size(164, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tên nhân viên";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(526, 254);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(507, 259);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 21);
+            this.label2.Size = new System.Drawing.Size(117, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tài khoản";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(115, 357);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(73, 361);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 21);
+            this.label3.Size = new System.Drawing.Size(112, 29);
             this.label3.TabIndex = 4;
             this.label3.Text = "Mật khẩu";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(526, 354);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(507, 359);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 21);
+            this.label4.Size = new System.Drawing.Size(167, 29);
             this.label4.TabIndex = 5;
             this.label4.Text = "Loại nhân viên";
             // 
             // txtTennv
             // 
-            this.txtTennv.Location = new System.Drawing.Point(272, 245);
+            this.txtTennv.Location = new System.Drawing.Point(260, 258);
             this.txtTennv.Name = "txtTennv";
             this.txtTennv.Size = new System.Drawing.Size(152, 23);
             this.txtTennv.TabIndex = 6;
             // 
             // txtpassword
             // 
-            this.txtpassword.Location = new System.Drawing.Point(272, 354);
+            this.txtpassword.Location = new System.Drawing.Point(260, 367);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(152, 23);
             this.txtpassword.TabIndex = 7;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(699, 248);
+            this.txtUsername.Location = new System.Drawing.Point(706, 258);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(152, 23);
             this.txtUsername.TabIndex = 8;
@@ -155,7 +155,7 @@ namespace QuanLy.QuanLy
             this.cbLoai.Items.AddRange(new object[] {
             "Bán hàng",
             "Thủ kho"});
-            this.cbLoai.Location = new System.Drawing.Point(699, 357);
+            this.cbLoai.Location = new System.Drawing.Point(706, 367);
             this.cbLoai.Name = "cbLoai";
             this.cbLoai.Size = new System.Drawing.Size(152, 24);
             this.cbLoai.TabIndex = 9;
