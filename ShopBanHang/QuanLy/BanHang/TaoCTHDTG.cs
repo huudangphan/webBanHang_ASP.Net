@@ -83,46 +83,109 @@ namespace QuanLy.BanHang
             
            
         }
+        public bool check()
+        {
+            string url1 = "http://localhost:55543/api/HDTG/GetMaHDMax";
+            int mahd = Int32.Parse(Services.GET(url1, sess.token));
+            string url2 = "http://localhost:55543/api/HDTG/GetMaCTHDMax";
+            int macthd= Int32.Parse(Services.GET(url2, sess.token));
+            if (mahd == macthd)
+                return true;
+            return false;
+        }
+        public bool CheckSLTon(string masp,string makho,int slMua)
+        {
+            //GetSLTon
+            string url = "http://localhost:55543/api/HDTG/GetSLTon?masp=" + masp + "&makho=" + makho;
+            int slTon = Int32.Parse(Services.GET(url, sess.token));
+            if (slMua <= slTon)
+                return true;
+            return false;
+            
+        }
+        public int checkSLTon2()
+        {
+            int key = 1;
+            foreach (var item in lst)
+            {
+                if(CheckSLTon(item.masp,item.makho,Int32.Parse(item.soluong))==false)
+                {
+                    key = 0;
+                }                 
+                    
+            }
+            return key;
+        }
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
+            double tongTien = 0;
             string ngaycoc = dateTimePicker1.Value.ToString();
             string tiencoc = txttiencoc.Text;
             string thang = sothang.Text;
             string thangcoc = "";
-            double check = 0;
-           
+            
+            foreach (var item in lst)
+            {
+                tongTien += double.Parse(item.soluong) * double.Parse(item.giaBan);
+            }
             if (thang == "3 tháng")
                 thangcoc = "3";
             else
                 thangcoc = "6";
             if (lst.Count == 0)
                 MessageBox.Show("Giỏ hàng không được để trống");
+            
               
             else
             {
-
-                try
+                if(tongTien<double.Parse(tiencoc))
                 {
-                    string urltaohd = "http://localhost:55543/api/HDTG/TaoHDTG?makh=" + GlobalData.makh + "&tiencoc=" + tiencoc + "&sothang=" + thangcoc;
-                    Services.POST(urltaohd, sess.token);
+                    MessageBox.Show("Tiền cọc bị thừa");
 
-                    foreach (var item in lst)
+                }
+                else
+                {
+                    
+                    if(checkSLTon2()==1)
                     {
-                        
-                        string baseurl = "http://localhost:55543/api/HDTG/TaoCTHDTG?makho="+item.makho+"&masp="+item.masp+"&sl="+item.soluong+"&giaban="+item.giaBan;
-                        Services.POST(baseurl, sess.token);
+                        string urltaohd = "http://localhost:55543/api/HDTG/TaoHDTG?makh=" + GlobalData.makh + "&tiencoc=" + tiencoc + "&sothang=" + thangcoc;
+                        Services.POST(urltaohd, sess.token);
+                        foreach (var item in lst)
+                        {
+                            //UpdateSL
 
-                    }
-                    string urlday = "http://localhost:55543/api/HDTG/UpdateNgayTra";
-                    Services.POST(urlday, sess.token);
-                    MessageBox.Show("Tạo đơn hàng thành công");
-                }
-                catch (Exception ex)
-                {
+                            string baseurl = "http://localhost:55543/api/HDTG/TaoCTHDTG?makho=" + item.makho + "&masp=" + item.masp + "&sl=" + item.soluong + "&giaban=" + item.giaBan;
+                            Services.POST(baseurl, sess.token);
+                            string url2 = "http://localhost:55543/api/HDTG/UpdateSL?makho=" + item.makho + "&masp=" + item.masp + "&sl=" + item.soluong;
+                            Services.PUT(url2, sess.token);
 
-                    MessageBox.Show(ex.ToString());
+                        }
+                        string urlday = "http://localhost:55543/api/HDTG/UpdateNgayTra";
+                        Services.POST(urlday, sess.token);
+                        if (check())
+                        {
+                            MessageBox.Show("Tạo đơn hàng thành công");
+
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("Tiền cọc phải đạt ít nhất 20 % giá trị đơn hàng");
+                            //DeleteHD
+                            string baseurl = "http://localhost:55543/api/HDTG/DeleteHD";
+                            Services.DELETE(baseurl, sess.token);
+                        }
+                    }    
+                    else
+                    {
+                        MessageBox.Show("Số lượng hàng tồn không đủ");
+                    }                    
+                    
+                                         
+                    
                 }
+               
 
             }
         }
@@ -137,6 +200,14 @@ namespace QuanLy.BanHang
         private void barButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             dataGridView2.DataSource = lst;
+            double tongTien = 0;
+            foreach (var item in lst)
+            {
+                tongTien += double.Parse(item.soluong) * double.Parse(item.giaBan);
+            }
+            double min = tongTien * 0.2;
+            txtCocMin.Text = min.ToString();
+            txtTongTien.Text = tongTien.ToString();
         }
 
         private void dataGridView2_KeyDown(object sender, KeyEventArgs e)

@@ -73,28 +73,73 @@ namespace QuanLy.BanHang
                 }
             }
         }
-       
+        public bool check()
+        {
+            string url1 = "http://localhost:55543/api/DHOfline/GetMaHD";
+            int mahd = Int32.Parse(Services.GET(url1, sess.token));
+            string url2 = "http://localhost:55543/api/DHOfline/GetMaCTHD";
+            int macthd = Int32.Parse(Services.GET(url2, sess.token));
+            if (mahd == macthd)
+                return true;
+            return false;
+        }
+        public bool CheckSLTon(string masp, string makho, int slMua)
+        {
+            //GetSLTon
+            string url = "http://localhost:55543/api/HDTG/GetSLTon?masp=" + masp + "&makho=" + makho;
+            int slTon = Int32.Parse(Services.GET(url, sess.token));
+            if (slMua <= slTon)
+                return true;
+            return false;
+
+        }
+        public int checkSLTon2()
+        {
+            int key = 1;
+            foreach (var item in lst)
+            {
+                if (CheckSLTon(item.masp, item.makho, Int32.Parse(item.soluong)) == false)
+                {
+                    key = 0;
+                }
+
+            }
+            return key;
+        }
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (lst.Count == 0)
                 MessageBox.Show("Giỏ hàng không được để trống");
             else
             {
-                try
+                if(checkSLTon2()==1)
                 {
-                    foreach (var item in lst)
+                    try
                     {
-                        string url = "http://localhost:55543/api/dhofline/taocthdoff?mahd=" + GlobalData.madh + "&masp=" + item.masp + "&giaban=" + item.giaBan + "&sl=" + item.soluong + "&makho=" + item.makho;
-                        Services.POST(url, sess.token);
-                        
-                    }
-                    MessageBox.Show("Tạo đơn hàng thành công");
-                }
-                catch (Exception ex)
-                {
+                        foreach (var item in lst)
+                        {
+                            string url = "http://localhost:55543/api/dhofline/taocthdoff?masp=" + item.masp + "&giaban=" + item.giaBan + "&sl=" + item.soluong + "&makho=" + item.makho;
+                            Services.POST(url, sess.token);
+                            string url2 = "http://localhost:55543/api/HDTG/UpdateSL?makho=" + item.makho + "&masp=" + item.masp + "&sl=" + item.soluong;
+                            Services.PUT(url2, sess.token);
 
-                    MessageBox.Show(ex.ToString());
-                }
+                        }
+                        MessageBox.Show("Tạo đơn hàng thành công");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.ToString());
+                    }
+                }    
+                else
+                {
+                   
+                    string url = "http://localhost:55543/api/DHOfline/XoaDHThua";
+                    Services.DELETE(url, sess.token);
+                    MessageBox.Show("Số lượng hàng tồn kho không đủ");
+                }    
+              
                 
             }
         }
@@ -128,17 +173,16 @@ namespace QuanLy.BanHang
                 int soluong = Int32.Parse(numericUpDown1.Value.ToString());
                 int masp = Int32.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
                 double giaban = double.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString());
-                int makho = 0;
+                int makho = 3;
                 if (kho == "Sư Vạn Hạnh")
                     makho = 1;
                 if (kho == "Nguyễn Đình Chiểu")
                     makho = 2;
-                else
-                    makho = 3;
                 try
                 {
 
                     lst.Add(new GioHang() { masp = masp.ToString(), mahd = GlobalData.madh, soluong = soluong.ToString(), giaBan = giaban.ToString(), makho = makho.ToString() });
+                    MessageBox.Show("Thêm vào giỏ hàng thành công");
                 }
                 catch (Exception ex)
                 {

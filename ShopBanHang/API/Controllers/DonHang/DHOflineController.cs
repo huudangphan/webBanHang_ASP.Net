@@ -23,9 +23,9 @@ namespace API.Controllers.DonHang
             dh.TaoDHOffline(makh);
         }
         [HttpPost]
-        public void TaoCTHDOff(int mahd,int masp,double giaBan,int SL,int makho)
+        public void TaoCTHDOff(int masp,double giaBan,int SL,int makho)
         {
-            dh.TaoCTDOff(makho, mahd, masp, SL, giaBan);
+            dh.TaoCTDOff(makho,masp, SL, giaBan);
         }
         [HttpGet]
         public string HDOff(int makh)
@@ -46,6 +46,21 @@ namespace API.Controllers.DonHang
         public string getCTHDOff(int mahd)
         {
             return dh.getCTHDOff(mahd);
+        }
+        [HttpGet]
+        public string GetMaHD()
+        {
+            return dh.getmahdmax();
+        }
+        [HttpGet]
+        public string GetMaCTHD()
+        {
+            return dh.getmacthdmax();
+        }
+        [HttpDelete]
+        public void XoaDHThua()
+        {
+            dh.XoaDHThua();
         }
     }
 }

@@ -33,6 +33,7 @@ namespace QuanLy.BanHang
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -58,8 +59,11 @@ namespace QuanLy.BanHang
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.txtCocMin = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -99,6 +103,15 @@ namespace QuanLy.BanHang
             this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Xem giỏ hàng";
+            this.barButtonItem4.Id = 6;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_1);
             // 
             // ribbonPage1
             // 
@@ -174,7 +187,7 @@ namespace QuanLy.BanHang
             "Xô Viết Nghệ Tĩnh"});
             this.comboBox1.Location = new System.Drawing.Point(751, 336);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(168, 24);
+            this.comboBox1.Size = new System.Drawing.Size(131, 24);
             this.comboBox1.TabIndex = 18;
             // 
             // simpleButton1
@@ -331,15 +344,6 @@ namespace QuanLy.BanHang
             this.dataGridView2.TabIndex = 27;
             this.dataGridView2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView2_KeyDown);
             // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Xem giỏ hàng";
-            this.barButtonItem4.Id = 6;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick_1);
-            // 
             // simpleButton2
             // 
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
@@ -350,11 +354,47 @@ namespace QuanLy.BanHang
             this.simpleButton2.Text = "Sửa";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(905, 403);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 17);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Tổng tiền";
+            // 
+            // txtTongTien
+            // 
+            this.txtTongTien.Location = new System.Drawing.Point(992, 400);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(121, 23);
+            this.txtTongTien.TabIndex = 32;
+            // 
+            // txtCocMin
+            // 
+            this.txtCocMin.Location = new System.Drawing.Point(992, 336);
+            this.txtCocMin.Name = "txtCocMin";
+            this.txtCocMin.Size = new System.Drawing.Size(121, 23);
+            this.txtCocMin.TabIndex = 34;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(905, 339);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 17);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Cọc ít nhất";
+            // 
             // TaoCTHDTG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 812);
+            this.Controls.Add(this.txtCocMin);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtTongTien);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox2);
@@ -415,5 +455,9 @@ namespace QuanLy.BanHang
         private System.Windows.Forms.DataGridView dataGridView2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.TextBox txtCocMin;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -102,11 +102,39 @@ namespace API.Query.DonHangQuery
             string query = "select MAX(MaHD) as MaHD from HDTraGop ";
             return Execute.ExcuteQueryReead(query, "MaHD");
         }
+        public string getmacthd()
+        {
+            string date = DateTime.Now.ToString();
+            string query = "select MAX(MaHD) as MaHD from CTHDTG";
+            return Execute.ExcuteQueryReead(query, "MaHD");
+        }
+        public void deletehdThua()
+        {
+            string mahd = getmahd();
+            string query = "delete from HDTraGop where MaHD=" + mahd;
+            Execute.ExcuteNonquery(query);
+
+        }
+        public string getSPTon(string masp,string makho)
+        {
+            string query = "select SL from CTTonKho where MaSP=" + masp + " and MaKho=" + makho;
+            return Execute.ExcuteQueryReead(query, "SL");
+        }
+        
         public void TaoCTTG( int makho,  int masp, int sl, double giaban)
         {
-            int mahd = Int32.Parse(getmahd());
-            string query = "insert into CTHDTG(MaKho,MaSP,MaHD,SL,GiaBan) values(" + makho + "," + masp + "," + mahd + "," + sl + "," + giaban + ")";
-            Execute.ExcuteNonquery(query);
+            try
+            {
+                int mahd = Int32.Parse(getmahd());
+                string query = "insert into CTHDTG(MaKho,MaSP,MaHD,SL,GiaBan) values(" + makho + "," + masp + "," + mahd + "," + sl + "," + giaban + ")";
+                Execute.ExcuteNonquery(query);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
         public void TaoPhieuTraGop(int mahd,int sothang,double tienDong)
         {
@@ -171,6 +199,11 @@ namespace API.Query.DonHangQuery
             Execute.ExcuteNonquery(query);
 
 
+        }
+        public void UpdateSL(string makho,string masp,string sl)
+        {
+            string query = "Update CTTonKho set SL-=" + sl + "where MaKho=" + makho + "and MaSP=" + masp ;
+            Execute.ExcuteNonquery(query);
         }
     }
 }

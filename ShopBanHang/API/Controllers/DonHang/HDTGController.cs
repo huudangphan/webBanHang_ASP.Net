@@ -78,5 +78,30 @@ namespace API.Controllers.DonHang
         {
             dh.autoupdate();
         }
+        [HttpGet]
+        public string GetMaHDMax()
+        {
+            return dh.getmahd();
+        }
+        [HttpGet]
+        public string GetMaCTHDMax()
+        {
+            return dh.getmacthd();
+        }
+        [HttpDelete]
+        public void DeleteHD()
+        {
+            dh.deletehdThua();
+        }
+        [HttpGet]
+        public string GetSLTon(string masp,string makho)
+        {
+           return dh.getSPTon(masp, makho);
+        }
+        [HttpPut]
+        public void UpdateSL(string makho,string masp,string sl)
+        {
+            dh.UpdateSL(makho, masp, sl);
+        }
     }
 }

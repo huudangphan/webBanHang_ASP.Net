@@ -19,8 +19,9 @@ namespace API.Query.DonHangQuery
             string query = "select * from HDOffline";
             return Execute.ExcuteQuery(query);
         }
-        public void  TaoCTDOff(int makho, int mahd,int masp,int sl,double giaban)
+        public void  TaoCTDOff(int makho,int masp,int sl,double giaban)
         {
+            int mahd = Int32.Parse(getmahdmax());
             string query = "insert into CTHDOff(MaKho,MaSP,MaHD,SL,GiaBan) values(" + makho + "," + masp + "," + mahd + "," + sl + "," + giaban + ")";
             Execute.ExcuteNonquery(query);
         }
@@ -41,6 +42,22 @@ namespace API.Query.DonHangQuery
             string query = "select SanPham.tenSP,CTHDOff.SL,CTHDOff.GiaBan,CTHDOff.thanhTien,CTHDOff.thanhTien,CTHDOff.MaKho from SanPham, CTHDOff where CTHDOff.MaSP = SanPham.maSP and CTHDOff.MaHD =" + mahd;
 
             return Execute.ExcuteQuery(query);
+        }
+        public string getmahdmax()
+        {
+            string query = "select MAX(MaHD) as mahd from HDOffLine";
+            return Execute.ExcuteQueryReead(query, "mahd");
+        }
+        public string getmacthdmax()
+        {
+            string query = "select MAX(MaHD) as mahd from CTHDOff";
+            return Execute.ExcuteQueryReead(query, "mahd");
+        }
+        public void XoaDHThua()
+        {
+            string mahd = getmahdmax();
+            string query = "delete from HDOffLine where MaHD=" + mahd;
+            Execute.ExcuteNonquery(query);
         }
       
     }
