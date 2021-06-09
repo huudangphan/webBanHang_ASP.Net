@@ -19,6 +19,7 @@
 
 
         <td>Thành tiền</td>
+        <td></td>
     </tr>
     @foreach (var item in Model)
     {
@@ -35,11 +36,18 @@
 
 
             <td>@item.thanhTien </td>
-            <td>@ViewBag.tongtien</td>
+            <td>@Html.ActionLink("Xóa", "XoaGioHang",new { masp=item.maSP})</td>
+       
+          
         </tr>
 
     }
+<tr>
+    <td>Tổng tiền</td>
+    <td colspan="5" style="text-align:right">@ViewBag.tongtien</td>
+</tr>
     <tr>
+        
         <td colspan="6" style="text-align:right">@Html.ActionLink("Sửa", "SuaGioHang")</td>
     </tr>
     <tr>

@@ -18,6 +18,7 @@ namespace ShopBanHang.Models
         public CTTonKho()
         {
             this.CTHDOnlines = new HashSet<CTHDOnline>();
+            this.CTHDOnlines1 = new HashSet<CTHDOnline>();
             this.CTHDTGs = new HashSet<CTHDTG>();
         }
     
@@ -27,6 +28,8 @@ namespace ShopBanHang.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHDOnline> CTHDOnlines { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTHDOnline> CTHDOnlines1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHDTG> CTHDTGs { get; set; }
         public virtual Kho Kho { get; set; }

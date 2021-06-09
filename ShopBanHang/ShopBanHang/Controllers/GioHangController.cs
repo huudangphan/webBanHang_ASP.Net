@@ -14,7 +14,7 @@ namespace ShopBanHang.Controllers
     public class GioHangController : Controller
     {
 
-        ShopEntities db = new ShopEntities();
+        ShopDoCongNgheEntities2 db = new ShopDoCongNgheEntities2();
 
         //databaseEntities db = new databaseEntities();
 
@@ -102,7 +102,8 @@ namespace ShopBanHang.Controllers
             if (Session["GioHang"] == null)
                 return RedirectToAction("Index", "Home");
             List<GioHang> listGioHang = getGioHang();
-
+            ViewBag.TongSL = TongSoLuong();
+            ViewBag.TongTien = TongTien();
             return View(listGioHang);
         }
         public PartialViewResult PartialGioHang()
@@ -143,93 +144,11 @@ namespace ShopBanHang.Controllers
 
             return View(listGioHang);
         }
-        public IList<HoaDonXuat> LayHoaDonOnline()
-        {
-         
-            var list = (from a in db.HDOnlines
-                        join b in db.CTHDOnlines
-                        on a.MaHD equals b.MaHD
-                        join c in db.SanPhams
-                        on b.MaSP equals c.maSP
-                        join d in db.KhachHangs
-                        on a.MaKH equals d.MaKH
-                        where  a.MaHD == HoaDonXuat.mahd
-                        select new HoaDonXuat
-                        {
-                            masp = b.MaSP,
-                            tenSP = c.tenSP,
-                            sl = (int)b.SL,
-                            donGia = (double)b.GiaBan,
-                            ngay = (DateTime)a.NgayDat,
-                            tenkh = d.tenKH,
-                            diaChi = d.DiaChi,
-                            sdt = (int)d.SDT
-                        }
-                      ).ToList();
-            return list;
-        }
-        public IList<HoaDonXuat> LayHDOff()
-        {
-            var list = (from a in db.HDOffLines
-                        join b in db.CTHDOffs
-                        on a.MaHD equals b.MaHD
-                        join c in db.SanPhams
-                        on b.MaSP equals c.maSP
-                        join d in db.KhachHangs
-                        on a.MaKH equals d.MaKH
-                        where a.MaHD == HoaDonXuat.mahd
-                        select new HoaDonXuat
-                        {
-                            masp = b.MaSP,
-                            tenSP = c.tenSP,
-                            sl = (int)b.SL,
-                            donGia = (double)b.GiaBan,
-                            ngay = (DateTime)a.NgayMua,
-                            tenkh = d.tenKH,
-                            diaChi = d.DiaChi,
-                            sdt = (int)d.SDT
-                        }
-                     ).ToList();
-            return list;
-        }
+        
        
-        public ActionResult XuatHDOffline()
-        {
-            var gv = new GridView();
-            gv.DataSource = this.LayHDOff();
-            gv.DataBind();
-            Response.ClearContent();
-            Response.Buffer = true;
-            Response.AddHeader("content-disposition", "attachment ;filename=XuatExcell.xls");
-            Response.ContentType = "aplication/ms-excel";
-            Response.Charset = "";
-            StringWriter objStringWriter = new StringWriter();
-            HtmlTextWriter objHtmlWriter = new HtmlTextWriter(objStringWriter);
-            gv.RenderControl(objHtmlWriter);
-            Response.Output.Write(objStringWriter.ToString());
-            Response.Flush();
-            Response.End();
-            return View();
-        }
+       
 
-        public ActionResult XuatHDOnline()
-        {
-            var gv = new GridView();
-            gv.DataSource = this.LayHoaDonOnline();
-            gv.DataBind();
-            Response.ClearContent();
-            Response.Buffer = true;
-            Response.AddHeader("content-disposition", "attachment ;filename=XuatExcell.xls");
-            Response.ContentType = "aplication/ms-excel";
-            Response.Charset = "";
-            StringWriter objStringWriter = new StringWriter();
-            HtmlTextWriter objHtmlWriter = new HtmlTextWriter(objStringWriter);
-            gv.RenderControl(objHtmlWriter);
-            Response.Output.Write(objStringWriter.ToString());
-            Response.Flush();
-            Response.End();
-            return View();
-        }
+       
 
         [HttpPost]
         public ActionResult DatHang()
@@ -251,7 +170,7 @@ namespace ShopBanHang.Controllers
             hd.MaKH = kh.MaKH;
             hd.NgayDat = DateTime.Now;
             hd.TinhTrang = false;
-            HoaDonXuat.mahd = hd.MaHD;
+            
             db.HDOnlines.Add(hd);
             foreach (var item in gioHang)
             {

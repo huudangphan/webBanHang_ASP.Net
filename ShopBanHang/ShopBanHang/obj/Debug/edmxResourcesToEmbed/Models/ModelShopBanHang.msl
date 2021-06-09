@@ -1,60 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ShopDoCongNgheModelStoreContainer" CdmEntityContainer="ShopDoCongNgheEntities">
+  <EntityContainerMapping StorageEntityContainer="ShopDoCongNgheModelStoreContainer" CdmEntityContainer="ShopDoCongNgheEntities2">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="ShopDoCongNgheModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="userAdmin" ColumnName="userAdmin" />
+          <ScalarProperty Name="passAdmin" ColumnName="passAdmin" />
+          <ScalarProperty Name="tenAdmin" ColumnName="tenAdmin" />
+          <ScalarProperty Name="Loai" ColumnName="Loai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CTHDOffs">
       <EntityTypeMapping TypeName="ShopDoCongNgheModel.CTHDOff">
         <MappingFragment StoreEntitySet="CTHDOff">
-          <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
           <ScalarProperty Name="MaKho" ColumnName="MaKho" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="MaHD" ColumnName="MaHD" />
           <ScalarProperty Name="SL" ColumnName="SL" />
           <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+          <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CTHDOnlines">
       <EntityTypeMapping TypeName="ShopDoCongNgheModel.CTHDOnline">
         <MappingFragment StoreEntitySet="CTHDOnline">
-          <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
           <ScalarProperty Name="MaKho" ColumnName="MaKho" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
           <ScalarProperty Name="SL" ColumnName="SL" />
           <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+          <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CTHDTGs">
       <EntityTypeMapping TypeName="ShopDoCongNgheModel.CTHDTG">
         <MappingFragment StoreEntitySet="CTHDTG">
-          <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
           <ScalarProperty Name="MaKho" ColumnName="MaKho" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="MaHD" ColumnName="MaHD" />
           <ScalarProperty Name="SL" ColumnName="SL" />
           <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+          <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CTPNs">
       <EntityTypeMapping TypeName="ShopDoCongNgheModel.CTPN">
         <MappingFragment StoreEntitySet="CTPN">
-          <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
           <ScalarProperty Name="maPhieuNhap" ColumnName="maPhieuNhap" />
           <ScalarProperty Name="maSP" ColumnName="maSP" />
           <ScalarProperty Name="SLNhap" ColumnName="SLNhap" />
           <ScalarProperty Name="giaNhap" ColumnName="giaNhap" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CTTNs">
-      <EntityTypeMapping TypeName="ShopDoCongNgheModel.CTTN">
-        <MappingFragment StoreEntitySet="CTTN">
-          <ScalarProperty Name="maKHGui" ColumnName="maKHGui" />
-          <ScalarProperty Name="maTN" ColumnName="maTN" />
-          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-          <ScalarProperty Name="idNguoiNhan" ColumnName="idNguoiNhan" />
+          <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -122,11 +122,11 @@
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="tenKH" ColumnName="tenKH" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-          <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="taiKhoan" ColumnName="taiKhoan" />
           <ScalarProperty Name="matKhau" ColumnName="matKhau" />
           <ScalarProperty Name="tongMua" ColumnName="tongMua" />
+          <ScalarProperty Name="sodt" ColumnName="sodt" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -171,13 +171,13 @@
     <EntitySetMapping Name="SanPhams">
       <EntityTypeMapping TypeName="ShopDoCongNgheModel.SanPham">
         <MappingFragment StoreEntitySet="SanPham">
-          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
           <ScalarProperty Name="maSP" ColumnName="maSP" />
           <ScalarProperty Name="maHang" ColumnName="maHang" />
           <ScalarProperty Name="maLoai" ColumnName="maLoai" />
           <ScalarProperty Name="tenSP" ColumnName="tenSP" />
           <ScalarProperty Name="anh" ColumnName="anh" />
           <ScalarProperty Name="giaSP" ColumnName="giaSP" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -192,47 +192,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TinNhans">
-      <EntityTypeMapping TypeName="ShopDoCongNgheModel.TinNhan">
-        <MappingFragment StoreEntitySet="TinNhan">
-          <ScalarProperty Name="maTN" ColumnName="maTN" />
-          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Admins">
-      <EntityTypeMapping TypeName="ShopDoCongNgheModel.Admin">
-        <MappingFragment StoreEntitySet="Admin">
-          <ScalarProperty Name="Loai" ColumnName="Loai" />
-          <ScalarProperty Name="tenAdmin" ColumnName="tenAdmin" />
-          <ScalarProperty Name="passAdmin" ColumnName="passAdmin" />
-          <ScalarProperty Name="userAdmin" ColumnName="userAdmin" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ShopDoCongNgheModel.Store.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ShopDoCongNgheModel.Store.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ShopDoCongNgheModel.Store.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ShopDoCongNgheModel.Store.sp_helpdiagramdefinition">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ShopDoCongNgheModel.sp_helpdiagramdefinition_Result">
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ShopDoCongNgheModel.Store.sp_helpdiagrams">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ShopDoCongNgheModel.sp_helpdiagrams_Result">
-          <ScalarProperty Name="Database" ColumnName="Database" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Owner" ColumnName="Owner" />
-          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ShopDoCongNgheModel.Store.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ShopDoCongNgheModel.Store.sp_upgraddiagrams" />
   </EntityContainerMapping>
 </Mapping>

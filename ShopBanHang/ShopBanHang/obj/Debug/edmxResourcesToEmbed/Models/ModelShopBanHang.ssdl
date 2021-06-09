@@ -30,10 +30,10 @@
     </Key>
     <Property Name="MaKho" Type="int" Nullable="false" />
     <Property Name="MaSP" Type="int" Nullable="false" />
-    <Property Name="MaHD" Type="int" Nullable="false" />
     <Property Name="SL" Type="int" />
     <Property Name="GiaBan" Type="decimal" Precision="18" Scale="0" />
     <Property Name="thanhTien" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MaHD" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="CTHDTG">
     <Key>
@@ -58,16 +58,6 @@
     <Property Name="SLNhap" Type="int" />
     <Property Name="giaNhap" Type="decimal" Precision="18" Scale="0" />
     <Property Name="thanhTien" Type="decimal" Precision="18" Scale="0" />
-  </EntityType>
-  <EntityType Name="CTTN">
-    <Key>
-      <PropertyRef Name="maKHGui" />
-      <PropertyRef Name="maTN" />
-    </Key>
-    <Property Name="maKHGui" Type="int" Nullable="false" />
-    <Property Name="maTN" Type="int" Nullable="false" />
-    <Property Name="NoiDung" Type="nvarchar(max)" />
-    <Property Name="idNguoiNhan" Type="int" />
   </EntityType>
   <EntityType Name="CTTonKho">
     <Key>
@@ -129,11 +119,11 @@
     <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="tenKH" Type="nvarchar" MaxLength="50" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
-    <Property Name="SDT" Type="int" />
     <Property Name="email" Type="nvarchar" MaxLength="50" />
     <Property Name="taiKhoan" Type="nvarchar" MaxLength="50" />
     <Property Name="matKhau" Type="nvarchar" MaxLength="50" />
     <Property Name="tongMua" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="sodt" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Kho">
     <Key>
@@ -191,13 +181,6 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <EntityType Name="TinNhan">
-    <Key>
-      <PropertyRef Name="maTN" />
-    </Key>
-    <Property Name="maTN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ThoiGian" Type="date" />
-  </EntityType>
   <Association Name="FK_CTHDOff_HDOffLine">
     <End Role="HDOffLine" Type="Self.HDOffLine" Multiplicity="1" />
     <End Role="CTHDOff" Type="Self.CTHDOff" Multiplicity="*" />
@@ -211,6 +194,20 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CTHDOnline_CTTonKho">
+    <End Role="CTTonKho" Type="Self.CTTonKho" Multiplicity="1" />
+    <End Role="CTHDOnline" Type="Self.CTHDOnline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CTTonKho">
+        <PropertyRef Name="MaKho" />
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="CTHDOnline">
+        <PropertyRef Name="MaKho" />
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHDOnline_CTTonKho1">
     <End Role="CTTonKho" Type="Self.CTTonKho" Multiplicity="1" />
     <End Role="CTHDOnline" Type="Self.CTHDOnline" Multiplicity="*" />
     <ReferentialConstraint>
@@ -259,30 +256,6 @@
       </Principal>
       <Dependent Role="CTHDTG">
         <PropertyRef Name="MaHD" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CTTN">
-    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
-    <End Role="CTTN" Type="Self.CTTN" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KhachHang">
-        <PropertyRef Name="MaKH" />
-      </Principal>
-      <Dependent Role="CTTN">
-        <PropertyRef Name="maKHGui" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CTTN2">
-    <End Role="TinNhan" Type="Self.TinNhan" Multiplicity="1" />
-    <End Role="CTTN" Type="Self.CTTN" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TinNhan">
-        <PropertyRef Name="maTN" />
-      </Principal>
-      <Dependent Role="CTTN">
-        <PropertyRef Name="maTN" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -395,7 +368,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PhieuTraGop_HDTraGop">
-    <End Role="HDTraGop" Type="Self.HDTraGop" Multiplicity="0..1" />
+    <End Role="HDTraGop" Type="Self.HDTraGop" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="PhieuTraGop" Type="Self.PhieuTraGop" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="HDTraGop">
@@ -430,44 +405,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="ShopDoCongNgheModelStoreContainer">
     <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTHDOff" EntityType="Self.CTHDOff" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTHDOnline" EntityType="Self.CTHDOnline" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTHDTG" EntityType="Self.CTHDTG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTPN" EntityType="Self.CTPN" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CTTN" EntityType="Self.CTTN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTTonKho" EntityType="Self.CTTonKho" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Hang" EntityType="Self.Hang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HDNhapSP" EntityType="Self.HDNhapSP" Schema="dbo" store:Type="Tables" />
@@ -481,12 +424,15 @@
     <EntitySet Name="PhieuTraGop" EntityType="Self.PhieuTraGop" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TinNhan" EntityType="Self.TinNhan" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_CTHDOff_HDOffLine" Association="Self.FK_CTHDOff_HDOffLine">
       <End Role="HDOffLine" EntitySet="HDOffLine" />
       <End Role="CTHDOff" EntitySet="CTHDOff" />
     </AssociationSet>
     <AssociationSet Name="FK_CTHDOnline_CTTonKho" Association="Self.FK_CTHDOnline_CTTonKho">
+      <End Role="CTTonKho" EntitySet="CTTonKho" />
+      <End Role="CTHDOnline" EntitySet="CTHDOnline" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHDOnline_CTTonKho1" Association="Self.FK_CTHDOnline_CTTonKho1">
       <End Role="CTTonKho" EntitySet="CTTonKho" />
       <End Role="CTHDOnline" EntitySet="CTHDOnline" />
     </AssociationSet>
@@ -501,14 +447,6 @@
     <AssociationSet Name="FK_CTHDTG_HDTraGop" Association="Self.FK_CTHDTG_HDTraGop">
       <End Role="HDTraGop" EntitySet="HDTraGop" />
       <End Role="CTHDTG" EntitySet="CTHDTG" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CTTN" Association="Self.FK_CTTN">
-      <End Role="KhachHang" EntitySet="KhachHang" />
-      <End Role="CTTN" EntitySet="CTTN" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CTTN2" Association="Self.FK_CTTN2">
-      <End Role="TinNhan" EntitySet="TinNhan" />
-      <End Role="CTTN" EntitySet="CTTN" />
     </AssociationSet>
     <AssociationSet Name="FK_CTTonKho" Association="Self.FK_CTTonKho">
       <End Role="Kho" EntitySet="Kho" />

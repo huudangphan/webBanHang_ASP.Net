@@ -17,7 +17,6 @@ namespace ShopBanHang.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KhachHang()
         {
-            this.CTTNs = new HashSet<CTTN>();
             this.HDOffLines = new HashSet<HDOffLine>();
             this.HDOnlines = new HashSet<HDOnline>();
             this.HDTraGops = new HashSet<HDTraGop>();
@@ -26,14 +25,12 @@ namespace ShopBanHang.Models
         public int MaKH { get; set; }
         public string tenKH { get; set; }
         public string DiaChi { get; set; }
-        public Nullable<int> SDT { get; set; }
         public string email { get; set; }
         public string taiKhoan { get; set; }
         public string matKhau { get; set; }
         public Nullable<decimal> tongMua { get; set; }
+        public string sodt { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTTN> CTTNs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HDOffLine> HDOffLines { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

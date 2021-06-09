@@ -22,7 +22,9 @@ namespace ShopBanHang.Models
         public string email { get; set; }
         [Required(ErrorMessage = "không thể bỏ trống")]
         [DisplayName("Số điện thoại")]
-        public int sdt { get; set; }
+        [Phone]
+        
+        public string sdt { get; set; }
       
         [DisplayName("Tài khoản")]
         public string username { get; set; }

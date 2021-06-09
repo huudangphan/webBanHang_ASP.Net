@@ -9,7 +9,7 @@ namespace ShopBanHang.Controllers
 {
     public class TimKiemController : Controller
     {
-        ShopEntities db = new ShopEntities();
+        ShopDoCongNgheEntities2 db = new ShopDoCongNgheEntities2();
 
         // GET: TimKiem
         public ActionResult Index()

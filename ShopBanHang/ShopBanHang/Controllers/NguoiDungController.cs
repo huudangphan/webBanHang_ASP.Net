@@ -10,7 +10,7 @@ namespace ShopBanHang.Controllers
 {
     public class NguoiDungController : Controller
     {
-        ShopEntities db = new ShopEntities();
+        ShopDoCongNgheEntities2 db = new ShopDoCongNgheEntities2();
 
         //databaseEntities db = new databaseEntities();
         // GET: NguoiDung
@@ -61,7 +61,7 @@ namespace ShopBanHang.Controllers
                     khach.tenKH = kh.tenKH;
                     khach.DiaChi = kh.diaChi;
                     khach.email = kh.email;
-                    khach.SDT = kh.sdt;
+                    khach.sodt = kh.sdt;
 
                     khach.taiKhoan = kh.username;
                     khach.matKhau = kh.password;
@@ -130,7 +130,7 @@ namespace ShopBanHang.Controllers
                     Session["diaChi"] = data.FirstOrDefault().DiaChi;
 
                     Session["email"] = data.FirstOrDefault().email;
-                    Session["sdt"] = data.FirstOrDefault().SDT;
+                    Session["sdt"] = data.FirstOrDefault().sodt;
                     return RedirectToAction("Index", "Home");
                 }
                 else

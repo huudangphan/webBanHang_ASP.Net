@@ -626,7 +626,6 @@ D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\System.Web.WebPages.Razor.xml
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\Newtonsoft.Json.xml
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\Antlr3.Runtime.pdb
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\webBanHang_ASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csprojAssemblyReference.cache
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csproj.CoreCompileInputs.cache
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csproj.CopyComplete
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.dll

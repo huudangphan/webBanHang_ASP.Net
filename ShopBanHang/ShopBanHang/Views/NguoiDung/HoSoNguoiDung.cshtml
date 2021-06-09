@@ -9,54 +9,7 @@
 @using (Html.BeginForm())
 {
     <table class="table">
-        <tr>
-            <th>
-                Họ và tên
-            </th>
-            <th>
-                Địa Chỉ
-            </th>
-
-            <th>
-                Email
-            </th>
-            <th>
-                Số điện thoại
-            </th>
-            <th>
-                Tài Khoản
-            </th>
-
-            <th></th>
-        </tr>
-
-
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => Model.tenKH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => Model.DiaChi)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => Model.email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => Model.SDT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => Model.taiKhoan)
-            </td>
-            <td>
-            </td>
-
-        </tr>
-        @*<tr>
-            <td>
-                <a href="@Url.Action("ChangePass","NguoiDung")">Đổi mật khẩu</a>
-            </td>
-        </tr>*@
+       
         <div style="color:red;">  @ViewBag.error</div>
       
         <tr>
