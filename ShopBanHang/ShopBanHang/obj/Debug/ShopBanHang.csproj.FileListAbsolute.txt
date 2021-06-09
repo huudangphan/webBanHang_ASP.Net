@@ -630,3 +630,4 @@ D:\webBanHang_ASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csproj.CoreCompi
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csproj.CopyComplete
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.dll
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.pdb
+D:\webBanHang_ASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csprojAssemblyReference.cache

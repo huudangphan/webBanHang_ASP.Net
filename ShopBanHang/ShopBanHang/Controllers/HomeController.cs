@@ -4,12 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ShopBanHang.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace ShopBanHang.Controllers
 {
     public class HomeController : Controller
     {
         ShopDoCongNgheEntities2 db = new ShopDoCongNgheEntities2();
+        public PartialViewResult ListSanPham(int? page)
+        {
+            int pageNum = (page ?? 1);
+            int pageSize = 10;
+            var list = db.SanPhams.OrderBy(c => c.tenSP).ToPagedList(pageNum, pageSize);
+            return PartialView(list);
+        }
         public ActionResult Index(string search)
         {
             var kq = db.SanPhams.Where(x => x.tenSP.StartsWith(search)).ToList();
