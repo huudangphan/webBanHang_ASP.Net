@@ -65,8 +65,9 @@ namespace QuanLy.Kho
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBox1.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
-            string url = @"D:\webBanHang_ASP\ShopBanHang\ShopBanHang\Assit\img\" + textBox1.Text;
+            string urll= dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
+            //textBox1.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
+            string url = @"D:\webBanHang_ASP\ShopBanHang\ShopBanHang\Assit\img\" + urll;
             pictureBox1.Image = Image.FromFile(url);
         }
 
@@ -112,6 +113,17 @@ namespace QuanLy.Kho
             
 
 
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            string giasp = txtgia.Text;
+            string masp = txtmasp.Text;
+            string url = "http://localhost:55543/api/SanPham/SuaGia?masp="+masp+"&giasp="+giasp;
+            Services.PUT(url, sess.token);
+            loadData();
+            MessageBox.Show("Cập nhật thành công");
+            
         }
     }
 }

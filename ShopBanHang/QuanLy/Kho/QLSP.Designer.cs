@@ -39,7 +39,6 @@ namespace QuanLy.Kho
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtmota = new System.Windows.Forms.RichTextBox();
             this.txtgia = new System.Windows.Forms.TextBox();
             this.txtten = new System.Windows.Forms.TextBox();
@@ -53,6 +52,7 @@ namespace QuanLy.Kho
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -129,7 +129,7 @@ namespace QuanLy.Kho
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.simpleButton2);
             this.groupBox1.Controls.Add(this.txtmota);
             this.groupBox1.Controls.Add(this.txtgia);
             this.groupBox1.Controls.Add(this.txtten);
@@ -145,13 +145,6 @@ namespace QuanLy.Kho
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sản phẩm";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(417, 216);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 23);
-            this.textBox1.TabIndex = 9;
             // 
             // txtmota
             // 
@@ -265,6 +258,16 @@ namespace QuanLy.Kho
             this.comboBox1.Size = new System.Drawing.Size(168, 24);
             this.comboBox1.TabIndex = 20;
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(417, 212);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(96, 51);
+            this.simpleButton2.TabIndex = 9;
+            this.simpleButton2.Text = "Sửa giá";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // QLSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -317,6 +320,6 @@ namespace QuanLy.Kho
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

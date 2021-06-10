@@ -65,5 +65,10 @@ namespace API.Controllers
         {
             sp.themctphieunhap(masp, slnhap, gianhap, thanhtien);
         }
+        [HttpPut]
+        public void SuaGia(string masp,string giasp)
+        {
+            sp.SuaGia(masp, giasp);
+        }
     }
 }

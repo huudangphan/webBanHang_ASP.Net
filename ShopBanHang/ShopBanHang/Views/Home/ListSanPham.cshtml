@@ -7,7 +7,7 @@
 
 
 <div class="container">
-    
+    <h1>Tất cả sản phẩm</h1>
     <div class="row" style="margin-top:20px">
         @foreach (var item in Model)
         {
@@ -26,6 +26,9 @@
 </div>
 Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
 <style>
+    .menu li {
+        display: inline;
+    }
     .container h1 {
         position: relative;
         margin: 40px 0 30px;
@@ -58,9 +61,4 @@ Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
     @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
 </div>
 
-<style>
-    .menu li {
-        display: inline;
-        
-    }
-</style>
+

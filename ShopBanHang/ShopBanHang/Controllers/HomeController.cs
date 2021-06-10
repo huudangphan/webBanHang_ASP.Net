@@ -15,7 +15,7 @@ namespace ShopBanHang.Controllers
         public PartialViewResult ListSanPham(int? page)
         {
             int pageNum = (page ?? 1);
-            int pageSize = 10;
+            int pageSize = 12;
             var list = db.SanPhams.OrderBy(c => c.tenSP).ToPagedList(pageNum, pageSize);
             return PartialView(list);
         }

@@ -79,6 +79,13 @@ namespace API.Query
             Execute.ExcuteNonquery(query);
 
         }
+        public void SuaGia(string masp,string giasp)
+        {
+            string query = "update SanPham set giaSP = "+giasp+" where maSP = "+masp;
+            Execute.ExcuteNonquery(query);
+
+
+        }
 
     }
 }

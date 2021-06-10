@@ -357,10 +357,14 @@ z-index: 999;}
 }
 .single-promo i {
   font-size: 50px;
+  
 }
 
 .single-promo:hover {color: #fff;background: #222;}
-.promo1 { background:#ee5057;}
+.promo1 {
+    background-color: #99FFFF;
+}
+       
 .promo2 { background:#ffd900;}
 .promo3 { background:#fa8072;}
 .promo4 { background:#4abebd;}
@@ -428,6 +432,7 @@ z-index: 999;}
     line-height: 25px;
     margin-bottom: 10px;
     margin-top: 15px;
+    
 }
 
 
