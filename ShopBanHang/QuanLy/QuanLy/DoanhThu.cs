@@ -42,7 +42,7 @@ namespace QuanLy.QuanLy
         }
         public void loadDataOnline(string month,string year)
         {
-            string baseURL = "http://localhost:55543/api/Admin/DoanhThuOnline?thang="+month+"&nam="+year;
+            string baseURL = "http://apidnh.somee.com/api/Admin/DoanhThuOnline?thang=" + month+"&nam="+year;
             using (WebClient wc = new WebClient())
             {
                 try
@@ -63,7 +63,7 @@ namespace QuanLy.QuanLy
         }
         public void loadDataOffline(string month, string year)
         {
-            string baseURL = "http://localhost:55543/api/Admin/DoanhThuOffline?thang=" + month + "&nam=" + year;
+            string baseURL = "http://apidnh.somee.com/api/Admin/DoanhThuOffline?thang=" + month + "&nam=" + year;
             using (WebClient wc = new WebClient())
             {
                 try
@@ -85,7 +85,7 @@ namespace QuanLy.QuanLy
         public void loadDataTG(string month, string year)
         {
             //DoanhThuTG
-            string baseURL = "http://localhost:55543/api/Admin/DoanhThuTG?nam=" + month + "&thang=" + year; 
+            string baseURL = "http://apidnh.somee.com/api/Admin/DoanhThuTG?nam=" + month + "&thang=" + year; 
             using (WebClient wc = new WebClient())
             {
                 try
@@ -106,7 +106,7 @@ namespace QuanLy.QuanLy
         }
         public void loadDataPhieu(string month, string year)
         {
-            string baseURL = "http://localhost:55543/api/Admin/DoanhThuTGThang?nam=" + month + "&thang=" + year;
+            string baseURL = "http://apidnh.somee.com/api/Admin/DoanhThuTGThang?nam=" + month + "&thang=" + year;
             using (WebClient wc = new WebClient())
             {
                 try
@@ -127,7 +127,7 @@ namespace QuanLy.QuanLy
         }
         public void loadDataPhat(string month, string year)
         {
-            string baseURL = "http://localhost:55543/api/Admin/DoanhThuPhat?nam=" + month + "&thang=" + year;
+            string baseURL = "http://apidnh.somee.com/api/Admin/DoanhThuPhat?nam=" + month + "&thang=" + year;
             using (WebClient wc = new WebClient())
             {
                 try
@@ -148,7 +148,7 @@ namespace QuanLy.QuanLy
         }
         public void loadDataChi(string month, string year)
         {
-            string baseURL = "http://localhost:55543/api/Admin/TongChi?nam=" + month + "&thang=" + year;
+            string baseURL = "http://apidnh.somee.com/api/Admin/TongChi?nam=" + month + "&thang=" + year;
             using (WebClient wc = new WebClient())
             {
                 try

@@ -100,7 +100,7 @@ namespace QuanLy
             this.Controls.Add(this.txtUsername);
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fLogin";
+            this.Text = "Đăng nhập";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data.Odbc;
-using API.Global;
+
 using System.Data;
 using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
@@ -22,19 +22,20 @@ namespace API
         {
             _appSettings = appsttings.Value;
         }
+        private string con= @"workstation id=DBHuuDang.mssql.somee.com;packet size=4096;user id=huudang2412_SQLLogin_1;pwd=zz1bl999px;data source=DBHuuDang.mssql.somee.com;persist security info=False;initial catalog=DBHuuDang ";
         DataTable dt;
         private string ExcuteQuery(string query,string para)
         {
-            OdbcConnection conn = new OdbcConnection(GlobalData.conStr);
-            OdbcCommand cmd = new OdbcCommand(query, conn);
-            OdbcDataAdapter adapter = new OdbcDataAdapter(cmd);
+            SqlConnection conn = new SqlConnection(con);
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             dt = new DataTable();
             string result = "";
             try
             {
                 conn.Open();
                 adapter.Fill(dt);
-                OdbcDataReader dRead = cmd.ExecuteReader();
+                SqlDataReader dRead = cmd.ExecuteReader();
                 while (dRead.Read())
                 {
                     result = dRead[para].ToString();

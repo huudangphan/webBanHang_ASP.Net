@@ -32,7 +32,7 @@ namespace QuanLy
 
             try
             {
-                string Urlbase = "http://localhost:55543/api/Account/Post";              
+                string Urlbase = "http://apidnh.somee.com/api/Account/Post";              
 
                 user.username = username;
                 user.password = password;
@@ -65,7 +65,7 @@ namespace QuanLy
             catch (Exception ex)
             {
 
-                MessageBox.Show("Username or Password invalid");
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai");
             }
 
 

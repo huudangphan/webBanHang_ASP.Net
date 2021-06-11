@@ -41,5 +41,10 @@ namespace API.Controllers
         {
             return kh.getAll();
         }
+        [HttpGet]
+        public  string GetKhachHang(string sodt)
+        {
+            return kh.GetKhachHang(sodt);
+        }
     }
 }

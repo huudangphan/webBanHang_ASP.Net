@@ -25,7 +25,7 @@ begin
 	select @mahd=MaHD from inserted
 	select @tienCoc=TienCoc from HDTraGop hd where hd.MaHD=@mahd
 	select @tongTien=sum(SL*GiaBan) from inserted
-	if(@tienCoc<(@tongTien/2))
+	if(@tienCoc<(@tongTien/5))
 	begin
 		delete from CTHDTG where MaHD=@mahd
 		delete from HDTraGop where MaHD=@mahd
@@ -179,11 +179,7 @@ end
 	where maPhieuNhap=@maHD and MaSP=@maSP
  end
 
- select *
- from HDOnline
-
- insert into HDOnline(MaKH,NgayDat,NgayGiao,TinhTrang)
- values(4,'2021-1-1','2021-1-1','0')
+ 
  
 
  alter Table HDOnline

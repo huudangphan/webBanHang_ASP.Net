@@ -31,7 +31,7 @@ namespace QuanLy.BanHang
         }
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/HDTG/GetPTG?mahd=" + GlobalData.madh;
+            string baseURL = "http://apidnh.somee.com/api/HDTG/GetPTG?mahd=" + GlobalData.madh;
             using (WebClient wc = new WebClient())
             {
                 try
@@ -54,12 +54,13 @@ namespace QuanLy.BanHang
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
             GlobalData.madh = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-            string url = "http://localhost:55543/api/HDTG/TraGop?maphieu=" + GlobalData.madh;
+            string url = "http://apidnh.somee.com/api/HDTG/TraGop?maphieu=" + GlobalData.madh;
             Services.POST(url, sess.token);
             CTPhieuTraGop f = new CTPhieuTraGop(sess);
             this.Hide();
             f.ShowDialog();
             this.Show();
+            loadData();
         }
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)

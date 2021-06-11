@@ -43,7 +43,7 @@ namespace QuanLy.Kho
         }
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/SanPham/getAllSanPham";
+            string baseURL = "http://apidnh.somee.com/api/SanPham/getAllSanPham";
             using (WebClient wc = new WebClient())
             {
                 try
@@ -119,7 +119,7 @@ namespace QuanLy.Kho
         {
             string giasp = txtgia.Text;
             string masp = txtmasp.Text;
-            string url = "http://localhost:55543/api/SanPham/SuaGia?masp="+masp+"&giasp="+giasp;
+            string url = "http://apidnh.somee.com/api/SanPham/SuaGia?masp=" + masp+"&giasp="+giasp;
             Services.PUT(url, sess.token);
             loadData();
             MessageBox.Show("Cập nhật thành công");

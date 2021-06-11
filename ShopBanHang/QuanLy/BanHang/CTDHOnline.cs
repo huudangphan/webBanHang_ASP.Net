@@ -50,7 +50,7 @@ namespace QuanLy.BanHang
         }
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/DHOnline/GetCTHDOnline?mahd="+ModelCT.mahd;
+            string baseURL = "http://apidnh.somee.com/api/DHOnline/GetCTHDOnline?mahd=" + ModelCT.mahd;
             using (WebClient wc = new WebClient())
             {
                 try
@@ -72,7 +72,7 @@ namespace QuanLy.BanHang
         }
         public void loadData2()
         {
-            string baseURL = "http://localhost:55543/api/DHOnline/GetHDOnlineID?mahd="+ModelCT.mahd;
+            string baseURL = "http://apidnh.somee.com/api/DHOnline/GetHDOnlineID?mahd=" + ModelCT.mahd;
             using (WebClient wc = new WebClient())
             {
                 try
@@ -109,7 +109,7 @@ namespace QuanLy.BanHang
             {
                 try
                 {
-                    string query = "http://localhost:55543/api/DHOnline/GuiHang?MaDH=" + ModelCT.mahd + "&MaKho=" + txtkho.Text;
+                    string query = "http://apidnh.somee.com/api/DHOnline/GuiHang?MaDH=" + ModelCT.mahd + "&MaKho=" + txtkho.Text;
                     Services.POST(query, Sess.token);
                     MessageBox.Show("Gửi hàng thành công");
                 }

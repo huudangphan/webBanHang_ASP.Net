@@ -54,7 +54,7 @@ namespace QuanLy.QuanLy
                 {
                     if(newPass==conPass)
                     {
-                        string Urlbase = "http://localhost:55543/api/Admin/DoiMatKhau?password=" + newPass;
+                        string Urlbase = "http://apidnh.somee.com/api/Admin/DoiMatKhau?password=" + newPass;
                         Services.PUT(Urlbase, sess.token);
                         MessageBox.Show("Đổi mật khẩu thành công");
                     }    

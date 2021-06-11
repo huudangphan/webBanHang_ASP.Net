@@ -372,7 +372,7 @@ namespace QuanLy.Kho
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "CTK";
+            this.Text = "Chi tiết tồn kho";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

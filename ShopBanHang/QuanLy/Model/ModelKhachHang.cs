@@ -11,7 +11,7 @@ namespace QuanLy.Model
         public string MaKH { get; set; }
         public string tenKH { get; set; }
         public string DiaChi { get; set; }
-        public string SDT { get; set; }
+        public string sodt { get; set; }
         public string email { get; set; }
 
     }

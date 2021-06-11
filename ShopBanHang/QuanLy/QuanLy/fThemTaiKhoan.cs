@@ -37,7 +37,7 @@ namespace QuanLy.QuanLy
                 type = 2;
             else
                 type = 3;
-            string query = "http://localhost:55543/api/Admin/InsertNhanVien?username="+username+"&password="+password+"&tennv="+tenNv+"&loai="+type;
+            string query = "http://apidnh.somee.com/api/Admin/InsertNhanVien?username=" + username+"&password="+password+"&tennv="+tenNv+"&loai="+type;
             try
             {
                 Services.POST(query, sess.token);

@@ -48,7 +48,7 @@ namespace QuanLy.BanHang
         }
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/HDTG/GetHDTGId?mahd=" + GlobalData.madh;
+            string baseURL = "http://apidnh.somee.com/api/HDTG/GetHDTGId?mahd=" + GlobalData.madh;
             using (WebClient wc = new WebClient())
             {
                 try
@@ -69,7 +69,7 @@ namespace QuanLy.BanHang
         }
         public void loadData2()
         {
-            string baseURL = "http://localhost:55543/api/HDTG/GetCTHDTG?mahd=" + GlobalData.madh;
+            string baseURL = "http://apidnh.somee.com/api/HDTG/GetCTHDTG?mahd=" + GlobalData.madh;
             using (WebClient wc = new WebClient())
             {
                 try

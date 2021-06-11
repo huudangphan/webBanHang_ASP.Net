@@ -32,7 +32,7 @@ namespace QuanLy.Index
         }
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/Admin/getNhanVien";
+            string baseURL = "http://apidnh.somee.com/api/Admin/getNhanVien";
             using (WebClient wc = new WebClient())
             {
                 try

@@ -41,7 +41,7 @@ namespace QuanLy.BanHang
         }
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/HDTG/getHDTG";
+            string baseURL = "http://apidnh.somee.com/api/HDTG/getHDTG";
             using (WebClient wc = new WebClient())
             {
                 try

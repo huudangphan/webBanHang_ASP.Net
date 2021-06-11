@@ -11,7 +11,7 @@ namespace ShopBanHang.Controllers
 {
     public class HomeController : Controller
     {
-        ShopDoCongNgheEntities2 db = new ShopDoCongNgheEntities2();
+        ShopDoCongNgheEntities1 db = new ShopDoCongNgheEntities1();
         public PartialViewResult ListSanPham(int? page)
         {
             int pageNum = (page ?? 1);
@@ -32,21 +32,21 @@ namespace ShopBanHang.Controllers
 
             return PartialView(kq);
         }
-       public ActionResult SanPhamHot()
-        {
+       //public ActionResult SanPhamHot()
+       // {
 
-            //var list = db.SanPhams.OrderBy(c => c.slTon).Take(4).ToList();
-            var list = (from sp in db.SanPhams
-                        join n in db.CTPNs
-                        on sp.maSP equals n.maSP
-                        join pn in db.HDNhapSPs
-                        on n.maPhieuNhap equals pn.maPhieuNhap
-                        orderby pn.ngayNhap descending
-                        select sp).Take(4).ToList();
+       //     //var list = db.SanPhams.OrderBy(c => c.slTon).Take(4).ToList();
+       //     var list = (from sp in db.SanPhams
+       //                 join n in db.CTPNs
+       //                 on sp.maSP equals n.maSP
+       //                 join pn in db.HDNhapSPs
+       //                 on n.maPhieuNhap equals pn.maPhieuNhap
+       //                 orderby pn.ngayNhap descending
+       //                 select sp).Take(4).ToList();
             
 
-            return PartialView("SanPhamHot",list);
-        }
+       //     return PartialView("SanPhamHot",list);
+       // }
         public PartialViewResult DienthoaiHot()
         {
 

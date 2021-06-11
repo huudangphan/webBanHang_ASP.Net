@@ -32,7 +32,7 @@ namespace QuanLy.KhachHang
         }
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/KhachHang/getAll";
+            string baseURL = "http://apidnh.somee.com/api/KhachHang/getAll";
             using (WebClient wc = new WebClient())
             {
                 try
@@ -65,9 +65,9 @@ namespace QuanLy.KhachHang
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
             GlobalData.makh = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-            string url = "http://localhost:55543/api/DHOfline/TaoHDOffline?makh="+GlobalData.makh;
+            string url = "http://apidnh.somee.com/api/DHOfline/TaoHDOffline?makh=" + GlobalData.makh;
             Services.POST(url, sess.token);            
-            GlobalData.madh = Services.GET("http://localhost:55543/api/DHOfline/getlastdh", sess.token);
+            GlobalData.madh = Services.GET("http://apidnh.somee.com/api/DHOfline/getlastdh", sess.token);
             TaoHDOff f = new TaoHDOff(Sess);
             this.Hide();
             f.ShowDialog();

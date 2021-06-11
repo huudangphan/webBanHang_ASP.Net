@@ -40,7 +40,7 @@ namespace QuanLy.BanHang
         }
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/DHOfline/getHDOff";
+            string baseURL = "http://apidnh.somee.com/api/DHOfline/getHDOff";
             using (WebClient wc = new WebClient())
             {
                 try

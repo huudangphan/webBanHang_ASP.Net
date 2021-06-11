@@ -33,7 +33,7 @@ namespace QuanLy.BanHang
       
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/SanPham/getAllSanPham";
+            string baseURL = "http://apidnh.somee.com/api/SanPham/getAllSanPham";
             using (WebClient wc = new WebClient())
             {
                 try
@@ -54,7 +54,7 @@ namespace QuanLy.BanHang
         }
         public void loadDataTK(string tensp)
         {
-            string baseURL = "http://localhost:55543/api/SanPham/getSP?tensp="+tensp;
+            string baseURL = "http://apidnh.somee.com/api/SanPham/getSP?tensp=" + tensp;
             using (WebClient wc = new WebClient())
             {
                 try
@@ -75,9 +75,9 @@ namespace QuanLy.BanHang
         }
         public bool check()
         {
-            string url1 = "http://localhost:55543/api/DHOfline/GetMaHD";
+            string url1 = "http://apidnh.somee.com/api/DHOfline/GetMaHD";
             int mahd = Int32.Parse(Services.GET(url1, sess.token));
-            string url2 = "http://localhost:55543/api/DHOfline/GetMaCTHD";
+            string url2 = "http://apidnh.somee.com/api/DHOfline/GetMaCTHD";
             int macthd = Int32.Parse(Services.GET(url2, sess.token));
             if (mahd == macthd)
                 return true;
@@ -86,7 +86,7 @@ namespace QuanLy.BanHang
         public bool CheckSLTon(string masp, string makho, int slMua)
         {
             //GetSLTon
-            string url = "http://localhost:55543/api/HDTG/GetSLTon?masp=" + masp + "&makho=" + makho;
+            string url = "http://apidnh.somee.com/api/HDTG/GetSLTon?masp=" + masp + "&makho=" + makho;
             int slTon = Int32.Parse(Services.GET(url, sess.token));
             if (slMua <= slTon)
                 return true;
@@ -118,9 +118,9 @@ namespace QuanLy.BanHang
                     {
                         foreach (var item in lst)
                         {
-                            string url = "http://localhost:55543/api/dhofline/taocthdoff?masp=" + item.masp + "&giaban=" + item.giaBan + "&sl=" + item.soluong + "&makho=" + item.makho;
+                            string url = "http://apidnh.somee.com/api/dhofline/taocthdoff?masp=" + item.masp + "&giaban=" + item.giaBan + "&sl=" + item.soluong + "&makho=" + item.makho;
                             Services.POST(url, sess.token);
-                            string url2 = "http://localhost:55543/api/HDTG/UpdateSL?makho=" + item.makho + "&masp=" + item.masp + "&sl=" + item.soluong;
+                            string url2 = "http://apidnh.somee.com/api/HDTG/UpdateSL?makho=" + item.makho + "&masp=" + item.masp + "&sl=" + item.soluong;
                             Services.PUT(url2, sess.token);
 
                         }
@@ -135,7 +135,7 @@ namespace QuanLy.BanHang
                 else
                 {
                    
-                    string url = "http://localhost:55543/api/DHOfline/XoaDHThua";
+                    string url = "http://apidnh.somee.com/api/DHOfline/XoaDHThua";
                     Services.DELETE(url, sess.token);
                     MessageBox.Show("Số lượng hàng tồn kho không đủ");
                 }    
@@ -207,7 +207,7 @@ namespace QuanLy.BanHang
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            //lst.Add(new GioHang() { masp = masp.ToString(), mahd = GlobalData.madh, soluong = soluong.ToString(), giaBan = giaban.ToString(), makho = makho.ToString() });
+            //lst.add(new giohang() { masp = masp.tostring(), mahd = globaldata.madh, soluong = soluong.tostring(), giaban = giaban.tostring(), makho = makho.tostring() });
             List<GioHangTemp> lstTemp = new List<GioHangTemp>();
             string masp, sl, gia, kho;
             for (int i = 0; i < dataGridView2.Rows.Count; i++)

@@ -118,7 +118,7 @@ namespace QuanLy.KhachHang
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1092, 390);
+            this.dataGridView1.Size = new System.Drawing.Size(1104, 387);
             this.dataGridView1.TabIndex = 2;
             // 
             // Column1
@@ -155,7 +155,7 @@ namespace QuanLy.KhachHang
             // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "SDT";
+            this.Column5.DataPropertyName = "sodt";
             this.Column5.HeaderText = "Số điện thoại";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
@@ -173,7 +173,7 @@ namespace QuanLy.KhachHang
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "KhachHangOff";
+            this.Text = "Khách hàng";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

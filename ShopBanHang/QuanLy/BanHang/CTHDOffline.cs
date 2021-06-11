@@ -43,7 +43,7 @@ namespace QuanLy.BanHang
         }
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/DHOfline/getCTHDOff?mahd=" + ModelCT.mahd;
+            string baseURL = "http://apidnh.somee.com/api/DHOfline/getCTHDOff?mahd=" + ModelCT.mahd;
             using (WebClient wc = new WebClient())
             {
                 try
@@ -65,7 +65,7 @@ namespace QuanLy.BanHang
         }
         public void loadData2()
         {
-            string baseURL = "http://localhost:55543/api/DHOfline/HDOff?makh=2" + ModelCT.mahd;
+            string baseURL = "http://apidnh.somee.com/api/DHOfline/HDOff?makh=2" + ModelCT.mahd;
             using (WebClient wc = new WebClient())
             {
                 try

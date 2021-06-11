@@ -37,7 +37,7 @@ namespace QuanLy.KhachHang
             string diachi = txtDiaChi.Text;
             string email = txtEmail.Text;
             string sdt = txtSDT.Text;
-            string url = "http://localhost:55543/api/KhachHang/ThemKhachHangkUser?tenkh=" + ten + "&diachi=" + diachi + "&sdt=" + sdt + "&email=" + email;
+            string url = "http://apidnh.somee.com/api/KhachHang/ThemKhachHangkUser?tenkh=" + ten + "&diachi=" + diachi + "&sdt=" + sdt + "&email=" + email;
             try
             {
                 Services.POST(url, sess.token);

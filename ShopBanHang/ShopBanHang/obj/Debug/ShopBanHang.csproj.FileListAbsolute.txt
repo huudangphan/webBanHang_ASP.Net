@@ -536,6 +536,7 @@ E:\WebBanHangASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csproj.CoreCompil
 E:\WebBanHangASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.csproj.CopyComplete
 E:\WebBanHangASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.dll
 E:\WebBanHangASP\ShopBanHang\ShopBanHang\obj\Debug\ShopBanHang.pdb
+D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\DocumentFormat.OpenXml.xml
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\ShopBanHang.dll.config
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\ShopBanHang.dll
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\ShopBanHang.pdb
@@ -610,7 +611,6 @@ D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\System.Web.WebPages.Razor.dll
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\WebGrease.dll
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\ClosedXML.pdb
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\ClosedXML.xml
-D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\DocumentFormat.OpenXml.xml
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\EntityFramework.xml
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\EntityFramework.SqlServer.xml
 D:\webBanHang_ASP\ShopBanHang\ShopBanHang\bin\ExcelNumberFormat.xml

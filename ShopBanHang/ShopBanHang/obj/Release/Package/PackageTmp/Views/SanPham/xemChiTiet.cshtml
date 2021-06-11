@@ -1,0 +1,28 @@
+﻿@model ShopBanHang.Models.SanPham
+
+@{
+    ViewBag.Title = "xemChiTiet";
+    Layout = "~/Views/Shared/_LayoutTrangChuNewNoAd.cshtml";
+}
+
+<div style="width: 100%; height: auto;margin-top: 40px;">
+    <div style="width: 30%;height: 400px; float: left;margin-top:10px;">
+        <img src="~/Assit/img/@Model.anh" alt="Alternate Text" style="width:100%;height:100%;"/>
+    </div>
+    <div style="width:60%;height:auto;float:left;margin-left:20px;">
+        <h2 style="color:orange">Xem chi tiết sản phẩm : @Model.tenSP</h2>
+
+        <p style="font-size:20px;color:orangered;">Tên sản phẩm: @Model.tenSP</p>
+        <p style="font-size:20px;color:palevioletred;">Giá:@String.Format("{0:0,0}", Model.giaSP) VNĐ </p>
+        <div style="width: 85%;border: 0.5px solid #d3cdcd;padding-left:10px;padding-top:10px;">@Model.MoTa</div>
+        <div style="margin-top:15px;">
+            @using (Html.BeginForm("ThemGioHang", "GioHang", new { @masp = Model.maSP, @url = Request.Url.ToString() }))
+            {
+                <input type="submit" class="btn btn-secondary" name="name" value="Thêm Vào Gỉo Hàng" />}
+        </div>
+    </div>
+</div>
+
+
+@*<button class="btn btn-primary">Thêm vào giỏ hàng</button>*@
+

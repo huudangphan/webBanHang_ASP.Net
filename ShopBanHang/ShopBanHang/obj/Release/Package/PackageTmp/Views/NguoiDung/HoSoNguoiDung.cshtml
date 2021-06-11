@@ -1,0 +1,46 @@
+﻿@model ShopBanHang.Models.KhachHang
+
+
+@{
+    ViewBag.Title = "HoSoNguoiDung";
+    Layout = "~/Views/Shared/_LayoutTrangChuNewNoAd.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <table class="table">
+       
+        <div style="color:red;">  @ViewBag.error</div>
+      
+        <tr>
+            <td>
+                Mật khẩu hiện tại
+            </td>
+            <td>
+                <input type="password" name="cur_pass" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Mật khẩu mới
+            </td>
+            <td>
+                <input type="password" name="pass" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Xác nhận mật khẩu
+            </td>
+            <td>
+                <input type="password" name="pass2" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Đổi mật khẩu" /></td>
+        </tr>
+
+
+    </table>
+}
+

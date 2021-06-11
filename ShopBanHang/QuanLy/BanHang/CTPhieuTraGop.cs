@@ -31,7 +31,7 @@ namespace QuanLy.BanHang
         }
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/HDTG/GetCTPTG?maphieu=" + GlobalData.madh;
+            string baseURL = "http://apidnh.somee.com/api/HDTG/GetCTPTG?maphieu=" + GlobalData.madh;
             using (WebClient wc = new WebClient())
             {
                 try

@@ -45,6 +45,7 @@ namespace API.Query.DonHangQuery
             return 0;
             
         }
+
         private bool checkdh(int madh)
         {
             string query = "select TinhTrang from HDOnline where TinhTrang = False and MaHD='" + madh + "'";

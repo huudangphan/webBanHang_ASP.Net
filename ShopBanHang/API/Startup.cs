@@ -11,7 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using API.Global;
+
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -31,7 +31,7 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
            
-            GlobalData.conStr = @"Dsn=Data";
+          
             var appSettingSections = Configuration.GetSection("AppSettings");
             services.Configure<AppSetting>(appSettingSections);
             // JWT

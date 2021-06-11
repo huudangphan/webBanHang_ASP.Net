@@ -35,7 +35,7 @@ namespace QuanLy.Kho
         public void LoadData()
         {
             //http://localhost:55543/api/SanPham/GetHang
-            string baseURL = "http://localhost:55543/api/SanPham/GetHang";
+            string baseURL = "http://apidnh.somee.com/api/SanPham/GetHang";
             using (WebClient wc = new WebClient())
             {
                 try
@@ -64,7 +64,7 @@ namespace QuanLy.Kho
         public void LoadData2()
         {
            
-            string baseURL = "http://localhost:55543/api/SanPham/GetLoai";
+            string baseURL = "http://apidnh.somee.com/api/SanPham/GetLoai";
             using (WebClient wc = new WebClient())
             {
                 try
@@ -178,16 +178,16 @@ namespace QuanLy.Kho
                     
                 }
                 //url    ThemSP string maHang,string maLoai,string tenSP,string anh,string giaSP,string MoTa
-                string baseURL = "http://localhost:55543/api/SanPham/ThemSP?maHang='"+hang+"'&maLoai='"+loai+"'&tenSP='"+tensp+"'&anh='"+anh+"'&giaSP='"+giasp+"'&MoTa='"+mota+"'";
+                string baseURL = "http://apidnh.somee.com/api/SanPham/ThemSP?maHang='" + hang+"'&maLoai='"+loai+"'&tenSP='"+tensp+"'&anh='"+anh+"'&giaSP='"+giasp+"'&MoTa='"+mota+"'";
                 Services.POST(baseURL, sess.token);
 
                 #region them chi tiet ton kho
                 string sl1 = numericUpDown1.Value.ToString();
                 string sl2 = numericUpDown2.Value.ToString();
                 string sl3 = numericUpDown3.Value.ToString();
-                string url1 = "http://localhost:55543/api/SanPham/themCTTonKho?makho=2&sl=" + sl1;
-                string url2 = "http://localhost:55543/api/SanPham/themCTTonKho?makho=1&sl=" + sl2;
-                string url3 = "http://localhost:55543/api/SanPham/themCTTonKho?makho=3&sl=" + sl3;
+                string url1 = "http://apidnh.somee.com/api/SanPham/themCTTonKho?makho=2&sl=" + sl1;
+                string url2 = "http://apidnh.somee.com/api/SanPham/themCTTonKho?makho=1&sl=" + sl2;
+                string url3 = "http://apidnh.somee.com/api/SanPham/themCTTonKho?makho=3&sl=" + sl3;
                 Services.POST(url1, sess.token);
                 Services.POST(url2, sess.token);
                 Services.POST(url3, sess.token);

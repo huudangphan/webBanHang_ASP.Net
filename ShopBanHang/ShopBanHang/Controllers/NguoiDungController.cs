@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ShopBanHang.Models;
-using ShopBanHang.MultiData;
+
 
 namespace ShopBanHang.Controllers
 {
     public class NguoiDungController : Controller
     {
-        ShopDoCongNgheEntities2 db = new ShopDoCongNgheEntities2();
+        ShopDoCongNgheEntities1 db = new ShopDoCongNgheEntities1();
 
         //databaseEntities db = new databaseEntities();
         // GET: NguoiDung

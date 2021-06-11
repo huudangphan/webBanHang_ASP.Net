@@ -41,7 +41,7 @@ namespace QuanLy.BanHang
         }
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/DHOnline/GetDHOnline";
+            string baseURL = "http://apidnh.somee.com/api/DHOnline/GetDHOnline";
             using (WebClient wc = new WebClient())
             {
                 try

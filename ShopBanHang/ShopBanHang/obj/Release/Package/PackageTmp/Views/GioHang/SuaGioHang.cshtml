@@ -1,0 +1,56 @@
+﻿@using ShopBanHang.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "Sửa giỏ hàng";
+    Layout = "~/Views/Shared/_LayoutTrangChuNewNoAd.cshtml";
+}
+
+<table border="1px">
+    <tr>
+        <td>Mã sản phẩm</td>
+
+        <td>Tên sản phẩm</td>
+
+        <td>Ảnh </td>
+
+        <td>Đơn giá</td>
+
+        <td>Số lượng</td>
+
+
+        <td>Thành tiền</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @masp = item.maSP }))
+        {
+            <tr>
+                <td>@item.maSP</td>
+
+                <td>@item.tenSP</td>
+
+                <td><img src="@Url.Content("~/Assit/img/" + item.hinhAnh)" alt="Alternate Text" width="50" height="50" /></td>
+
+                <td>@String.Format("{0:0,0}", item.donGia.ToString()) VNĐ </td>
+
+                @*<td>@Html.TextBox("txtSoLuong", item.soLuong) </td>*@
+                <td><input type="number" name="txtSoLuong" min="1" value="@item.soLuong" /></td>
+            
+
+
+                <td>@item.thanhTien</td>
+                <td>
+                    <input type="submit" value="Cập nhật" />
+                    <br />
+                    @Html.ActionLink("Xóa", "XoaGioHang", new { @masp = item.maSP })
+
+                </td>
+
+
+
+            </tr>
+        }
+
+    }
+</table>
+

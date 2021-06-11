@@ -33,5 +33,12 @@ namespace API.Query
             string query = "select * from KhachHang";
             return Execute.ExcuteQuery(query);
         }
+        public string GetKhachHang(string sodt)
+        {
+            string que = "select * from KhachHang where sodt = '" + sodt + "'";
+            return Execute.ExcuteQuery(que);
+
+
+        }
     }
 }

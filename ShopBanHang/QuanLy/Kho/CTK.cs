@@ -34,7 +34,7 @@ namespace QuanLy.Kho
         }
         public void loadData()
         {
-            string baseURL = "http://localhost:55543/api/SanPham/XemCTKho?makho="+GlobalData.makho;
+            string baseURL = "http://apidnh.somee.com/api/SanPham/XemCTKho?makho=" + GlobalData.makho;
             using (WebClient wc = new WebClient())
             {
                 try
@@ -79,12 +79,12 @@ namespace QuanLy.Kho
             {
                 string date = dateTimePicker1.Value.ToString();
                 
-                string url1 = "http://localhost:55543/api/SanPham/themphieunhap?ngaynhap="+date+"&makho="+GlobalData.makho;
+                string url1 = "http://apidnh.somee.com/api/SanPham/themphieunhap?ngaynhap=" + date+"&makho="+GlobalData.makho;
                 Services.POST(url1, sess.token);
                 foreach (var item in lst)
                 {
                     double thanhtien = double.Parse(item.slnhap) * double.Parse(item.gianhap);
-                    string url2 = "http://localhost:55543/api/SanPham/themctpn?masp="+item.masp+"&slnhap="+item.slnhap+"&gianhap=1&thanhtien="+thanhtien;
+                    string url2 = "http://apidnh.somee.com/api/SanPham/themctpn?masp=" + item.masp+"&slnhap="+item.slnhap+"&gianhap=1&thanhtien="+thanhtien;
                     Services.POST(url2, sess.token);
 
                 }
