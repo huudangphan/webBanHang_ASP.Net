@@ -198,6 +198,7 @@ namespace QuanLy.BanHang
             this.simpleButton1.Size = new System.Drawing.Size(103, 47);
             this.simpleButton1.TabIndex = 17;
             this.simpleButton1.Text = "Tìm kiếm";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // txtTenSP
             // 
@@ -288,6 +289,7 @@ namespace QuanLy.BanHang
             this.txttiencoc.Name = "txttiencoc";
             this.txttiencoc.Size = new System.Drawing.Size(152, 23);
             this.txttiencoc.TabIndex = 5;
+            this.txttiencoc.TextChanged += new System.EventHandler(this.txttiencoc_TextChanged);
             // 
             // dateTimePicker1
             // 

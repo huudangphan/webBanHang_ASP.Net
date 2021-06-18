@@ -43,6 +43,8 @@ namespace QuanLy.KhachHang
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtsdt = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -100,7 +102,7 @@ namespace QuanLy.KhachHang
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 592);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 615);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1104, 30);
@@ -114,11 +116,11 @@ namespace QuanLy.KhachHang
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 199);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 349);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1104, 387);
+            this.dataGridView1.Size = new System.Drawing.Size(1104, 260);
             this.dataGridView1.TabIndex = 2;
             // 
             // Column1
@@ -161,11 +163,30 @@ namespace QuanLy.KhachHang
             this.Column5.Name = "Column5";
             this.Column5.Width = 175;
             // 
+            // txtsdt
+            // 
+            this.txtsdt.Location = new System.Drawing.Point(187, 235);
+            this.txtsdt.Name = "txtsdt";
+            this.txtsdt.Size = new System.Drawing.Size(206, 23);
+            this.txtsdt.TabIndex = 5;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.ImageOptions.Image")));
+            this.btnTimKiem.Location = new System.Drawing.Point(444, 224);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(95, 43);
+            this.btnTimKiem.TabIndex = 6;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
             // KhachHangOff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 622);
+            this.ClientSize = new System.Drawing.Size(1104, 645);
+            this.Controls.Add(this.btnTimKiem);
+            this.Controls.Add(this.txtsdt);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
@@ -196,5 +217,7 @@ namespace QuanLy.KhachHang
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.TextBox txtsdt;
+        private DevExpress.XtraEditors.SimpleButton btnTimKiem;
     }
 }

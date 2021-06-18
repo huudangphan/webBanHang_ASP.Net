@@ -153,6 +153,7 @@ namespace QuanLy.KhachHang
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(142, 23);
             this.txtSDT.TabIndex = 12;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // txtEmail
             // 

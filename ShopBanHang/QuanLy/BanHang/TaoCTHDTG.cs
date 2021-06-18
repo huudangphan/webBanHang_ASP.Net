@@ -261,5 +261,42 @@ namespace QuanLy.BanHang
             lstTemp.Clear();
             dataGridView2.DataSource = lst;
         }
+
+        private void txttiencoc_TextChanged(object sender, EventArgs e)
+        {
+            int i = 0;
+            if (!string.IsNullOrEmpty(txttiencoc.Text) &&
+                 !int.TryParse(txttiencoc.Text, out i)
+              )
+            {
+                MessageBox.Show("Hãy nhập đúng định dạng");
+            }
+        }
+        public void loadDataTK(string tensp)
+        {
+            string baseURL = "http://apidnh.somee.com/api/SanPham/getSP?tensp=" + tensp;
+            using (WebClient wc = new WebClient())
+            {
+                try
+                {
+                    wc.Headers.Add("Authorization", "Bearer " + sess.token);
+                    var json = wc.DownloadString(baseURL);
+
+                    var data = JsonConvert.DeserializeObject<List<ModelSanPham>>(json);
+
+
+                    dataGridView1.DataSource = data;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            string tenSP = txtTenSP.Text;
+            loadDataTK(tenSP);
+        }
     }
 }

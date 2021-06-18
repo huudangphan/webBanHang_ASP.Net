@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ShopBanHang.Models.CTHDOnline>
+
+@{
+    ViewBag.Title = "ChiTietDonHang";
+    Layout = "~/Views/Shared/_LayoutTrangChuNewNoAd.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thanhTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CTTonKho.MaKho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CTTonKho1.MaKho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HDOnline.MaHD)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.thanhTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CTTonKho.MaKho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CTTonKho1.MaKho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HDOnline.MaHD)
+        </td>
+        
+    </tr>
+}
+
+</table>

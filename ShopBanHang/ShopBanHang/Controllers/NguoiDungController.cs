@@ -125,7 +125,7 @@ namespace ShopBanHang.Controllers
                     Session["taiKhoan"] = khachhang;
                     Session["tk"] = data.FirstOrDefault().taiKhoan;
                     Session["tenKH"] = data.FirstOrDefault().tenKH;
-
+                    Session["MaKH"] = data.FirstOrDefault().MaKH;
                     Session["matKhau"] = data.FirstOrDefault().matKhau;
                     Session["diaChi"] = data.FirstOrDefault().DiaChi;
 
@@ -200,6 +200,16 @@ namespace ShopBanHang.Controllers
             return View();
            
         }
-        
+        public ActionResult LichSuDonHang(int makh)
+        {
+            var list = db.HDOnlines.Where(x => x.MaKH == makh).ToList();
+            return View(list);
+
+        }
+        public ActionResult ChiTietDonHang(int madh)
+        {
+            var list = db.CTHDOnlines.Where(x => x.MaHD == madh).ToList();
+            return View(list);
+        }
     }
 }

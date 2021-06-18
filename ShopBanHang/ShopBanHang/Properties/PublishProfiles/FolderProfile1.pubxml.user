@@ -6017,10 +6017,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/21/2021 16:40:52</publishTime>
     </File>
     <File Include="bin/ShopBanHang.dll">
-      <publishTime>06/10/2021 20:07:25</publishTime>
+      <publishTime>06/18/2021 20:13:33</publishTime>
     </File>
     <File Include="bin/ShopBanHang.pdb">
-      <publishTime>06/10/2021 20:07:25</publishTime>
+      <publishTime>06/18/2021 20:13:33</publishTime>
     </File>
     <File Include="bin/System.IO.Packaging.dll">
       <publishTime>05/21/2021 16:40:52</publishTime>
@@ -6274,6 +6274,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Home/XiaomiWatch.cshtml">
       <publishTime>05/30/2021 21:15:16</publishTime>
     </File>
+    <File Include="Views/NguoiDung/ChiTietDonHang.cshtml">
+      <publishTime>06/18/2021 20:11:21</publishTime>
+    </File>
     <File Include="Views/NguoiDung/DangKy.cshtml">
       <publishTime>05/30/2021 21:15:16</publishTime>
     </File>
@@ -6289,14 +6292,17 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/NguoiDung/HoSoNguoiDung.cshtml">
       <publishTime>06/08/2021 19:52:17</publishTime>
     </File>
+    <File Include="Views/NguoiDung/LichSuDonHang.cshtml">
+      <publishTime>06/18/2021 20:12:20</publishTime>
+    </File>
     <File Include="Views/SanPham/xemChiTiet.cshtml">
       <publishTime>06/10/2021 17:04:03</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutTrangChuNew.cshtml">
-      <publishTime>06/10/2021 20:06:25</publishTime>
+      <publishTime>06/18/2021 20:03:21</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutTrangChuNewNoAd.cshtml">
-      <publishTime>06/10/2021 20:06:25</publishTime>
+      <publishTime>06/18/2021 20:03:21</publishTime>
     </File>
     <File Include="Views/TimKiem/TimKiemKQ.cshtml">
       <publishTime>05/21/2021 16:40:50</publishTime>

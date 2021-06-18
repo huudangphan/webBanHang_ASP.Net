@@ -73,5 +73,32 @@ namespace QuanLy.KhachHang
             f.ShowDialog();
             this.Show();
         }
+
+        public void loadDataTK(string tensp)
+        {
+            string baseURL = "http://apidnh.somee.com/api/KhachHang/GetKhachHang?sodt=" + tensp;
+            using (WebClient wc = new WebClient())
+            {
+                try
+                {
+                    wc.Headers.Add("Authorization", "Bearer " + sess.token);
+                    var json = wc.DownloadString(baseURL);
+
+                    var data = JsonConvert.DeserializeObject<List<ModelKhachHang>>(json);
+
+
+                    dataGridView1.DataSource = data;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string sdt = txtsdt.Text;
+            loadDataTK(sdt);
+        }
     }
 }

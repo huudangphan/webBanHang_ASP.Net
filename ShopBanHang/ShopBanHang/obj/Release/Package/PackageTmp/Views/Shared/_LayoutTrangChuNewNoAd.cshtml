@@ -54,6 +54,7 @@
                                             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Tài khoản
                                         </a>
+                                        <a href="@Url.Action("LichSuDonHang","NguoiDung",new { @makh=Int32.Parse(Session["MaKH"].ToString())})">Lịch Sử đơn hàng</a>
 
                                         <a href="@Url.Action("DangXuat","NguoiDung" )" class="dropdown-item"> <i class="fas fa-sign-in-alt"></i>Đăng xuất</a>
                                         <div class="dropdown-divider"></div>
@@ -173,7 +174,7 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-about-us">
-                        <h2>V<span>ertu</span></h2>
+                        <h2>D<span>NH</span></h2>
                         <p>Đến với chúng tôi bạn sẽ có những trải nghiệm tốt nhất về mọi mặt, chúng tôi mang đến cho bạn những sản phẩm mới nhất và chính hãng, cùng những chính sách ưu đãi lớn, ... hãy trải nghiệm một cách tốt nhất có thể tại Vertu. chuỗi cửa hàng kinh doanh bán lẻ tốt nhất ở thành phố Hồ Chí Minh</p>
                     </div>
                 </div>

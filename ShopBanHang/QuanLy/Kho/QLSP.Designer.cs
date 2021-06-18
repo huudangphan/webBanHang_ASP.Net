@@ -247,6 +247,7 @@ namespace QuanLy.Kho
             this.simpleButton1.Size = new System.Drawing.Size(103, 47);
             this.simpleButton1.TabIndex = 19;
             this.simpleButton1.Text = "Tìm kiếm";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // txtTenSP
             // 

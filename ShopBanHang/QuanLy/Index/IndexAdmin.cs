@@ -86,5 +86,10 @@ namespace QuanLy.Index
             f.ShowDialog();
             this.Show();
         }
+
+        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

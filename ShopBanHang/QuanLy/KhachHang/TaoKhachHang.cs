@@ -51,5 +51,16 @@ namespace QuanLy.KhachHang
            
 
         }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            int i = 0;
+            if (!string.IsNullOrEmpty(txtSDT.Text) &&
+                 !int.TryParse(txtSDT.Text, out i)
+              )
+            {
+                MessageBox.Show("Hãy nhập đúng định dạng số điện thoại");
+            }
+        }
     }
 }

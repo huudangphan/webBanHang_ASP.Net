@@ -125,5 +125,32 @@ namespace QuanLy.Kho
             MessageBox.Show("Cập nhật thành công");
             
         }
+        public void loadDataTK(string tensp)
+        {
+            string baseURL = "http://apidnh.somee.com/api/SanPham/getSP?tensp=" + tensp;
+            using (WebClient wc = new WebClient())
+            {
+                try
+                {
+                    wc.Headers.Add("Authorization", "Bearer " + sess.token);
+                    var json = wc.DownloadString(baseURL);
+
+                    var data = JsonConvert.DeserializeObject<List<ModelSanPham>>(json);
+
+
+                    dataGridView1.DataSource = data;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            string tenSP = txtTenSP.Text;
+            loadDataTK(tenSP);
+        }
     }
 }
