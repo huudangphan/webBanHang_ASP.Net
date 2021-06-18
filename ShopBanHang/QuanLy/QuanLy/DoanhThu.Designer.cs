@@ -50,7 +50,6 @@ namespace QuanLy.QuanLy
             this.dtgvchi = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvphat)).BeginInit();
@@ -258,21 +257,11 @@ namespace QuanLy.QuanLy
             this.dateTimePicker1.Size = new System.Drawing.Size(213, 40);
             this.dateTimePicker1.TabIndex = 0;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(391, 558);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(529, 123);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chênh lệch";
-            // 
             // DoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 728);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox2);
@@ -321,6 +310,5 @@ namespace QuanLy.QuanLy
         private System.Windows.Forms.DataGridView dtgvchi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

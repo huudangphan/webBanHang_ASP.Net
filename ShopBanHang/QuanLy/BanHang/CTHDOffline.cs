@@ -88,47 +88,57 @@ namespace QuanLy.BanHang
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
+            try
             {
-                Microsoft.Office.Interop.Excel.Application xcelApp = new Microsoft.Office.Interop.Excel.Application();
-                xcelApp.Application.Workbooks.Add(Type.Missing);
-                int col = dataGridView2.Columns.Count;
-                for (int i = 1; i < col + 2; i++)
+                if (dataGridView1.Rows.Count > 0)
                 {
-                    if (i < 4)
+                    Microsoft.Office.Interop.Excel.Application xcelApp = new Microsoft.Office.Interop.Excel.Application();
+                    xcelApp.Application.Workbooks.Add(Type.Missing);
+                    int col = dataGridView2.Columns.Count;
+                    for (int i = 1; i < col + 2; i++)
                     {
-                        xcelApp.Cells[1, i] = dataGridView2.Columns[i - 1].HeaderText;
-                    }
-                    else
-                    {
-                        for (int j = 1, l = 4; j < dataGridView1.Columns.Count + 1; j++, l++)
+                        if (i < 4)
                         {
-                            xcelApp.Cells[1, l] = dataGridView1.Columns[j - 1].HeaderText;
-                        }
-
-                    }
-                }
-
-                int p = 0;
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    for (int j = 0; j < col + dataGridView1.Columns.Count; j++)
-                    {
-                        if (j < 3)
-                        {
-                            xcelApp.Cells[i + 2, j + 1] = dataGridView2.Rows[i].Cells[j].Value.ToString();
+                            xcelApp.Cells[1, i] = dataGridView2.Columns[i - 1].HeaderText;
                         }
                         else
                         {
-                            xcelApp.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[p].Value.ToString();
-                            p++;
-                        }
+                            for (int j = 1, l = 4; j < dataGridView1.Columns.Count + 1; j++, l++)
+                            {
+                                xcelApp.Cells[1, l] = dataGridView1.Columns[j - 1].HeaderText;
+                            }
 
+                        }
                     }
+
+                    int p = 0;
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < col + dataGridView1.Columns.Count; j++)
+                        {
+                            if (j < 3)
+                            {
+                                xcelApp.Cells[i + 2, j + 1] = dataGridView2.Rows[i].Cells[j].Value.ToString();
+                            }
+                            else
+                            {
+                                xcelApp.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[p].Value.ToString();
+                                p++;
+                            }
+
+                        }
+                    }
+                    xcelApp.Columns.AutoFit();
+                    xcelApp.Visible = true;
                 }
-                xcelApp.Columns.AutoFit();
-                xcelApp.Visible = true;
+                }
+            catch (Exception)
+            {
+
+                throw;
             }
+            
+            
         }
     }
 }
