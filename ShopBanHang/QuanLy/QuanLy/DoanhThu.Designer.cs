@@ -41,24 +41,19 @@ namespace QuanLy.QuanLy
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtgvphat = new System.Windows.Forms.DataGridView();
-            this.dtgvphieu = new System.Windows.Forms.DataGridView();
-            this.dtgvtg = new System.Windows.Forms.DataGridView();
-            this.dtgvoff = new System.Windows.Forms.DataGridView();
-            this.dtgvonline = new System.Windows.Forms.DataGridView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.dtgvchi = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtOnline = new System.Windows.Forms.TextBox();
+            this.txtOff = new System.Windows.Forms.TextBox();
+            this.txttg = new System.Windows.Forms.TextBox();
+            this.txtthang = new System.Windows.Forms.TextBox();
+            this.txtphat = new System.Windows.Forms.TextBox();
+            this.txtchi = new System.Windows.Forms.TextBox();
+            this.txtchenhlech = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvphat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvphieu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvtg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvoff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvonline)).BeginInit();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvchi)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -105,16 +100,16 @@ namespace QuanLy.QuanLy
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtphat);
+            this.groupBox2.Controls.Add(this.txtthang);
+            this.groupBox2.Controls.Add(this.txttg);
+            this.groupBox2.Controls.Add(this.txtOff);
+            this.groupBox2.Controls.Add(this.txtOnline);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.dtgvphat);
-            this.groupBox2.Controls.Add(this.dtgvphieu);
-            this.groupBox2.Controls.Add(this.dtgvtg);
-            this.groupBox2.Controls.Add(this.dtgvoff);
-            this.groupBox2.Controls.Add(this.dtgvonline);
             this.groupBox2.Location = new System.Drawing.Point(12, 220);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(362, 461);
@@ -167,59 +162,9 @@ namespace QuanLy.QuanLy
             this.label1.TabIndex = 5;
             this.label1.Text = "Đơn hàng online";
             // 
-            // dtgvphat
-            // 
-            this.dtgvphat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvphat.Location = new System.Drawing.Point(194, 381);
-            this.dtgvphat.Name = "dtgvphat";
-            this.dtgvphat.RowHeadersWidth = 51;
-            this.dtgvphat.RowTemplate.Height = 24;
-            this.dtgvphat.Size = new System.Drawing.Size(162, 74);
-            this.dtgvphat.TabIndex = 4;
-            // 
-            // dtgvphieu
-            // 
-            this.dtgvphieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvphieu.Location = new System.Drawing.Point(194, 300);
-            this.dtgvphieu.Name = "dtgvphieu";
-            this.dtgvphieu.RowHeadersWidth = 51;
-            this.dtgvphieu.RowTemplate.Height = 24;
-            this.dtgvphieu.Size = new System.Drawing.Size(162, 74);
-            this.dtgvphieu.TabIndex = 3;
-            // 
-            // dtgvtg
-            // 
-            this.dtgvtg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvtg.Location = new System.Drawing.Point(194, 212);
-            this.dtgvtg.Name = "dtgvtg";
-            this.dtgvtg.RowHeadersWidth = 51;
-            this.dtgvtg.RowTemplate.Height = 24;
-            this.dtgvtg.Size = new System.Drawing.Size(162, 74);
-            this.dtgvtg.TabIndex = 2;
-            // 
-            // dtgvoff
-            // 
-            this.dtgvoff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvoff.Location = new System.Drawing.Point(194, 127);
-            this.dtgvoff.Name = "dtgvoff";
-            this.dtgvoff.RowHeadersWidth = 51;
-            this.dtgvoff.RowTemplate.Height = 24;
-            this.dtgvoff.Size = new System.Drawing.Size(162, 74);
-            this.dtgvoff.TabIndex = 1;
-            // 
-            // dtgvonline
-            // 
-            this.dtgvonline.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvonline.Location = new System.Drawing.Point(194, 46);
-            this.dtgvonline.Name = "dtgvonline";
-            this.dtgvonline.RowHeadersWidth = 51;
-            this.dtgvonline.RowTemplate.Height = 24;
-            this.dtgvonline.Size = new System.Drawing.Size(162, 74);
-            this.dtgvonline.TabIndex = 0;
-            // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.dtgvchi);
+            this.groupBox7.Controls.Add(this.txtchi);
             this.groupBox7.Controls.Add(this.label6);
             this.groupBox7.Location = new System.Drawing.Point(391, 420);
             this.groupBox7.Name = "groupBox7";
@@ -227,16 +172,6 @@ namespace QuanLy.QuanLy
             this.groupBox7.TabIndex = 5;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Tổng chi";
-            // 
-            // dtgvchi
-            // 
-            this.dtgvchi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvchi.Location = new System.Drawing.Point(114, 30);
-            this.dtgvchi.Name = "dtgvchi";
-            this.dtgvchi.RowHeadersWidth = 51;
-            this.dtgvchi.RowTemplate.Height = 24;
-            this.dtgvchi.Size = new System.Drawing.Size(152, 69);
-            this.dtgvchi.TabIndex = 1;
             // 
             // label6
             // 
@@ -257,11 +192,67 @@ namespace QuanLy.QuanLy
             this.dateTimePicker1.Size = new System.Drawing.Size(213, 40);
             this.dateTimePicker1.TabIndex = 0;
             // 
+            // txtOnline
+            // 
+            this.txtOnline.Location = new System.Drawing.Point(194, 58);
+            this.txtOnline.Name = "txtOnline";
+            this.txtOnline.Size = new System.Drawing.Size(100, 23);
+            this.txtOnline.TabIndex = 8;
+            this.txtOnline.Text = "0";
+            // 
+            // txtOff
+            // 
+            this.txtOff.Location = new System.Drawing.Point(194, 139);
+            this.txtOff.Name = "txtOff";
+            this.txtOff.Size = new System.Drawing.Size(100, 23);
+            this.txtOff.TabIndex = 10;
+            this.txtOff.Text = "0";
+            // 
+            // txttg
+            // 
+            this.txttg.Location = new System.Drawing.Point(194, 227);
+            this.txttg.Name = "txttg";
+            this.txttg.Size = new System.Drawing.Size(100, 23);
+            this.txttg.TabIndex = 11;
+            this.txttg.Text = "0";
+            // 
+            // txtthang
+            // 
+            this.txtthang.Location = new System.Drawing.Point(194, 318);
+            this.txtthang.Name = "txtthang";
+            this.txtthang.Size = new System.Drawing.Size(100, 23);
+            this.txtthang.TabIndex = 12;
+            this.txtthang.Text = "0";
+            // 
+            // txtphat
+            // 
+            this.txtphat.Location = new System.Drawing.Point(194, 396);
+            this.txtphat.Name = "txtphat";
+            this.txtphat.Size = new System.Drawing.Size(100, 23);
+            this.txtphat.TabIndex = 13;
+            this.txtphat.Text = "0";
+            // 
+            // txtchi
+            // 
+            this.txtchi.Location = new System.Drawing.Point(125, 42);
+            this.txtchi.Name = "txtchi";
+            this.txtchi.Size = new System.Drawing.Size(100, 23);
+            this.txtchi.TabIndex = 1;
+            this.txtchi.Text = "0";
+            // 
+            // txtchenhlech
+            // 
+            this.txtchenhlech.Location = new System.Drawing.Point(544, 570);
+            this.txtchenhlech.Name = "txtchenhlech";
+            this.txtchenhlech.Size = new System.Drawing.Size(49, 23);
+            this.txtchenhlech.TabIndex = 8;
+            // 
             // DoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 728);
+            this.Controls.Add(this.txtchenhlech);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox2);
@@ -275,14 +266,8 @@ namespace QuanLy.QuanLy
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvphat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvphieu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvtg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvoff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvonline)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvchi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,14 +286,15 @@ namespace QuanLy.QuanLy
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dtgvphat;
-        private System.Windows.Forms.DataGridView dtgvphieu;
-        private System.Windows.Forms.DataGridView dtgvtg;
-        private System.Windows.Forms.DataGridView dtgvoff;
-        private System.Windows.Forms.DataGridView dtgvonline;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.DataGridView dtgvchi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtphat;
+        private System.Windows.Forms.TextBox txtthang;
+        private System.Windows.Forms.TextBox txttg;
+        private System.Windows.Forms.TextBox txtOff;
+        private System.Windows.Forms.TextBox txtOnline;
+        private System.Windows.Forms.TextBox txtchi;
+        private System.Windows.Forms.TextBox txtchenhlech;
     }
 }

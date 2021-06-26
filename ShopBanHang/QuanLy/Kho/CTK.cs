@@ -73,6 +73,7 @@ namespace QuanLy.Kho
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
+            dateTimePicker1.MinDate = DateTime.Now;
             if (lst.Count == 0)
                 MessageBox.Show("Vui lòng chọn sản phẩm muốn nhập thêm");
             else

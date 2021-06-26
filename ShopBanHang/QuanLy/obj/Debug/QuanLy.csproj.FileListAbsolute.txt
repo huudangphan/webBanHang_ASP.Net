@@ -200,3 +200,6 @@ D:\webBanHang_ASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.Kho.NhapSPMoi.resources
 D:\webBanHang_ASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.Kho.CTK.resources
 D:\webBanHang_ASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.QuanLy.DoanhThu.resources
 D:\webBanHang_ASP\ShopBanHang\QuanLy\obj\Debug\QuanLy.QuanLy.DoiMatKhau.resources
+D:\webBanHang_ASP\ShopBanHang\QuanLy\bin\Debug\DocumentFormat.OpenXml.dll
+D:\webBanHang_ASP\ShopBanHang\QuanLy\bin\Debug\System.IO.Packaging.dll
+D:\webBanHang_ASP\ShopBanHang\QuanLy\bin\Debug\DocumentFormat.OpenXml.xml

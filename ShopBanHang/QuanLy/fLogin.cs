@@ -84,14 +84,14 @@ namespace QuanLy
                 f.ShowDialog();
                 this.Show();
             }
-            else if (s.role == 2)
+             if (s.role == 2)
             {
                 QLSP f = new QLSP(s);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
             }
-            else if(s.role==3)
+             if(s.role==3)
             {
                 IndexBanHang f = new IndexBanHang(s);
                 this.Hide();

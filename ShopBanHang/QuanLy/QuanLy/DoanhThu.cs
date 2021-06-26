@@ -7,11 +7,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json.Linq;
+
 
 namespace QuanLy.QuanLy
 {
@@ -47,17 +50,29 @@ namespace QuanLy.QuanLy
             {
                 try
                 {
+                    //wc.Headers.Add("Authorization", "Bearer " + sess.token);
+                    string url = string.Format(baseURL);
+                    WebRequest request = WebRequest.Create(url);
+                    request.Headers.Add("Authorization", "Bearer " + sess.token);
+                    request.ContentType = "application/json";
+                    //request.Method = "GET";
+                    var response = request.GetResponse();
+                    using (var streamReader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        var obj = JsonConvert.DeserializeObject<JArray>(result).ToObject<List<JObject>>().FirstOrDefault();
+                        //txtOnline.Text = (string)obj["doanhThuOnline"];
+                        txtOnline.Text = String.Format("{0:0,0}", (string)obj["doanhThuOnline"]);
 
-                    wc.Headers.Add("Authorization", "Bearer " + sess.token);
-                    var json = wc.DownloadString(baseURL);
 
-                    var data = JsonConvert.DeserializeObject<List<DoanhThuOnline>>(json);
-
-                    dtgvonline.DataSource = data;
+                        //var data = (JObject)JsonConvert.DeserializeObject(result);
+                        ////JObject
+                        //txtOnline.Text = data["doanhThuOnline"].Value<int>().ToString();
+                    }
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString());
                 }
             }
         }
@@ -68,39 +83,61 @@ namespace QuanLy.QuanLy
             {
                 try
                 {
+                    //wc.Headers.Add("Authorization", "Bearer " + sess.token);
+                    string url = string.Format(baseURL);
+                    WebRequest request = WebRequest.Create(url);
+                    request.Headers.Add("Authorization", "Bearer " + sess.token);
+                    request.ContentType = "application/json";
+                    //request.Method = "GET";
+                    var response = request.GetResponse();
+                    using (var streamReader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        var obj = JsonConvert.DeserializeObject<JArray>(result).ToObject<List<JObject>>().FirstOrDefault();
+                        txtOff.Text = (string)obj["doanhthuoff"];
 
-                    wc.Headers.Add("Authorization", "Bearer " + sess.token);
-                    var json = wc.DownloadString(baseURL);
 
-                    var data = JsonConvert.DeserializeObject<List<DoanhThuOffline>>(json);
-
-                    dtgvoff.DataSource = data;
+                        //var data = (JObject)JsonConvert.DeserializeObject(result);
+                        ////JObject
+                        //txtOnline.Text = data["doanhThuOnline"].Value<int>().ToString();
+                    }
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString());
                 }
             }
         }
         public void loadDataTG(string month, string year)
         {
             //DoanhThuTG
-            string baseURL = "http://apidnh.somee.com/api/Admin/DoanhThuTG?nam=" + month + "&thang=" + year; 
+            string baseURL = "http://apidnh.somee.com/api/Admin/DoanhThuTG?nam=" + month + "&thang=" + year;
             using (WebClient wc = new WebClient())
             {
                 try
                 {
+                    //wc.Headers.Add("Authorization", "Bearer " + sess.token);
+                    string url = string.Format(baseURL);
+                    WebRequest request = WebRequest.Create(url);
+                    request.Headers.Add("Authorization", "Bearer " + sess.token);
+                    request.ContentType = "application/json";
+                    //request.Method = "GET";
+                    var response = request.GetResponse();
+                    using (var streamReader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        var obj = JsonConvert.DeserializeObject<JArray>(result).ToObject<List<JObject>>().FirstOrDefault();
+                        txttg.Text = (string)obj["doanhthuTG"];
 
-                    wc.Headers.Add("Authorization", "Bearer " + sess.token);
-                    var json = wc.DownloadString(baseURL);
 
-                    var data = JsonConvert.DeserializeObject<List<DoanhThuTG>>(json);
-
-                    dtgvtg.DataSource = data;
+                        //var data = (JObject)JsonConvert.DeserializeObject(result);
+                        ////JObject
+                        //txtOnline.Text = data["doanhThuOnline"].Value<int>().ToString();
+                    }
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString());
                 }
             }
         }
@@ -111,17 +148,28 @@ namespace QuanLy.QuanLy
             {
                 try
                 {
+                    //wc.Headers.Add("Authorization", "Bearer " + sess.token);
+                    string url = string.Format(baseURL);
+                    WebRequest request = WebRequest.Create(url);
+                    request.Headers.Add("Authorization", "Bearer " + sess.token);
+                    request.ContentType = "application/json";
+                    //request.Method = "GET";
+                    var response = request.GetResponse();
+                    using (var streamReader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        var obj = JsonConvert.DeserializeObject<JArray>(result).ToObject<List<JObject>>().FirstOrDefault();
+                        txtthang.Text = (string)obj["tientragop"];
 
-                    wc.Headers.Add("Authorization", "Bearer " + sess.token);
-                    var json = wc.DownloadString(baseURL);
 
-                    var data = JsonConvert.DeserializeObject<List<DoanThuPTG>>(json);
-
-                    dtgvphieu.DataSource = data;
+                        //var data = (JObject)JsonConvert.DeserializeObject(result);
+                        ////JObject
+                        //txtOnline.Text = data["doanhThuOnline"].Value<int>().ToString();
+                    }
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString());
                 }
             }
         }
@@ -132,17 +180,28 @@ namespace QuanLy.QuanLy
             {
                 try
                 {
+                    //wc.Headers.Add("Authorization", "Bearer " + sess.token);
+                    string url = string.Format(baseURL);
+                    WebRequest request = WebRequest.Create(url);
+                    request.Headers.Add("Authorization", "Bearer " + sess.token);
+                    request.ContentType = "application/json";
+                    //request.Method = "GET";
+                    var response = request.GetResponse();
+                    using (var streamReader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        var obj = JsonConvert.DeserializeObject<JArray>(result).ToObject<List<JObject>>().FirstOrDefault();
+                        txtphat.Text = (string)obj["tientragop"];
 
-                    wc.Headers.Add("Authorization", "Bearer " + sess.token);
-                    var json = wc.DownloadString(baseURL);
 
-                    var data = JsonConvert.DeserializeObject<List<DoanhThuPhat>>(json);
-
-                    dtgvphat.DataSource = data;
+                        //var data = (JObject)JsonConvert.DeserializeObject(result);
+                        ////JObject
+                        //txtOnline.Text = data["doanhThuOnline"].Value<int>().ToString();
+                    }
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString());
                 }
             }
         }
@@ -153,17 +212,28 @@ namespace QuanLy.QuanLy
             {
                 try
                 {
+                    //wc.Headers.Add("Authorization", "Bearer " + sess.token);
+                    string url = string.Format(baseURL);
+                    WebRequest request = WebRequest.Create(url);
+                    request.Headers.Add("Authorization", "Bearer " + sess.token);
+                    request.ContentType = "application/json";
+                    //request.Method = "GET";
+                    var response = request.GetResponse();
+                    using (var streamReader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        var obj = JsonConvert.DeserializeObject<JArray>(result).ToObject<List<JObject>>().FirstOrDefault();
+                        txtchi.Text = (string)obj["tongChi"];
 
-                    wc.Headers.Add("Authorization", "Bearer " + sess.token);
-                    var json = wc.DownloadString(baseURL);
 
-                    var data = JsonConvert.DeserializeObject<List<TongChi>>(json);
-
-                    dtgvchi.DataSource = data;
+                        //var data = (JObject)JsonConvert.DeserializeObject(result);
+                        ////JObject
+                        //txtOnline.Text = data["doanhThuOnline"].Value<int>().ToString();
+                    }
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString());
                 }
             }
         }
