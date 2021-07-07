@@ -24,7 +24,6 @@
             </div>}
     </div>
 </div>
-Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
 <style>
     .menu li {
         display: inline;
@@ -34,6 +33,7 @@ Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
         margin: 40px 0 30px;
         padding-bottom: 12px;
         color: black;
+ 
     }
 
         .container h1::before {
@@ -58,7 +58,9 @@ Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
 
 
 <div class="menu">
+    <div style="display: flex; justify-content:center">
     @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+        </div>
 </div>
 
 

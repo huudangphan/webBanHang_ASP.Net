@@ -38,7 +38,27 @@
                 <div class="col-md-8">
                     <div class="user-menu">
                         <ul>
-                            <li></li>
+
+                            <li>
+                                <div class="col-md-4">
+                                    <div class="input-group txtTimKiem" style="margin-left:40px;margin-top:40px">
+                                        @using (Html.BeginForm())
+                                        {
+                                            <table>
+                                                <tr>
+                                                    <td>@Html.TextBox("search")</td>
+                                                    <td><button type="submit" class="btn btn-secondary"><i class="fas fa-search fa-sm"></i></button></td>
+                                                </tr>
+                                            </table>
+
+
+
+                                        }
+
+
+                                    </div>
+                                </div>
+                            </li>
                             <li><a href="@Url.Action("GioHang","GioHang")"><i class="fa fa-gift"></i> Giỏ hàng (@ViewBag.TongSL)</a></li>
 
                             <li>
@@ -72,27 +92,6 @@
                                 }
 
                             </li>
-                            <li>
-                                <div class="col-md-4">
-                                    <div class="input-group txtTimKiem" style="margin-left:40px;margin-top:40px">
-                                        @using (Html.BeginForm())
-                                        {
-                                            <table>
-                                                <tr>
-                                                    <td>@Html.TextBox("search")</td>
-                                                    <td><button type="submit" class="btn btn-secondary"><i class="fas fa-search fa-sm"></i></button></td>
-                                                </tr>
-                                            </table>
-
-
-
-                                        }
-
-
-                                    </div>
-                                </div>
-                            </li>
-
                         </ul>
                     </div>
                 </div>
@@ -104,14 +103,7 @@
     <!-- site branding area -->
     <div class="site-branding-area">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="logo">
-                        <h1><a href="@Url.Action("Index","Home")"><img src="~/Assit/css2/img/horizontal_on_white_by_logaster.png"></a></h1>
-                    </div>
-                </div>
-
-            </div>
+         
         </div>
     </div>
     <!-- End site branding area -->
