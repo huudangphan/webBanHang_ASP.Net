@@ -23,25 +23,7 @@ namespace ShopBanHang.Controllers
         {
             return View();
         }
-        //[HttpPost]
-        //public ActionResult DangKy(KhachHang kh)
-        //{
-        //    var check = db.KhachHangs.SingleOrDefault(c => c.taiKhoan == kh.taiKhoan);
-        //    if (check == null)
-        //    {
-
-
-        //        return View();
-        //    }
-
-        //    else
-        //    {
-        //        ViewBag.Error = "Tài khoản đã tồn tại";
-        //        return View();
-        //    }
-
-
-        //}
+       
 
         [HttpGet]
         public ActionResult DangKy2()
@@ -211,5 +193,11 @@ namespace ShopBanHang.Controllers
             var list = db.CTHDOnlines.Where(x => x.MaHD == madh).ToList();
             return View(list);
         }
+        public void Chon(int id)
+        {
+            user.id = id;
+        }
+
+
     }
 }

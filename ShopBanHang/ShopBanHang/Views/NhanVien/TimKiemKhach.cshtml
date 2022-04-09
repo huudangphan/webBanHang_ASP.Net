@@ -1,0 +1,73 @@
+﻿@model ShopBanHang.Models.KhachHang
+
+<div>
+
+    <hr />
+    @try
+    {
+        <dl class="dl-horizontal">
+
+            <dt>
+                Tên khách hàng
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tenKH)
+            </dd>
+
+            <dt>
+                Địa chỉ
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DiaChi)
+            </dd>
+
+            <dt>
+                Email
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+
+
+
+            <dt>
+                Số điện thoại
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.sodt)
+            </dd>
+            <dt>
+
+            </dt>
+            <dd>
+                <div class="row">
+                    <div class="col-md-2">
+                        <button class="btn btn-outline-danger">
+                            <a href="@Url.Action("Chon","NguoiDung",new { @id=Model.MaKH})">Chọn</a>
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-outline-danger"><a href=@Url.Action("DangKy2","NguoiDung")>Thêm khách hàng</a></button>
+
+                    </div>
+                </div>
+
+            </dd>
+
+        </dl>
+    }
+    catch (Exception)
+    {
+
+        <div>Vui lòng nhập số điện thoại của khách hàng</div>
+    }
+   
+
+</div>
+<p>
+    
+</p>

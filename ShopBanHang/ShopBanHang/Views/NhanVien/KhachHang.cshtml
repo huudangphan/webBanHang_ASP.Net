@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "KhachHang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-2">
+        <div class="input-group txtTimKiem" style="margin-left:40px;margin-top:40px">
+            @using (Html.BeginForm())
+            {
+                <table>
+                    <tr>
+                        <td>@Html.TextBox("search")</td>
+                        <td><button type="submit" class="btn btn-secondary"><i class="fas fa-search fa-sm"></i></button></td>
+                    </tr>
+                </table>
+
+            }
+
+
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    @{ Html.RenderAction("TimKiemKhach", "NhanVien");}
+</div>
+

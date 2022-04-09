@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<!--
+    ustora by freshdesignweb.com
+    Twitter: https://twitter.com/freshdesignweb
+    URL: https://www.freshdesignweb.com/ustora/
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DNH Shop</title>
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-a11y="true"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/Assit/css2/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Assit/css2/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+
+    <link href="~/Assit/css2/css/owl.carousel.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Assit/css2/style.css">
+    <link rel="stylesheet" href="~/Assit/css2/css/responsive.css">
+</head>
+<body>
+
+    <!-- header area -->
+    <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="user-menu">
+                        <ul>
+
+                            <li>
+                                <div class="col-md-4">
+                                    <div class="input-group txtTimKiem" style="margin-left:40px;margin-top:40px">
+                                        @using (Html.BeginForm())
+                                        {
+                                            <table>
+                                                <tr>
+                                                    <td>@Html.TextBox("search")</td>
+                                                    <td><button type="submit" class="btn btn-secondary"><i class="fas fa-search fa-sm"></i></button></td>
+                                                </tr>
+                                            </table>
+
+
+
+                                        }
+
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="@Url.Action("GioHang","GioHang")"><i class="fa fa-gift"></i> Giỏ hàng (@ViewBag.TongSL)</a></li>
+
+                            <li>
+                                @if (Session["tenKH"] != null)
+                                {
+
+                                    <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["tenKH"].ToString()</a>
+
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                         aria-labelledby="userDropdown">
+                                        <a class="dropdown-item" href="@Url.Action("HoSoNguoiDung","NguoiDung")">
+                                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Tài khoản
+                                        </a>
+                                        <a href="@Url.Action("LichSuDonHang","NguoiDung",new { @makh=Int32.Parse(Session["MaKH"].ToString())})">Lịch Sử đơn hàng</a>
+
+                                        <a href="@Url.Action("DangXuat","NguoiDung" )" class="dropdown-item"> <i class="fas fa-sign-in-alt"></i>Đăng xuất</a>
+                                        <div class="dropdown-divider"></div>
+
+                                    </div>
+                                }
+                                else
+                                {
+                                    <a class="nav-link dropdown-toggle" href="@Url.Action("DangNhap","NguoiDung")">
+
+                                        <span class="dangkydangnhap ">Đăng ký/Đăng nhập  </span>
+
+
+                                    </a>
+                                }
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End header area -->
+    <!-- site branding area -->
+    <div class="site-branding-area">
+        <div class="container">
+         
+        </div>
+    </div>
+    <!-- End site branding area -->
+    <!-- main menu  -->
+    <div class="mainmenu-area">
+        <div class="row" style="margin-left: 2%;">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li><a href="@Url.Action("AppleLaptop","Home")">Sản phẩm</a></li>
+                    <li><a href="@Url.Action("DellLaptop","Home")">Đơn hàng trực tuyến</a></li>
+                    <li><a href="@Url.Action("HPLaptop","Home")">Đơn hàng trả góp</a></li>
+                    <li><a href="@Url.Action("AsusLaptop","Home")">Đơn hàng</a></li>
+                    <li><a href="@Url.Action("AsusLaptop","Home")">Nhân sự</a></li>
+                    <li><a href="@Url.Action("AsusLaptop","Home")">Báo cáo</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End mainmenu area -->
+    <!-- slider area -->
+    <!-- End slider area -->
+    <!-- promo area -->
+    <!-- End promo area -->
+    <!-- main content area(product hot) -->
+    <div class="maincontent-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="latest-product">
+
+                        <div class="product-carousel">
+
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End main content area -->
+    <!-- brand area -->
+    <!-- End brands area -->
+    <!-- product widget area -->
+    <div class="product-widget-area">
+        @{ Html.RenderAction("timKiem", "NhanVien");}
+    </div>
+    <!-- End product widget area -->
+
+    <div class="footer-top-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-about-us">
+                        <h2>D<span>NH</span></h2>
+                        <p>Đến với chúng tôi bạn sẽ có những trải nghiệm tốt nhất về mọi mặt, chúng tôi mang đến cho bạn những sản phẩm mới nhất và chính hãng, cùng những chính sách ưu đãi lớn, ... hãy trải nghiệm một cách tốt nhất có thể tại Vertu. chuỗi cửa hàng kinh doanh bán lẻ tốt nhất ở thành phố Hồ Chí Minh</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Các Chi Nhánh</h2>
+                        <ul>
+                            <li>Chi Nhánh 1: 456 Sư Vạn Hạnh,p.12,q.10,tp.HCM</li>
+                            <li>Chi Nhánh 2: 137 Nguyễn Đình Chiểu,p.Bến Nghé,q.1,tp.HCM</li>
+                            <li>Chi Nhánh 3: 255 Xô Viết Nghệ Tĩnh,p.6,q.Phú nhuận,tp.HCM</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Các Loại Mặt Hàng</h2>
+                        <ul>
+                            <li>Điện thoại di động</li>
+                            <li>LapTop</li>
+                            <li>Đồng hồ</li>
+                            <li>Camera</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Thông báo mới</h2>
+                        <p></p>
+                        <div class="newsletter-form">
+                            <form action="#">
+                                <p>Đăng ký tài khoản thành viên với vertu sẽ giúp bạn được đãi ngộ chu đáo và tận tình nhất, bạn sẽ có những trải nghiệm tuyệt vời nhất khi chọn và mua sắm tại Vertu.Liên hệ biết thêm chi tiết về chúng tôi.</p>
+                                <h3><span>Hotline : 0706883095</span></h3>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="copyright">
+                        <p>&copy; 2021 uCommerce. All Rights Reserved. </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="footer-card-icon">
+                        <i class="fa fa-cc-discover"></i>
+                        <i class="fa fa-cc-mastercard"></i>
+                        <i class="fa fa-cc-paypal"></i>
+                        <i class="fa fa-cc-visa"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Latest jQuery form server -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+
+    <!-- Bootstrap JS form CDN -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <!-- jQuery sticky menu -->
+    <script src="~/Assit/css2/js/owl.carousel.min.js"></script>
+    <script src="~/Assit/css2/js/jquery.sticky.js"></script>
+
+    <!-- jQuery easing -->
+    <script src="~/Assit/css2/js/jquery.easing.1.3.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
+
+    <!-- Slider -->
+    <script type="text/javascript" src="~/Assit/css2/js/bxslider.min.js"></script>
+    <script type="text/javascript" src="~/Assit/css2/js/script.slider.js"></script>
+
+
+
+
+
+    <script src="~/Assit/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Assit/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/Assit/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/Assit/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/Assit/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Assit/js/demo/chart-area-demo.js"></script>
+    <script src="~/Assit/js/demo/chart-pie-demo.js"></script>
+</body>
+</html>
