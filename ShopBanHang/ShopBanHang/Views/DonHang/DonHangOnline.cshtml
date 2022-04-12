@@ -1,0 +1,88 @@
+﻿@model IEnumerable<ShopBanHang.Models.HDOnline>
+
+@{
+    ViewBag.Title = "DonHangOnline";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+
+    <table>
+        <tr>
+            <td>From date &nbsp;</td> 
+            <td><input name="fromDate" type="date" /> &nbsp;</td>
+            <td>ToDate date &nbsp;</td>
+            <td><input name="toDate" type="date" /> &nbsp;</td>
+            <td> <input type="submit" name="name" value="Tìm kiếm" /></td>
+        </tr>
+        
+    </table>
+
+
+}
+<br/> <br />
+<table class="table">
+    <tr>
+                
+        <th>
+            Ngày đặt
+        </th>
+        <th>
+            Ngày giao
+        </th>
+        <th>
+            Đã giao hàng
+        </th>
+        <th></th>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            
+            <td>
+                @if (item.NgayDat.ToString() == "1900-01-01")
+                {
+                    <p> </p>
+                }
+
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.NgayDat)
+                }
+
+
+            </td>
+            <td>
+                @if (item.NgayGiao.ToString() == "1900-01-01")
+                {
+                    <p></p>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.NgayGiao)
+                }
+
+            </td>
+            <td>
+                @if (item.TinhTrang == false)
+                {
+                    <input type="checkbox" name="name" value="false" disabled="disabled" />
+                }
+                else
+                {
+                    <input type="checkbox" name="name" value="true" checked="checked" disabled="disabled" />
+                }
+               
+            </td>
+            <td>
+                <a href="#">Chi tiết</a>
+            </td>
+            
+        </tr>
+    }
+
+</table>
