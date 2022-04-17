@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "TaoDonHangOffline";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        @{Html.RenderAction("KhachMuaHang", "DonHang");}
+    </div>
+    <div class="col-md-6">
+        @{ Html.RenderAction("PartialGioHang","GioHang")}
+    </div>
+</div>
+
