@@ -1,0 +1,60 @@
+﻿@using ShopBanHang.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<table border="1px">
+    <tr>
+        <td>Mã sản phẩm</td>
+
+        <td>Tên sản phẩm</td>
+
+        <td>Ảnh </td>
+
+        <td>Đơn giá</td>
+
+        <td>Số lượng</td>
+
+
+        <td>Thành tiền</td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.maSP</td>
+
+            <td>@item.tenSP</td>
+
+            <td><img src="@Url.Content("~/Assit/img/"+item.hinhAnh)" alt="Alternate Text" width="50" height="50" /></td>
+
+            <td>@String.Format("{0:0,0}", item.donGia.ToString()) VNĐ </td>
+
+            <td>@item.soLuong</td>
+
+
+            <td>@item.thanhTien </td>
+            <td>@Html.ActionLink("Xóa", "XoaGioHang", new { masp = item.maSP })</td>
+
+
+        </tr>
+
+    }
+    <tr>
+        <td>Tổng tiền</td>
+        <td colspan="5" style="text-align:right">@ViewBag.tongtien</td>
+    </tr>
+    <tr>
+
+        <td colspan="6" style="text-align:right">@Html.ActionLink("Sửa", "SuaGioHang")</td>
+    </tr>
+    <tr>
+        <td colspan="6" style="text-align:right">            
+            <button><a href="@Url.Action("TaoDonHangOffline","DonHang")"> Mua hàng</a> </button>
+            <button><a>Mua trả góp</a></button>
+        </td>
+    </tr>
+</table>
+

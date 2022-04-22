@@ -24,5 +24,15 @@ namespace ShopBanHang.Controllers
             }
             return View(sp);
         }
+        public ViewResult XemSP(int masp=0)
+        {
+            SanPham sp = db.SanPhams.SingleOrDefault(n => n.maSP == masp);
+            if (sp == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(sp);
+        }
     }
 }

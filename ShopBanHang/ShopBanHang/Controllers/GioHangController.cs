@@ -106,6 +106,15 @@ namespace ShopBanHang.Controllers
             ViewBag.TongTien = TongTien();
             return View(listGioHang);
         }
+        public ActionResult GioHangAdmin()
+        {
+            if (Session["GioHang"] == null)
+                return RedirectToAction("SanPham", "NhanVien");
+            List<GioHang> listGioHang = getGioHang();
+            ViewBag.TongSL = TongSoLuong();
+            ViewBag.TongTien = TongTien();
+            return View(listGioHang);
+        }
         public PartialViewResult PartialGioHang()
         {
             
