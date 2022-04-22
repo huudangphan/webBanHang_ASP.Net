@@ -3,13 +3,20 @@
     ViewBag.Title = "TaoDonHangOffline";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
+@ViewBag.result
 <div class="row">
     <div class="col-md-6">
         @{Html.RenderAction("KhachMuaHang", "DonHang");}
     </div>
+    @*<div class="col-md-6">
+        @{ Html.RenderAction("PartialGioHang", "GioHang")}
+    </div>*@
+</div>
+<div class="row">
     <div class="col-md-6">
-        @{ Html.RenderAction("PartialGioHang","GioHang")}
+        @using (Html.BeginForm("DatHang", "GioHang"))
+        {
+            <input type="submit" value="Mua hàng" />
+        }
     </div>
 </div>
-

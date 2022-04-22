@@ -196,6 +196,7 @@ namespace ShopBanHang.Controllers
         public void Chon(int id)
         {
             user.id = id;
+            RedirectToAction("KhachHang", "NhanVien");
         }
 
 
