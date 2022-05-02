@@ -163,8 +163,12 @@ namespace ShopBanHang.Controllers
             List<GioHang> listGioHang = getGioHang();
 
             return View(listGioHang);
-        }   
-                
+        }
+        
+       
+       
+
+       
 
         [HttpPost]
         public ActionResult DatHang()
@@ -210,7 +214,7 @@ namespace ShopBanHang.Controllers
         }
         public ActionResult PaymentWithPaypal(string Cancel = null)
         {
-
+            
             //getting the apiContext  
             APIContext apiContext = PaypalConfiguration.GetAPIContext();
             try
@@ -265,7 +269,7 @@ namespace ShopBanHang.Controllers
                 return View("FailureView");
             }
             //on successful payment, show success page to user.  
-            return View("SuccessView");
+            return View("SuccessView","GioHang");
         }
         private PayPal.Api.Payment payment;
         private Payment ExecutePayment(APIContext apiContext, string payerId, string paymentId)
@@ -282,23 +286,34 @@ namespace ShopBanHang.Controllers
         }
         private Payment CreatePayment(APIContext apiContext, string redirectUrl)
         {
-
+            var lstGioHang = getGioHang();
             //create itemlist and add item objects to it  
             var itemList = new ItemList()
             {
                 items = new List<Item>()
             };
-
             //Adding Item Details like name, currency, price etc  
-            
-            //itemList.items.Add(new Item()
+            //foreach (var item in lstGioHang)
             //{
-            //    name = "Item Name comes here",
-            //    currency = "USD",
-            //    price = "1",
-            //    quantity = "1",
-            //    sku = "sku"
-            //});
+            //    string price = item.donGia.ToString();
+            //    string quantity = item.soLuong.ToString();
+            //    itemList.items.Add(new Item()
+            //    {
+            //        name = item.tenSP,
+            //        currency = "USD",
+            //        price = price,
+            //        quantity = quantity,
+            //        sku="sku"
+            //    });
+            //}
+            itemList.items.Add(new Item()
+            {
+                name = "Item Name comes here",
+                currency = "USD",
+                price = "1",
+                quantity = "1",
+                sku = "sku"
+            });
             var payer = new Payer()
             {
                 payment_method = "paypal"
@@ -317,19 +332,18 @@ namespace ShopBanHang.Controllers
                 subtotal = "1"
             };
             //Final amount with details  
-            var amount = new Amount()
-            {
-                currency = "USD",
-                total = TongTien().ToString() // Total must be equal to sum of tax, shipping and subtotal.  33
-
-
-            };
             //var amount = new Amount()
             //{
             //    currency = "USD",
-            //    total = "3", // Total must be equal to sum of tax, shipping and subtotal.  
+            //    total = TongTien().ToString(), // Total must be equal to sum of tax, shipping and subtotal.  33
             //    details = details
             //};
+            var amount = new Amount()
+            {
+                currency = "USD",
+                total = "3", // Total must be equal to sum of tax, shipping and subtotal.  
+                details = details
+            };
             var transactionList = new List<Transaction>();
             // Adding description about the transaction  
             transactionList.Add(new Transaction()
@@ -337,7 +351,7 @@ namespace ShopBanHang.Controllers
                 description = "Transaction description",
                 invoice_number = "your generated invoice number", //Generate an Invoice No  
                 amount = amount,
-                item_list = null
+                item_list = itemList
             });
             this.payment = new Payment()
             {

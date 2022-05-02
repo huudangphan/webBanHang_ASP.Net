@@ -193,10 +193,10 @@ namespace ShopBanHang.Controllers
             var list = db.CTHDOnlines.Where(x => x.MaHD == madh).ToList();
             return View(list);
         }
-        public void Chon(int id)
+        public ActionResult Chon(int id)
         {
             user.id = id;
-            RedirectToAction("KhachHang", "NhanVien");
+            return RedirectToAction("KhachHang", "NhanVien");
         }
 
 
