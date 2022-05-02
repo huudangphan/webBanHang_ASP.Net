@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using ShopBanHang.Models;
 using PagedList;
 using PagedList.Mvc;
+using PayPal.Api;
 
 namespace ShopBanHang.Controllers
 {
@@ -183,6 +184,6 @@ namespace ShopBanHang.Controllers
             var kq = db.SanPhams.Where(x=>x.tenSP.Contains(tukhoa)).ToList();
             return View(kq);
         }
-
+      
     }
 }

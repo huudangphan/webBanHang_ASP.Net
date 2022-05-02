@@ -124,8 +124,23 @@ namespace ShopBanHang.Controllers
                 HDOffLine hd = new HDOffLine();
                 hd.MaKH = user.id;
                 hd.NgayMua = DateTime.Now;
-                db.HDOffLines.Add(hd);
+                db.HDOffLines.Add(hd);              
+                List<GioHang> gioHang = getGioHang();
+                foreach (var item in gioHang)
+                {
+                    CTHDOff ct = new CTHDOff();
+                    ct.MaHD = hd.MaHD;
+                    ct.MaSP = item.maSP;
+                    ct.SL = item.soLuong;
+                    ct.MaKho = 3;
+                    ct.MaSP = item.maSP;
+                    ct.GiaBan = item.donGia;
+                    db.CTHDOffs.Add(ct);
+                }
                 db.SaveChanges();
+                user.id = -1;
+                Session["GioHang"] = null;
+                ViewBag.result = "Mua hàng thành công";
                 return View();
             }
             catch (Exception ex)
@@ -135,9 +150,26 @@ namespace ShopBanHang.Controllers
             }                    
                       
         }
+        
+        public List<GioHang> getGioHang()
+        {
+            List<GioHang> listGioHang = Session["GioHang"] as List<GioHang>;
+            if (listGioHang == null)
+            {
+                listGioHang = new List<GioHang>();
+                Session["GioHang"] = listGioHang;
+            }// nếu chưa có giỏ hàng
+            return listGioHang;
+        }
         [HttpGet]
         public ActionResult TaoDonHangTraGop()
         {
+
+            if (string.IsNullOrEmpty(user.id.ToString()) || Session["GioHang"] == null)
+            {
+                ViewBag.result = "Vui lòng chọn khách hàng và sản phẩm";
+                return View();
+            }
             return View();
         }
         [HttpPost]
