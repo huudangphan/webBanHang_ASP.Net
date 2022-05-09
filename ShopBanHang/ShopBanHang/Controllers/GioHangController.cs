@@ -15,7 +15,7 @@ namespace ShopBanHang.Controllers
     public class GioHangController : Controller
     {
 
-        ShopDoCongNgheEntities1 db = new ShopDoCongNgheEntities1();
+        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
 
         //databaseEntities db = new databaseEntities();
 
@@ -264,6 +264,7 @@ namespace ShopBanHang.Controllers
                 string error = ex.ToString();
                 return View("FailureView");
             }
+            DatHang();
             //on successful payment, show success page to user.  
             return View("SuccessView");
         }

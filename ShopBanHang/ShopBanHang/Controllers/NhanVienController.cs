@@ -9,7 +9,7 @@ namespace ShopBanHang.Controllers
     public class NhanVienController : Controller
     {
         // GET: NhanVien
-        ShopDoCongNgheEntities1 db = new ShopDoCongNgheEntities1();
+        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
         public ActionResult Index()
         {
             return View();

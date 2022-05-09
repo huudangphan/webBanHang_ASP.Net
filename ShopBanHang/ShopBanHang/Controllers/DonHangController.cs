@@ -8,7 +8,7 @@ namespace ShopBanHang.Controllers
 {
     public class DonHangController : Controller
     {
-        ShopDoCongNgheEntities1 db = new ShopDoCongNgheEntities1();
+        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
         // GET: DonHang
         public ActionResult Index()
         {
