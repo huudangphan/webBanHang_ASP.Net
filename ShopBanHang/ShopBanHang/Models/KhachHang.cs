@@ -19,7 +19,6 @@ namespace ShopBanHang.Models
         {
             this.HDOffLines = new HashSet<HDOffLine>();
             this.HDOnlines = new HashSet<HDOnline>();
-            this.HDTraGops = new HashSet<HDTraGop>();
         }
     
         public int MaKH { get; set; }
@@ -35,7 +34,5 @@ namespace ShopBanHang.Models
         public virtual ICollection<HDOffLine> HDOffLines { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HDOnline> HDOnlines { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HDTraGop> HDTraGops { get; set; }
     }
 }
