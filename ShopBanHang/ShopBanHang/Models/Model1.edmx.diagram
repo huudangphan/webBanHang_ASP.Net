@@ -4,32 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="14d60f4a720a4571aab96d4aa6b88fc4" Name="Diagram1">
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.Admin" Width="1.5" PointX="2.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTHDOff" Width="1.5" PointX="5.25" PointY="21.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTHDOnline" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTHDTG" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTPN" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTTonKho" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.Hang" Width="1.5" PointX="1.5" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.HDNhapSP" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.HDOffLine" Width="1.5" PointX="3" PointY="21.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.HDOnline" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.HDTraGop" Width="1.5" PointX="6" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.KhachHang" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.Kho" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.Loai" Width="1.5" PointX="1.5" PointY="14" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.LoaiAdmin" Width="1.5" PointX="7.75" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.Phat" Width="1.5" PointX="6" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.PhieuTraGop" Width="1.5" PointX="8.25" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.SanPham" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopDoCongNgheModel.sysdiagram" Width="1.5" PointX="9.75" PointY="9.25" IsExpanded="true" />
+      <Diagram DiagramId="96fc48b1b97b49949b0269c294305fd3" Name="Diagram1">
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.Admin" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTHDOff" Width="1.5" PointX="10.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTHDOnline" Width="1.5" PointX="10.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTPN" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.CTTonKho" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.Hang" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.HDNhapSP" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.HDOffLine" Width="1.5" PointX="8.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.HDOnline" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.KhachHang" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.Kho" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.Loai" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.LoaiAdmin" Width="1.5" PointX="2.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDoCongNgheModel.SanPham" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
         <AssociationConnector Association="ShopDoCongNgheModel.FK_CTHDOff_HDOffLine" ManuallyRouted="false" />
         <AssociationConnector Association="ShopDoCongNgheModel.FK_CTHDOnline_CTTonKho" ManuallyRouted="false" />
         <AssociationConnector Association="ShopDoCongNgheModel.FK_CTHDOnline_CTTonKho1" ManuallyRouted="false" />
         <AssociationConnector Association="ShopDoCongNgheModel.FK_CTHDOnline_HDOnline" ManuallyRouted="false" />
-        <AssociationConnector Association="ShopDoCongNgheModel.FK_CTHDTG_CTTonKho" ManuallyRouted="false" />
-        <AssociationConnector Association="ShopDoCongNgheModel.FK_CTHDTG_HDTraGop" ManuallyRouted="false" />
         <AssociationConnector Association="ShopDoCongNgheModel.FK_HDNhapSP2" ManuallyRouted="false" />
         <AssociationConnector Association="ShopDoCongNgheModel.FK_SanPham" ManuallyRouted="false" />
         <AssociationConnector Association="ShopDoCongNgheModel.FK_CTTonKho" ManuallyRouted="false" />
@@ -38,10 +31,7 @@
         <AssociationConnector Association="ShopDoCongNgheModel.FK_HDNhapSP" ManuallyRouted="false" />
         <AssociationConnector Association="ShopDoCongNgheModel.FK_HDOffLine" ManuallyRouted="false" />
         <AssociationConnector Association="ShopDoCongNgheModel.FK_HDOnline" ManuallyRouted="false" />
-        <AssociationConnector Association="ShopDoCongNgheModel.FK_HDTraGop_KhachHang" ManuallyRouted="false" />
-        <AssociationConnector Association="ShopDoCongNgheModel.FK_PhieuTraGop_HDTraGop" ManuallyRouted="false" />
         <AssociationConnector Association="ShopDoCongNgheModel.FK_Loai" ManuallyRouted="false" />
-        <AssociationConnector Association="ShopDoCongNgheModel.FK_PhieuTraGop_Phat" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
