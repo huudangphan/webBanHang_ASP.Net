@@ -2,7 +2,35 @@
 @{
     ViewBag.Title = "TaoDonHangTraGop";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
 
-<h2>TaoDonHangTraGop</h2>
+
+}
+@ViewBag.result
+@if (ViewBag.result == "Vui lòng chọn khách hàng và sản phẩm")
+{
+
+}
+else
+{
+    <div class="row">
+        <div class="col-md-6">
+            @{Html.RenderAction("KhachMuaHang", "DonHang");}
+        </div>
+        <div class="col-md-6">
+            @{Html.RenderAction("PartialGioHang", "GioHang");}
+        </div>
+    </div>
+    using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <td>Tiền cọc</td>              
+                <td><input type="number" name="tienCoc" id="tienCoc" /> </td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-success">Xác nhận</button>
+
+
+    }
+}
 
