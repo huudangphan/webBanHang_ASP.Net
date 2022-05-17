@@ -13,7 +13,7 @@
         <h2 style="color:orange">Xem chi tiết sản phẩm : @Model.tenSP</h2>
 
         <p style="font-size:20px;color:orangered;">Tên sản phẩm: @Model.tenSP</p>
-        <p style="font-size:20px;color:palevioletred;">Giá:@String.Format("{0:0,0}", Model.giaSP) VNĐ </p>
+        <p style="font-size:20px;color:palevioletred;">Giá:@String.Format("{0:0,0}", Model.giaSP) USD </p>
         <div style="width: 85%;border: 0.5px solid #d3cdcd;padding-left:10px;padding-top:10px;">@Model.MoTa</div>
         <div style="margin-top:15px;">
             @using (Html.BeginForm("ThemGioHang", "GioHang", new { @masp = Model.maSP, @url = Request.Url.ToString() }))
