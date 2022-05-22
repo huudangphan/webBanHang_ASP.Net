@@ -10,9 +10,8 @@ namespace ShopBanHang.Controllers
 {
     public class NguoiDungController : Controller
     {
-        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
-      
-        //databaseEntities db = new databaseEntities();
+        ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();     
+        
         // GET: NguoiDung
         public ActionResult Index()
         {
@@ -60,28 +59,7 @@ namespace ShopBanHang.Controllers
                 ViewBag.thongBao = "Tài khoản bị trùng";
                 return View();
             }
-
-            //if (check == null && kh.password == kh.confirmPassword)
-            //{
-            //    KhachHang khach = new KhachHang();
-            //    khach.tenKH = kh.tenKH;
-            //    khach.DiaChi = kh.diaChi;
-            //    khach.email = kh.email;
-            //    khach.SDT = kh.sdt;
-
-            //    khach.taiKhoan = kh.username;
-            //    khach.matKhau = kh.password;
-            //    db.KhachHangs.Add(khach);
-            //    db.SaveChanges();
-            //    return RedirectToAction("DangNhap", "NguoiDung");
-            //}
-
-            //else
-            //{
-
-            //    return View();
-            //}
-
+                            
 
         }
         [HttpGet]
@@ -101,7 +79,8 @@ namespace ShopBanHang.Controllers
             {
                 var data = db.KhachHangs.Where(c => c.taiKhoan.Equals(kh.taiKhoan) && c.matKhau.Equals(kh.matKhau)).ToList();
                 var khachhang = db.KhachHangs.SingleOrDefault(n => n.taiKhoan == kh.taiKhoan && n.matKhau == kh.matKhau);
-
+                var data2 = db.Admins.Where(x => x.userAdmin.Equals(kh.taiKhoan) && x.passAdmin.Equals(kh.matKhau)).ToList();
+                var nhanvien = db.Admins.SingleOrDefault(n => n.userAdmin == kh.taiKhoan && n.passAdmin == kh.matKhau);
                 if (data.Count() > 0)
                 {
                     Session["taiKhoan"] = khachhang;
@@ -110,10 +89,19 @@ namespace ShopBanHang.Controllers
                     Session["MaKH"] = data.FirstOrDefault().MaKH;
                     Session["matKhau"] = data.FirstOrDefault().matKhau;
                     Session["diaChi"] = data.FirstOrDefault().DiaChi;
-
+                   
                     Session["email"] = data.FirstOrDefault().email;
                     Session["sdt"] = data.FirstOrDefault().sodt;
                     return RedirectToAction("Index", "Home");
+                }
+                if (data2.Count() > 0)
+                {
+                    Session["taiKhoan"] = nhanvien;
+                    Session["tk"] = data2.FirstOrDefault().userAdmin;
+                    Session["tenAdmin"] = data2.FirstOrDefault().tenAdmin;
+                    Session["MaKH"] = data2.FirstOrDefault().userAdmin;
+                    Session["matKhau"] = data2.FirstOrDefault().passAdmin;
+                    return RedirectToAction("SanPham", "NhanVien");
                 }
                 else
                 {

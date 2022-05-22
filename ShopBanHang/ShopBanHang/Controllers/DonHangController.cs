@@ -50,6 +50,7 @@ namespace ShopBanHang.Controllers
             var result = db.CTHDOnlines.Where(x => x.MaHD == id).FirstOrDefault();
             var temp = db.HDOnlines.Where(x => x.MaHD == id).FirstOrDefault();
             GioHang.makh = Int32.Parse(temp.MaKH.ToString());
+            GioHang.madh = id;
             return View(result);
         }
         public PartialViewResult KhachHang()
@@ -57,9 +58,38 @@ namespace ShopBanHang.Controllers
             var result = db.KhachHangs.Where(x => x.MaKH == GioHang.makh).FirstOrDefault();
             return PartialView(result);
         }
-        public PartialViewResult ChiTietSanPham(int id)
+        public PartialViewResult ChiTietSanPham()
         {
-            return PartialView(db.SanPhams.Where(x => x.maSP == id).FirstOrDefault());
+            var rusult = ((from a in db.SanPhams
+                         join b in db.CTHDOnlines
+                         on a.maSP equals b.MaSP
+                         where b.MaHD==GioHang.madh
+                          select new CTSP
+                          {
+                              tensp = a.tenSP,
+                              anh = a.anh,
+                              giasp = (double)a.giaSP
+
+
+                          }).ToList());
+            return PartialView(rusult);
+        }
+        public PartialViewResult ChiTietSanPham2()
+        {
+            var result = ((from a in db.SanPhams
+                          join b in db.CTHDOffs
+                          on a.maSP equals b.MaSP
+                          where b.MaHD == GioHang.madh
+                          select new CTSP
+                          {
+                              tensp=a.tenSP,
+                              anh=a.anh,
+                              giasp= (double)a.giaSP
+                              
+
+                          }).ToList());
+           
+            return PartialView(result);
         }
         public ActionResult GuiHang(int id)
         {
@@ -177,6 +207,45 @@ namespace ShopBanHang.Controllers
         {
             return View();
 
+        }
+        [HttpGet]
+        public ActionResult DonHangOffline()
+        {
+            try
+            {
+                return View(db.HDOffLines.Where(x=>x.MaHD==-1).ToList());
+            }
+            catch (Exception ex)
+            {
+
+                return View();
+            }
+
+        }
+        [HttpPost]
+        public ActionResult DonHangOffline(FormCollection f)
+        {
+            try
+            {
+                DateTime fromDate = DateTime.Parse(f["fromDate"]);
+                DateTime toDate = DateTime.Parse(f["toDate"]);
+                var result = db.HDOffLines.Where(x => x.NgayMua >= fromDate && x.NgayMua <= toDate).ToList();
+                return View(result);
+            }
+            catch (Exception)
+            {
+
+                return View();
+            }
+
+        }
+        public ActionResult ChiTietDonHangOffline(int id)
+        {
+            var result = db.CTHDOffs.Where(x => x.MaHD == id).FirstOrDefault();
+            var temp = db.HDOffLines.Where(x => x.MaHD == id).FirstOrDefault();
+            GioHang.makh = Int32.Parse(temp.MaKH.ToString());
+            GioHang.madh = id;
+            return View(result);
         }
     }
 }

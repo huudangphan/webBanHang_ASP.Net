@@ -167,7 +167,7 @@ namespace ShopBanHang.Controllers
                 
 
         [HttpPost]
-        public ActionResult DatHang()
+        public ActionResult DatHang(int type=0)
         {
             // Kiểm tra đăng nhập
             if (Session["taiKhoan"] == null || Session["taiKhoan"].ToString() == "")
@@ -185,7 +185,15 @@ namespace ShopBanHang.Controllers
             KhachHang kh = (KhachHang)Session["taiKhoan"];
             hd.MaKH = kh.MaKH;
             hd.NgayDat = DateTime.Now;
-            hd.TinhTrang = false;
+            if(type==1)
+            {
+                hd.TinhTrang = true;
+            }
+            else
+            {
+                hd.TinhTrang = false;
+            }
+          
             
             db.HDOnlines.Add(hd);
             foreach (var item in gioHang)
@@ -264,7 +272,7 @@ namespace ShopBanHang.Controllers
                 string error = ex.ToString();
                 return View("FailureView");
             }
-            DatHang();
+            DatHang(1);
             //on successful payment, show success page to user.  
             return View("SuccessView");
         }
