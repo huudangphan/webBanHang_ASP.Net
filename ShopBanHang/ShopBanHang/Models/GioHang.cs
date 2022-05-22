@@ -9,7 +9,7 @@ namespace ShopBanHang.Models
     {
         ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
         public static int makh { get; set; }
-
+        public static int madh { get; set; }
         //databaseEntities db = new databaseEntities();
         public int maSP { get; set; }
         public string tenSP { get; set; }
