@@ -62,19 +62,19 @@
                             <li><a href="@Url.Action("GioHangAdmin","GioHang")"><i class="fa fa-gift"></i> Giỏ hàng (@ViewBag.TongSL)</a></li>
 
                             <li>
-                                @if (Session["tenKH"] != null)
+                                @if (Session["tenAdmin"] != null)
                                 {
 
                                     <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button"
-                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Session["tenKH"].ToString()</a>
-
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                                       //@Session["tenKH"].ToString()
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                          aria-labelledby="userDropdown">
                                         <a class="dropdown-item" href="@Url.Action("HoSoNguoiDung","NguoiDung")">
                                             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Tài khoản
                                         </a>
-                                        <a href="@Url.Action("LichSuDonHang","NguoiDung",new { @makh=Int32.Parse(Session["MaKH"].ToString())})">Lịch Sử đơn hàng</a>
+                                        @*<a href="@Url.Action("LichSuDonHang","NguoiDung",new { @makh=Int32.Parse(Session["MaKH"].ToString())})">Lịch Sử đơn hàng</a>*@
 
                                         <a href="@Url.Action("DangXuat","NguoiDung" )" class="dropdown-item"> <i class="fas fa-sign-in-alt"></i>Đăng xuất</a>
                                         <div class="dropdown-divider"></div>

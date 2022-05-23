@@ -8,12 +8,12 @@
 <table border="1px">
     <tr>
         
-        @*<td>Tên sản phẩm</td>
+        <td>Tên sản phẩm</td>
         <td>Ảnh </td>
         <td>Đơn giá</td>
         <td>Số lượng</td>
         <td>Thành tiền</td>
-        <td></td>*@
+        <td></td>
     </tr>
     @foreach (var item in Model)
     {
@@ -21,18 +21,16 @@
             
             
             <td><img src="@Url.Content("~/Assit/img/"+item.hinhAnh)" alt="Alternate Text" width="50" height="50" /></td>
-
-            
-       
-          
-        </tr>
-        <tr>
             <td>@item.tenSP</td>
             <td>@String.Format("{0:0,0}", item.donGia.ToString()) USD </td>
             <td>@item.soLuong</td>
             <td>@item.thanhTien </td>
             <td>@Html.ActionLink("Xóa", "XoaGioHang", new { masp = item.maSP })</td>
+            
+       
+          
         </tr>
+        
 
     }
 <tr>
@@ -46,7 +44,7 @@
     <tr>
         <td colspan="2"><a href="@Url.Action("PaymentWithPaypal", "GioHang")"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" /></a></td>
         <td colspan="4" style="text-align:right">
-            @using (Html.BeginForm("DatHang", "GioHang"))
+            @using (Html.BeginForm("DatHang", "GioHang",new { @type=0}))
             {
                 <input type="submit" value="Đặt hàng" />
             }
