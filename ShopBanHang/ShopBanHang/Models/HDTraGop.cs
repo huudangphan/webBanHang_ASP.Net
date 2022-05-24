@@ -12,30 +12,26 @@ namespace ShopBanHang.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class KhachHang
+    public partial class HDTraGop
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KhachHang()
+        public HDTraGop()
         {
-            this.HDOffLines = new HashSet<HDOffLine>();
-            this.HDOnlines = new HashSet<HDOnline>();
-            this.HDTraGops = new HashSet<HDTraGop>();
+            this.CTHDTGs = new HashSet<CTHDTG>();
+            this.PhieuTraGops = new HashSet<PhieuTraGop>();
         }
     
-        public int MaKH { get; set; }
-        public string tenKH { get; set; }
-        public string DiaChi { get; set; }
-        public string email { get; set; }
-        public string taiKhoan { get; set; }
-        public string matKhau { get; set; }
-        public Nullable<decimal> tongMua { get; set; }
-        public string sodt { get; set; }
+        public int MaHD { get; set; }
+        public Nullable<int> MaKH { get; set; }
+        public Nullable<System.DateTime> NgayCoc { get; set; }
+        public Nullable<decimal> TienCoc { get; set; }
+        public Nullable<int> SoThang { get; set; }
+        public Nullable<int> laiSuat { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HDOffLine> HDOffLines { get; set; }
+        public virtual ICollection<CTHDTG> CTHDTGs { get; set; }
+        public virtual KhachHang KhachHang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HDOnline> HDOnlines { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HDTraGop> HDTraGops { get; set; }
+        public virtual ICollection<PhieuTraGop> PhieuTraGops { get; set; }
     }
 }
