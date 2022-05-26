@@ -191,23 +191,7 @@ namespace ShopBanHang.Controllers
             }// nếu chưa có giỏ hàng
             return listGioHang;
         }
-        [HttpGet]
-        public ActionResult TaoDonHangTraGop()
-        {
-
-            if (string.IsNullOrEmpty(user.id.ToString()) || Session["GioHang"] == null)
-            {
-                ViewBag.result = "Vui lòng chọn khách hàng và sản phẩm";
-                return View();
-            }
-            return View();
-        }
-        [HttpPost]
-        public ActionResult TaoDonHangTraGop(FormCollection f)
-        {
-            return View();
-
-        }
+        
         [HttpGet]
         public ActionResult DonHangOffline()
         {
@@ -247,5 +231,46 @@ namespace ShopBanHang.Controllers
             GioHang.madh = id;
             return View(result);
         }
+        [HttpGet]
+        public ActionResult NhapHang()
+        {
+            if ( Session["GioHang"] == null)
+            {
+                ViewBag.result = "Vui lòng chọn khách hàng và sản phẩm";
+                return View();
+            }
+            return View();
+        }
+        public ActionResult NhapHang(FormCollection f)
+        {
+            try
+            {
+                HDNhapSP hd = new HDNhapSP();
+                hd.ngayNhap = DateTime.Now;
+                hd.maKho = 1;
+                db.HDNhapSPs.Add(hd);
+                List<GioHang> gioHang = getGioHang();
+                foreach (var item in gioHang)
+                {
+                    CTPN ct = new CTPN();
+                    ct.maPhieuNhap = hd.maPhieuNhap;
+                    ct.maSP = item.maSP;
+                    ct.SLNhap = item.soLuong;
+                    ct.giaNhap = item.donGia;
+                    db.CTPNs.Add(ct);
+                }
+                db.SaveChanges();
+                Session["GioHang"] = null;
+                ViewBag.result = "Nhập hàng về thành công";
+            }
+            catch (Exception e )
+            {
+
+                ViewBag.result = "Đã xảy ra lỗi, vui lòng thử lại sau";
+            }
+            return View();
+        }
+       
+
     }
 }

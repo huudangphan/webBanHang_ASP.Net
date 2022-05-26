@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "NhapHang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@ViewBag.result
+@if (ViewBag.result == "Vui lòng chọn khách hàng và sản phẩm")
+{
+
+}
+else
+{
+    <div class="row">
+       
+        <div class="col-md-6">
+            @{Html.RenderAction("PartialGioHang", "GioHang");}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            @using (Html.BeginForm("NhapHang", "DonHang"))
+            {
+                <input type="submit" value="Mua hàng" />
+            }
+        </div>
+    </div>
+}
+
+
+

@@ -74,6 +74,25 @@ namespace ShopBanHang.Controllers
 
             return RedirectToAction("GioHang");
         }
+        public ActionResult CapNhatGioHangAdmin(int masp, FormCollection f)
+        {
+            SanPham sp = db.SanPhams.SingleOrDefault(a => a.maSP == masp);
+            // kiểm tra sản phẩm có tồn tại trong giỏ hàng hay không
+            if (sp == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            List<GioHang> listGioHang = getGioHang();
+            GioHang lsp = listGioHang.SingleOrDefault(x => x.maSP == masp);
+            if (lsp != null)
+            {
+                lsp.soLuong = Int32.Parse(f["txtSoLuong"].ToString());
+                lsp.donGia = Int32.Parse(f["dongia"].ToString());
+            }
+
+            return RedirectToAction("GioHangAdmin");
+        }
         // Xóa giỏ hàng
         public  ActionResult XoaGioHang(int masp)
         {
@@ -164,8 +183,16 @@ namespace ShopBanHang.Controllers
             List<GioHang> listGioHang = getGioHang();
 
             return View(listGioHang);
-        }   
-                
+        }
+        public ActionResult SuaGioHangAdmin()
+        {
+            if (Session["GioHang"] == null)
+                return RedirectToAction("SanPham", "NhanVien");
+            List<GioHang> listGioHang = getGioHang();
+
+            return View(listGioHang);
+        }
+
 
         [HttpPost]
         public ActionResult DatHang(int type=0)
@@ -217,6 +244,10 @@ namespace ShopBanHang.Controllers
         {
             return View();
         }
-        
+        public ActionResult NhapHang()
+        {
+            return View();
+        }
+
     }
 }

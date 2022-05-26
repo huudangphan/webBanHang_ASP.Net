@@ -48,12 +48,12 @@
     </tr>
     <tr>
 
-        <td colspan="6" style="text-align:right">@Html.ActionLink("Sửa", "SuaGioHang")</td>
+        <td colspan="6" style="text-align:right">@Html.ActionLink("Sửa", "SuaGioHangAdmin")</td>
     </tr>
     <tr>
         <td colspan="6" style="text-align:right">            
             <button><a href="@Url.Action("TaoDonHangOffline","DonHang")"> Mua hàng</a> </button>
-            <button><a>Mua trả góp</a></button>
+            <button><a href="@Url.Action("NhapHang","DonHang")" >Nhập hàng</a></button>
         </td>
     </tr>
 </table>

@@ -33,12 +33,34 @@ namespace ShopBanHang.Controllers
         public PartialViewResult TimKiemKhach(string search)
         {
             if (string.IsNullOrEmpty(search))
-                return PartialView(db.KhachHangs.Where(x=>x.MaKH==45).FirstOrDefault());
-            var result = db.KhachHangs.Where(x => x.sodt == search).FirstOrDefault();
-            return PartialView(result);
+            {
+                ViewBag.result = "-1";
+                Response.StatusCode = 404;
+                return null;
+            }
+            else
+            {
+                
+                var result = db.KhachHangs.Where(x => x.sodt == search).FirstOrDefault();
+                if (result != null)
+                {
+                    ViewBag.result = "1";
+                    return PartialView(result);
+                }
+                else
+                {
+                    ViewBag.result = "-1";
+                    Response.StatusCode = 404;
+                    return null;
+                }
+
+          
+            }
+
+          
         }
 
-
+        
 
 
     }
