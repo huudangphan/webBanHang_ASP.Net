@@ -11,5 +11,6 @@ namespace ShopBanHang.Models
         public string pass { get; set; }
         public string pass2 { get; set; }
         public static int id { get; set; }
+        public static double tongtien { get; set; }
     }
 }

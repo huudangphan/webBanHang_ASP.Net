@@ -42,7 +42,7 @@
         <td colspan="6" style="text-align:right">@Html.ActionLink("Sửa", "SuaGioHang")</td>
     </tr>
     <tr>
-        <td colspan="2"><a href="@Url.Action("PaymentWithPaypal", "GioHang")"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" /></a></td>
+        <td colspan="2"><a href="@Url.Action("PaymentWithPaypal", "Home")"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" /></a></td>
         <td colspan="4" style="text-align:right">
             @using (Html.BeginForm("DatHang", "GioHang",new { @type=0}))
             {

@@ -13,6 +13,7 @@ namespace ShopBanHang.Controllers
     public class HomeController : Controller
     {
         ShopDoCongNgheEntities db = new ShopDoCongNgheEntities();
+        GioHangController gh = new GioHangController();
         public PartialViewResult ListSanPham(int? page)
         {
             int pageNum = (page ?? 1);
@@ -33,21 +34,7 @@ namespace ShopBanHang.Controllers
 
             return PartialView(kq);
         }
-       //public ActionResult SanPhamHot()
-       // {
-
-       //     //var list = db.SanPhams.OrderBy(c => c.slTon).Take(4).ToList();
-       //     var list = (from sp in db.SanPhams
-       //                 join n in db.CTPNs
-       //                 on sp.maSP equals n.maSP
-       //                 join pn in db.HDNhapSPs
-       //                 on n.maPhieuNhap equals pn.maPhieuNhap
-       //                 orderby pn.ngayNhap descending
-       //                 select sp).Take(4).ToList();
-            
-
-       //     return PartialView("SanPhamHot",list);
-       // }
+      
         public PartialViewResult DienthoaiHot()
         {
 
@@ -184,6 +171,118 @@ namespace ShopBanHang.Controllers
             var kq = db.SanPhams.Where(x=>x.tenSP.Contains(tukhoa)).ToList();
             return View(kq);
         }
-      
+        public ActionResult PaymentWithPaypal(string Cancel = null)
+        {
+
+            //getting the apiContext  
+            APIContext apiContext = PaypalConfiguration.GetAPIContext();
+            try
+            {
+
+                string payerId = Request.Params["PayerID"];
+                if (string.IsNullOrEmpty(payerId))
+                {
+
+                    string baseURI = Request.Url.Scheme + "://" + Request.Url.Authority + "/Home/PaymentWithPayPal?";
+                    var guid = Convert.ToString((new Random()).Next(100000));
+                    var createdPayment = this.CreatePayment(apiContext, baseURI + "guid=" + guid);
+                    var links = createdPayment.links.GetEnumerator();
+                    string paypalRedirectUrl = null;
+                    while (links.MoveNext())
+                    {
+                        Links lnk = links.Current;
+                        if (lnk.rel.ToLower().Trim().Equals("approval_url"))
+                        {
+
+                            paypalRedirectUrl = lnk.href;
+                        }
+                    }
+
+                    Session.Add(guid, createdPayment.id);
+                    return Redirect(paypalRedirectUrl);
+                }
+                else
+                {
+                    var guid = Request.Params["guid"];
+                    var executedPayment = ExecutePayment(apiContext, payerId, Session[guid] as string);
+                    if (executedPayment.state.ToLower() != "approved")
+                    {
+                        return View("FailureView");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string error = ex.ToString();
+                return View("FailureView");
+            }
+
+           
+             gh.DatHang(1);
+            //on successful payment, show success page to user.  
+            return View("SuccessView");
+        }
+        private PayPal.Api.Payment payment;
+        private Payment ExecutePayment(APIContext apiContext, string payerId, string paymentId)
+        {
+            var paymentExecution = new PaymentExecution()
+            {
+                payer_id = payerId
+            };
+            this.payment = new Payment()
+            {
+                id = paymentId
+            };
+            return this.payment.Execute(apiContext, paymentExecution);
+        }
+        private Payment CreatePayment(APIContext apiContext, string redirectUrl)
+        {
+
+
+            var itemList = new ItemList()
+            {
+                items = new List<Item>()
+            };
+
+
+            var payer = new Payer()
+            {
+                payment_method = "paypal"
+            };
+            // Configure Redirect Urls here with RedirectUrls object  
+            var redirUrls = new RedirectUrls()
+            {
+                cancel_url = redirectUrl + "&Cancel=true",
+                return_url = redirectUrl
+            };
+            string tongtien = user.tongtien.ToString();
+            var amount = new Amount()
+            {
+                currency = "USD",
+                total = tongtien // Total must be equal to sum of tax, shipping and subtotal.  33
+
+
+            };
+
+            var transactionList = new List<Transaction>();
+
+            transactionList.Add(new Transaction()
+            {
+                description = "Transaction description",
+                invoice_number = "your generated invoice number", //Generate an Invoice No  
+                amount = amount,
+                item_list = null
+            });
+            this.payment = new Payment()
+            {
+                intent = "sale",
+                payer = payer,
+                transactions = transactionList,
+                redirect_urls = redirUrls
+            };
+            // Create a payment using a APIContext  
+            return this.payment.Create(apiContext);
+        }
+
     }
 }
