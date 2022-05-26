@@ -5,7 +5,7 @@
     {
 
 <div class="col-md-3">
-    <a href="@Url.Action("xemChiTiet","SanPham",new { @masp=item.maSP})" style="color:white"><img src="~/Assit/img/@Html.DisplayFor(modelItem=>item.anh)" alt="Alternate Text" style="width:270px;height:250px;" /></a>
+    <a href="@Url.Action("xemChiTiet","SanPham",new { @masp=item.maSP})" style="color:white;margin-left:80px"><img src="~/Assit/img/@Html.DisplayFor(modelItem=>item.anh)" alt="Alternate Text" style="width:270px;height:250px;" /></a>
 
     <div style="text-align:center;margin-bottom:10px;">
         @Html.DisplayFor(modelItem => item.tenSP)

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ShopBanHang.Models.CTSP>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tensp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giasp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anh)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tensp)
+            </td>
+            <td>
+                <p style="font-size:20px;color:palevioletred;">Giá:@String.Format("{0:0,0}", @Html.DisplayFor(modelItem => item.giasp)) USD </p>
+            </td>
+            <td>
+                <div style="width: 30%;height: 30%; float: left;margin-top:10px;">
+                    <img src="~/Assit/img/@Html.DisplayFor(modelItem=>item.anh)" alt="Alternate Text" style="width:100%;height:100%;" />
+                </div>
+            </td>
+
+        </tr>
+    }
+
+</table>

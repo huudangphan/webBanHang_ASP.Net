@@ -23,6 +23,7 @@ namespace ShopBanHang.Controllers
                 Response.StatusCode = 404;
                 return null;
             }
+            
             return View(sp);
         }
         public ViewResult XemSP(int masp = 0)
@@ -33,6 +34,11 @@ namespace ShopBanHang.Controllers
                 Response.StatusCode = 404;
                 return null;
             }
+            var kho = db.CTTonKhoes.Where(x => x.MaSP == masp && x.MaKho == 1).FirstOrDefault();
+            if(kho!=null)
+                ViewBag.sl = kho.SL;
+            ViewBag.sl = 0;
+
             return View(sp);
         }
         [HttpGet]
