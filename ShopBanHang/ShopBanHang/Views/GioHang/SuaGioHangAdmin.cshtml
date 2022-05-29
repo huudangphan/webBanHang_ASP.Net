@@ -24,31 +24,27 @@
     {
         using (Html.BeginForm("CapNhatGioHangAdmin", "GioHang", new { @masp = item.maSP }))
         {
-            <tr>
-                <td>@item.maSP</td>
+<tr>
+    <td>@item.maSP</td>
 
-                <td>@item.tenSP</td>
+    <td>@item.tenSP</td>
 
-                <td><img src="@Url.Content("~/Assit/img/" + item.hinhAnh)" alt="Alternate Text" width="50" height="50" /></td>
+    <td><img src="@Url.Content("~/Assit/img/" + item.hinhAnh)" alt="Alternate Text" width="50" height="50" /></td>
+    <td><input type="text" name="dongia" value=@item.donGia /></td>
+    <td><input type="number" name="txtSoLuong" min="1" /></td>
+    <td>@item.thanhTien</td>
+    <td>
+        <input type="submit" value="Cập nhật" />
+        <br />
+        @Html.ActionLink("Xóa", "XoaGioHang", new { @masp = item.maSP })
 
-                <td>@String.Format("{0:0,0}", item.donGia.ToString()) VNĐ </td>
-
-                @*<td>@Html.TextBox("txtSoLuong", item.soLuong) </td>*@
-                <td><input type="number" name="txtSoLuong" min="1"  /></td>
-                <td><input type="text" name="dongia" value=@item.donGia   /></td>
-
-
-                <td>@item.thanhTien</td>
-                <td>
-                    <input type="submit" value="Cập nhật" />
-                    <br />
-                    @Html.ActionLink("Xóa", "XoaGioHang", new { @masp = item.maSP })
-
-                </td>
+    </td>
 
 
 
-            </tr>
+
+
+</tr>
         }
 
     }

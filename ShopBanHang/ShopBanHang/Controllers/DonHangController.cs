@@ -74,7 +74,7 @@ namespace ShopBanHang.Controllers
                           {
                               tensp = a.tenSP,
                               anh = a.anh,
-                              giasp = (double)a.giaSP
+                              giasp = (double)b.GiaBan
 
 
                           }).ToList());
@@ -90,7 +90,7 @@ namespace ShopBanHang.Controllers
                           {
                               tensp=a.tenSP,
                               anh=a.anh,
-                              giasp= (double)a.giaSP
+                              giasp= (double)b.GiaBan
                               
 
                           }).ToList());
@@ -107,7 +107,7 @@ namespace ShopBanHang.Controllers
                          {
                              tensp = a.tenSP,
                              anh = a.anh,
-                             giasp = (double)a.giaSP
+                             giasp = (double)b.giaNhap
 
 
                          }).ToList());
