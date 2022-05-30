@@ -37,7 +37,9 @@ namespace ShopBanHang.Controllers
             var kho = db.CTTonKhoes.Where(x => x.MaSP == masp && x.MaKho == 1).FirstOrDefault();
             if(kho!=null)
                 ViewBag.sl = kho.SL;
-            ViewBag.sl = 0;
+            else
+                ViewBag.sl = 0;
+
 
             return View(sp);
         }
